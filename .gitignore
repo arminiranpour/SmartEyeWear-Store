@@ -1,8 +1,8 @@
 FileContentIndex/
-v17/
 bin/
 obj/
 SmartEyewearStore/SmartEyewearStore/obj/
 *.bin
 .vs/
 *.cache
+/Debug
