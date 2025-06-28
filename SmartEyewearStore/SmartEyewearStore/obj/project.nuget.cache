@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vqxuXghRgYM=",
+  "dgSpecHash": "r6DkEw/hCbY=",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\oracle.entityframeworkcore\\9.23.80\\oracle.entityframeworkcore.9.23.80.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\oracle.manageddataaccess\\23.8.0\\oracle.manageddataaccess.23.8.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\oracle.manageddataaccess.core\\23.8.0\\oracle.manageddataaccess.core.23.8.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
@@ -83,7 +84,20 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\system.text.encodings.web\\9.0.4\\system.text.encodings.web.9.0.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.text.json\\9.0.4\\system.text.json.9.0.4.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.threading.tasks.extensions\\4.6.0\\system.threading.tasks.extensions.4.6.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Oracle.ManagedDataAccess 23.8.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

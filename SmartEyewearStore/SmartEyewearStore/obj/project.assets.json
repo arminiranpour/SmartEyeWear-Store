@@ -977,6 +977,22 @@
           "lib/net8.0/Oracle.EntityFrameworkCore.dll": {}
         }
       },
+      "Oracle.ManagedDataAccess/23.8.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.2",
+          "System.Formats.Asn1": "8.0.1",
+          "System.Memory": "4.6.0",
+          "System.Text.Json": "8.0.5",
+          "System.Threading.Tasks.Extensions": "4.6.0"
+        },
+        "compile": {
+          "lib/net472/Oracle.ManagedDataAccess.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Oracle.ManagedDataAccess.dll": {}
+        }
+      },
       "Oracle.ManagedDataAccess.Core/23.8.0": {
         "type": "package",
         "dependencies": {
@@ -1604,10 +1620,10 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.4": {
+      "System.Threading.Tasks.Extensions/4.6.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.1/_._": {}
+          "lib/netcoreapp2.1/_._": {}
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
@@ -3516,6 +3532,33 @@
         "oracle.png"
       ]
     },
+    "Oracle.ManagedDataAccess/23.8.0": {
+      "sha512": "ZUEITCW3oyyQUX4Vrxd2G3+W0h30zkGfhvKCpm5VUtbbBhniq/TEiEooWMrBH0groOQjfQaXkEuuMdPITMFk7g==",
+      "type": "package",
+      "path": "oracle.manageddataaccess/23.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "PerfCounters/register_odpm_perfmon_counters.ps1",
+        "PerfCounters/unregister_odpm_perfmon_counters.ps1",
+        "README.md",
+        "bin/x64/Oracle.ManagedDataAccessIOP.dll",
+        "content/net472/App.config.install.xdt",
+        "content/net472/App.config.transform",
+        "content/net472/App.config.uninstall.xdt",
+        "content/net472/Oracle.DataAccess.Common.Configuration.Section.xsd",
+        "content/net472/Oracle.ManagedDataAccess.Client.Configuration.Section.xsd",
+        "content/net472/Web.config.install.xdt",
+        "content/net472/Web.config.transform",
+        "content/net472/Web.config.uninstall.xdt",
+        "info.txt",
+        "lib/net472/Oracle.ManagedDataAccess.dll",
+        "oracle.manageddataaccess.23.8.0.nupkg.sha512",
+        "oracle.manageddataaccess.nuspec",
+        "oracle.png"
+      ]
+    },
     "Oracle.ManagedDataAccess.Core/23.8.0": {
       "sha512": "wgCcndZnwbWySb4Bm0UOAJO8wOagFAs1IG8Aa4ZX38D9N9MrySfryGKJd+yajb2CDGXv/yL3x7yES6mmF4OMWw==",
       "type": "package",
@@ -4732,41 +4775,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.4": {
-      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+    "System.Threading.Tasks.Extensions/4.6.0": {
+      "sha512": "I5G6Y8jb0xRtGUC9Lahy7FUvlYlnGMMkbuKAQBy8Jb7Y6Yn8OlBEiUOY0PqZ0hy6Ua8poVA1ui1tAIiXNxGdsg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.4",
+      "path": "system.threading.tasks.extensions/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.Threading.Tasks.Extensions.dll",
-        "lib/net461/System.Threading.Tasks.Extensions.xml",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net461/System.Threading.Tasks.Extensions.targets",
+        "buildTransitive/net462/_._",
+        "lib/net462/System.Threading.Tasks.Extensions.dll",
+        "lib/net462/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
         "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
-        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netcoreapp2.1/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "system.threading.tasks.extensions.4.6.0.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec"
       ]
     }
   },
@@ -4777,7 +4803,9 @@
       "Microsoft.EntityFrameworkCore.Relational >= 9.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.4",
-      "Oracle.EntityFrameworkCore >= 9.23.80"
+      "Oracle.EntityFrameworkCore >= 9.23.80",
+      "Oracle.ManagedDataAccess >= 23.8.0",
+      "Oracle.ManagedDataAccess.Core >= 23.8.0"
     ]
   },
   "packageFolders": {
@@ -4857,6 +4885,14 @@
           "Oracle.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.23.80, )"
+          },
+          "Oracle.ManagedDataAccess": {
+            "target": "Package",
+            "version": "[23.8.0, )"
+          },
+          "Oracle.ManagedDataAccess.Core": {
+            "target": "Package",
+            "version": "[23.8.0, )"
           }
         },
         "imports": [
@@ -4881,5 +4917,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Oracle.ManagedDataAccess 23.8.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
