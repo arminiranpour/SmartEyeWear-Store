@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SmartEyewearStore"
+    "\\SmartEyewearStore",
+    "\\SmartEyewearStore\\SmartEyewearStore"
   ],
+  "SelectedNode": "\\SmartEyewearStore\\SmartEyewearStore\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
