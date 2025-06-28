@@ -14,7 +14,6 @@ public class SurveyViewModel
     [Required]
     public List<string> Usage { get; set; }
 
-    public bool EyeCondition { get; set; }
 
     [Required]
     public string Gender { get; set; }

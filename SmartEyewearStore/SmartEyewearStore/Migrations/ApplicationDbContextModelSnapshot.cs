@@ -68,7 +68,6 @@ namespace SmartEyewearStore.Migrations
                 b.Property<string>("BudgetRange")
                     .IsRequired();
 
-                b.Property<bool>("EyeCondition");
 
                 b.Property<string>("FaceShape")
                     .IsRequired();

@@ -7,7 +7,6 @@
         public string PreferredColors { get; set; }
         public string Style { get; set; }
         public string Usage { get; set; }
-        public bool EyeCondition { get; set; }
         public string Gender { get; set; }
         public string AgeRange { get; set; }
         public string BudgetRange { get; set; }

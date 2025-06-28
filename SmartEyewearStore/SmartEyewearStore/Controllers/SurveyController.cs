@@ -29,7 +29,6 @@ public class SurveyController : Controller
                 PreferredColors = string.Join(",", model.PreferredColors),
                 Style = model.Style,
                 Usage = string.Join(",", model.Usage),
-                EyeCondition = model.EyeCondition,
                 Gender = model.Gender,
                 AgeRange = model.AgeRange,
                 BudgetRange = model.BudgetRange,

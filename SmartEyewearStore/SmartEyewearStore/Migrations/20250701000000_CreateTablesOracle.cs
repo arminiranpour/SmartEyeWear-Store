@@ -55,7 +55,6 @@ namespace SmartEyewearStore.Migrations
                     PreferredColors = table.Column<string>(nullable: false),
                     Style = table.Column<string>(nullable: false),
                     Usage = table.Column<string>(nullable: false),
-                    EyeCondition = table.Column<bool>(nullable: false),
                     Gender = table.Column<string>(nullable: false),
                     AgeRange = table.Column<string>(nullable: false),
                     BudgetRange = table.Column<string>(nullable: false),
