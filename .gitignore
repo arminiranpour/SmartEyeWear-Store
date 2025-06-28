@@ -3,3 +3,5 @@ v17/
 CopilotIndices/
 bin/
 obj/
+*.bin
+.vs/

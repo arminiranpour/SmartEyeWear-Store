@@ -66,8 +66,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\SurveyAnswer.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAowAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:11:04.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:11:04.854Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Migrations\\20250701000000_CreateTablesOracle.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAQwDgAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:58:20.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T21:58:20.206Z"
             },
             {
               "$type": "Document",
@@ -92,8 +90,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Migrations\\20250511203918_InitialCreate.Designer.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAjwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:56:34.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T21:56:34.259Z"
             },
             {
               "$type": "Document",
@@ -105,8 +102,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Migrations\\ApplicationDbContextModelSnapshot.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAjwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:57:23.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T21:57:23.106Z"
             },
             {
               "$type": "Document",
@@ -118,8 +114,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAACsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-28T22:14:14.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:14:14.82Z"
             },
             {
               "$type": "Document",
@@ -129,7 +124,7 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\SurveyViewModel.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SurveyViewModel.cs",
               "RelativeToolTip": "SmartEyewearStore\\Models\\SurveyViewModel.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T22:14:23.596Z",
               "EditorCaption": ""
@@ -144,8 +139,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:11:57.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:11:57.268Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\SurveyController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAewB4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T22:12:59.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-28T22:12:59.087Z"
             },
             {
               "$type": "Document",
@@ -194,8 +187,7 @@
               "RelativeToolTip": "SmartEyewearStore\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-11T13:57:29.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T13:57:29.142Z"
             }
           ]
         }
