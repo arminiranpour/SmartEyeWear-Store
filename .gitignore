@@ -3,5 +3,7 @@ v17/
 CopilotIndices/
 bin/
 obj/
+SmartEyewearStore/SmartEyewearStore/obj/
 *.bin
 .vs/
+*.cache
