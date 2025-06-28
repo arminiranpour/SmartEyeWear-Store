@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\controllers\\surveycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\surveycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SurveyController.cs",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\SurveyController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\SurveyController.cs",
@@ -79,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SurveyViewModel.cs",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SurveyViewModel.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\SurveyViewModel.cs",
@@ -91,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Program.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Program.cs",
@@ -103,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Success.cshtml",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Success.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\Success.cshtml",
@@ -115,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Index.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
@@ -127,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
@@ -139,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\appsettings.json",
               "RelativeDocumentMoniker": "SmartEyewearStore\\appsettings.json",
@@ -151,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ErrorViewModel.cs",
@@ -159,7 +159,8 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T11:52:26.095Z"
+              "WhenOpened": "2025-06-02T11:52:26.095Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
