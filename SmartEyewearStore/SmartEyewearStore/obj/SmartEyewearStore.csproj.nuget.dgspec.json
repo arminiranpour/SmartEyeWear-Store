@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\padidar\\Desktop\\پروژه پایانی\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj": {}
+    "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\padidar\\Desktop\\پروژه پایانی\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj": {
+    "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\padidar\\Desktop\\پروژه پایانی\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
+        "projectUniqueName": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
         "projectName": "SmartEyewearStore",
-        "projectPath": "C:\\Users\\padidar\\Desktop\\پروژه پایانی\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
+        "projectPath": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\SmartEyewearStore.csproj",
         "packagesPath": "C:\\Users\\padidar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\padidar\\Desktop\\پروژه پایانی\\SmartEyewearStore\\SmartEyewearStore\\obj\\",
+        "outputPath": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\padidar\\AppData\\Roaming\\NuGet\\NuGet.Config",
