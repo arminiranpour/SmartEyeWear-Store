@@ -2,25 +2,44 @@
 
 public class SurveyViewModel
 {
-    [Required]
-    public string FaceShape { get; set; }
+    public enum GlassTypeEnum
+    {
+        Sunglasses,
+        Eyeglasses
+    }
 
-    [Required]
-    public List<string> PreferredColors { get; set; }
+    public enum MaterialEnum
+    {
+        Plastic_acetate,
+        Metallic
+    }
 
-    [Required]
-    public string Style { get; set; }
+    public enum GenderEnum
+    {
+        Masculine,
+        Feminine
+    }
 
-    [Required]
-    public List<string> Usage { get; set; }
+    public enum ToneEnum
+    {
+        Dark,
+        Colorful,
+        Neutral
+    }
 
+    public class SurveyViewModel
+    {
+        [Required]
+        public GlassTypeEnum GlassType { get; set; }
 
-    [Required]
-    public string Gender { get; set; }
+        [Required]
+        public MaterialEnum Material { get; set; }
 
-    [Required]
-    public string AgeRange { get; set; }
+        [Required]
+        public GenderEnum Gender { get; set; }
 
-    [Required]
-    public string BudgetRange { get; set; }
+        [Required]
+        public ToneEnum Tone { get; set; }
+    }
+
 }

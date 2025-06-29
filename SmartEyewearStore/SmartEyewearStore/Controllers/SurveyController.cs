@@ -12,6 +12,7 @@ public class SurveyController : Controller
     }
 
     // GET: /Survey
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
@@ -25,24 +26,23 @@ public class SurveyController : Controller
         {
             var survey = new SurveyAnswer
             {
-                FaceShape = model.FaceShape,
-                PreferredColors = string.Join(",", model.PreferredColors),
-                Style = model.Style,
-                Usage = string.Join(",", model.Usage),
-                Gender = model.Gender,
-                AgeRange = model.AgeRange,
-                BudgetRange = model.BudgetRange,
-                UserId = 1 // تستی: بعداً با User واقعی جایگزین می‌کنیم
+                GlassType = model.GlassType.ToString(),
+                Material = model.Material.ToString(),
+                Gender = model.Gender.ToString(),
+                Tone = model.Tone.ToString(),
+                UserId = 1 // تستی — بعداً با User واقعی جایگزین می‌کنیم
             };
 
             _context.SurveyAnswers.Add(survey);
             _context.SaveChanges();
+
             return RedirectToAction("Success");
         }
 
         return View(model);
     }
 
+    // GET: /Survey/Success
     public IActionResult Success()
     {
         return View();

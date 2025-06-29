@@ -3,13 +3,14 @@
     public class SurveyAnswer
     {
         public int Id { get; set; }
-        public string FaceShape { get; set; }
-        public string PreferredColors { get; set; }
-        public string Style { get; set; }
-        public string Usage { get; set; }
+
+        public string GlassType { get; set; }
+
+        public string Material { get; set; }
+
         public string Gender { get; set; }
-        public string AgeRange { get; set; }
-        public string BudgetRange { get; set; }
+
+        public string Tone { get; set; }
 
         public int UserId { get; set; }
         public User User { get; set; }

@@ -1,74 +1,44 @@
 ﻿@model SurveyViewModel
 @{
-    ViewData["Title"] = "پرسشنامه";
+    ViewData["Title"] = "پرسشنامه انتخاب عینک";
 }
 
-<h2>پرسشنامه انتخاب عینک مناسب</h2>
+<h2>📝 پرسشنامه انتخاب عینک</h2>
 
 <form asp-action="Index" method="post">
-    <div>
-        <label>فرم صورت:</label>
-        <select asp-for="FaceShape" class="form-control">
-            <option>گرد</option>
-            <option>بیضی</option>
-            <option>مربعی</option>
-            <option>کشیده</option>
-            <option>قلبی</option>
-        </select>
-    </div>
 
-    <div>
-        <label>رنگ‌های مورد علاقه:</label><br />
-        @foreach (var color in new[] { "مشکی", "طلایی", "نقره‌ای", "قرمز", "آبی" })
+    <div class="form-group">
+        <label>نوع عینک:</label><br />
+        @foreach (var type in Enum.GetValues(typeof(SurveyViewModel.GlassTypeEnum)))
         {
-            <input type="checkbox" name="PreferredColors" value="@color" /> @color <br />
+        <input type="radio" asp-for="GlassType" value="@type" />  @type  <br />
         }
     </div>
 
-    <div>
-        <label>سبک پوشش:</label><br />
-        @foreach (var style in new[] { "رسمی", "فانتزی", "ساده", "اسپرت" })
+    <div class="form-group">
+        <label>جنس عینک:</label><br />
+        @foreach (var material in Enum.GetValues(typeof(SurveyViewModel.MaterialEnum)))
         {
-            <input type="radio" asp-for="Style" value="@style" /> @style <br />
+        <input type="radio" asp-for="Material" value="@material" />  @material  <br />
         }
     </div>
 
-    <div>
-        <label>کاربرد عینک:</label><br />
-        @foreach (var usage in new[] { "مطالعه", "رانندگی", "کامپیوتر", "روزمره" })
+    <div class="form-group">
+        <label>جنسیت کاربر:</label><br />
+        @foreach (var gender in Enum.GetValues(typeof(SurveyViewModel.GenderEnum)))
         {
-            <input type="checkbox" name="Usage" value="@usage" /> @usage <br />
+        <input type="radio" asp-for="Gender" value="@gender" />  @gender  <br />
         }
     </div>
 
-    
-
-    <div>
-        <label>جنسیت:</label><br />
-        <input type="radio" asp-for="Gender" value="زن" /> زن
-        <input type="radio" asp-for="Gender" value="مرد" /> مرد
+    <div class="form-group">
+        <label>تن رنگی:</label><br />
+        @foreach (var tone in Enum.GetValues(typeof(SurveyViewModel.ToneEnum)))
+        {
+        <input type="radio" asp-for="Tone" value="@tone" />  @tone  <br />
+        }
     </div>
 
-    <div>
-        <label>بازه سنی:</label>
-        <select asp-for="AgeRange" class="form-control">
-            <option>زیر ۱۸</option>
-            <option>۱۸ تا ۲۵</option>
-            <option>۲۶ تا ۳۵</option>
-            <option>۳۶ تا ۵۰</option>
-            <option>بالای ۵۰</option>
-        </select>
-    </div>
+    <button type="submit" class="btn btn-success mt-3">ثبت اطلاعات</button>
 
-    <div>
-        <label>بودجه خرید:</label>
-        <select asp-for="BudgetRange" class="form-control">
-            <option>تا ۵۰۰ هزار</option>
-            <option>۵۰۰ تا ۱ میلیون</option>
-            <option>۱ تا ۲ میلیون</option>
-            <option>بیشتر از ۲ میلیون</option>
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-success">ثبت اطلاعات</button>
 </form>
