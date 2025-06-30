@@ -18,26 +18,20 @@ public class ScanController : Controller
     }
 
     [HttpPost]
-    public IActionResult SavePhoto(string imageData)
+    [HttpPost]
+    public IActionResult SavePhoto(string faceShape, string skinTone)
     {
-        if (!string.IsNullOrEmpty(imageData))
+        var survey = _context.SurveyAnswers.OrderByDescending(x => x.Id).FirstOrDefault();
+        if (survey != null)
         {
-            var faceShape = "Round"; // فعلاً تستی
-            var skinTone = "Light";  // فعلاً تستی
+            survey.FaceShape = faceShape;
+            survey.SkinTone = skinTone;
 
-            var survey = _context.SurveyAnswers.OrderByDescending(x => x.Id).FirstOrDefault();
-            if (survey != null)
-            {
-                survey.FaceShape = faceShape;
-                survey.SkinTone = skinTone;
-
-                _context.SurveyAnswers.Update(survey);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("Success", "Survey");
+            _context.SurveyAnswers.Update(survey);
+            _context.SaveChanges();
         }
 
-        return View("Index");
+        return RedirectToAction("Success", "Survey");
     }
+
 }

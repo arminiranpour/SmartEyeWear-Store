@@ -1,42 +1,80 @@
-﻿@{
-    ViewData["Title"] = "اسکن چهره";
-}
+﻿@section Scripts {
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
 
-<h2>📸 اسکن چهره</h2>
-
-<video id="video" width="400" autoplay></video>
-<br />
-<button id="snap" class="btn btn-primary mt-2">گرفتن عکس</button>
-<br />
-<br />
-<canvas id="canvas" width="400"></canvas>
-<br />
-<form id="photoForm" method="post" enctype="multipart/form-data" asp-action="SavePhoto">
-    <input type="hidden" id="imageData" name="imageData" />
-    <button type="submit" class="btn btn-success mt-2">ارسال عکس</button>
-</form>
-
-@section Scripts {
     <script>
-        var video = document.getElementById('video');
-        var canvas = document.getElementById('canvas');
-        var snap = document.getElementById("snap");
-        var imageData = document.getElementById("imageData");
-        var context = canvas.getContext('2d');
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById("snap");
+        const faceShapeInput = document.getElementById("faceShape");
+        const skinToneInput = document.getElementById("skinTone");
+        const context = canvas.getContext('2d');
 
         navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function (stream) {
+            .then(stream => {
                 video.srcObject = stream;
                 video.play();
             })
-            .catch(function (err) {
+            .catch(err => {
                 console.log("خطا: " + err);
             });
 
-        snap.addEventListener("click", function () {
-            context.drawImage(video, 0, 0, 400, 300);
-            var dataUrl = canvas.toDataURL("image/png");
-            imageData.value = dataUrl;
+        Promise.all([
+            faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+            faceapi.nets.faceLandmark68Net.loadFromUri('/models')
+        ]).then(() => {
+            console.log("✅ مدل‌ها بارگذاری شدند!");
+        });
+
+        snap.addEventListener("click", async function () {
+            context.drawImage(video, 0, 0, 300, 400);
+            const detections = await faceapi.detectSingleFace(canvas, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks();
+
+            let faceShape = "Unknown";
+            let skinTone = "Unknown";
+
+            if (detections) {
+                const landmarks = detections.landmarks;
+                const jawWidth = landmarks.positions[16].x - landmarks.positions[0].x;
+                const faceHeight = landmarks.positions[8].y - landmarks.positions[27].y;
+                const ratio = jawWidth / faceHeight;
+
+                if (ratio > 1.3) {
+                    faceShape = "Round";
+                } else if (ratio > 1.1) {
+                    faceShape = "Square";
+                } else {
+                    faceShape = "Oval";
+                }
+
+                const imgData = context.getImageData(150, 200, 10, 10).data;
+                let r = 0, g = 0, b = 0, count = 0;
+                for (let i = 0; i < imgData.length; i += 4) {
+                    r += imgData[i];
+                    g += imgData[i + 1];
+                    b += imgData[i + 2];
+                    count++;
+                }
+                r = Math.floor(r / count);
+                g = Math.floor(g / count);
+                b = Math.floor(b / count);
+
+                const brightness = (r + g + b) / 3;
+                if (brightness > 180) {
+                    skinTone = "Light";
+                } else if (brightness > 100) {
+                    skinTone = "Medium";
+                } else {
+                    skinTone = "Dark";
+                }
+            }
+
+            faceShapeInput.value = faceShape;
+            skinToneInput.value = skinTone;
+
+            document.getElementById("resultText").innerHTML = `
+                ✅ فرم صورت: <b>${faceShape}</b><br>
+                ✅ رنگ پوست: <b>${skinTone}</b>
+            `;
         });
     </script>
 }
