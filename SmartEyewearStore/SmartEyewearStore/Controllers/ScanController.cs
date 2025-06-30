@@ -18,7 +18,6 @@ public class ScanController : Controller
     }
 
     [HttpPost]
-    [HttpPost]
     public IActionResult SavePhoto(string faceShape, string skinTone)
     {
         var survey = _context.SurveyAnswers.OrderByDescending(x => x.Id).FirstOrDefault();
@@ -33,5 +32,4 @@ public class ScanController : Controller
 
         return RedirectToAction("Success", "Survey");
     }
-
 }

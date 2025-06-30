@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
+using System;
 
 public class SurveyController : Controller
 {
@@ -22,21 +23,31 @@ public class SurveyController : Controller
     {
         if (ModelState.IsValid)
         {
-            var survey = new SurveyAnswer
+            try
             {
-                GlassType = model.GlassType.ToString(),
-                Material = model.Material.ToString(),
-                Gender = model.Gender.ToString(),
-                Tone = model.Tone.ToString(),
-                UserId = 1 // تستی
-            };
+                var survey = new SurveyAnswer
+                {
+                    GlassType = model.GlassType.ToString(),
+                    Material = model.Material.ToString(),
+                    Gender = model.Gender.ToString(),
+                    Tone = model.Tone.ToString(),
+                    UserId = 1 // تستی — بعداً کاربر واقعی جایگزین می‌شود
+                };
 
-            _context.SurveyAnswers.Add(survey);
-            _context.SaveChanges();
+                _context.SurveyAnswers.Add(survey);
+                _context.SaveChanges();
 
-            return RedirectToAction("Index", "Scan");
+                // ریدایرکت به صفحه اسکن (کنترلر Scan)
+                return RedirectToAction("Index", "Scan");
+            }
+            catch (Exception ex)
+            {
+                // نمایش خطا روی صفحه
+                return Content("❌ خطا هنگام ذخیره: " + ex.Message);
+            }
         }
 
+        // اگر ModelState معتبر نباشد، دوباره فرم نمایش داده شود
         return View(model);
     }
 
