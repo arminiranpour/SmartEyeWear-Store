@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\SmartEyewearStore",
-    "\\SmartEyewearStore\\SmartEyewearStore"
+    "\\SmartEyewearStore\\SmartEyewearStore",
+    "\\SmartEyewearStore\\SmartEyewearStore\\Migrations",
+    "\\SmartEyewearStore\\SmartEyewearStore\\Models",
+    "\\SmartEyewearStore\\SmartEyewearStore\\Views",
+    "\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey"
   ],
-  "SelectedNode": "\\SmartEyewearStore\\SmartEyewearStore\\Program.cs",
+  "SelectedNode": "\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\ApplicationDbContextModelSnapshot.cs",
   "PreviewInSolutionExplorer": false
 }

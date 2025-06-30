@@ -11,7 +11,8 @@
         public string Gender { get; set; }
 
         public string Tone { get; set; }
-
+        public string? FaceShape { get; set; }
+        public string? SkinTone { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
     }

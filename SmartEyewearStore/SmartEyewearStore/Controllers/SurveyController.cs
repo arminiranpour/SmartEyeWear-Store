@@ -11,14 +11,12 @@ public class SurveyController : Controller
         _context = context;
     }
 
-    // GET: /Survey
     [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
 
-    // POST: /Survey
     [HttpPost]
     public IActionResult Index(SurveyViewModel model)
     {
@@ -30,19 +28,18 @@ public class SurveyController : Controller
                 Material = model.Material.ToString(),
                 Gender = model.Gender.ToString(),
                 Tone = model.Tone.ToString(),
-                UserId = 1 // تستی — بعداً با User واقعی جایگزین می‌کنیم
+                UserId = 1 // تستی
             };
 
             _context.SurveyAnswers.Add(survey);
             _context.SaveChanges();
 
-            return RedirectToAction("Success");
+            return RedirectToAction("Index", "Scan");
         }
 
         return View(model);
     }
 
-    // GET: /Survey/Success
     public IActionResult Success()
     {
         return View();

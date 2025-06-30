@@ -5,40 +5,39 @@
 
 <h2>📝 پرسشنامه انتخاب عینک</h2>
 
-<form asp-action="Index" method="post">
+<form asp-action="Index" method="post" class="mt-4">
 
     <div class="form-group">
         <label>نوع عینک:</label><br />
-        @foreach (var type in Enum.GetValues(typeof(SurveyViewModel.GlassTypeEnum)))
+        @foreach (var type in Enum.GetValues(typeof(GlassTypeEnum)))
         {
-        <input type="radio" asp-for="GlassType" value="@type" />  @type  <br />
+            <input type="radio" asp-for="GlassType" value="@type" /> @type <br />
         }
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-3">
         <label>جنس عینک:</label><br />
-        @foreach (var material in Enum.GetValues(typeof(SurveyViewModel.MaterialEnum)))
+        @foreach (var material in Enum.GetValues(typeof(MaterialEnum)))
         {
-        <input type="radio" asp-for="Material" value="@material" />  @material  <br />
+            <input type="radio" asp-for="Material" value="@material" /> @material <br />
         }
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-3">
         <label>جنسیت کاربر:</label><br />
-        @foreach (var gender in Enum.GetValues(typeof(SurveyViewModel.GenderEnum)))
+        @foreach (var gender in Enum.GetValues(typeof(GenderEnum)))
         {
-        <input type="radio" asp-for="Gender" value="@gender" />  @gender  <br />
+            <input type="radio" asp-for="Gender" value="@gender" /> @gender <br />
         }
     </div>
 
-    <div class="form-group">
+    <div class="form-group mt-3">
         <label>تن رنگی:</label><br />
-        @foreach (var tone in Enum.GetValues(typeof(SurveyViewModel.ToneEnum)))
+        @foreach (var tone in Enum.GetValues(typeof(ToneEnum)))
         {
-        <input type="radio" asp-for="Tone" value="@tone" />  @tone  <br />
+            <input type="radio" asp-for="Tone" value="@tone" /> @tone <br />
         }
     </div>
 
-    <button type="submit" class="btn btn-success mt-3">ثبت اطلاعات</button>
-
+    <button type="submit" class="btn btn-success mt-4">ادامه و اسکن چهره</button>
 </form>
