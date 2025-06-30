@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -15,8 +11,16 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\github\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +38,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEgBAAAAAAAAAAAswF8BAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-30T15:04:11.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Footer.cshtml",
-              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAswF0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-30T15:02:22.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Header.cshtml",
               "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
               "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
               "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAKwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-30T14:59:05.193Z",
+              "WhenOpened": "2025-06-30T17:45:18.512Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-30T14:29:12.063Z",
+              "WhenOpened": "2025-06-30T17:44:17.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-30T17:43:08.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T17:41:12.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\GitHub\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T17:38:56.303Z",
               "EditorCaption": ""
             }
           ]
