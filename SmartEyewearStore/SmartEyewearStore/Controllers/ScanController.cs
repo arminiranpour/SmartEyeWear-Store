@@ -41,10 +41,14 @@ namespace SmartEyewearStore.Controllers
 
             using var ms = new MemoryStream();
             await image.CopyToAsync(ms);
+            var bytes = ms.ToArray();
+
+            using var faceStream = new MemoryStream(bytes);
+            using var skinStream = new MemoryStream(bytes);
 
             try
             {
-                var result = await _faceApi.AnalyzeFaceAsync(ms);
+                var result = await _faceApi.AnalyzeFaceAsync(faceStream, skinStream);
                 var survey = await _context.SurveyAnswers.FindAsync(id);
                 if (survey != null)
                 {
@@ -63,6 +67,5 @@ namespace SmartEyewearStore.Controllers
                 return View(survey);
             }
         }
-
     }
 }
