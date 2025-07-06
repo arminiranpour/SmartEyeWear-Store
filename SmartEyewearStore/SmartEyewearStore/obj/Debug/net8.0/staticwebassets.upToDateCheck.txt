@@ -58,3 +58,13 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\models\age_gender_model.weights
+wwwroot\models\face_expression_model.weights
+wwwroot\models\face_landmark_68_model.weights
+wwwroot\models\face_landmark_68_tiny_model.weights
+wwwroot\models\face_recognition_model.weights
+wwwroot\models\mtcnn_model.weights
+wwwroot\models\ssd_mobilenetv1.weights
+wwwroot\models\tiny_face_detector_model.weights
+wwwroot\models\tiny_yolov2_model.weights
+wwwroot\models\tiny_yolov2_separable_conv_model.weights
