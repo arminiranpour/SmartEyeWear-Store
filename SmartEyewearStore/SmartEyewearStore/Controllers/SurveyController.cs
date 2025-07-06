@@ -37,8 +37,8 @@ public class SurveyController : Controller
                 _context.SurveyAnswers.Add(survey);
                 _context.SaveChanges();
 
-                // ریدایرکت به صفحه اسکن (کنترلر Scan)
-                return RedirectToAction("Index", "Scan");
+                // ریدایرکت به صفحه اسکن همراه با شناسه پاسخ ثبت شده
+                return RedirectToAction("Index", "Scan", new { id = survey.Id });
             }
             catch (Exception ex)
             {

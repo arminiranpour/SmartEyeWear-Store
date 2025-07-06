@@ -1,0 +1,17 @@
+﻿@model SmartEyewearStore.Models.SurveyAnswer
+@{
+    ViewData["Title"] = "نتیجه اسکن";
+}
+
+<h2>نتیجه اسکن</h2>
+
+@if (Model != null)
+{
+    <p>فرم صورت: <strong>@Model.FaceShape</strong></p>
+    <p>رنگ پوست: <strong>@Model.SkinTone</strong></p>
+    <a href="@Url.Action("Success", "Survey")" class="btn btn-success mt-3">ادامه</a>
+}
+else
+{
+    <p>نتیجه‌ای یافت نشد.</p>
+}

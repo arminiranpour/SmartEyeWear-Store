@@ -1,0 +1,22 @@
+﻿@model SmartEyewearStore.Models.SurveyAnswer?
+@{
+    ViewData["Title"] = "اسکن چهره";
+}
+
+<h2>📷 اسکن چهره</h2>
+
+<form asp-action="Index" asp-route-id="@ViewBag.SurveyId" method="post" enctype="multipart/form-data" class="mt-4">
+    <div class="form-group">
+        <label>تصویر چهره را انتخاب کنید:</label>
+        <input type="file" name="image" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">ارسال برای تحلیل</button>
+</form>
+
+@if (Model != null && Model.FaceShape != null)
+{
+    <h3 class="mt-4">نتیجه اسکن</h3>
+    <p>فرم صورت: <strong>@Model.FaceShape</strong></p>
+    <p>رنگ پوست: <strong>@Model.SkinTone</strong></p>
+    <a href="@Url.Action("Success", "Survey")" class="btn btn-success mt-3">ادامه</a>
+}
