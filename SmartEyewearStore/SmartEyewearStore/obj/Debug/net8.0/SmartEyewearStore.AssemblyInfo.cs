@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartEyewearStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b0db02b6b6942649d3d1707450cfed33ec5b068")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a9f22bd1fe82edfd2f28c60829a644ef3eb4786")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartEyewearStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartEyewearStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
