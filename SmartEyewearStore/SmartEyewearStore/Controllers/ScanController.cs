@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using SmartEyewearStore.Data;
-using SmartEyewearStore.Helpers;
 using SmartEyewearStore.Models;
 
 namespace SmartEyewearStore.Controllers
@@ -10,14 +12,12 @@ namespace SmartEyewearStore.Controllers
     public class ScanController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly FaceApiHelper _faceApi;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public ScanController(ApplicationDbContext context, IConfiguration config)
+        public ScanController(ApplicationDbContext context, IHttpClientFactory httpClientFactory)
         {
             _context = context;
-            var endpoint = config["FaceApi:Endpoint"] ?? string.Empty;
-            var key = config["FaceApi:Key"] ?? string.Empty;
-            _faceApi = new FaceApiHelper(endpoint, key);
+            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]
@@ -39,33 +39,40 @@ namespace SmartEyewearStore.Controllers
                 return View(surveyMissing);
             }
 
+            var client = _httpClientFactory.CreateClient();
+            string faceShape = "Unknown";
+
             using var ms = new MemoryStream();
             await image.CopyToAsync(ms);
             var bytes = ms.ToArray();
 
-            using var faceStream = new MemoryStream(bytes);
-            using var skinStream = new MemoryStream(bytes);
+            using var content = new MultipartFormDataContent();
+            content.Add(new ByteArrayContent(bytes), "image", "upload.jpg");
 
             try
             {
-                var result = await _faceApi.AnalyzeFaceAsync(faceStream, skinStream);
-                var survey = await _context.SurveyAnswers.FindAsync(id);
-                if (survey != null)
+                var response = await client.PostAsync("http://127.0.0.1:5000/analyze", content);
+                if (response.IsSuccessStatusCode)
                 {
-                    survey.FaceShape = result.faceShape;
-                    survey.SkinTone = result.skinTone;
-                    await _context.SaveChangesAsync();
+                    var json = await response.Content.ReadAsStringAsync();
+                    dynamic result = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+                    faceShape = result.face_shape;
                 }
-                ViewBag.SurveyId = id;
-                return View(survey);
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
-                ViewBag.SurveyId = id;
-                var survey = await _context.SurveyAnswers.FindAsync(id);
-                return View(survey);
+                faceShape = "Error";
             }
+
+            var survey = await _context.SurveyAnswers.FindAsync(id);
+            if (survey != null)
+            {
+                survey.FaceShape = faceShape;
+                await _context.SaveChangesAsync();
+            }
+
+            ViewBag.SurveyId = id;
+            return View(survey);
         }
     }
 }
