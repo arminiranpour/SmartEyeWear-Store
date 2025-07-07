@@ -25,6 +25,11 @@ namespace SmartEyewearStore.Controllers
             if (userId == null && string.IsNullOrEmpty(guestId))
             {
                 guestId = Request.Query["guestId"].FirstOrDefault();
+                if (string.IsNullOrEmpty(guestId))
+                {
+                    guestId = Guid.NewGuid().ToString();
+                }
+                HttpContext.Session.SetString("GuestId", guestId);
             }
 
             _interactionService.AddInteraction(request.GlassId, request.InteractionType, userId, guestId);

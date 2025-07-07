@@ -6,20 +6,20 @@
 <h2>Store</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-@foreach (var glass in Model)
-{
-    <div class="border p-4 rounded">
-        <img src="@glass.ImageUrl" alt="@glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
-        <h3 class="font-bold">@glass.GlassesInfo?.Name</h3>
-        <p>Price: $@glass.Price</p>
-        <p>Color: @glass.Color</p>
-        <div class="space-x-2 mt-2">
-            <button onclick="sendInteraction(@glass.Id, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
-            <button onclick="sendInteraction(@glass.Id, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
-            <button onclick="sendInteraction(@glass.Id, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
+    @foreach (var glass in Model)
+    {
+        <div class="border p-4 rounded">
+            <img src="@glass.ImageUrl" alt="@glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
+            <h3 class="font-bold">@glass.GlassesInfo?.Name</h3>
+            <p>Price: $@glass.Price</p>
+            <p>Color: @glass.Color</p>
+            <div class="space-x-2 mt-2">
+                <button onclick="sendInteraction(@glass.Id, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+                <button onclick="sendInteraction(@glass.Id, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
+                <button onclick="sendInteraction(@glass.Id, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
+            </div>
         </div>
-    </div>
-}
+    }
 </div>
 
 @section Scripts {
