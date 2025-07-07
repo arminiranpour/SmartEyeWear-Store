@@ -25,14 +25,24 @@ public class SurveyController : Controller
         {
             var survey = new SurveyAnswer
             {
-                FaceShape = model.FaceShape,
-                PreferredColors = string.Join(",", model.PreferredColors),
-                Style = model.Style,
-                Usage = string.Join(",", model.Usage),
-                Gender = model.Gender,
-                AgeRange = model.AgeRange,
-                BudgetRange = model.BudgetRange,
-                UserId = 1 // تستی: بعداً با User واقعی جایگزین می‌کنیم
+                Gender = model.Gender.ToString(),
+                Style = model.Style.ToString(),
+                Lifestyle = model.Lifestyle.ToString(),
+                BuyingFrequency = model.BuyingFrequency.ToString(),
+                PriceFocus = model.PriceFocus.ToString(),
+                FaceShape = model.FaceShape.ToString(),
+                FavoriteShapes = model.FavoriteShapes,
+                Colors = model.Colors,
+                Materials = model.Materials,
+                LensWidth = model.LensWidth,
+                BridgeWidth = model.BridgeWidth,
+                TempleLength = model.TempleLength,
+                HeadSize = model.HeadSize.ToString(),
+                ScreenTime = model.ScreenTime.ToString(),
+                DayLocation = model.DayLocation.ToString(),
+                Prescription = model.Prescription,
+                Features = model.Features,
+                UserId = 1 // TODO: replace with real user id
             };
 
             _context.SurveyAnswers.Add(survey);

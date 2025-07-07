@@ -1,74 +1,78 @@
-﻿@model SurveyViewModel
+﻿@model SmartEyewearStore.Models.SurveyViewModel
 @{
-    ViewData["Title"] = "پرسشنامه";
+    ViewData["Title"] = "Survey";
 }
 
-<h2>پرسشنامه انتخاب عینک مناسب</h2>
+<h2>Survey</h2>
 
 <form asp-action="Index" method="post">
-    <div>
-        <label>فرم صورت:</label>
-        <select asp-for="FaceShape" class="form-control">
-            <option>گرد</option>
-            <option>بیضی</option>
-            <option>مربعی</option>
-            <option>کشیده</option>
-            <option>قلبی</option>
-        </select>
+    <div class="mb-2">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.GenderEnum>()" class="form-control"></select>
     </div>
-
-    <div>
-        <label>رنگ‌های مورد علاقه:</label><br />
-        @foreach (var color in new[] { "مشکی", "طلایی", "نقره‌ای", "قرمز", "آبی" })
-        {
-            <input type="checkbox" name="PreferredColors" value="@color" /> @color <br />
-        }
+    <div class="mb-2">
+        <label asp-for="Style"></label>
+        <select asp-for="Style" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.StyleEnum>()" class="form-control"></select>
     </div>
-
-    <div>
-        <label>سبک پوشش:</label><br />
-        @foreach (var style in new[] { "رسمی", "فانتزی", "ساده", "اسپرت" })
-        {
-            <input type="radio" asp-for="Style" value="@style" /> @style <br />
-        }
+    <div class="mb-2">
+        <label asp-for="Lifestyle"></label>
+        <select asp-for="Lifestyle" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.LifestyleEnum>()" class="form-control"></select>
     </div>
-
-    <div>
-        <label>کاربرد عینک:</label><br />
-        @foreach (var usage in new[] { "مطالعه", "رانندگی", "کامپیوتر", "روزمره" })
-        {
-            <input type="checkbox" name="Usage" value="@usage" /> @usage <br />
-        }
+    <div class="mb-2">
+        <label asp-for="BuyingFrequency"></label>
+        <select asp-for="BuyingFrequency" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.BuyingFrequencyEnum>()" class="form-control"></select>
     </div>
-
-    
-
-    <div>
-        <label>جنسیت:</label><br />
-        <input type="radio" asp-for="Gender" value="زن" /> زن
-        <input type="radio" asp-for="Gender" value="مرد" /> مرد
+    <div class="mb-2">
+        <label asp-for="PriceFocus"></label>
+        <select asp-for="PriceFocus" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.PriceFocusEnum>()" class="form-control"></select>
     </div>
-
-    <div>
-        <label>بازه سنی:</label>
-        <select asp-for="AgeRange" class="form-control">
-            <option>زیر ۱۸</option>
-            <option>۱۸ تا ۲۵</option>
-            <option>۲۶ تا ۳۵</option>
-            <option>۳۶ تا ۵۰</option>
-            <option>بالای ۵۰</option>
-        </select>
+    <div class="mb-2">
+        <label asp-for="FaceShape"></label>
+        <select asp-for="FaceShape" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.FaceShapeEnum>()" class="form-control"></select>
     </div>
-
-    <div>
-        <label>بودجه خرید:</label>
-        <select asp-for="BudgetRange" class="form-control">
-            <option>تا ۵۰۰ هزار</option>
-            <option>۵۰۰ تا ۱ میلیون</option>
-            <option>۱ تا ۲ میلیون</option>
-            <option>بیشتر از ۲ میلیون</option>
-        </select>
+    <div class="mb-2">
+        <label asp-for="FavoriteShapes"></label>
+        <input asp-for="FavoriteShapes" class="form-control" />
     </div>
-
-    <button type="submit" class="btn btn-success">ثبت اطلاعات</button>
+    <div class="mb-2">
+        <label asp-for="Colors"></label>
+        <input asp-for="Colors" class="form-control" />
+    </div>
+    <div class="mb-2">
+        <label asp-for="Materials"></label>
+        <input asp-for="Materials" class="form-control" />
+    </div>
+    <div class="mb-2">
+        <label asp-for="LensWidth"></label>
+        <input asp-for="LensWidth" class="form-control" />
+    </div>
+    <div class="mb-2">
+        <label asp-for="BridgeWidth"></label>
+        <input asp-for="BridgeWidth" class="form-control" />
+    </div>
+    <div class="mb-2">
+        <label asp-for="TempleLength"></label>
+        <input asp-for="TempleLength" class="form-control" />
+    </div>
+    <div class="mb-2">
+        <label asp-for="HeadSize"></label>
+        <select asp-for="HeadSize" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.HeadSizeEnum>()" class="form-control"></select>
+    </div>
+    <div class="mb-2">
+        <label asp-for="ScreenTime"></label>
+        <select asp-for="ScreenTime" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.ScreenTimeEnum>()" class="form-control"></select>
+    </div>
+    <div class="mb-2">
+        <label asp-for="DayLocation"></label>
+        <select asp-for="DayLocation" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.DayLocationEnum>()" class="form-control"></select>
+    </div>
+    <div class="mb-2 form-check">
+        <input asp-for="Prescription" class="form-check-input" />
+        <label asp-for="Prescription" class="form-check-label"></label>
+    </div>
+    <div class="mb-2">
+        <label asp-for="Features"></label>
+        <input asp-for="Features" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
 </form>
