@@ -97,6 +97,12 @@ namespace SmartEyewearStore.Data
                     index.SetDatabaseName(index.GetDatabaseName().ToUpper());
                 }
             }
+            modelBuilder.Entity<Glasses>().ToTable("GLASSES", schema: "DBS311_252NAA12");
+            modelBuilder.Entity<GlassesInfo>().ToTable("GLASSESINFO", schema: "DBS311_252NAA12");
+            modelBuilder.Entity<User>().ToTable("USERS", schema: "DBS311_252NAA12");
+            modelBuilder.Entity<UserInteraction>().ToTable("USERINTERACTIONS", schema: "DBS311_252NAA12");
+            modelBuilder.Entity<SurveyAnswer>().ToTable("SURVEYANSWER", schema: "DBS311_252NAA12");
+
         }
     }
 }

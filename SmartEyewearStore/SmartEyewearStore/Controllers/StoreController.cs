@@ -12,15 +12,18 @@ namespace SmartEyewearStore.Controllers
         public StoreController(ApplicationDbContext context)
         {
             _context = context;
+            var conn = _context.Database.GetDbConnection();
+            Console.WriteLine($"Connection string being used: {conn.ConnectionString}");
+
         }
 
         public IActionResult Index()
         {
             var glasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .ToList();
+            .AsNoTracking()
+            .ToList();
 
-            Console.WriteLine($"Loaded glasses count: {glasses.Count}");
+            Console.WriteLine($"Loaded glasses count (no join): {glasses.Count}");
             return View(glasses);
         }
     }

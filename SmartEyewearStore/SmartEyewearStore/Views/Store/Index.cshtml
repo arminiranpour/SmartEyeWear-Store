@@ -1,39 +1,41 @@
 ﻿@model IEnumerable<SmartEyewearStore.Models.Glasses>
-
 @{
     ViewData["Title"] = "Store";
 }
 
-<h1>Our Glasses Collection</h1>
+<h2>Store</h2>
 
-<div class="glasses-container">
-    @foreach (var glass in Model)
-    {
-        <div class="glass-card">
-            <h3>@glass.GlassesInfo?.Name</h3>
-            <img src="@glass.ImageUrl" alt="Glasses image" style="width:200px; height:auto;" />
-            <p>Price: @glass.Price</p>
-            <p>Color: @glass.Color</p>
-            <p>In Stock: @(glass.InStock ? "Yes" : "No")</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+@foreach (var glass in Model)
+{
+    <div class="border p-4 rounded">
+        <img src="@glass.ImageUrl" alt="@glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
+        <h3 class="font-bold">@glass.GlassesInfo?.Name</h3>
+        <p>Price: $@glass.Price</p>
+        <p>Color: @glass.Color</p>
+        <div class="space-x-2 mt-2">
+            <button onclick="sendInteraction(@glass.Id, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+            <button onclick="sendInteraction(@glass.Id, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
+            <button onclick="sendInteraction(@glass.Id, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
         </div>
-    }
+    </div>
+}
 </div>
 
-<style>
-    .glasses-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .glass-card {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        width: 220px;
-        text-align: center;
-    }
-    .glass-card img {
-        max-width: 100%;
-        border-radius: 4px;
-    }
-</style>
+@section Scripts {
+    <script>
+        function sendInteraction(glassId, type) {
+            fetch('/Interaction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ glassId: glassId, interactionType: type })
+            }).then(response => {
+                if (response.ok) {
+                    alert('Interaction saved: ' + type);
+                } else {
+                    alert('Error saving interaction');
+                }
+            });
+        }
+    </script>
+}
