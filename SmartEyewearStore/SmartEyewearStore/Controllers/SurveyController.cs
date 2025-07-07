@@ -69,6 +69,7 @@ public class SurveyController : Controller
 
     public IActionResult Success(SurveyViewModel model)
     {
+        ViewData["UserId"] = HttpContext.Session.GetInt32("UserId");
         return View(model);
     }
 }

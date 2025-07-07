@@ -36,7 +36,7 @@
 
     <script>
         window.userId = @(ViewData["UserId"] != null ? ViewData["UserId"] : "null");
-        document.addEventListener('DOMContentLoaded', function () {
+         document.addEventListener('DOMContentLoaded', function () {
             const pending = localStorage.getItem('pendingSurvey');
             if (pending && window.userId) {
                 fetch('/Survey/Save?userId=' + window.userId, {
@@ -46,6 +46,7 @@
                 }).then(r => {
                     if (r.ok) {
                         localStorage.removeItem('pendingSurvey');
+                        window.location.href = '/Recommendation/GetRecommendations';
                     }
                 });
             }
