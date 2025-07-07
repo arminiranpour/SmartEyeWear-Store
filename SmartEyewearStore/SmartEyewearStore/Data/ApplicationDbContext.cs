@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmartEyewearStore.Models;
 
@@ -13,17 +12,57 @@ namespace SmartEyewearStore.Data
         public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
         public DbSet<Glasses> Glasses { get; set; }
 
-        // using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Glasses price precision
             modelBuilder.Entity<Glasses>()
                 .Property(g => g.Price)
                 .HasPrecision(10, 2);
 
-           
+            // SurveyAnswer foreign key constraint name (short)
+            modelBuilder.Entity<SurveyAnswer>()
+                .HasOne(s => s.User)
+                .WithMany(u => u.Surveys)
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_SA_USER");
+
+            // Convert boolean to number for Oracle
+            modelBuilder.Entity<SurveyAnswer>()
+                .Property(s => s.Prescription)
+                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasColumnType("NUMBER(1)");
+
+            // Uppercase all table and column names
+            foreach (var entity in modelBuilder.Model.GetEntityTypes())
+            {
+                // Table
+                entity.SetTableName(entity.GetTableName().ToUpper());
+
+                // Columns
+                foreach (var property in entity.GetProperties())
+                {
+                    property.SetColumnName(property.GetColumnName().ToUpper());
+                }
+
+                // Keys
+                foreach (var key in entity.GetKeys())
+                {
+                    key.SetName(key.GetName().ToUpper());
+                }
+
+                // Foreign keys
+                foreach (var fk in entity.GetForeignKeys())
+                {
+                    fk.SetConstraintName(fk.GetConstraintName().ToUpper());
+                }
+
+                // Indexes
+                foreach (var index in entity.GetIndexes())
+                {
+                    index.SetDatabaseName(index.GetDatabaseName().ToUpper());
+                }
+            }
         }
-
     }
-
 }
