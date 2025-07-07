@@ -12,6 +12,7 @@ namespace SmartEyewearStore.Data
         public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
         public DbSet<GlassesInfo> GlassesInfo { get; set; }
         public DbSet<Glasses> Glasses { get; set; }
+        public DbSet<UserInteraction> UserInteractions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

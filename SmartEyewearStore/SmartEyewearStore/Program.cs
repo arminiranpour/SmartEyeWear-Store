@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
+using SmartEyewearStore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession();
+
+builder.Services.AddScoped<SmartEyewearStore.Services.InteractionService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
