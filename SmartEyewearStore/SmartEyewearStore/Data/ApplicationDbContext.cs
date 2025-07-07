@@ -36,7 +36,18 @@ namespace SmartEyewearStore.Data
                 .Property(g => g.HasAntiScratchCoating)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)");
-            
+            modelBuilder.Entity<UserInteraction>()
+                .HasOne(ui => ui.Glass)
+                .WithMany()
+                .HasForeignKey(ui => ui.GlassId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_UI_GLS");
+
+            modelBuilder.Entity<UserInteraction>()
+                .HasOne(ui => ui.User)
+                .WithMany()
+                .HasForeignKey(ui => ui.UserId)
+                .HasConstraintName("FK_UI_USR");
 
             // SurveyAnswer foreign key constraint name (short)
             modelBuilder.Entity<SurveyAnswer>()

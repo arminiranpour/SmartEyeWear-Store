@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -111,6 +112,35 @@ namespace SmartEyewearStore.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "USERINTERACTIONS",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    USERID = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    GUESTID = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    GLASSID = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    INTERACTIONTYPE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    SCORE = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    TIMESTAMP = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_USERINTERACTIONS", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_UI_GLS",
+                        column: x => x.GLASSID,
+                        principalTable: "GLASSES",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UI_USR",
+                        column: x => x.USERID,
+                        principalTable: "USERS",
+                        principalColumn: "ID");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_GLASSES_GLASSESINFOID",
                 table: "GLASSES",
@@ -120,22 +150,35 @@ namespace SmartEyewearStore.Migrations
                 name: "IX_SURVEY_ANSWERS_USER_ID",
                 table: "SURVEY_ANSWERS",
                 column: "USER_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_USERINTERACTIONS_GLASSID",
+                table: "USERINTERACTIONS",
+                column: "GLASSID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_USERINTERACTIONS_USERID",
+                table: "USERINTERACTIONS",
+                column: "USERID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "GLASSES");
-
-            migrationBuilder.DropTable(
                 name: "SURVEY_ANSWERS");
 
             migrationBuilder.DropTable(
-                name: "GLASSESINFO");
+                name: "USERINTERACTIONS");
+
+            migrationBuilder.DropTable(
+                name: "GLASSES");
 
             migrationBuilder.DropTable(
                 name: "USERS");
+
+            migrationBuilder.DropTable(
+                name: "GLASSESINFO");
         }
     }
 }
