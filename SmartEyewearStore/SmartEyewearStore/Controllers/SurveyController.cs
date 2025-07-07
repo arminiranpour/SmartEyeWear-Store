@@ -23,38 +23,52 @@ public class SurveyController : Controller
     {
         if (ModelState.IsValid)
         {
-            var survey = new SurveyAnswer
-            {
-                Gender = model.Gender.ToString(),
-                Style = model.Style.ToString(),
-                Lifestyle = model.Lifestyle.ToString(),
-                BuyingFrequency = model.BuyingFrequency.ToString(),
-                PriceFocus = model.PriceFocus.ToString(),
-                FaceShape = model.FaceShape.ToString(),
-                FavoriteShapes = model.FavoriteShapes,
-                Colors = model.Colors,
-                Materials = model.Materials,
-                LensWidth = model.LensWidth,
-                BridgeWidth = model.BridgeWidth,
-                TempleLength = model.TempleLength,
-                HeadSize = model.HeadSize.ToString(),
-                ScreenTime = model.ScreenTime.ToString(),
-                DayLocation = model.DayLocation.ToString(),
-                Prescription = model.Prescription,
-                Features = model.Features,
-                UserId = 1 // TODO: replace with real user id
-            };
-
-            _context.SurveyAnswers.Add(survey);
-            _context.SaveChanges();
-            return RedirectToAction("Success");
+            // Do not persist the survey yet. Simply return the success view
+            // so that the client-side script can store the data in local storage.
+            return View("Success", model);
         }
 
         return View(model);
     }
 
-    public IActionResult Success()
+    [HttpPost("Save")]
+    public IActionResult Save([FromQuery] int userId, [FromBody] SurveyViewModel model)
     {
-        return View();
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var survey = new SurveyAnswer
+        {
+            Gender = model.Gender.ToString(),
+            Style = model.Style.ToString(),
+            Lifestyle = model.Lifestyle.ToString(),
+            BuyingFrequency = model.BuyingFrequency.ToString(),
+            PriceFocus = model.PriceFocus.ToString(),
+            FaceShape = model.FaceShape.ToString(),
+            FavoriteShapes = model.FavoriteShapes,
+            Colors = model.Colors,
+            Materials = model.Materials,
+            LensWidth = model.LensWidth,
+            BridgeWidth = model.BridgeWidth,
+            TempleLength = model.TempleLength,
+            HeadSize = model.HeadSize.ToString(),
+            ScreenTime = model.ScreenTime.ToString(),
+            DayLocation = model.DayLocation.ToString(),
+            Prescription = model.Prescription,
+            Features = model.Features,
+            UserId = userId
+        };
+
+        _context.SurveyAnswers.Add(survey);
+        _context.SaveChanges();
+
+        return Ok();
+    }
+
+    public IActionResult Success(SurveyViewModel model)
+    {
+        return View(model);
     }
 }

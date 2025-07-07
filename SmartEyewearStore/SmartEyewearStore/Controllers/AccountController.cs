@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 
@@ -24,8 +26,13 @@ namespace SmartEyewearStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TODO: add authentication logic
-                return RedirectToAction("Index", "Home");
+                var user = _context.Users.FirstOrDefault(u => u.Email == model.Email && u.Password == model.Password);
+                if (user != null)
+                {
+                    HttpContext.Session.SetInt32("UserId", user.Id);
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError(string.Empty, "Invalid login attempt");
             }
             return View(model);
         }
@@ -51,7 +58,8 @@ namespace SmartEyewearStore.Controllers
                 _context.Users.Add(user);
                 _context.SaveChanges();
 
-                return RedirectToAction("Login");
+                HttpContext.Session.SetInt32("UserId", user.Id);
+                return RedirectToAction("Index", "Home");
             }
             return View(model);
         }

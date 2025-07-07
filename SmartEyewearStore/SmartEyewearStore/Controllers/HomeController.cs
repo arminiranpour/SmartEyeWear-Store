@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SmartEyewearStore.Models;
+using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 
 namespace SmartEyewearStore.Controllers
@@ -15,6 +16,7 @@ namespace SmartEyewearStore.Controllers
 
         public IActionResult Index()
         {
+            ViewData["UserId"] = HttpContext.Session.GetInt32("UserId");
             return View();
         }
 

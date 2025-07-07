@@ -34,6 +34,24 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/node_modules/alpinejs/alpine.min.js" defer></script>
 
+    <script>
+        window.userId = @(ViewData["UserId"] != null ? ViewData["UserId"] : "null");
+        document.addEventListener('DOMContentLoaded', function () {
+            const pending = localStorage.getItem('pendingSurvey');
+            if (pending && window.userId) {
+                fetch('/Survey/Save?userId=' + window.userId, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: pending
+                }).then(r => {
+                    if (r.ok) {
+                        localStorage.removeItem('pendingSurvey');
+                    }
+                });
+            }
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
