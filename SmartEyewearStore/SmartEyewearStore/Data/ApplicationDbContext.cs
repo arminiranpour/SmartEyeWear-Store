@@ -10,6 +10,7 @@ namespace SmartEyewearStore.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
+        public DbSet<GlassesInfo> GlassesInfo { get; set; }
         public DbSet<Glasses> Glasses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,6 +20,23 @@ namespace SmartEyewearStore.Data
                 .Property(g => g.Price)
                 .HasPrecision(10, 2);
 
+            modelBuilder.Entity<Glasses>()
+                .HasOne(g => g.GlassesInfo)
+                .WithMany()
+                .HasForeignKey(g => g.GlassesInfoId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_GLS_INFO");
+            modelBuilder.Entity<Glasses>()
+                .Property(g => g.InStock)
+                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasColumnType("NUMBER(1)");
+
+            modelBuilder.Entity<GlassesInfo>()
+                .Property(g => g.HasAntiScratchCoating)
+                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasColumnType("NUMBER(1)");
+            
+
             // SurveyAnswer foreign key constraint name (short)
             modelBuilder.Entity<SurveyAnswer>()
                 .HasOne(s => s.User)
@@ -27,6 +45,10 @@ namespace SmartEyewearStore.Data
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_SA_USER");
 
+            modelBuilder.Entity<SurveyAnswer>()
+                .Property(s => s.Prescription)
+                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasColumnType("NUMBER(1)");
             // Convert boolean to number for Oracle
             modelBuilder.Entity<SurveyAnswer>()
                 .Property(s => s.Prescription)
