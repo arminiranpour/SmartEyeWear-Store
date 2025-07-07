@@ -1,10 +1,26 @@
+# Ignore build results and IDE files
 FileContentIndex/
-bin/
-obj/
-SmartEyewearStore/SmartEyewearStore/obj/
-*.bin
 .vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 *.cache
-/Debug
-SmartEyewearStore/.vs/SmartEyewearStore/v17/.suo
-SmartEyewearStore/.vs/SmartEyewearStore/v17/DocumentLayout.backup.json
+
+# Build directories
+**/bin/
+**/obj/
+[Dd]ebug/
+[Rr]elease/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+**/logs/

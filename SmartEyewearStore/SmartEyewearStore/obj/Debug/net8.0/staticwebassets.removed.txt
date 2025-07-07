@@ -1,0 +1,2 @@
+C:\Users\ASUS\Desktop\SmartEyeWear-Store\SmartEyewearStore\SmartEyewearStore\wwwroot\css\site.css
+C:\Users\ASUS\Desktop\SmartEyeWear-Store\SmartEyewearStore\SmartEyewearStore\wwwroot\js\site.js
