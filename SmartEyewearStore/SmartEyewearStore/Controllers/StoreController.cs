@@ -19,6 +19,8 @@ namespace SmartEyewearStore.Controllers
             var glasses = _context.Glasses
                 .Include(g => g.GlassesInfo)
                 .ToList();
+
+            Console.WriteLine($"Loaded glasses count: {glasses.Count}");
             return View(glasses);
         }
     }
