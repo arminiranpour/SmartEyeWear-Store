@@ -11,5 +11,8 @@ namespace SmartEyewearStore.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+
+        public string? PendingSurvey { get; set; }
     }
 }

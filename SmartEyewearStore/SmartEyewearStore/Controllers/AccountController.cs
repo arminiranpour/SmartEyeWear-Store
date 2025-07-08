@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using System.Text.Json;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 
@@ -42,18 +43,43 @@ namespace SmartEyewearStore.Controllers
                             interaction.UserId = user.Id;
                             interaction.GuestId = null;
                         }
-
-                        var surveys = _context.SurveyAnswers
-                            .Where(x => x.UserId == null)
-                            .ToList();
-                        foreach (var survey in surveys)
-                        {
-                            survey.UserId = user.Id;
-                        }
-
-                        _context.SaveChanges();
-                        HttpContext.Session.Remove("GuestId");
                     }
+                    if (!string.IsNullOrEmpty(model.PendingSurvey))
+                    {
+                        try
+                        {
+                            var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey);
+                            if (pending != null)
+                            {
+                                var survey = new SurveyAnswer
+                                {
+                                    Gender = pending.Gender.ToString(),
+                                    Style = pending.Style.ToString(),
+                                    Lifestyle = pending.Lifestyle.ToString(),
+                                    BuyingFrequency = pending.BuyingFrequency.ToString(),
+                                    PriceFocus = pending.PriceFocus.ToString(),
+                                    FaceShape = pending.FaceShape.ToString(),
+                                    FavoriteShapes = string.IsNullOrEmpty(pending.FavoriteShapes) ? string.Empty : pending.FavoriteShapes,
+                                    Colors = string.IsNullOrEmpty(pending.Colors) ? string.Empty : pending.Colors,
+                                    Materials = string.IsNullOrEmpty(pending.Materials) ? string.Empty : pending.Materials,
+                                    LensWidth = pending.LensWidth,
+                                    BridgeWidth = pending.BridgeWidth,
+                                    TempleLength = pending.TempleLength,
+                                    HeadSize = pending.HeadSize.ToString(),
+                                    ScreenTime = pending.ScreenTime.ToString(),
+                                    DayLocation = pending.DayLocation.ToString(),
+                                    Prescription = pending.Prescription,
+                                    Features = string.IsNullOrEmpty(pending.Features) ? string.Empty : pending.Features,
+                                    UserId = user.Id
+                                };
+                                _context.SurveyAnswers.Add(survey);
+                            }
+                        }
+                        catch { }
+                    }
+
+                    _context.SaveChanges();
+                    HttpContext.Session.Remove("GuestId");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -96,18 +122,43 @@ namespace SmartEyewearStore.Controllers
                         interaction.UserId = user.Id;
                         interaction.GuestId = null;
                     }
-
-                    var surveys = _context.SurveyAnswers
-                        .Where(x => x.UserId == null)
-                        .ToList();
-                    foreach (var survey in surveys)
-                    {
-                        survey.UserId = user.Id;
-                    }
-
-                    _context.SaveChanges();
-                    HttpContext.Session.Remove("GuestId");
                 }
+                if (!string.IsNullOrEmpty(model.PendingSurvey))
+                {
+                    try
+                    {
+                        var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey);
+                        if (pending != null)
+                        {
+                            var survey = new SurveyAnswer
+                            {
+                                Gender = pending.Gender.ToString(),
+                                Style = pending.Style.ToString(),
+                                Lifestyle = pending.Lifestyle.ToString(),
+                                BuyingFrequency = pending.BuyingFrequency.ToString(),
+                                PriceFocus = pending.PriceFocus.ToString(),
+                                FaceShape = pending.FaceShape.ToString(),
+                                FavoriteShapes = string.IsNullOrEmpty(pending.FavoriteShapes) ? string.Empty : pending.FavoriteShapes,
+                                Colors = string.IsNullOrEmpty(pending.Colors) ? string.Empty : pending.Colors,
+                                Materials = string.IsNullOrEmpty(pending.Materials) ? string.Empty : pending.Materials,
+                                LensWidth = pending.LensWidth,
+                                BridgeWidth = pending.BridgeWidth,
+                                TempleLength = pending.TempleLength,
+                                HeadSize = pending.HeadSize.ToString(),
+                                ScreenTime = pending.ScreenTime.ToString(),
+                                DayLocation = pending.DayLocation.ToString(),
+                                Prescription = pending.Prescription,
+                                Features = string.IsNullOrEmpty(pending.Features) ? string.Empty : pending.Features,
+                                UserId = user.Id
+                            };
+                            _context.SurveyAnswers.Add(survey);
+                        }
+                    }
+                    catch { }
+                }
+
+                _context.SaveChanges();
+                HttpContext.Session.Remove("GuestId");
 
                 return RedirectToAction("Index", "Home");
             }

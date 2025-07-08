@@ -61,7 +61,7 @@ public class SurveyController : Controller
         return View(model);
     }
 
-    [HttpPost("Save")]
+    [HttpPost]
     public IActionResult Save([FromQuery] int userId, [FromBody] SurveyViewModel model)
     {
         if (!ModelState.IsValid)

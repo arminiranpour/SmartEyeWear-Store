@@ -8,7 +8,7 @@ namespace SmartEyewearStore.Models
         public int Id { get; set; }
         public int? UserId { get; set; }
         public User User { get; set; }
-        public string GuestId { get; set; }
+        public string? GuestId { get; set; }
         public int GlassId { get; set; }
         public Glasses Glass { get; set; }
         public string InteractionType { get; set; }
