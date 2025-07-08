@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 
@@ -18,14 +19,44 @@ public class SurveyController : Controller
     }
 
     // POST: /Survey
+    // POST: /Survey
     [HttpPost]
     public IActionResult Index(SurveyViewModel model)
     {
         if (ModelState.IsValid)
         {
-            // Do not persist the survey yet. Simply return the success view
-            // so that the client-side script can store the data in local storage.
-            return View("Success", model);
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId.HasValue)
+            {
+                var survey = new SurveyAnswer
+                {
+                    Gender = model.Gender.ToString(),
+                    Style = model.Style.ToString(),
+                    Lifestyle = model.Lifestyle.ToString(),
+                    BuyingFrequency = model.BuyingFrequency.ToString(),
+                    PriceFocus = model.PriceFocus.ToString(),
+                    FaceShape = model.FaceShape.ToString(),
+                    FavoriteShapes = model.FavoriteShapes,
+                    Colors = model.Colors,
+                    Materials = model.Materials,
+                    LensWidth = model.LensWidth,
+                    BridgeWidth = model.BridgeWidth,
+                    TempleLength = model.TempleLength,
+                    HeadSize = model.HeadSize.ToString(),
+                    ScreenTime = model.ScreenTime.ToString(),
+                    DayLocation = model.DayLocation.ToString(),
+                    Prescription = model.Prescription,
+                    Features = model.Features,
+                    UserId = userId.Value
+                };
+
+                _context.SurveyAnswers.Add(survey);
+                _context.SaveChanges();
+
+                return RedirectToAction("GetRecommendations", "Recommendation");
+            }
+
+            return RedirectToAction("AnalyzeFromClient", "Recommendation", model);
         }
 
         return View(model);
