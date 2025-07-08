@@ -11,6 +11,7 @@ builder.Services.AddSession();
 
 builder.Services.AddScoped<SmartEyewearStore.Services.InteractionService>();
 builder.Services.AddScoped<ContentBasedService>();
+builder.Services.AddScoped<CollaborativeFilteringService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));

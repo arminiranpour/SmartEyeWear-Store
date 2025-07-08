@@ -11,11 +11,13 @@ namespace SmartEyewearStore.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ContentBasedService _service;
+        private readonly CollaborativeFilteringService _collabService;
 
-        public RecommendationController(ApplicationDbContext context, ContentBasedService service)
+        public RecommendationController(ApplicationDbContext context, ContentBasedService service, CollaborativeFilteringService collabService)
         {
             _context = context;
             _service = service;
+            _collabService = collabService;
         }
 
         public IActionResult AnalyzeFromClient(SurveyViewModel model)
@@ -83,6 +85,39 @@ namespace SmartEyewearStore.Controllers
             return View(recommended);
         }
 
+        public IActionResult GetCollaborativeRecommendations()
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            string? guestId = HttpContext.Session.GetString("GuestId");
+
+            if (userId == null && string.IsNullOrEmpty(guestId))
+            {
+                return RedirectToAction("Index", "Store");
+            }
+
+            if (userId == null)
+            {
+                return View(new List<Glasses>());
+            }
+
+            var allInteractions = LoadAllInteractions();
+            var topUsers = _collabService.GetTopSimilarUsers(userId.Value, allInteractions);
+            var recommendedIds = _collabService.GetRecommendedGlassIds(userId.Value, allInteractions, topUsers);
+
+            var glasses = _context.Glasses
+                .Include(g => g.GlassesInfo)
+                .AsNoTracking()
+                .Where(g => recommendedIds.Contains(g.Id))
+                .ToList();
+
+            var ordered = recommendedIds
+                .Join(glasses, id => id, g => g.Id, (id, g) => g)
+                .ToList();
+
+            return View(ordered);
+        }
+
+
         private List<UserInteraction> LoadInteractions()
         {
             int? userId = HttpContext.Session.GetInt32("UserId");
@@ -108,6 +143,14 @@ namespace SmartEyewearStore.Controllers
             }
 
             return query.ToList();
+        }
+        private List<UserInteraction> LoadAllInteractions()
+        {
+            return _context.UserInteractions
+                .Include(ui => ui.Glass)
+                    .ThenInclude(g => g.GlassesInfo)
+                .AsNoTracking()
+                .ToList();
         }
     }
 }
