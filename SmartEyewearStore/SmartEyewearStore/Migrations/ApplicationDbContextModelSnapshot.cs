@@ -60,7 +60,7 @@ namespace SmartEyewearStore.Migrations
                     b.HasIndex("GlassesInfoId")
                         .HasDatabaseName("IX_GLASSES_GLASSESINFOID");
 
-                    b.ToTable("GLASSES");
+                    b.ToTable("GLASSES", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.GlassesInfo", b =>
@@ -147,9 +147,9 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("WEIGHT");
 
                     b.HasKey("Id")
-                        .HasName("PK_GLASSESINFO");
+                        .HasName("PK_GLASSES_INFO");
 
-                    b.ToTable("GLASSESINFO");
+                    b.ToTable("GLASSESINFO", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.SurveyAnswer", b =>
@@ -252,7 +252,7 @@ namespace SmartEyewearStore.Migrations
                     b.HasIndex("UserId")
                         .HasDatabaseName("IX_SURVEY_ANSWERS_USER_ID");
 
-                    b.ToTable("SURVEY_ANSWERS");
+                    b.ToTable("SURVEYANSWER", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.User", b =>
@@ -282,7 +282,7 @@ namespace SmartEyewearStore.Migrations
                     b.HasKey("Id")
                         .HasName("PK_USERS");
 
-                    b.ToTable("USERS");
+                    b.ToTable("USERS", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.UserInteraction", b =>
@@ -321,15 +321,15 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("USERID");
 
                     b.HasKey("Id")
-                        .HasName("PK_USERINTERACTIONS");
+                        .HasName("PK_USER_INTERACTIONS");
 
                     b.HasIndex("GlassId")
-                        .HasDatabaseName("IX_USERINTERACTIONS_GLASSID");
+                        .HasDatabaseName("IX_USER_INTERACTIONS_GLASSID");
 
                     b.HasIndex("UserId")
-                        .HasDatabaseName("IX_USERINTERACTIONS_USERID");
+                        .HasDatabaseName("IX_USER_INTERACTIONS_USERID");
 
-                    b.ToTable("USERINTERACTIONS");
+                    b.ToTable("USERINTERACTIONS", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.Glasses", b =>

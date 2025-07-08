@@ -11,8 +11,12 @@ namespace SmartEyewearStore.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "DBS311_252NAA12");
+
             migrationBuilder.CreateTable(
                 name: "GLASSESINFO",
+                schema: "DBS311_252NAA12",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -35,11 +39,12 @@ namespace SmartEyewearStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GLASSESINFO", x => x.ID);
+                    table.PrimaryKey("PK_GLASSES_INFO", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "USERS",
+                schema: "DBS311_252NAA12",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -55,6 +60,7 @@ namespace SmartEyewearStore.Migrations
 
             migrationBuilder.CreateTable(
                 name: "GLASSES",
+                schema: "DBS311_252NAA12",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -71,13 +77,15 @@ namespace SmartEyewearStore.Migrations
                     table.ForeignKey(
                         name: "FK_GLS_INFO",
                         column: x => x.GLASSESINFOID,
+                        principalSchema: "DBS311_252NAA12",
                         principalTable: "GLASSESINFO",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "SURVEY_ANSWERS",
+                name: "SURVEYANSWER",
+                schema: "DBS311_252NAA12",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -107,6 +115,7 @@ namespace SmartEyewearStore.Migrations
                     table.ForeignKey(
                         name: "FK_SA_USER",
                         column: x => x.USER_ID,
+                        principalSchema: "DBS311_252NAA12",
                         principalTable: "USERS",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -114,6 +123,7 @@ namespace SmartEyewearStore.Migrations
 
             migrationBuilder.CreateTable(
                 name: "USERINTERACTIONS",
+                schema: "DBS311_252NAA12",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -127,37 +137,43 @@ namespace SmartEyewearStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_USERINTERACTIONS", x => x.ID);
+                    table.PrimaryKey("PK_USER_INTERACTIONS", x => x.ID);
                     table.ForeignKey(
                         name: "FK_UI_GLS",
                         column: x => x.GLASSID,
+                        principalSchema: "DBS311_252NAA12",
                         principalTable: "GLASSES",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UI_USR",
                         column: x => x.USERID,
+                        principalSchema: "DBS311_252NAA12",
                         principalTable: "USERS",
                         principalColumn: "ID");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GLASSES_GLASSESINFOID",
+                schema: "DBS311_252NAA12",
                 table: "GLASSES",
                 column: "GLASSESINFOID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SURVEY_ANSWERS_USER_ID",
-                table: "SURVEY_ANSWERS",
+                schema: "DBS311_252NAA12",
+                table: "SURVEYANSWER",
                 column: "USER_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_USERINTERACTIONS_GLASSID",
+                name: "IX_USER_INTERACTIONS_GLASSID",
+                schema: "DBS311_252NAA12",
                 table: "USERINTERACTIONS",
                 column: "GLASSID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_USERINTERACTIONS_USERID",
+                name: "IX_USER_INTERACTIONS_USERID",
+                schema: "DBS311_252NAA12",
                 table: "USERINTERACTIONS",
                 column: "USERID");
         }
@@ -166,19 +182,24 @@ namespace SmartEyewearStore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SURVEY_ANSWERS");
+                name: "SURVEYANSWER",
+                schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "USERINTERACTIONS");
+                name: "USERINTERACTIONS",
+                schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "GLASSES");
+                name: "GLASSES",
+                schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "USERS");
+                name: "USERS",
+                schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "GLASSESINFO");
+                name: "GLASSESINFO",
+                schema: "DBS311_252NAA12");
         }
     }
 }

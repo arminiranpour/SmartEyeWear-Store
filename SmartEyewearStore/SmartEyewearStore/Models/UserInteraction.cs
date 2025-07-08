@@ -1,5 +1,8 @@
-﻿namespace SmartEyewearStore.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SmartEyewearStore.Models
 {
+    [Table("USER_INTERACTIONS")]
     public class UserInteraction
     {
         public int Id { get; set; }

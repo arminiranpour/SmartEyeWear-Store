@@ -53,10 +53,10 @@ public class SurveyController : Controller
                 _context.SurveyAnswers.Add(survey);
                 _context.SaveChanges();
 
-                return RedirectToAction("GetCollaborativeRecommendations", "Recommendation");
+                return RedirectToAction("GetHybridRecommendations", "Recommendation");
             }
 
-            return RedirectToAction("GetCollaborativeRecommendations", "Recommendation", model);
+            return RedirectToAction("GetHybridRecommendations", "Recommendation", model);
         }
 
         return View(model);

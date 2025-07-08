@@ -1,5 +1,8 @@
-﻿namespace SmartEyewearStore.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SmartEyewearStore.Models
 {
+    [Table("GLASSES_INFO")]
     public class GlassesInfo
     {
         public int Id { get; set; }

@@ -4,6 +4,13 @@ namespace SmartEyewearStore.Services
 {
     public class HybridRecommendationService
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public HybridRecommendationService(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
         public List<GlassRecommendation> GetHybridRecommendationsWithScores(
             SurveyAnswer userProfile,
             List<UserInteraction> allInteractions,
@@ -14,9 +21,11 @@ namespace SmartEyewearStore.Services
             double alpha = 0.6,
             double beta = 0.4)
         {
-            string targetKey = userProfile.UserId.ToString();
+            var guestId = _httpContextAccessor.HttpContext?.Session.GetString("GuestId");
+            string targetKey = userProfile.UserId > 0
+                                ? userProfile.UserId.ToString()
+                                : guestId;
 
-            // interactions of target user for content based
             var userInteractions = allInteractions
                 .Where(i => (i.UserId?.ToString() ?? i.GuestId) == targetKey)
                 .ToList();
@@ -26,7 +35,6 @@ namespace SmartEyewearStore.Services
             var contentDict = contentResults.ToDictionary(r => r.Glass.Id, r => r.Score);
             double maxContent = contentDict.Values.DefaultIfEmpty(0).Max();
 
-            // collaborative filtering
             var topUsers = collabService.GetTopSimilarUsers(targetKey, allInteractions);
             var collabIds = collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers, topN);
             var collabScores = new Dictionary<int, double>();

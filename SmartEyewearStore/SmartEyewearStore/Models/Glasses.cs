@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartEyewearStore.Models
 {
+    [Table("GLASSES")]
     public class Glasses
     {
         public int Id { get; set; }

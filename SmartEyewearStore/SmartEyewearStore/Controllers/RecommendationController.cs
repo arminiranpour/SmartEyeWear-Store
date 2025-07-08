@@ -143,7 +143,7 @@ namespace SmartEyewearStore.Controllers
 
             var allInteractions = LoadAllInteractions();
 
-            var hybridService = new HybridRecommendationService();
+            var hybridService = HttpContext.RequestServices.GetService<HybridRecommendationService>();
             var recommended = hybridService.GetHybridRecommendationsWithScores(
                 profile,
                 allInteractions,
