@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 
@@ -19,7 +19,6 @@ public class SurveyController : Controller
     }
 
     // POST: /Survey
-    // POST: /Survey
     [HttpPost]
     public IActionResult Index(SurveyViewModel model)
     {
@@ -36,17 +35,17 @@ public class SurveyController : Controller
                     BuyingFrequency = model.BuyingFrequency.ToString(),
                     PriceFocus = model.PriceFocus.ToString(),
                     FaceShape = model.FaceShape.ToString(),
-                    FavoriteShapes = model.FavoriteShapes,
-                    Colors = model.Colors,
-                    Materials = model.Materials,
-                    LensWidth = model.LensWidth,
-                    BridgeWidth = model.BridgeWidth,
-                    TempleLength = model.TempleLength,
+                    FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
+                    Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
+                    Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
+                    LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
+                    BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
+                    TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
                     HeadSize = model.HeadSize.ToString(),
                     ScreenTime = model.ScreenTime.ToString(),
                     DayLocation = model.DayLocation.ToString(),
                     Prescription = model.Prescription,
-                    Features = model.Features,
+                    Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features,
                     UserId = userId.Value
                 };
 
@@ -78,17 +77,17 @@ public class SurveyController : Controller
             BuyingFrequency = model.BuyingFrequency.ToString(),
             PriceFocus = model.PriceFocus.ToString(),
             FaceShape = model.FaceShape.ToString(),
-            FavoriteShapes = model.FavoriteShapes,
-            Colors = model.Colors,
-            Materials = model.Materials,
-            LensWidth = model.LensWidth,
-            BridgeWidth = model.BridgeWidth,
-            TempleLength = model.TempleLength,
+            FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
+            Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
+            Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
+            LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
+            BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
+            TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
             HeadSize = model.HeadSize.ToString(),
             ScreenTime = model.ScreenTime.ToString(),
             DayLocation = model.DayLocation.ToString(),
             Prescription = model.Prescription,
-            Features = model.Features,
+            Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features,
             UserId = userId
         };
 
