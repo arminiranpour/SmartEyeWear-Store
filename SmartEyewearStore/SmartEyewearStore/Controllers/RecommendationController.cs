@@ -46,7 +46,9 @@ namespace SmartEyewearStore.Controllers
                 .AsNoTracking()
                 .ToList();
 
-            var recommended = _service.GetRecommendedGlasses(survey, glasses);
+            var interactions = LoadInteractions();
+
+            var recommended = _service.GetRecommendedGlasses(survey, glasses, interactions);
 
             return View("GetRecommendations", recommended);
         }
@@ -74,9 +76,38 @@ namespace SmartEyewearStore.Controllers
                 .AsNoTracking()
                 .ToList();
 
-            var recommended = _service.GetRecommendedGlasses(profile, glasses);
+            var interactions = LoadInteractions();
+
+            var recommended = _service.GetRecommendedGlasses(profile, glasses, interactions);
 
             return View(recommended);
+        }
+
+        private List<UserInteraction> LoadInteractions()
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            string? guestId = HttpContext.Session.GetString("GuestId");
+
+            var query = _context.UserInteractions
+                .Include(ui => ui.Glass)
+                    .ThenInclude(g => g.GlassesInfo)
+                .AsNoTracking()
+                .AsQueryable();
+
+            if (userId != null)
+            {
+                query = query.Where(ui => ui.UserId == userId.Value);
+            }
+            else if (!string.IsNullOrEmpty(guestId))
+            {
+                query = query.Where(ui => ui.GuestId == guestId);
+            }
+            else
+            {
+                return new List<UserInteraction>();
+            }
+
+            return query.ToList();
         }
     }
 }

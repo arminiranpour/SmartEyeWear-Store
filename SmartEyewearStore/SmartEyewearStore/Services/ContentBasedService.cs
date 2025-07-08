@@ -4,7 +4,14 @@ namespace SmartEyewearStore.Services
 {
     public class ContentBasedService
     {
-        public List<Glasses> GetRecommendedGlasses(SurveyAnswer userProfile, List<Glasses> allGlasses, int topN = 10)
+        private const double SurveyWeight = 0.7;
+        private const double InteractionWeight = 0.3;
+
+        public List<Glasses> GetRecommendedGlasses(
+            SurveyAnswer userProfile,
+            List<Glasses> allGlasses,
+            List<UserInteraction>? userInteractions = null,
+            int topN = 10)
         {
             var shapes = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Shape)));
             var colors = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.Color)));
@@ -35,7 +42,9 @@ namespace SmartEyewearStore.Services
             AddRange(headSizes);
             AddRange(features);
 
-            var userVector = BuildUserVector(userProfile, map);
+            var surveyVector = BuildUserVector(userProfile, map);
+            var interactionVector = BuildInteractionVector(userInteractions, map);
+            var userVector = CombineVectors(surveyVector, interactionVector);
 
             var scored = new List<(Glasses glass, double score)>();
             foreach (var g in allGlasses)
@@ -70,6 +79,43 @@ namespace SmartEyewearStore.Services
             Set(new[] { profile.HeadSize });
             Set(SplitValues(profile.Features));
             return vec.ToList();
+        }
+
+        private List<int> BuildInteractionVector(List<UserInteraction>? interactions, Dictionary<string, int> map)
+        {
+            var vec = new int[map.Count];
+            if (interactions == null) return vec.ToList();
+
+            void Set(IEnumerable<string> vals)
+            {
+                foreach (var v in vals)
+                    if (map.TryGetValue(v, out int idx)) vec[idx] = 1;
+            }
+
+            foreach (var inter in interactions)
+            {
+                var g = inter.Glass;
+                if (g == null) continue;
+                Set(SplitValues(g.GlassesInfo?.Shape));
+                Set(SplitValues(g.Color));
+                Set(SplitValues(g.GlassesInfo?.Style));
+                Set(SplitValues(g.GlassesInfo?.Material));
+                Set(SplitValues(g.GlassesInfo?.HeadSize));
+                Set(SplitValues(g.GlassesInfo?.Features));
+            }
+
+            return vec.ToList();
+        }
+
+        private List<int> CombineVectors(List<int> surveyVector, List<int> interactionVector)
+        {
+            var result = new int[surveyVector.Count];
+            for (int i = 0; i < surveyVector.Count; i++)
+            {
+                double val = SurveyWeight * surveyVector[i] + InteractionWeight * interactionVector[i];
+                result[i] = val >= 0.5 ? 1 : 0;
+            }
+            return result.ToList();
         }
 
         private List<int> BuildGlassVector(Glasses glass, Dictionary<string, int> map)
