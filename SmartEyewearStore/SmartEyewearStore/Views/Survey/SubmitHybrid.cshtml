@@ -1,0 +1,27 @@
+﻿@model SmartEyewearStore.Models.SurveyViewModel
+
+<form id="submitForm" method="post" asp-controller="Recommendation" asp-action="AnalyzeHybridFromClient">
+    <input type="hidden" asp-for="Gender" />
+    <input type="hidden" asp-for="Style" />
+    <input type="hidden" asp-for="Lifestyle" />
+    <input type="hidden" asp-for="BuyingFrequency" />
+    <input type="hidden" asp-for="PriceFocus" />
+    <input type="hidden" asp-for="FaceShape" />
+    <input type="hidden" asp-for="FavoriteShapes" />
+    <input type="hidden" asp-for="Colors" />
+    <input type="hidden" asp-for="Materials" />
+    <input type="hidden" asp-for="LensWidth" />
+    <input type="hidden" asp-for="BridgeWidth" />
+    <input type="hidden" asp-for="TempleLength" />
+    <input type="hidden" asp-for="HeadSize" />
+    <input type="hidden" asp-for="ScreenTime" />
+    <input type="hidden" asp-for="DayLocation" />
+    <input type="hidden" asp-for="Prescription" />
+    <input type="hidden" asp-for="Features" />
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById('submitForm').submit();
+    </script>
+}
