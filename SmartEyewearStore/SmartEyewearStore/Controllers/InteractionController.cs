@@ -22,7 +22,11 @@ namespace SmartEyewearStore.Controllers
             int? userId = HttpContext.Session.GetInt32("UserId");
             string? guestId = HttpContext.Session.GetString("GuestId");
 
-            if (userId == null && string.IsNullOrEmpty(guestId))
+            if (userId != null)
+            {
+                guestId = null;
+            }
+            else if (string.IsNullOrEmpty(guestId))
             {
                 guestId = Request.Query["guestId"].FirstOrDefault();
                 if (string.IsNullOrEmpty(guestId))

@@ -76,3 +76,15 @@
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
+
+@section Scripts {
+    <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            if (!window.userId) {
+                const data = {};
+                new FormData(this).forEach((v, k) => data[k] = v);
+                localStorage.setItem('pendingSurvey', JSON.stringify(data));
+            }
+        });
+    </script>
+}
