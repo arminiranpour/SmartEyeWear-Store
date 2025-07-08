@@ -7,7 +7,7 @@ namespace SmartEyewearStore.Services
         private const double SurveyWeight = 0.7;
         private const double InteractionWeight = 0.3;
 
-        public List<Glasses> GetRecommendedGlasses(
+        public List<GlassRecommendation> GetRecommendedGlassesWithScores(
             SurveyAnswer userProfile,
             List<Glasses> allGlasses,
             List<UserInteraction>? userInteractions = null,
@@ -46,15 +46,26 @@ namespace SmartEyewearStore.Services
             var interactionVector = BuildInteractionVector(userInteractions, map);
             var userVector = CombineVectors(surveyVector, interactionVector);
 
-            var scored = new List<(Glasses glass, double score)>();
+            var scored = new List<GlassRecommendation>();
             foreach (var g in allGlasses)
             {
                 var vector = BuildGlassVector(g, map);
                 var score = CalculateCosineSimilarity(userVector, vector);
-                scored.Add((g, score));
+                scored.Add(new GlassRecommendation { Glass = g, Score = score });
             }
 
-            return scored.OrderByDescending(s => s.score).Take(topN).Select(s => s.glass).ToList();
+            return scored.OrderByDescending(s => s.Score).Take(topN).ToList();
+        }
+
+        public List<Glasses> GetRecommendedGlasses(
+            SurveyAnswer userProfile,
+            List<Glasses> allGlasses,
+            List<UserInteraction>? userInteractions = null,
+            int topN = 10)
+        {
+            return GetRecommendedGlassesWithScores(userProfile, allGlasses, userInteractions, topN)
+                .Select(r => r.Glass)
+                .ToList();
         }
 
         private static IEnumerable<string> SplitValues(string? raw)

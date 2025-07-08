@@ -115,6 +115,44 @@ namespace SmartEyewearStore.Controllers
             return View(ordered);
         }
 
+        public IActionResult GetHybridRecommendations()
+        {
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            string? guestId = HttpContext.Session.GetString("GuestId");
+
+            string? targetKey = userId?.ToString() ?? guestId;
+            if (string.IsNullOrEmpty(targetKey))
+            {
+                return RedirectToAction("Index", "Store");
+            }
+
+            var profile = _context.SurveyAnswers
+                .Where(s => s.UserId == userId)
+                .OrderByDescending(s => s.Id)
+                .FirstOrDefault();
+
+            if (profile == null)
+            {
+                return RedirectToAction("Index", "Store");
+            }
+
+            var allGlasses = _context.Glasses
+                .Include(g => g.GlassesInfo)
+                .AsNoTracking()
+                .ToList();
+
+            var allInteractions = LoadAllInteractions();
+
+            var hybridService = new HybridRecommendationService();
+            var recommended = hybridService.GetHybridRecommendationsWithScores(
+                profile,
+                allInteractions,
+                allGlasses,
+                _service,
+                _collabService);
+
+            return View(recommended);
+        }
 
         private List<UserInteraction> LoadInteractions()
         {

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SmartEyewearStore.Models.GlassRecommendation>
+@{
+    ViewData["Title"] = "Hybrid Recommendations";
+}
+
+<h2>Hybrid Recommendations</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    @foreach (var item in Model)
+    {
+        <div class="border p-4 rounded">
+            <img src="@item.Glass.ImageUrl" alt="@item.Glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
+            <h3 class="font-bold">@item.Glass.GlassesInfo?.Name</h3>
+            <p>Color: @item.Glass.Color</p>
+            <p>Price: $@item.Glass.Price</p>
+            <p>Score: @item.Score.ToString("F2")</p>
+        </div>
+    }
+</div>
