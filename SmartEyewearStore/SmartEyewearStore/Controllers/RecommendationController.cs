@@ -90,19 +90,17 @@ namespace SmartEyewearStore.Controllers
             int? userId = HttpContext.Session.GetInt32("UserId");
             string? guestId = HttpContext.Session.GetString("GuestId");
 
-            if (userId == null && string.IsNullOrEmpty(guestId))
+            string? targetKey = userId?.ToString() ?? guestId;
+            if (string.IsNullOrEmpty(targetKey))
             {
                 return RedirectToAction("Index", "Store");
             }
 
-            if (userId == null)
-            {
-                return View(new List<Glasses>());
-            }
+            
 
             var allInteractions = LoadAllInteractions();
-            var topUsers = _collabService.GetTopSimilarUsers(userId.Value, allInteractions);
-            var recommendedIds = _collabService.GetRecommendedGlassIds(userId.Value, allInteractions, topUsers);
+            var topUsers = _collabService.GetTopSimilarUsers(targetKey, allInteractions);
+            var recommendedIds = _collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers);
 
             var glasses = _context.Glasses
                 .Include(g => g.GlassesInfo)

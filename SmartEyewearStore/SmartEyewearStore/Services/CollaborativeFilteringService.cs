@@ -50,12 +50,12 @@ namespace SmartEyewearStore.Services
             return dot / (Math.Sqrt(magA) * Math.Sqrt(magB));
         }
 
-        public List<int> GetTopSimilarUsers(int targetUserId, List<UserInteraction> allInteractions, int topN = 5)
+        public List<string> GetTopSimilarUsers(string targetKey, List<UserInteraction> allInteractions, int topN = 5)
         {
             var matrix = BuildInteractionMatrix(allInteractions);
-            string targetKey = targetUserId.ToString();
+         
             if (!matrix.TryGetValue(targetKey, out var targetCols))
-                return new List<int>();
+                return new List<string>();
 
             var glassIds = allInteractions.Select(i => i.GlassId).Distinct().ToList();
             var targetVector = BuildVector(targetCols, glassIds);
@@ -70,24 +70,23 @@ namespace SmartEyewearStore.Services
             }
 
             return similarities
-                .Where(s => int.TryParse(s.userKey, out _))
                 .OrderByDescending(s => s.sim)
                 .Take(topN)
-                .Select(s => int.Parse(s.userKey))
+                .Select(s => s.userKey)
                 .ToList();
         }
 
-        public List<int> GetRecommendedGlassIds(int targetUserId, List<UserInteraction> allInteractions, List<int> topSimilarUsers, int topN = 10)
+        public List<int> GetRecommendedGlassIds(string targetKey, List<UserInteraction> allInteractions, List<string> topSimilarUsers, int topN = 10)
         {
             var targetGlasses = allInteractions
-                .Where(i => i.UserId == targetUserId)
+                .Where(i => (i.UserId?.ToString() ?? i.GuestId) == targetKey)
                 .Select(i => i.GlassId)
                 .ToHashSet();
 
             var scores = new Dictionary<int, double>();
-            foreach (var simUser in topSimilarUsers)
+            foreach (var simUserKey in topSimilarUsers)
             {
-                foreach (var inter in allInteractions.Where(i => i.UserId == simUser))
+                foreach (var inter in allInteractions.Where(i => (i.UserId?.ToString() ?? i.GuestId) == simUserKey))
                 {
                     if (targetGlasses.Contains(inter.GlassId))
                         continue;
