@@ -12,7 +12,7 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250708184510_BuildFromScratch")]
+    [Migration("20250708202941_BuildFromScratch")]
     partial class BuildFromScratch
     {
         /// <inheritdoc />
@@ -245,7 +245,7 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NUMBER(10)")
                         .HasColumnName("TEMPLE_LENGTH");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("NUMBER(10)")
                         .HasColumnName("USER_ID");
 
@@ -353,7 +353,6 @@ namespace SmartEyewearStore.Migrations
                         .WithMany("Surveys")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
                         .HasConstraintName("FK_SA_USER");
 
                     b.Navigation("User");

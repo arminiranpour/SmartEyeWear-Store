@@ -30,6 +30,31 @@ namespace SmartEyewearStore.Controllers
                 if (user != null)
                 {
                     HttpContext.Session.SetInt32("UserId", user.Id);
+
+                    var guestId = HttpContext.Session.GetString("GuestId");
+                    if (!string.IsNullOrEmpty(guestId))
+                    {
+                        var interactions = _context.UserInteractions
+                            .Where(x => x.GuestId == guestId && x.UserId == null)
+                            .ToList();
+                        foreach (var interaction in interactions)
+                        {
+                            interaction.UserId = user.Id;
+                            interaction.GuestId = null;
+                        }
+
+                        var surveys = _context.SurveyAnswers
+                            .Where(x => x.UserId == null)
+                            .ToList();
+                        foreach (var survey in surveys)
+                        {
+                            survey.UserId = user.Id;
+                        }
+
+                        _context.SaveChanges();
+                        HttpContext.Session.Remove("GuestId");
+                    }
+
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError(string.Empty, "Invalid login attempt");
@@ -59,6 +84,31 @@ namespace SmartEyewearStore.Controllers
                 _context.SaveChanges();
 
                 HttpContext.Session.SetInt32("UserId", user.Id);
+
+                var guestId = HttpContext.Session.GetString("GuestId");
+                if (!string.IsNullOrEmpty(guestId))
+                {
+                    var interactions = _context.UserInteractions
+                        .Where(x => x.GuestId == guestId && x.UserId == null)
+                        .ToList();
+                    foreach (var interaction in interactions)
+                    {
+                        interaction.UserId = user.Id;
+                        interaction.GuestId = null;
+                    }
+
+                    var surveys = _context.SurveyAnswers
+                        .Where(x => x.UserId == null)
+                        .ToList();
+                    foreach (var survey in surveys)
+                    {
+                        survey.UserId = user.Id;
+                    }
+
+                    _context.SaveChanges();
+                    HttpContext.Session.Remove("GuestId");
+                }
+
                 return RedirectToAction("Index", "Home");
             }
             return View(model);

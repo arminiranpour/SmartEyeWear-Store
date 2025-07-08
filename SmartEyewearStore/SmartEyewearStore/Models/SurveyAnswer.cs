@@ -62,7 +62,7 @@ namespace SmartEyewearStore.Models
         public string Features { get; set; }
 
         [Column("USER_ID")]
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public User User { get; set; }
     }
