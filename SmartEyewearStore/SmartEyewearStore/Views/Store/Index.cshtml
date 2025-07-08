@@ -25,7 +25,12 @@
 @section Scripts {
     <script>
         function sendInteraction(glassId, type) {
-            fetch('/Interaction', {
+            const guestId = localStorage.getItem('GuestId');
+            let url = '/Interaction';
+            if (!window.userId && guestId) {
+                url += '?guestId=' + encodeURIComponent(guestId);
+            }
+            fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ glassId: glassId, interactionType: type })
