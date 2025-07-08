@@ -55,6 +55,48 @@ namespace SmartEyewearStore.Controllers
             return View("GetRecommendations", recommended);
         }
 
+        [HttpPost]
+        public IActionResult AnalyzeHybridFromClient(SurveyViewModel model)
+        {
+            var survey = new SurveyAnswer
+            {
+                Gender = model.Gender.ToString(),
+                Style = model.Style.ToString(),
+                Lifestyle = model.Lifestyle.ToString(),
+                BuyingFrequency = model.BuyingFrequency.ToString(),
+                PriceFocus = model.PriceFocus.ToString(),
+                FaceShape = model.FaceShape.ToString(),
+                FavoriteShapes = model.FavoriteShapes,
+                Colors = model.Colors,
+                Materials = model.Materials,
+                LensWidth = model.LensWidth,
+                BridgeWidth = model.BridgeWidth,
+                TempleLength = model.TempleLength,
+                HeadSize = model.HeadSize.ToString(),
+                ScreenTime = model.ScreenTime.ToString(),
+                DayLocation = model.DayLocation.ToString(),
+                Prescription = model.Prescription,
+                Features = model.Features
+            };
+
+            var allGlasses = _context.Glasses
+                .Include(g => g.GlassesInfo)
+                .AsNoTracking()
+                .ToList();
+
+            var allInteractions = LoadAllInteractions();
+
+            var hybridService = HttpContext.RequestServices.GetService<HybridRecommendationService>();
+            var recommended = hybridService.GetHybridRecommendationsWithScores(
+                survey,
+                allInteractions,
+                allGlasses,
+                _service,
+                _collabService);
+
+            return View("GetHybridRecommendations", recommended);
+        }
+
         public IActionResult GetRecommendations()
         {
             int? userId = HttpContext.Session.GetInt32("UserId");

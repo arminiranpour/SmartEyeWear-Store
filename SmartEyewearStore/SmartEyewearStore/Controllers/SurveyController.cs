@@ -56,7 +56,7 @@ public class SurveyController : Controller
                 return RedirectToAction("GetHybridRecommendations", "Recommendation");
             }
 
-            return RedirectToAction("GetHybridRecommendations", "Recommendation", model);
+            return RedirectToAction("AnalyzeHybridFromClient", "Recommendation", model);
         }
 
         return View(model);
