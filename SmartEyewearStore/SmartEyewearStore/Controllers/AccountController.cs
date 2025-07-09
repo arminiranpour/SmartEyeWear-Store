@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Text.Json;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
@@ -10,7 +11,10 @@ namespace SmartEyewearStore.Controllers
     public class AccountController : Controller
     {
         private readonly ApplicationDbContext _context;
-
+        private static readonly JsonSerializerOptions _enumOptions = new JsonSerializerOptions
+        {
+            Converters = { new JsonStringEnumConverter() }
+        };
         public AccountController(ApplicationDbContext context)
         {
             _context = context;
@@ -48,8 +52,7 @@ namespace SmartEyewearStore.Controllers
                     {
                         try
                         {
-                            var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey);
-                            if (pending != null)
+                            var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey, _enumOptions); if (pending != null)
                             {
                                 var survey = new SurveyAnswer
                                 {
@@ -127,7 +130,7 @@ namespace SmartEyewearStore.Controllers
                 {
                     try
                     {
-                        var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey);
+                        var pending = JsonSerializer.Deserialize<SurveyViewModel>(model.PendingSurvey, _enumOptions);
                         if (pending != null)
                         {
                             var survey = new SurveyAnswer
