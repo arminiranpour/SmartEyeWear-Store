@@ -29,12 +29,12 @@ namespace SmartEyewearStore.Data
                 .HasConstraintName("FK_GLS_INFO");
             modelBuilder.Entity<Glasses>()
                 .Property(g => g.InStock)
-                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
 
             modelBuilder.Entity<GlassesInfo>()
                 .Property(g => g.HasAntiScratchCoating)
-                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
             modelBuilder.Entity<UserInteraction>()
                 .HasOne(ui => ui.Glass)
@@ -59,12 +59,12 @@ namespace SmartEyewearStore.Data
 
             modelBuilder.Entity<SurveyAnswer>()
                 .Property(s => s.Prescription)
-                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
             // Convert boolean to number for Oracle
             modelBuilder.Entity<SurveyAnswer>()
                 .Property(s => s.Prescription)
-                .HasConversion(new BoolToZeroOneConverter<int>())
+                .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
 
             // Uppercase all table and column names

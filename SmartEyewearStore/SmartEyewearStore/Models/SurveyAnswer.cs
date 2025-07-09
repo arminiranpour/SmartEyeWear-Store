@@ -56,13 +56,13 @@ namespace SmartEyewearStore.Models
         public string DayLocation { get; set; }
 
         [Column("PRESCRIPTION")]
-        public bool Prescription { get; set; }
+        public bool? Prescription { get; set; }
 
         [Column("FEATURES")]
         public string Features { get; set; }
 
         [Column("USER_ID")]
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public User User { get; set; }
     }

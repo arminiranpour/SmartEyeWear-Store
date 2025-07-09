@@ -20,6 +20,6 @@ namespace SmartEyewearStore.Models
         public string Material { get; set; }
         public string Fit { get; set; }
         public string Features { get; set; }
-        public bool HasAntiScratchCoating { get; set; }
+        public bool? HasAntiScratchCoating { get; set; }
     }
 }

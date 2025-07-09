@@ -76,3 +76,23 @@
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
+
+@section Scripts {
+    <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            if (!window.userId) {
+                const data = {};
+                new FormData(this).forEach((v, k) => {
+                    if (["LensWidth", "BridgeWidth", "TempleLength"].includes(k)) {
+                        data[k] = v ? parseInt(v) : null;
+                    } else if (k === "Prescription") {
+                        data[k] = v === "on" || v === "true" || v === "True";
+                    } else {
+                        data[k] = v;
+                    }
+                });
+                localStorage.setItem('pendingSurvey', JSON.stringify(data));
+            }
+        });
+    </script>
+}

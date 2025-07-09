@@ -9,7 +9,8 @@ namespace SmartEyewearStore.Filters
         public void OnActionExecuting(ActionExecutingContext context)
         {
             var session = context.HttpContext.Session;
-            if (string.IsNullOrEmpty(session.GetString("GuestId")))
+            bool hasUser = session.GetInt32("UserId") != null;
+            if (!hasUser && string.IsNullOrEmpty(session.GetString("GuestId")))
             {
                 var guestId = Guid.NewGuid().ToString();
                 session.SetString("GuestId", guestId);

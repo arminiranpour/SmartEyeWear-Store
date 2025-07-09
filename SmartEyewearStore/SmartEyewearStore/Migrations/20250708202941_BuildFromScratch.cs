@@ -107,7 +107,7 @@ namespace SmartEyewearStore.Migrations
                     DAY_LOCATION = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     PRESCRIPTION = table.Column<int>(type: "NUMBER(1)", nullable: false),
                     FEATURES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    USER_ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    USER_ID = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
                 constraints: table =>
                 {
