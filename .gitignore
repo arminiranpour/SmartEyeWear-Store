@@ -1,6 +1,5 @@
 # Ignore build results and IDE files
 FileContentIndex/
-.vs/
 .vscode/
 .idea/
 
