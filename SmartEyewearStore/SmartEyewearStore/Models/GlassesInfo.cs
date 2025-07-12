@@ -5,7 +5,7 @@ namespace SmartEyewearStore.Models
     [Table("GLASSES_INFO")]
     public class GlassesInfo
     {
-        public int Id { get; set; }
+        public int GlassesInfoID { get; set; }
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
