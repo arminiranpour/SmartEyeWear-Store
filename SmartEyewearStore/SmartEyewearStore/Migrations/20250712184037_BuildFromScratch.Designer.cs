@@ -12,7 +12,7 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250712050103_BuildFromScratch")]
+    [Migration("20250712184037_BuildFromScratch")]
     partial class BuildFromScratch
     {
         /// <inheritdoc />
@@ -75,7 +75,7 @@ namespace SmartEyewearStore.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(10)")
-                        .HasColumnName("ID");
+                        .HasColumnName("GLASSESINFOID");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 

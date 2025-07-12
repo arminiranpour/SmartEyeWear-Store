@@ -69,12 +69,12 @@ namespace SmartEyewearStore.Migrations
 
             modelBuilder.Entity("SmartEyewearStore.Models.GlassesInfo", b =>
                 {
-                    b.Property<int>("GlassesInfoID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(10)")
                         .HasColumnName("GLASSESINFOID");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GlassesInfoID"));
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Brand")
                         .IsRequired()
@@ -150,7 +150,7 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("WEIGHT");
 
-                    b.HasKey("GlassesInfoID")
+                    b.HasKey("Id")
                         .HasName("PK_GLASSES_INFO");
 
                     b.ToTable("GLASSESINFO", "DBS311_252NAA12");

@@ -19,7 +19,7 @@ namespace SmartEyewearStore.Migrations
                 schema: "DBS311_252NAA12",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                    GLASSESINFOID = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     NAME = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     BRAND = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
@@ -39,7 +39,7 @@ namespace SmartEyewearStore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GLASSES_INFO", x => x.ID);
+                    table.PrimaryKey("PK_GLASSES_INFO", x => x.GLASSESINFOID);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,7 +80,7 @@ namespace SmartEyewearStore.Migrations
                         column: x => x.GLASSESINFOID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "GLASSESINFO",
-                        principalColumn: "ID",
+                        principalColumn: "GLASSESINFOID",
                         onDelete: ReferentialAction.Cascade);
                 });
 

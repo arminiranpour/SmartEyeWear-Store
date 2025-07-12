@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\glassrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\glassrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\glassesinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\glassesinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\glassrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\glassrecommendation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\migrations\\20250712050103_buildfromscratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\migrations\\20250712050103_buildfromscratch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\glasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\store\\tryon.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -177,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\surveyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\surveyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\migrations\\20250712052520_changedname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\migrations\\20250712052520_changedname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -194,15 +190,16 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "20250712052520_changedName.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712052520_changedName.cs",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Migrations\\20250712052520_changedName.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712052520_changedName.cs",
-              "RelativeToolTip": "SmartEyewearStore\\Migrations\\20250712052520_changedName.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "20250712184037_BuildFromScratch.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Migrations\\20250712184037_BuildFromScratch.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwCkAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:25:20.327Z"
+              "WhenOpened": "2025-07-12T18:40:37.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -212,7 +209,7 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\StoreController.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\StoreController.cs",
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAIAwwB4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-12T05:20:23.518Z",
               "EditorCaption": ""
@@ -237,9 +234,10 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\GlassesInfo.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\GlassesInfo.cs",
               "RelativeToolTip": "SmartEyewearStore\\Models\\GlassesInfo.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAcAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T05:40:32.706Z"
+              "WhenOpened": "2025-07-07T05:40:32.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -279,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Glasses.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Glasses.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Glasses.cs",
@@ -291,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GlassRecommendation.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\GlassRecommendation.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\GlassRecommendation.cs",
@@ -300,18 +298,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-08T18:05:49.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250712050103_BuildFromScratch.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712050103_BuildFromScratch.cs",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Migrations\\20250712050103_BuildFromScratch.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Migrations\\20250712050103_BuildFromScratch.cs",
-              "RelativeToolTip": "SmartEyewearStore\\Migrations\\20250712050103_BuildFromScratch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T05:01:04.43Z"
             },
             {
               "$type": "Document",
