@@ -17,6 +17,10 @@
                 <button onclick="sendInteraction(@glass.Id, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
                 <button onclick="sendInteraction(@glass.Id, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
                 <button onclick="sendInteraction(@glass.Id, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
+                @if (glass.VirtualTryOnAvailable == 1)
+                {
+                    <a href="/Store/TryOn/@glass.Id" class="btn btn-primary">Virtual Try On</a>
+                }
             </div>
         </div>
     }

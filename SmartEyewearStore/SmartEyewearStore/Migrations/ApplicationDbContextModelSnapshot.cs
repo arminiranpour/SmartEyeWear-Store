@@ -54,6 +54,10 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("DECIMAL(10,2)")
                         .HasColumnName("PRICE");
 
+                    b.Property<int?>("VirtualTryOnAvailable")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("VIRTUALTRYONAVAILABLE");
+
                     b.HasKey("Id")
                         .HasName("PK_GLASSES");
 

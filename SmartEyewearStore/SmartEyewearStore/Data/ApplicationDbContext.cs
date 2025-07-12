@@ -32,6 +32,10 @@ namespace SmartEyewearStore.Data
                 .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
 
+            modelBuilder.Entity<Glasses>()
+                .Property(g => g.VirtualTryOnAvailable)
+                .HasColumnType("NUMBER(1)");
+
             modelBuilder.Entity<GlassesInfo>()
                 .Property(g => g.HasAntiScratchCoating)
                 .HasConversion(new BoolToZeroOneConverter<int?>())

@@ -12,7 +12,7 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250708202941_BuildFromScratch")]
+    [Migration("20250712050103_BuildFromScratch")]
     partial class BuildFromScratch
     {
         /// <inheritdoc />
@@ -48,7 +48,7 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("IMAGEURL");
 
-                    b.Property<int>("InStock")
+                    b.Property<int?>("InStock")
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("INSTOCK");
 
@@ -56,6 +56,10 @@ namespace SmartEyewearStore.Migrations
                         .HasPrecision(10, 2)
                         .HasColumnType("DECIMAL(10,2)")
                         .HasColumnName("PRICE");
+
+                    b.Property<int?>("VirtualTryOnAvailable")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("VIRTUALTRYONAVAILABLE");
 
                     b.HasKey("Id")
                         .HasName("PK_GLASSES");
@@ -100,7 +104,7 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("GENDER");
 
-                    b.Property<int>("HasAntiScratchCoating")
+                    b.Property<int?>("HasAntiScratchCoating")
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("HASANTISCRATCHCOATING");
 
@@ -222,7 +226,7 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("MATERIALS");
 
-                    b.Property<int>("Prescription")
+                    b.Property<int?>("Prescription")
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("PRESCRIPTION");
 
@@ -302,7 +306,6 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("GLASSID");
 
                     b.Property<string>("GuestId")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("GUESTID");
 
