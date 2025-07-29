@@ -198,37 +198,37 @@ namespace SmartEyewearStore.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_GLASSES_GLASSESINFOID",
+                name: "IX_GLA_GLA_1C8",
                 schema: "DBS311_252NAA12",
                 table: "GLASSES",
                 column: "GLASSESINFOID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GLASSES_FEATURES_GLASSESINFOID",
+                name: "IX_GLA_GLA_FEA",
                 schema: "DBS311_252NAA12",
                 table: "GLASSES_FEATURES",
                 column: "GLASSESINFOID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SURVEY_MULTI_CHOICES_SURVEY_ID",
+                name: "IX_SUR_SUR_A57",
                 schema: "DBS311_252NAA12",
                 table: "SURVEY_MULTI_CHOICES",
                 column: "SURVEY_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SURVEY_ANSWERS_USER_ID",
+                name: "IX_SUR_USE_C81",
                 schema: "DBS311_252NAA12",
                 table: "SURVEYANSWER",
                 column: "USER_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_USER_INTERACTIONS_GLASSID",
+                name: "IX_USE_GLA_62B",
                 schema: "DBS311_252NAA12",
                 table: "USERINTERACTIONS",
                 column: "GLASSID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_USER_INTERACTIONS_USERID",
+                name: "IX_USE_USE_62B",
                 schema: "DBS311_252NAA12",
                 table: "USERINTERACTIONS",
                 column: "USERID");

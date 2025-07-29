@@ -67,7 +67,7 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_GLASSES");
 
                     b.HasIndex("GlassesInfoId")
-                        .HasDatabaseName("IX_GLASSES_GLASSESINFOID");
+                        .HasDatabaseName("IX_GLA_GLA_1C8");
 
                     b.ToTable("GLASSES", "DBS311_252NAA12");
                 });
@@ -94,7 +94,7 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_GLASSES_FEATURES");
 
                     b.HasIndex("GlassesInfoId")
-                        .HasDatabaseName("IX_GLASSES_FEATURES_GLASSESINFOID");
+                        .HasDatabaseName("IX_GLA_GLA_FEA");
 
                     b.ToTable("GLASSES_FEATURES", "DBS311_252NAA12");
                 });
@@ -271,7 +271,7 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_SURVEY_ANSWERS");
 
                     b.HasIndex("UserId")
-                        .HasDatabaseName("IX_SURVEY_ANSWERS_USER_ID");
+                        .HasDatabaseName("IX_SUR_USE_C81");
 
                     b.ToTable("SURVEYANSWER", "DBS311_252NAA12");
                 });
@@ -303,7 +303,7 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_SURVEY_MULTI_CHOICES");
 
                     b.HasIndex("SurveyId")
-                        .HasDatabaseName("IX_SURVEY_MULTI_CHOICES_SURVEY_ID");
+                        .HasDatabaseName("IX_SUR_SUR_A57");
 
                     b.ToTable("SURVEY_MULTI_CHOICES", "DBS311_252NAA12");
                 });
@@ -376,10 +376,10 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_USER_INTERACTIONS");
 
                     b.HasIndex("GlassId")
-                        .HasDatabaseName("IX_USER_INTERACTIONS_GLASSID");
+                        .HasDatabaseName("IX_USE_GLA_62B");
 
                     b.HasIndex("UserId")
-                        .HasDatabaseName("IX_USER_INTERACTIONS_USERID");
+                        .HasDatabaseName("IX_USE_USE_62B");
 
                     b.ToTable("USERINTERACTIONS", "DBS311_252NAA12");
                 });

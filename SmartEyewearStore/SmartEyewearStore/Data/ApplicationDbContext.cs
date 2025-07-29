@@ -140,6 +140,27 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<SurveyMultiChoice>().ToTable("SURVEY_MULTI_CHOICES", schema: "DBS311_252NAA12");
             modelBuilder.Entity<GlassesFeature>().ToTable("GLASSES_FEATURES", schema: "DBS311_252NAA12");
 
+            // Shorten index names to avoid ORA-00972
+            foreach (var entity in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var index in entity.GetIndexes())
+                {
+                    var tableName = entity.GetTableName();
+                    var columns = string.Join("_", index.Properties.Select(p => p.Name));
+                    var shortName = $"IX_{tableName.Substring(0, Math.Min(3, tableName.Length))}_{columns.Substring(0, Math.Min(3, columns.Length))}_{entity.GetTableName().GetHashCode().ToString("X").Substring(0, 3)}";
+
+                    if (shortName.Length <= 30)
+                    {
+                        index.SetDatabaseName(shortName.ToUpper());
+                    }
+                    else
+                    {
+                        var hash = Math.Abs($"{tableName}_{columns}".GetHashCode()).ToString("X");
+                        index.SetDatabaseName($"IX_{hash.Substring(0, 8)}");
+                    }
+                }
+            }
         }
     }
+
 }

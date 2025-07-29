@@ -20,7 +20,7 @@ namespace SmartEyewearStore.Controllers
         public IActionResult Index()
         {
             var glasses = _context.Glasses
-            .Where(g => g.IsActive)
+            .Where(g => g.IsActive == true)
             .AsNoTracking()
             .ToList();
 
