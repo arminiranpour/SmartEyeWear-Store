@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace SmartEyewearStore.Models
 {
@@ -28,15 +29,6 @@ namespace SmartEyewearStore.Models
         [Column("FACE_SHAPE")]
         public string FaceShape { get; set; }
 
-        [Column("FAVORITE_SHAPES")]
-        public string FavoriteShapes { get; set; }
-
-        [Column("COLORS")]
-        public string Colors { get; set; }
-
-        [Column("MATERIALS")]
-        public string Materials { get; set; }
-
         [Column("LENS_WIDTH")]
         public int? LensWidth { get; set; }
 
@@ -58,12 +50,11 @@ namespace SmartEyewearStore.Models
         [Column("PRESCRIPTION")]
         public bool? Prescription { get; set; }
 
-        [Column("FEATURES")]
-        public string Features { get; set; }
-
         [Column("USER_ID")]
         public int? UserId { get; set; }
 
         public User User { get; set; }
+
+        public List<SurveyMultiChoice> MultiChoices { get; set; } = new();
     }
 }

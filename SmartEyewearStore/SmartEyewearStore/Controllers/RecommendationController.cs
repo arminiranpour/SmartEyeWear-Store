@@ -30,21 +30,32 @@ namespace SmartEyewearStore.Controllers
                 BuyingFrequency = model.BuyingFrequency.ToString(),
                 PriceFocus = model.PriceFocus.ToString(),
                 FaceShape = model.FaceShape.ToString(),
-                FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
-                Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
-                Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
                 LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
                 BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
                 TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
                 HeadSize = model.HeadSize.ToString(),
                 ScreenTime = model.ScreenTime.ToString(),
                 DayLocation = model.DayLocation.ToString(),
-                Prescription = model.Prescription,
-                Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features
+                Prescription = model.Prescription
             };
+            void AddChoices(string type, string raw)
+            {
+                if (string.IsNullOrWhiteSpace(raw)) return;
+                foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+                {
+                    survey.MultiChoices.Add(new SurveyMultiChoice { Type = type, Value = v.Trim() });
+                }
+            }
+
+            AddChoices("shape", model.FavoriteShapes);
+            AddChoices("color", model.Colors);
+            AddChoices("material", model.Materials);
+            AddChoices("feature", model.Features);
 
             var glasses = _context.Glasses
+                .Where(g => g.IsActive)
                 .Include(g => g.GlassesInfo)
+                .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .ToList();
 
@@ -66,9 +77,6 @@ namespace SmartEyewearStore.Controllers
                 BuyingFrequency = model.BuyingFrequency.ToString(),
                 PriceFocus = model.PriceFocus.ToString(),
                 FaceShape = model.FaceShape.ToString(),
-                FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
-                Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
-                Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
                 LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
                 BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
                 TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
@@ -76,13 +84,27 @@ namespace SmartEyewearStore.Controllers
                 ScreenTime = model.ScreenTime.ToString(),
                 DayLocation = model.DayLocation.ToString(),
                 Prescription = model.Prescription,
-                Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features
             };
+            void AddChoices(string type, string raw)
+            {
+                if (string.IsNullOrWhiteSpace(raw)) return;
+                foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+                {
+                    survey.MultiChoices.Add(new SurveyMultiChoice { Type = type, Value = v.Trim() });
+                }
+            }
+
+            AddChoices("shape", model.FavoriteShapes);
+            AddChoices("color", model.Colors);
+            AddChoices("material", model.Materials);
+            AddChoices("feature", model.Features);
 
             var allGlasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .ToList();
+               .Where(g => g.IsActive)
+               .Include(g => g.GlassesInfo)
+                   .ThenInclude(i => i.FeaturesList)
+               .AsNoTracking()
+               .ToList();
 
             var allInteractions = LoadAllInteractions();
 
@@ -106,6 +128,7 @@ namespace SmartEyewearStore.Controllers
             }
 
             var profile = _context.SurveyAnswers
+                .Include(s => s.MultiChoices)
                 .Where(s => s.UserId == userId.Value)
                 .OrderByDescending(s => s.Id)
                 .FirstOrDefault();
@@ -116,7 +139,9 @@ namespace SmartEyewearStore.Controllers
             }
 
             var glasses = _context.Glasses
+                .Where(g => g.IsActive)
                 .Include(g => g.GlassesInfo)
+                    .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .ToList();
 
@@ -143,7 +168,9 @@ namespace SmartEyewearStore.Controllers
             var recommendedIds = _collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers);
 
             var glasses = _context.Glasses
+                .Where(g => g.IsActive)
                 .Include(g => g.GlassesInfo)
+                    .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .Where(g => recommendedIds.Contains(g.Id))
                 .ToList();
@@ -167,6 +194,7 @@ namespace SmartEyewearStore.Controllers
             }
 
             var profile = _context.SurveyAnswers
+                .Include(s => s.MultiChoices)
                 .Where(s => s.UserId == userId)
                 .OrderByDescending(s => s.Id)
                 .FirstOrDefault();
@@ -177,7 +205,9 @@ namespace SmartEyewearStore.Controllers
             }
 
             var allGlasses = _context.Glasses
+                .Where(g => g.IsActive)
                 .Include(g => g.GlassesInfo)
+                    .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .ToList();
 
@@ -202,6 +232,7 @@ namespace SmartEyewearStore.Controllers
             var query = _context.UserInteractions
                 .Include(ui => ui.Glass)
                     .ThenInclude(g => g.GlassesInfo)
+                        .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .AsQueryable();
 
@@ -226,6 +257,7 @@ namespace SmartEyewearStore.Controllers
             return _context.UserInteractions
                 .Include(ui => ui.Glass)
                     .ThenInclude(g => g.GlassesInfo)
+                        .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
                 .ToList();
         }

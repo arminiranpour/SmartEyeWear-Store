@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SmartEyewearStore.Migrations
 {
     /// <inheritdoc />
-    public partial class BuildFromScratch : Migration
+    public partial class fromScratch : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,12 +30,13 @@ namespace SmartEyewearStore.Migrations
                     STYLE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     HEADSIZE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     SIZE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    MEASUREMENTS = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    WEIGHT = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    LENSWIDTH = table.Column<decimal>(type: "DECIMAL(5,2)", precision: 5, scale: 2, nullable: true),
+                    BRIDGEWIDTH = table.Column<decimal>(type: "DECIMAL(5,2)", precision: 5, scale: 2, nullable: true),
+                    TEMPLELENGTH = table.Column<decimal>(type: "DECIMAL(5,2)", precision: 5, scale: 2, nullable: true),
+                    WEIGHTGRAMS = table.Column<decimal>(type: "DECIMAL(5,2)", precision: 5, scale: 2, nullable: true),
                     MATERIAL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     FIT = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    FEATURES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    HASANTISCRATCHCOATING = table.Column<int>(type: "NUMBER(1)", nullable: false)
+                    HASANTISCRATCHCOATING = table.Column<int>(type: "NUMBER(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,13 +70,37 @@ namespace SmartEyewearStore.Migrations
                     COLOR = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     PRICE = table.Column<decimal>(type: "DECIMAL(10,2)", precision: 10, scale: 2, nullable: false),
                     IMAGEURL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    INSTOCK = table.Column<int>(type: "NUMBER(1)", nullable: false)
+                    INSTOCK = table.Column<int>(type: "NUMBER(1)", nullable: true),
+                    POPULARITYSCORE = table.Column<decimal>(type: "DECIMAL(5,2)", precision: 5, scale: 2, nullable: false),
+                    ISACTIVE = table.Column<int>(type: "NUMBER(1)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_GLASSES", x => x.ID);
                     table.ForeignKey(
                         name: "FK_GLS_INFO",
+                        column: x => x.GLASSESINFOID,
+                        principalSchema: "DBS311_252NAA12",
+                        principalTable: "GLASSESINFO",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GLASSES_FEATURES",
+                schema: "DBS311_252NAA12",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    GLASSESINFOID = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    FEATURE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GLASSES_FEATURES", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_GF_INFO",
                         column: x => x.GLASSESINFOID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "GLASSESINFO",
@@ -96,17 +121,13 @@ namespace SmartEyewearStore.Migrations
                     BUYING_FREQUENCY = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     PRICE_FOCUS = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     FACE_SHAPE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    FAVORITE_SHAPES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    COLORS = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    MATERIALS = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     LENS_WIDTH = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     BRIDGE_WIDTH = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     TEMPLE_LENGTH = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     HEAD_SIZE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     SCREEN_TIME = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     DAY_LOCATION = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    PRESCRIPTION = table.Column<int>(type: "NUMBER(1)", nullable: false),
-                    FEATURES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    PRESCRIPTION = table.Column<int>(type: "NUMBER(1)", nullable: true),
                     USER_ID = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
                 constraints: table =>
@@ -129,7 +150,7 @@ namespace SmartEyewearStore.Migrations
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     USERID = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    GUESTID = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    GUESTID = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     GLASSID = table.Column<int>(type: "NUMBER(10)", nullable: false),
                     INTERACTIONTYPE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     SCORE = table.Column<int>(type: "NUMBER(10)", nullable: true),
@@ -153,11 +174,46 @@ namespace SmartEyewearStore.Migrations
                         principalColumn: "ID");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SURVEY_MULTI_CHOICES",
+                schema: "DBS311_252NAA12",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    SURVEY_ID = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    TYPE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    VALUE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SURVEY_MULTI_CHOICES", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_SM_SURVEY",
+                        column: x => x.SURVEY_ID,
+                        principalSchema: "DBS311_252NAA12",
+                        principalTable: "SURVEYANSWER",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_GLASSES_GLASSESINFOID",
                 schema: "DBS311_252NAA12",
                 table: "GLASSES",
                 column: "GLASSESINFOID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GLASSES_FEATURES_GLASSESINFOID",
+                schema: "DBS311_252NAA12",
+                table: "GLASSES_FEATURES",
+                column: "GLASSESINFOID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SURVEY_MULTI_CHOICES_SURVEY_ID",
+                schema: "DBS311_252NAA12",
+                table: "SURVEY_MULTI_CHOICES",
+                column: "SURVEY_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SURVEY_ANSWERS_USER_ID",
@@ -182,11 +238,19 @@ namespace SmartEyewearStore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SURVEYANSWER",
+                name: "GLASSES_FEATURES",
+                schema: "DBS311_252NAA12");
+
+            migrationBuilder.DropTable(
+                name: "SURVEY_MULTI_CHOICES",
                 schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
                 name: "USERINTERACTIONS",
+                schema: "DBS311_252NAA12");
+
+            migrationBuilder.DropTable(
+                name: "SURVEYANSWER",
                 schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(

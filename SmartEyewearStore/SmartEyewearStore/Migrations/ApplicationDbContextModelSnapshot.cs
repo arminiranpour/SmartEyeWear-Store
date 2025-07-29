@@ -49,6 +49,15 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NUMBER(1)")
                         .HasColumnName("INSTOCK");
 
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(1)")
+                        .HasColumnName("ISACTIVE");
+
+                    b.Property<decimal>("PopularityScore")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnName("POPULARITYSCORE");
+
                     b.Property<decimal>("Price")
                         .HasPrecision(10, 2)
                         .HasColumnType("DECIMAL(10,2)")
@@ -61,6 +70,33 @@ namespace SmartEyewearStore.Migrations
                         .HasDatabaseName("IX_GLASSES_GLASSESINFOID");
 
                     b.ToTable("GLASSES", "DBS311_252NAA12");
+                });
+
+            modelBuilder.Entity("SmartEyewearStore.Models.GlassesFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Feature")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("FEATURE");
+
+                    b.Property<int>("GlassesInfoId")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("GLASSESINFOID");
+
+                    b.HasKey("Id")
+                        .HasName("PK_GLASSES_FEATURES");
+
+                    b.HasIndex("GlassesInfoId")
+                        .HasDatabaseName("IX_GLASSES_FEATURES_GLASSESINFOID");
+
+                    b.ToTable("GLASSES_FEATURES", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.GlassesInfo", b =>
@@ -77,15 +113,15 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("BRAND");
 
+                    b.Property<decimal?>("BridgeWidth")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnName("BRIDGEWIDTH");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("DESCRIPTION");
-
-                    b.Property<string>("Features")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("FEATURES");
 
                     b.Property<string>("Fit")
                         .IsRequired()
@@ -106,15 +142,15 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("HEADSIZE");
 
+                    b.Property<decimal?>("LensWidth")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnName("LENSWIDTH");
+
                     b.Property<string>("Material")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("MATERIAL");
-
-                    b.Property<string>("Measurements")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("MEASUREMENTS");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -141,10 +177,15 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("STYLE");
 
-                    b.Property<string>("Weight")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("WEIGHT");
+                    b.Property<decimal?>("TempleLength")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnName("TEMPLELENGTH");
+
+                    b.Property<decimal?>("WeightGrams")
+                        .HasPrecision(5, 2)
+                        .HasColumnType("DECIMAL(5,2)")
+                        .HasColumnName("WEIGHTGRAMS");
 
                     b.HasKey("Id")
                         .HasName("PK_GLASSES_INFO");
@@ -170,11 +211,6 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("BUYING_FREQUENCY");
 
-                    b.Property<string>("Colors")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("COLORS");
-
                     b.Property<string>("DayLocation")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
@@ -184,16 +220,6 @@ namespace SmartEyewearStore.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("FACE_SHAPE");
-
-                    b.Property<string>("FavoriteShapes")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("FAVORITE_SHAPES");
-
-                    b.Property<string>("Features")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("FEATURES");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -213,11 +239,6 @@ namespace SmartEyewearStore.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)")
                         .HasColumnName("LIFESTYLE");
-
-                    b.Property<string>("Materials")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("MATERIALS");
 
                     b.Property<int?>("Prescription")
                         .HasColumnType("NUMBER(1)")
@@ -253,6 +274,38 @@ namespace SmartEyewearStore.Migrations
                         .HasDatabaseName("IX_SURVEY_ANSWERS_USER_ID");
 
                     b.ToTable("SURVEYANSWER", "DBS311_252NAA12");
+                });
+
+            modelBuilder.Entity("SmartEyewearStore.Models.SurveyMultiChoice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("SurveyId")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("SURVEY_ID");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("TYPE");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("VALUE");
+
+                    b.HasKey("Id")
+                        .HasName("PK_SURVEY_MULTI_CHOICES");
+
+                    b.HasIndex("SurveyId")
+                        .HasDatabaseName("IX_SURVEY_MULTI_CHOICES_SURVEY_ID");
+
+                    b.ToTable("SURVEY_MULTI_CHOICES", "DBS311_252NAA12");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.User", b =>
@@ -343,6 +396,18 @@ namespace SmartEyewearStore.Migrations
                     b.Navigation("GlassesInfo");
                 });
 
+            modelBuilder.Entity("SmartEyewearStore.Models.GlassesFeature", b =>
+                {
+                    b.HasOne("SmartEyewearStore.Models.GlassesInfo", "GlassesInfo")
+                        .WithMany("FeaturesList")
+                        .HasForeignKey("GlassesInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_GF_INFO");
+
+                    b.Navigation("GlassesInfo");
+                });
+
             modelBuilder.Entity("SmartEyewearStore.Models.SurveyAnswer", b =>
                 {
                     b.HasOne("SmartEyewearStore.Models.User", "User")
@@ -352,6 +417,18 @@ namespace SmartEyewearStore.Migrations
                         .HasConstraintName("FK_SA_USER");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SmartEyewearStore.Models.SurveyMultiChoice", b =>
+                {
+                    b.HasOne("SmartEyewearStore.Models.SurveyAnswer", "Survey")
+                        .WithMany("MultiChoices")
+                        .HasForeignKey("SurveyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_SM_SURVEY");
+
+                    b.Navigation("Survey");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.UserInteraction", b =>
@@ -371,6 +448,16 @@ namespace SmartEyewearStore.Migrations
                     b.Navigation("Glass");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SmartEyewearStore.Models.GlassesInfo", b =>
+                {
+                    b.Navigation("FeaturesList");
+                });
+
+            modelBuilder.Entity("SmartEyewearStore.Models.SurveyAnswer", b =>
+                {
+                    b.Navigation("MultiChoices");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.User", b =>

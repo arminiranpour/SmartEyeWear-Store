@@ -1,4 +1,6 @@
 ﻿using SmartEyewearStore.Models;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace SmartEyewearStore.Services
 {
@@ -18,14 +20,13 @@ namespace SmartEyewearStore.Services
             var styles = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Style)));
             var materials = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Material)));
             var headSizes = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.HeadSize)));
-            var features = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Features)));
-
-            shapes.UnionWith(SplitValues(userProfile.FavoriteShapes));
-            colors.UnionWith(SplitValues(userProfile.Colors));
+            var features = new HashSet<string>(allGlasses.SelectMany(g => g.GlassesInfo?.FeaturesList.Select(f => f.Feature) ?? Enumerable.Empty<string>()));
+            shapes.UnionWith(userProfile.MultiChoices.Where(c => c.Type == "shape").Select(c => c.Value));
+            colors.UnionWith(userProfile.MultiChoices.Where(c => c.Type == "color").Select(c => c.Value));
             styles.Add(userProfile.Style);
-            materials.UnionWith(SplitValues(userProfile.Materials));
+            materials.UnionWith(userProfile.MultiChoices.Where(c => c.Type == "material").Select(c => c.Value));
             if (!string.IsNullOrWhiteSpace(userProfile.HeadSize)) headSizes.Add(userProfile.HeadSize);
-            features.UnionWith(SplitValues(userProfile.Features));
+            features.UnionWith(userProfile.MultiChoices.Where(c => c.Type == "feature").Select(c => c.Value));
 
             var map = new Dictionary<string, int>();
             void AddRange(IEnumerable<string> vals)
@@ -83,12 +84,12 @@ namespace SmartEyewearStore.Services
                 foreach (var v in vals)
                     if (map.TryGetValue(v, out int idx)) vec[idx] = 1;
             }
-            Set(SplitValues(profile.FavoriteShapes));
-            Set(SplitValues(profile.Colors));
+            Set(profile.MultiChoices.Where(c => c.Type == "shape").Select(c => c.Value));
+            Set(profile.MultiChoices.Where(c => c.Type == "color").Select(c => c.Value));
             Set(new[] { profile.Style });
-            Set(SplitValues(profile.Materials));
+            Set(profile.MultiChoices.Where(c => c.Type == "material").Select(c => c.Value));
             Set(new[] { profile.HeadSize });
-            Set(SplitValues(profile.Features));
+            Set(profile.MultiChoices.Where(c => c.Type == "feature").Select(c => c.Value));
             return vec.ToList();
         }
 
@@ -112,7 +113,7 @@ namespace SmartEyewearStore.Services
                 Set(SplitValues(g.GlassesInfo?.Style));
                 Set(SplitValues(g.GlassesInfo?.Material));
                 Set(SplitValues(g.GlassesInfo?.HeadSize));
-                Set(SplitValues(g.GlassesInfo?.Features));
+                Set(g.GlassesInfo?.FeaturesList.Select(f => f.Feature) ?? Enumerable.Empty<string>());
             }
 
             return vec.ToList();
@@ -142,7 +143,7 @@ namespace SmartEyewearStore.Services
             Set(SplitValues(glass.GlassesInfo?.Style));
             Set(SplitValues(glass.GlassesInfo?.Material));
             Set(SplitValues(glass.GlassesInfo?.HeadSize));
-            Set(SplitValues(glass.GlassesInfo?.Features));
+            Set(glass.GlassesInfo?.FeaturesList.Select(f => f.Feature) ?? Enumerable.Empty<string>());
             return vec.ToList();
         }
 

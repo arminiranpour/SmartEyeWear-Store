@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+
 
 namespace SmartEyewearStore.Models
 {
@@ -15,11 +17,13 @@ namespace SmartEyewearStore.Models
         public string Style { get; set; }
         public string HeadSize { get; set; }
         public string Size { get; set; }
-        public string Measurements { get; set; }
-        public string Weight { get; set; }
+        public decimal? LensWidth { get; set; }
+        public decimal? BridgeWidth { get; set; }
+        public decimal? TempleLength { get; set; }
+        public decimal? WeightGrams { get; set; }
         public string Material { get; set; }
         public string Fit { get; set; }
-        public string Features { get; set; }
+        public List<GlassesFeature> FeaturesList { get; set; } = new();
         public bool? HasAntiScratchCoating { get; set; }
     }
 }

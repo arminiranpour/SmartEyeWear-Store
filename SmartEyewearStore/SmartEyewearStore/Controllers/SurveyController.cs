@@ -35,9 +35,6 @@ public class SurveyController : Controller
                     BuyingFrequency = model.BuyingFrequency.ToString(),
                     PriceFocus = model.PriceFocus.ToString(),
                     FaceShape = model.FaceShape.ToString(),
-                    FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
-                    Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
-                    Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
                     LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
                     BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
                     TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
@@ -45,11 +42,30 @@ public class SurveyController : Controller
                     ScreenTime = model.ScreenTime.ToString(),
                     DayLocation = model.DayLocation.ToString(),
                     Prescription = model.Prescription,
-                    Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features,
                     UserId = userId.Value
                 };
 
                 _context.SurveyAnswers.Add(survey);
+                _context.SaveChanges();
+
+                void AddChoices(string type, string raw)
+                {
+                    if (string.IsNullOrWhiteSpace(raw)) return;
+                    foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        _context.SurveyMultiChoices.Add(new SurveyMultiChoice
+                        {
+                            SurveyId = survey.Id,
+                            Type = type,
+                            Value = v.Trim()
+                        });
+                    }
+                }
+
+                AddChoices("shape", model.FavoriteShapes);
+                AddChoices("color", model.Colors);
+                AddChoices("material", model.Materials);
+                AddChoices("feature", model.Features);
                 _context.SaveChanges();
 
                 return RedirectToAction("GetHybridRecommendations", "Recommendation");
@@ -77,9 +93,6 @@ public class SurveyController : Controller
             BuyingFrequency = model.BuyingFrequency.ToString(),
             PriceFocus = model.PriceFocus.ToString(),
             FaceShape = model.FaceShape.ToString(),
-            FavoriteShapes = string.IsNullOrEmpty(model.FavoriteShapes) ? "" : model.FavoriteShapes,
-            Colors = string.IsNullOrEmpty(model.Colors) ? "" : model.Colors,
-            Materials = string.IsNullOrEmpty(model.Materials) ? "" : model.Materials,
             LensWidth = model.LensWidth.HasValue ? model.LensWidth : 0,
             BridgeWidth = model.BridgeWidth.HasValue ? model.BridgeWidth : 0,
             TempleLength = model.TempleLength.HasValue ? model.TempleLength : 0,
@@ -87,11 +100,30 @@ public class SurveyController : Controller
             ScreenTime = model.ScreenTime.ToString(),
             DayLocation = model.DayLocation.ToString(),
             Prescription = model.Prescription,
-            Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features,
             UserId = userId
         };
 
         _context.SurveyAnswers.Add(survey);
+        _context.SaveChanges();
+
+        void AddChoices(string type, string raw)
+        {
+            if (string.IsNullOrWhiteSpace(raw)) return;
+            foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+            {
+                _context.SurveyMultiChoices.Add(new SurveyMultiChoice
+                {
+                    SurveyId = survey.Id,
+                    Type = type,
+                    Value = v.Trim()
+                });
+            }
+        }
+
+        AddChoices("shape", model.FavoriteShapes);
+        AddChoices("color", model.Colors);
+        AddChoices("material", model.Materials);
+        AddChoices("feature", model.Features);
         _context.SaveChanges();
 
         return Ok();

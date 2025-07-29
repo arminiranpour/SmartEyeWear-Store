@@ -62,9 +62,6 @@ namespace SmartEyewearStore.Controllers
                                     BuyingFrequency = pending.BuyingFrequency.ToString(),
                                     PriceFocus = pending.PriceFocus.ToString(),
                                     FaceShape = pending.FaceShape.ToString(),
-                                    FavoriteShapes = string.IsNullOrEmpty(pending.FavoriteShapes) ? string.Empty : pending.FavoriteShapes,
-                                    Colors = string.IsNullOrEmpty(pending.Colors) ? string.Empty : pending.Colors,
-                                    Materials = string.IsNullOrEmpty(pending.Materials) ? string.Empty : pending.Materials,
                                     LensWidth = pending.LensWidth,
                                     BridgeWidth = pending.BridgeWidth,
                                     TempleLength = pending.TempleLength,
@@ -72,10 +69,27 @@ namespace SmartEyewearStore.Controllers
                                     ScreenTime = pending.ScreenTime.ToString(),
                                     DayLocation = pending.DayLocation.ToString(),
                                     Prescription = pending.Prescription,
-                                    Features = string.IsNullOrEmpty(pending.Features) ? string.Empty : pending.Features,
                                     UserId = user.Id
                                 };
                                 _context.SurveyAnswers.Add(survey);
+                                _context.SaveChanges();
+                                void AddChoices(string type, string raw)
+                                {
+                                    if (string.IsNullOrWhiteSpace(raw)) return;
+                                    foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+                                    {
+                                        _context.SurveyMultiChoices.Add(new SurveyMultiChoice
+                                        {
+                                            SurveyId = survey.Id,
+                                            Type = type,
+                                            Value = v.Trim()
+                                        });
+                                    }
+                                }
+                                AddChoices("shape", pending.FavoriteShapes);
+                                AddChoices("color", pending.Colors);
+                                AddChoices("material", pending.Materials);
+                                AddChoices("feature", pending.Features);
                             }
                         }
                         catch { }
@@ -141,9 +155,6 @@ namespace SmartEyewearStore.Controllers
                                 BuyingFrequency = pending.BuyingFrequency.ToString(),
                                 PriceFocus = pending.PriceFocus.ToString(),
                                 FaceShape = pending.FaceShape.ToString(),
-                                FavoriteShapes = string.IsNullOrEmpty(pending.FavoriteShapes) ? string.Empty : pending.FavoriteShapes,
-                                Colors = string.IsNullOrEmpty(pending.Colors) ? string.Empty : pending.Colors,
-                                Materials = string.IsNullOrEmpty(pending.Materials) ? string.Empty : pending.Materials,
                                 LensWidth = pending.LensWidth,
                                 BridgeWidth = pending.BridgeWidth,
                                 TempleLength = pending.TempleLength,
@@ -151,10 +162,29 @@ namespace SmartEyewearStore.Controllers
                                 ScreenTime = pending.ScreenTime.ToString(),
                                 DayLocation = pending.DayLocation.ToString(),
                                 Prescription = pending.Prescription,
-                                Features = string.IsNullOrEmpty(pending.Features) ? string.Empty : pending.Features,
                                 UserId = user.Id
                             };
                             _context.SurveyAnswers.Add(survey);
+                            _context.SaveChanges();
+
+                            void AddChoices(string type, string raw)
+                            {
+                                if (string.IsNullOrWhiteSpace(raw)) return;
+                                foreach (var v in raw.Split(',', System.StringSplitOptions.RemoveEmptyEntries))
+                                {
+                                    _context.SurveyMultiChoices.Add(new SurveyMultiChoice
+                                    {
+                                        SurveyId = survey.Id,
+                                        Type = type,
+                                        Value = v.Trim()
+                                    });
+                                }
+                            }
+
+                            AddChoices("shape", pending.FavoriteShapes);
+                            AddChoices("color", pending.Colors);
+                            AddChoices("material", pending.Materials);
+                            AddChoices("feature", pending.Features);
                         }
                     }
                     catch { }
