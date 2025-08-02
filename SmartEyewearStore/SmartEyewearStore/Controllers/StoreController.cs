@@ -26,5 +26,17 @@ namespace SmartEyewearStore.Controllers
             Console.WriteLine($"Loaded glasses count (no join): {glasses.Count}");
             return View(glasses);
         }
+
+        public IActionResult Shop()
+        {
+            return View();
+        }
+
+        public IActionResult Product(int id)
+        {
+            
+            return View();
+        }
+
     }
 }
