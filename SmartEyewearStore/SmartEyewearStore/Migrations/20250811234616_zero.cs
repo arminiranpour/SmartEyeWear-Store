@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SmartEyewearStore.Migrations
 {
     /// <inheritdoc />
-    public partial class BuildFromScratch : Migration
+    public partial class zero : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,7 @@ namespace SmartEyewearStore.Migrations
                     MATERIAL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     FIT = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     FEATURES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    HASANTISCRATCHCOATING = table.Column<int>(type: "NUMBER(1)", nullable: false)
+                    HASANTISCRATCHCOATING = table.Column<int>(type: "NUMBER(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -69,7 +69,7 @@ namespace SmartEyewearStore.Migrations
                     COLOR = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     PRICE = table.Column<decimal>(type: "DECIMAL(10,2)", precision: 10, scale: 2, nullable: false),
                     IMAGEURL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    INSTOCK = table.Column<int>(type: "NUMBER(1)", nullable: false)
+                    INSTOCK = table.Column<int>(type: "NUMBER(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,7 +105,7 @@ namespace SmartEyewearStore.Migrations
                     HEAD_SIZE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     SCREEN_TIME = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     DAY_LOCATION = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    PRESCRIPTION = table.Column<int>(type: "NUMBER(1)", nullable: false),
+                    PRESCRIPTION = table.Column<int>(type: "NUMBER(1)", nullable: true),
                     FEATURES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     USER_ID = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
@@ -129,7 +129,7 @@ namespace SmartEyewearStore.Migrations
                     ID = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     USERID = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    GUESTID = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    GUESTID = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     GLASSID = table.Column<int>(type: "NUMBER(10)", nullable: false),
                     INTERACTIONTYPE = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     SCORE = table.Column<int>(type: "NUMBER(10)", nullable: true),
