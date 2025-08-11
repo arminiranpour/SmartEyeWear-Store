@@ -31,11 +31,9 @@ namespace SmartEyewearStore.Data
                 .HasConstraintName("FK_GLS_INFO");
             modelBuilder.Entity<Glasses>()
                 .Property(g => g.InStock)
-                .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
             modelBuilder.Entity<Glasses>()
                 .Property(g => g.IsActive)
-                .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)");
             modelBuilder.Entity<Glasses>()
                 .Property(g => g.PopularityScore)

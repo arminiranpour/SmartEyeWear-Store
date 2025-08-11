@@ -14,10 +14,10 @@ namespace SmartEyewearStore.Models
         [Precision(10, 2)]
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
-        public bool? InStock { get; set; }
+        public int? InStock { get; set; }
 
         [Precision(5, 2)]
         public decimal PopularityScore { get; set; } = 0;
-        public bool IsActive { get; set; } = true;
+        public int IsActive { get; set; } = 1;
     }
 }

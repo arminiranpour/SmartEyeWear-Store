@@ -53,7 +53,7 @@ namespace SmartEyewearStore.Controllers
             AddChoices("feature", model.Features);
 
             var glasses = _context.Glasses
-                .Where(g => g.IsActive)
+                .Where(g => g.IsActive == 1)
                 .Include(g => g.GlassesInfo)
                 .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
@@ -100,7 +100,7 @@ namespace SmartEyewearStore.Controllers
             AddChoices("feature", model.Features);
 
             var allGlasses = _context.Glasses
-               .Where(g => g.IsActive)
+               .Where(g => g.IsActive == 1)
                .Include(g => g.GlassesInfo)
                    .ThenInclude(i => i.FeaturesList)
                .AsNoTracking()
@@ -139,7 +139,7 @@ namespace SmartEyewearStore.Controllers
             }
 
             var glasses = _context.Glasses
-                .Where(g => g.IsActive)
+                .Where(g => g.IsActive == 1)
                 .Include(g => g.GlassesInfo)
                     .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
@@ -168,7 +168,7 @@ namespace SmartEyewearStore.Controllers
             var recommendedIds = _collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers);
 
             var glasses = _context.Glasses
-                .Where(g => g.IsActive)
+                .Where(g => g.IsActive == 1)
                 .Include(g => g.GlassesInfo)
                     .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
@@ -205,7 +205,7 @@ namespace SmartEyewearStore.Controllers
             }
 
             var allGlasses = _context.Glasses
-                .Where(g => g.IsActive)
+                .Where(g => g.IsActive == 1)
                 .Include(g => g.GlassesInfo)
                     .ThenInclude(i => i.FeaturesList)
                 .AsNoTracking()
