@@ -138,6 +138,9 @@ namespace SmartEyewearStore.Data
                 .HasOne(f => f.RimStyle)
                 .WithMany(r => r.FrameSpecs)
                 .HasForeignKey(f => f.RimStyleId);
+            modelBuilder.Entity<FrameSpecs>()
+                .Property(f => f.WeightG)
+                .HasPrecision(18, 2);
 
             modelBuilder.Entity<ProductVariant>()
                  .HasKey(v => v.VariantId);
@@ -162,13 +165,28 @@ namespace SmartEyewearStore.Data
                 .HasIndex(v => v.ColorId);
 
             modelBuilder.Entity<VariantDimensions>()
-                .HasKey(d => d.VariantId);
+               .HasKey(d => d.VariantId);
             modelBuilder.Entity<VariantDimensions>()
                 .HasOne(d => d.Variant)
                 .WithOne(v => v.Dimensions)
                 .HasForeignKey<VariantDimensions>(d => d.VariantId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_VARIANT_DIMENSIONS");
+            modelBuilder.Entity<VariantDimensions>()
+                .Property(d => d.LensWidthMm)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<VariantDimensions>()
+                .Property(d => d.BridgeWidthMm)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<VariantDimensions>()
+                .Property(d => d.TempleLengthMm)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<VariantDimensions>()
+                .Property(d => d.LensHeightMm)
+                .HasPrecision(18, 2);
+            modelBuilder.Entity<VariantDimensions>()
+                .Property(d => d.FrameWidthMm)
+                .HasPrecision(18, 2);
 
             modelBuilder.Entity<VariantImage>()
                 .HasKey(i => i.ImageId);
@@ -251,6 +269,9 @@ namespace SmartEyewearStore.Data
                 .HasForeignKey<RatingSummary>(r => r.ProductId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_RATING_SUMMARY_PRODUCT");
+            modelBuilder.Entity<RatingSummary>()
+                .Property(r => r.AvgRating)
+                .HasPrecision(18, 2);
 
             // Uppercase all table and column names
             foreach (var entity in modelBuilder.Model.GetEntityTypes())

@@ -203,7 +203,7 @@ namespace SmartEyewearStore.Migrations
                     MATERIALID = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     SHAPEID = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     RIMSTYLEID = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    WEIGHTG = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: true),
+                    WEIGHTG = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: true),
                     GENDER = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     NOTES = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
                 },
@@ -328,7 +328,7 @@ namespace SmartEyewearStore.Migrations
                 columns: table => new
                 {
                     PRODUCTID = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    AVGRATING = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: true),
+                    AVGRATING = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: true),
                     RATINGCOUNT = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
                 constraints: table =>
@@ -381,11 +381,11 @@ namespace SmartEyewearStore.Migrations
                 columns: table => new
                 {
                     VARIANTID = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    LENSWIDTHMM = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
-                    BRIDGEWIDTHMM = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
-                    TEMPLELENGTHMM = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
-                    LENSHEIGHTMM = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: true),
-                    FRAMEWIDTHMM = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: true)
+                    LENSWIDTHMM = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: false),
+                    BRIDGEWIDTHMM = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: false),
+                    TEMPLELENGTHMM = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: false),
+                    LENSHEIGHTMM = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: true),
+                    FRAMEWIDTHMM = table.Column<decimal>(type: "DECIMAL(18,2)", precision: 18, scale: 2, nullable: true)
                 },
                 constraints: table =>
                 {

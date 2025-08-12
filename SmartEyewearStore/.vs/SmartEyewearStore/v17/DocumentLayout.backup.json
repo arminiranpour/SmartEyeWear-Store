@@ -154,21 +154,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ContentBasedService.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\ContentBasedService.cs",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\ContentBasedService.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\ContentBasedService.cs",
-              "RelativeToolTip": "SmartEyewearStore\\Services\\ContentBasedService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T01:30:38.765Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 9,
@@ -229,9 +216,22 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAowLMAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAkwBEBAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T00:43:14.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ContentBasedService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\ContentBasedService.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\ContentBasedService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\ContentBasedService.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Services\\ContentBasedService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T01:30:38.765Z",
               "EditorCaption": ""
             },
             {

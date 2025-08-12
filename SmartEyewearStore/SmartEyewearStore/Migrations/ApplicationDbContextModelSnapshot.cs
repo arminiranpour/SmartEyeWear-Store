@@ -126,7 +126,8 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("SHAPEID");
 
                     b.Property<decimal?>("WeightG")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("WEIGHTG");
 
                     b.HasKey("ProductId")
@@ -316,7 +317,8 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("PRODUCTID");
 
                     b.Property<decimal?>("AvgRating")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("AVGRATING");
 
                     b.Property<int?>("RatingCount")
@@ -408,23 +410,28 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("VARIANTID");
 
                     b.Property<decimal>("BridgeWidthMm")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("BRIDGEWIDTHMM");
 
                     b.Property<decimal?>("FrameWidthMm")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("FRAMEWIDTHMM");
 
                     b.Property<decimal?>("LensHeightMm")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("LENSHEIGHTMM");
 
                     b.Property<decimal>("LensWidthMm")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("LENSWIDTHMM");
 
                     b.Property<decimal>("TempleLengthMm")
-                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("DECIMAL(18,2)")
                         .HasColumnName("TEMPLELENGTHMM");
 
                     b.HasKey("VariantId")
