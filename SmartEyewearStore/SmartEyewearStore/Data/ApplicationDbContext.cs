@@ -62,11 +62,6 @@ namespace SmartEyewearStore.Data
                 .Property(s => s.Prescription)
                 .HasConversion(new BoolToZeroOneConverter<int?>())
                 .HasColumnType("NUMBER(1)");
-            // Convert boolean to number for Oracle
-            modelBuilder.Entity<SurveyAnswer>()
-                .Property(s => s.Prescription)
-                .HasConversion(new BoolToZeroOneConverter<int?>())
-                .HasColumnType("NUMBER(1)");
 
             // === Catalog configuration ===
 
@@ -105,7 +100,7 @@ namespace SmartEyewearStore.Data
                 .Property(p => p.IsActive)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(true);
+                .HasDefaultValueSql("1");
             modelBuilder.Entity<Product>()
                 .Property(p => p.CreatedAt)
                 .HasDefaultValueSql("SYSTIMESTAMP");
@@ -148,7 +143,7 @@ namespace SmartEyewearStore.Data
            .Property(v => v.IsDefault)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(false);
+                .HasDefaultValueSql("0");
             modelBuilder.Entity<ProductVariant>()
                 .HasOne(v => v.Product)
                 .WithMany(p => p.Variants)
@@ -219,7 +214,7 @@ namespace SmartEyewearStore.Data
                 .Property(i => i.Backorderable)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(false);
+                .HasDefaultValueSql("0");
             modelBuilder.Entity<VariantInventory>()
                 .HasOne(i => i.Variant)
                 .WithOne(v => v.Inventory)
