@@ -171,6 +171,8 @@ namespace SmartEyewearStore.Data
                 .HasConstraintName("FK_VARIANT_DIMENSIONS");
 
             modelBuilder.Entity<VariantImage>()
+                .HasKey(i => i.ImageId);
+            modelBuilder.Entity<VariantImage>()
                 .HasOne(i => i.Variant)
                 .WithMany(v => v.Images)
                 .HasForeignKey(i => i.VariantId)
