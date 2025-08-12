@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
-using SmartEyewearStore.Services;
 using SmartEyewearStore.Models;
+using SmartEyewearStore.Models.Catalog;
+using SmartEyewearStore.Services;
 
 namespace SmartEyewearStore.Controllers
 {
@@ -43,14 +47,12 @@ namespace SmartEyewearStore.Controllers
                 Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features
             };
 
-            var glasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .ToList();
+            var variants = LoadAllVariants();
+
 
             var interactions = LoadInteractions();
 
-            var recommended = _service.GetRecommendedGlasses(survey, glasses, interactions);
+            var recommended = _service.GetRecommendedVariants(survey, variants, interactions);
 
             return View("GetRecommendations", recommended);
         }
@@ -79,10 +81,8 @@ namespace SmartEyewearStore.Controllers
                 Features = string.IsNullOrEmpty(model.Features) ? "" : model.Features
             };
 
-            var allGlasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .ToList();
+            var allVariants = LoadAllVariants();
+
 
             var allInteractions = LoadAllInteractions();
 
@@ -90,7 +90,7 @@ namespace SmartEyewearStore.Controllers
             var recommended = hybridService.GetHybridRecommendationsWithScores(
                 survey,
                 allInteractions,
-                allGlasses,
+                allVariants,
                 _service,
                 _collabService);
 
@@ -115,14 +115,12 @@ namespace SmartEyewearStore.Controllers
                 return RedirectToAction("Index", "Store");
             }
 
-            var glasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .ToList();
+            var variants = LoadAllVariants();
+
 
             var interactions = LoadInteractions();
 
-            var recommended = _service.GetRecommendedGlasses(profile, glasses, interactions);
+            var recommended = _service.GetRecommendedVariants(profile, variants, interactions);
 
             return View(recommended);
         }
@@ -140,16 +138,14 @@ namespace SmartEyewearStore.Controllers
 
             var allInteractions = LoadAllInteractions();
             var topUsers = _collabService.GetTopSimilarUsers(targetKey, allInteractions);
-            var recommendedIds = _collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers);
+            var recommendedIds = _collabService.GetRecommendedVariantIds(targetKey, allInteractions, topUsers);
 
-            var glasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .Where(g => recommendedIds.Contains(g.Id))
+            var variants = LoadAllVariants()
+                .Where(v => recommendedIds.Contains(v.VariantId))
                 .ToList();
 
             var ordered = recommendedIds
-                .Join(glasses, id => id, g => g.Id, (id, g) => g)
+                .Join(variants, id => id, v => v.VariantId, (id, v) => v)
                 .ToList();
 
             return View(ordered);
@@ -176,10 +172,8 @@ namespace SmartEyewearStore.Controllers
                 return RedirectToAction("Index", "Store");
             }
 
-            var allGlasses = _context.Glasses
-                .Include(g => g.GlassesInfo)
-                .AsNoTracking()
-                .ToList();
+            var allVariants = LoadAllVariants();
+
 
             var allInteractions = LoadAllInteractions();
 
@@ -187,21 +181,56 @@ namespace SmartEyewearStore.Controllers
             var recommended = hybridService.GetHybridRecommendationsWithScores(
                 profile,
                 allInteractions,
-                allGlasses,
+                allVariants,
                 _service,
                 _collabService);
 
             return View(recommended);
         }
 
+        private List<ProductVariant> LoadAllVariants()
+        {
+            return _context.ProductVariants
+                .Include(v => v.Product)
+                    .ThenInclude(p => p.FrameSpecs)
+                        .ThenInclude(fs => fs.Shape)
+                .Include(v => v.Product)
+                    .ThenInclude(p => p.FrameSpecs)
+                        .ThenInclude(fs => fs.Material)
+                .Include(v => v.Product)
+                    .ThenInclude(p => p.ProductTags)
+                        .ThenInclude(pt => pt.Tag)
+                .Include(v => v.Product)
+                    .ThenInclude(p => p.ProductFeatures)
+                        .ThenInclude(pf => pf.Feature)
+                .Include(v => v.Color)
+                .AsNoTracking()
+                .ToList();
+        }
         private List<UserInteraction> LoadInteractions()
         {
             int? userId = HttpContext.Session.GetInt32("UserId");
             string? guestId = HttpContext.Session.GetString("GuestId");
 
             var query = _context.UserInteractions
-                .Include(ui => ui.Glass)
-                    .ThenInclude(g => g.GlassesInfo)
+                                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.FrameSpecs)
+                            .ThenInclude(fs => fs.Shape)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.FrameSpecs)
+                            .ThenInclude(fs => fs.Material)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.ProductTags)
+                            .ThenInclude(pt => pt.Tag)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.ProductFeatures)
+                            .ThenInclude(pf => pf.Feature)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Color)
                 .AsNoTracking()
                 .AsQueryable();
 
@@ -224,8 +253,24 @@ namespace SmartEyewearStore.Controllers
         private List<UserInteraction> LoadAllInteractions()
         {
             return _context.UserInteractions
-                .Include(ui => ui.Glass)
-                    .ThenInclude(g => g.GlassesInfo)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.FrameSpecs)
+                            .ThenInclude(fs => fs.Shape)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.FrameSpecs)
+                            .ThenInclude(fs => fs.Material)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.ProductTags)
+                            .ThenInclude(pt => pt.Tag)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Product)
+                        .ThenInclude(p => p.ProductFeatures)
+                            .ThenInclude(pf => pf.Feature)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Color)
                 .AsNoTracking()
                 .ToList();
         }

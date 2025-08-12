@@ -1,5 +1,8 @@
-﻿using SmartEyewearStore.Models;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using SmartEyewearStore.Models;
+using SmartEyewearStore.Models.Catalog;
 namespace SmartEyewearStore.Services
 {
     public class ContentBasedService
@@ -7,18 +10,18 @@ namespace SmartEyewearStore.Services
         private const double SurveyWeight = 0.7;
         private const double InteractionWeight = 0.3;
 
-        public List<GlassRecommendation> GetRecommendedGlassesWithScores(
+        public List<VariantRecommendation> GetRecommendedVariantsWithScores(
             SurveyAnswer userProfile,
-            List<Glasses> allGlasses,
+            List<ProductVariant> allVariants,
             List<UserInteraction>? userInteractions = null,
             int topN = 10)
         {
-            var shapes = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Shape)));
-            var colors = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.Color)));
-            var styles = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Style)));
-            var materials = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Material)));
-            var headSizes = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.HeadSize)));
-            var features = new HashSet<string>(allGlasses.SelectMany(g => SplitValues(g.GlassesInfo?.Features)));
+            var shapes = new HashSet<string>(allVariants.SelectMany(v => SplitValues(v.Product.FrameSpecs?.Shape?.Name)));
+            var colors = new HashSet<string>(allVariants.SelectMany(v => SplitValues(v.Color?.Name)));
+            var styles = new HashSet<string>(allVariants.SelectMany(v => v.Product.ProductTags.Select(pt => pt.Tag.Name)));
+            var materials = new HashSet<string>(allVariants.SelectMany(v => SplitValues(v.Product.FrameSpecs?.Material?.Name)));
+            var headSizes = new HashSet<string>();
+            var features = new HashSet<string>(allVariants.SelectMany(v => v.Product.ProductFeatures.Select(pf => pf.Feature.Label)));
 
             shapes.UnionWith(SplitValues(userProfile.FavoriteShapes));
             colors.UnionWith(SplitValues(userProfile.Colors));
@@ -46,26 +49,26 @@ namespace SmartEyewearStore.Services
             var interactionVector = BuildInteractionVector(userInteractions, map);
             var userVector = CombineVectors(surveyVector, interactionVector);
 
-            var scored = new List<GlassRecommendation>();
-            foreach (var g in allGlasses)
+            var scored = new List<VariantRecommendation>();
+            foreach (var v in allVariants)
             {
-                var vector = BuildGlassVector(g, map);
+                var vector = BuildVariantVector(v, map);
                 var score = CalculateCosineSimilarity(userVector, vector);
-                scored.Add(new GlassRecommendation { Glass = g, Score = score });
+                scored.Add(new VariantRecommendation { Variant = v, Score = score });
             }
 
             return scored.OrderByDescending(s => s.Score).Take(topN).ToList();
         }
 
-        public List<Glasses> GetRecommendedGlasses(
+        public List<ProductVariant> GetRecommendedVariants(
             SurveyAnswer userProfile,
-            List<Glasses> allGlasses,
+            List<ProductVariant> allVariants,
             List<UserInteraction>? userInteractions = null,
             int topN = 10)
         {
-            return GetRecommendedGlassesWithScores(userProfile, allGlasses, userInteractions, topN)
-                .Select(r => r.Glass)
-                .ToList();
+            return GetRecommendedVariantsWithScores(userProfile, allVariants, userInteractions, topN)
+            .Select(r => r.Variant)
+            .ToList();
         }
 
         private static IEnumerable<string> SplitValues(string? raw)
@@ -105,14 +108,13 @@ namespace SmartEyewearStore.Services
 
             foreach (var inter in interactions)
             {
-                var g = inter.Glass;
-                if (g == null) continue;
-                Set(SplitValues(g.GlassesInfo?.Shape));
-                Set(SplitValues(g.Color));
-                Set(SplitValues(g.GlassesInfo?.Style));
-                Set(SplitValues(g.GlassesInfo?.Material));
-                Set(SplitValues(g.GlassesInfo?.HeadSize));
-                Set(SplitValues(g.GlassesInfo?.Features));
+                var v = inter.Variant;
+                if (v == null) continue;
+                Set(SplitValues(v.Product.FrameSpecs?.Shape?.Name));
+                Set(SplitValues(v.Color?.Name));
+                Set(v.Product.ProductTags.Select(pt => pt.Tag.Name));
+                Set(SplitValues(v.Product.FrameSpecs?.Material?.Name));
+                Set(v.Product.ProductFeatures.Select(pf => pf.Feature.Label));
             }
 
             return vec.ToList();
@@ -129,7 +131,7 @@ namespace SmartEyewearStore.Services
             return result.ToList();
         }
 
-        private List<int> BuildGlassVector(Glasses glass, Dictionary<string, int> map)
+        private List<int> BuildVariantVector(ProductVariant variant, Dictionary<string, int> map)
         {
             var vec = new int[map.Count];
             void Set(IEnumerable<string> vals)
@@ -137,12 +139,11 @@ namespace SmartEyewearStore.Services
                 foreach (var v in vals)
                     if (map.TryGetValue(v, out int idx)) vec[idx] = 1;
             }
-            Set(SplitValues(glass.GlassesInfo?.Shape));
-            Set(SplitValues(glass.Color));
-            Set(SplitValues(glass.GlassesInfo?.Style));
-            Set(SplitValues(glass.GlassesInfo?.Material));
-            Set(SplitValues(glass.GlassesInfo?.HeadSize));
-            Set(SplitValues(glass.GlassesInfo?.Features));
+            Set(SplitValues(variant.Product.FrameSpecs?.Shape?.Name));
+            Set(SplitValues(variant.Color?.Name));
+            Set(variant.Product.ProductTags.Select(pt => pt.Tag.Name));
+            Set(SplitValues(variant.Product.FrameSpecs?.Material?.Name));
+            Set(variant.Product.ProductFeatures.Select(pf => pf.Feature.Label));
             return vec.ToList();
         }
 

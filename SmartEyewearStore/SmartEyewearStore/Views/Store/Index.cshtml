@@ -1,4 +1,5 @@
-﻿@model IEnumerable<SmartEyewearStore.Models.Glasses>
+﻿@model IEnumerable<SmartEyewearStore.Models.Catalog.ProductVariant>
+@using System.Linq
 @{
     ViewData["Title"] = "Store";
 }
@@ -6,17 +7,19 @@
 <h2>Store</h2>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    @foreach (var glass in Model)
+    @foreach (var variant in Model)
     {
+        var img = variant.Images.FirstOrDefault()?.Url;
+        var price = variant.Prices.FirstOrDefault()?.BasePriceCents / 100m;
         <div class="border p-4 rounded">
-            <img src="@glass.ImageUrl" alt="@glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
-            <h3 class="font-bold">@glass.GlassesInfo?.Name</h3>
-            <p>Price: $@glass.Price</p>
-            <p>Color: @glass.Color</p>
+            <img src="@img" alt="@variant.Product?.Name" class="mb-2 w-full h-auto" />
+            <h3 class="font-bold">@variant.Product?.Name</h3>
+            <p>Price: $@price</p>
+            <p>Color: @variant.Color?.Name</p>
             <div class="space-x-2 mt-2">
-                <button onclick="sendInteraction(@glass.Id, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
-                <button onclick="sendInteraction(@glass.Id, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
-                <button onclick="sendInteraction(@glass.Id, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
+                <button onclick="sendInteraction(@variant.VariantId, 'Click')" class="bg-blue-500 text-white px-2 py-1 rounded">View</button>
+                <button onclick="sendInteraction(@variant.VariantId, 'Favorite')" class="bg-green-500 text-white px-2 py-1 rounded">Favorite</button>
+                <button onclick="sendInteraction(@variant.VariantId, 'Purchase')" class="bg-red-500 text-white px-2 py-1 rounded">Buy</button>
             </div>
         </div>
     }
@@ -24,7 +27,7 @@
 
 @section Scripts {
     <script>
-        function sendInteraction(glassId, type) {
+        function sendInteraction(variantId, type) {
             const guestId = localStorage.getItem('GuestId');
             let url = '/Interaction';
             if (!window.userId && guestId) {
@@ -33,7 +36,7 @@
             fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ glassId: glassId, interactionType: type })
+                body: JSON.stringify({ variantId: variantId, interactionType: type })
             }).then(response => {
                 if (response.ok) {
                     alert('Interaction saved: ' + type);

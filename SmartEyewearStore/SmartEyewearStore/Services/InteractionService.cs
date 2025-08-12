@@ -1,4 +1,5 @@
-﻿using SmartEyewearStore.Data;
+﻿using System;
+using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 
 namespace SmartEyewearStore.Services
@@ -12,7 +13,7 @@ namespace SmartEyewearStore.Services
             _context = context;
         }
 
-        public void AddInteraction(int glassId, string interactionType, int? userId = null, string? guestId = null)
+        public void AddInteraction(int variantId, string interactionType, int? userId = null, string? guestId = null)
         {
             int score = interactionType switch
             {
@@ -27,7 +28,7 @@ namespace SmartEyewearStore.Services
             {
                 UserId = userId,
                 GuestId = guestId,
-                GlassId = glassId,
+                VariantId = variantId,
                 InteractionType = interactionType,
                 Score = score,
                 Timestamp = DateTime.UtcNow

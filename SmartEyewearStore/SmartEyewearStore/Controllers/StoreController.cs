@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
-using SmartEyewearStore.Models;
+using SmartEyewearStore.Models.Catalog;
 
 namespace SmartEyewearStore.Controllers
 {
@@ -19,12 +21,17 @@ namespace SmartEyewearStore.Controllers
 
         public IActionResult Index()
         {
-            var glasses = _context.Glasses
-            .AsNoTracking()
-            .ToList();
+            var variants = _context.ProductVariants
+                .Include(v => v.Product).ThenInclude(p => p.FrameSpecs).ThenInclude(fs => fs.Shape)
+                .Include(v => v.Product).ThenInclude(p => p.ProductTags).ThenInclude(pt => pt.Tag)
+                .Include(v => v.Color)
+                .Include(v => v.Images)
+                .Include(v => v.Prices)
+                .AsNoTracking()
+                .ToList();
 
-            Console.WriteLine($"Loaded glasses count (no join): {glasses.Count}");
-            return View(glasses);
+            Console.WriteLine($"Loaded variant count (no join): {variants.Count}");
+            return View(variants);
         }
 
         public IActionResult Shop()

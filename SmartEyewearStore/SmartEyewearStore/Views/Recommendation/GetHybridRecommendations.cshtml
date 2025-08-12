@@ -1,4 +1,5 @@
-﻿@model IEnumerable<SmartEyewearStore.Models.GlassRecommendation>
+﻿@model IEnumerable<SmartEyewearStore.Models.VariantRecommendation>
+@using System.Linq
 @{
     ViewData["Title"] = "Hybrid Recommendations";
 }
@@ -7,11 +8,13 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     @foreach (var item in Model)
     {
+        var img = item.Variant.Images.FirstOrDefault()?.Url;
+        var price = item.Variant.Prices.FirstOrDefault()?.BasePriceCents / 100m;
         <div class="border p-4 rounded">
-            <img src="@item.Glass.ImageUrl" alt="@item.Glass.GlassesInfo?.Name" class="mb-2 w-full h-auto" />
-            <h3 class="font-bold">@item.Glass.GlassesInfo?.Name</h3>
-            <p>Color: @item.Glass.Color</p>
-            <p>Price: $@item.Glass.Price</p>
+            <img src="@img" alt="@item.Variant.Product?.Name" class="mb-2 w-full h-auto" />
+            <h3 class="font-bold">@item.Variant.Product?.Name</h3>
+            <p>Color: @item.Variant.Color?.Name</p>
+            <p>Price: $@price</p>
             <p>Score: @item.Score.ToString("F2")</p>
         </div>
     }

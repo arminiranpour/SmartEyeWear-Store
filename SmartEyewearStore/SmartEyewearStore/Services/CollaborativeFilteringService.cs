@@ -1,10 +1,12 @@
-﻿using SmartEyewearStore.Models;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using SmartEyewearStore.Models;
 namespace SmartEyewearStore.Services
 {
     public class CollaborativeFilteringService
     {
-        // Build interaction matrix: key is userId or guestId, value is dictionary of glassId -> score
+        // Build interaction matrix: key is userId or guestId, value is dictionary of variantId -> score
         public Dictionary<string, Dictionary<int, int>> BuildInteractionMatrix(List<UserInteraction> interactions)
         {
             var matrix = new Dictionary<string, Dictionary<int, int>>();
@@ -20,17 +22,17 @@ namespace SmartEyewearStore.Services
                     matrix[userKey] = cols;
                 }
 
-                cols[inter.GlassId] = inter.Score ?? 0;
+                cols[inter.VariantId] = inter.Score ?? 0;
             }
             return matrix;
         }
 
-        private List<int> BuildVector(Dictionary<int, int> userInteractions, List<int> glassIds)
+        private List<int> BuildVector(Dictionary<int, int> userInteractions, List<int> variantIds)
         {
-            var vector = new List<int>(glassIds.Count);
-            foreach (var gId in glassIds)
+            var vector = new List<int>(variantIds.Count);
+            foreach (var id in variantIds)
             {
-                vector.Add(userInteractions.TryGetValue(gId, out var score) ? score : 0);
+                vector.Add(userInteractions.TryGetValue(id, out var score) ? score : 0);
             }
             return vector;
         }
@@ -57,14 +59,14 @@ namespace SmartEyewearStore.Services
             if (!matrix.TryGetValue(targetKey, out var targetCols))
                 return new List<string>();
 
-            var glassIds = allInteractions.Select(i => i.GlassId).Distinct().ToList();
-            var targetVector = BuildVector(targetCols, glassIds);
+            var variantIds = allInteractions.Select(i => i.VariantId).Distinct().ToList();
+            var targetVector = BuildVector(targetCols, variantIds);
 
             var similarities = new List<(string userKey, double sim)>();
             foreach (var kv in matrix)
             {
                 if (kv.Key == targetKey) continue;
-                var vec = BuildVector(kv.Value, glassIds);
+                var vec = BuildVector(kv.Value, variantIds);
                 double sim = CalculateCosineSimilarity(targetVector, vec);
                 similarities.Add((kv.Key, sim));
             }
@@ -76,11 +78,11 @@ namespace SmartEyewearStore.Services
                 .ToList();
         }
 
-        public List<int> GetRecommendedGlassIds(string targetKey, List<UserInteraction> allInteractions, List<string> topSimilarUsers, int topN = 10)
+        public List<int> GetRecommendedVariantIds(string targetKey, List<UserInteraction> allInteractions, List<string> topSimilarUsers, int topN = 10)
         {
-            var targetGlasses = allInteractions
+            var targetVariants = allInteractions
                 .Where(i => (i.UserId?.ToString() ?? i.GuestId) == targetKey)
-                .Select(i => i.GlassId)
+                .Select(i => i.VariantId)
                 .ToHashSet();
 
             var scores = new Dictionary<int, double>();
@@ -88,11 +90,11 @@ namespace SmartEyewearStore.Services
             {
                 foreach (var inter in allInteractions.Where(i => (i.UserId?.ToString() ?? i.GuestId) == simUserKey))
                 {
-                    if (targetGlasses.Contains(inter.GlassId))
+                    if (targetVariants.Contains(inter.VariantId))
                         continue;
-                    if (!scores.ContainsKey(inter.GlassId))
-                        scores[inter.GlassId] = 0;
-                    scores[inter.GlassId] += inter.Score ?? 0;
+                    if (!scores.ContainsKey(inter.VariantId))
+                        scores[inter.VariantId] = 0;
+                    scores[inter.VariantId] += inter.Score ?? 0;
                 }
             }
 

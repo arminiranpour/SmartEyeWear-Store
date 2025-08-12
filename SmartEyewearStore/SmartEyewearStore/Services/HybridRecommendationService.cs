@@ -1,5 +1,9 @@
-﻿using SmartEyewearStore.Models;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using SmartEyewearStore.Models;
+using SmartEyewearStore.Models.Catalog;
 namespace SmartEyewearStore.Services
 {
     public class HybridRecommendationService
@@ -11,10 +15,10 @@ namespace SmartEyewearStore.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public List<GlassRecommendation> GetHybridRecommendationsWithScores(
+        public List<VariantRecommendation> GetHybridRecommendationsWithScores(
             SurveyAnswer userProfile,
             List<UserInteraction> allInteractions,
-            List<Glasses> allGlasses,
+            List<ProductVariant> allVariants,
             ContentBasedService contentService,
             CollaborativeFilteringService collabService,
             int topN = 10,
@@ -31,12 +35,12 @@ namespace SmartEyewearStore.Services
                 .ToList();
 
             var contentResults = contentService
-                .GetRecommendedGlassesWithScores(userProfile, allGlasses, userInteractions, topN);
-            var contentDict = contentResults.ToDictionary(r => r.Glass.Id, r => r.Score);
+                .GetRecommendedVariantsWithScores(userProfile, allVariants, userInteractions, topN);
+            var contentDict = contentResults.ToDictionary(r => r.Variant.VariantId, r => r.Score);
             double maxContent = contentDict.Values.DefaultIfEmpty(0).Max();
 
             var topUsers = collabService.GetTopSimilarUsers(targetKey, allInteractions);
-            var collabIds = collabService.GetRecommendedGlassIds(targetKey, allInteractions, topUsers, topN);
+            var collabIds = collabService.GetRecommendedVariantIds(targetKey, allInteractions, topUsers, topN);
             var collabScores = new Dictionary<int, double>();
             for (int i = 0; i < collabIds.Count; i++)
             {
@@ -44,18 +48,18 @@ namespace SmartEyewearStore.Services
             }
             double maxCollab = collabScores.Values.DefaultIfEmpty(0).Max();
 
-            var combined = new List<GlassRecommendation>();
+            var combined = new List<VariantRecommendation>();
             var ids = contentDict.Keys.Union(collabScores.Keys);
             foreach (var id in ids)
             {
-                var glass = allGlasses.FirstOrDefault(g => g.Id == id);
-                if (glass == null) continue;
+                var variant = allVariants.FirstOrDefault(v => v.VariantId == id);
+                if (variant == null) continue;
                 double cScore = contentDict.TryGetValue(id, out var cs) ? cs : 0;
                 double normC = maxContent > 0 ? cScore / maxContent : 0;
                 double collScore = collabScores.TryGetValue(id, out var cl) ? cl : 0;
                 double normCl = maxCollab > 0 ? collScore / maxCollab : 0;
                 double final = alpha * normC + beta * normCl;
-                combined.Add(new GlassRecommendation { Glass = glass, Score = final });
+                combined.Add(new VariantRecommendation { Variant = variant, Score = final });
             }
 
             return combined
@@ -64,18 +68,18 @@ namespace SmartEyewearStore.Services
                 .ToList();
         }
 
-        public List<Glasses> GetHybridRecommendations(
+        public List<ProductVariant> GetHybridRecommendations(
             SurveyAnswer userProfile,
             List<UserInteraction> allInteractions,
-            List<Glasses> allGlasses,
+            List<ProductVariant> allVariants,
             ContentBasedService contentService,
             CollaborativeFilteringService collabService,
             int topN = 10,
             double alpha = 0.6,
             double beta = 0.4)
         {
-            return GetHybridRecommendationsWithScores(userProfile, allInteractions, allGlasses, contentService, collabService, topN, alpha, beta)
-                .Select(r => r.Glass)
+            return GetHybridRecommendationsWithScores(userProfile, allInteractions, allVariants, contentService, collabService, topN, alpha, beta)
+                .Select(r => r.Variant)
                 .ToList();
         }
     }

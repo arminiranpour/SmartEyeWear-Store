@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using Microsoft.AspNetCore.Http;
-using SmartEyewearStore.Services;
+using Microsoft.AspNetCore.Mvc;
 using SmartEyewearStore.Models;
+using SmartEyewearStore.Services;
 
 namespace SmartEyewearStore.Controllers
 {
@@ -36,7 +37,7 @@ namespace SmartEyewearStore.Controllers
                 HttpContext.Session.SetString("GuestId", guestId);
             }
 
-            _interactionService.AddInteraction(request.GlassId, request.InteractionType, userId, guestId);
+            _interactionService.AddInteraction(request.VariantId, request.InteractionType, userId, guestId);
             return Ok();
         }
     }
