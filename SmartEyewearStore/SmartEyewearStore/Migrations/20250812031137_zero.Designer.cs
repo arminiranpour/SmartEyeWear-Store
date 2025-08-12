@@ -12,7 +12,7 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250812030208_zero")]
+    [Migration("20250812031137_zero")]
     partial class zero
     {
         /// <inheritdoc />
