@@ -140,6 +140,8 @@ namespace SmartEyewearStore.Data
                 .HasForeignKey(f => f.RimStyleId);
 
             modelBuilder.Entity<ProductVariant>()
+                 .HasKey(v => v.VariantId);
+                 modelBuilder.Entity<ProductVariant>()
                 .Property(v => v.IsDefault)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
