@@ -185,6 +185,8 @@ namespace SmartEyewearStore.Data
                 .IsUnique();
 
             modelBuilder.Entity<VariantPrice>()
+                .HasKey(p => p.PriceId);
+            modelBuilder.Entity<VariantPrice>()
                 .HasOne(p => p.Variant)
                 .WithMany(v => v.Prices)
                 .HasForeignKey(p => p.VariantId)
