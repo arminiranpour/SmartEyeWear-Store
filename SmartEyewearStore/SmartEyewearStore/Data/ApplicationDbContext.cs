@@ -105,7 +105,7 @@ namespace SmartEyewearStore.Data
                 .Property(p => p.IsActive)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(1);
+                .HasDefaultValue(true);
             modelBuilder.Entity<Product>()
                 .Property(p => p.CreatedAt)
                 .HasDefaultValueSql("SYSTIMESTAMP");
@@ -144,11 +144,11 @@ namespace SmartEyewearStore.Data
 
             modelBuilder.Entity<ProductVariant>()
                  .HasKey(v => v.VariantId);
-                 modelBuilder.Entity<ProductVariant>()
-                .Property(v => v.IsDefault)
+            modelBuilder.Entity<ProductVariant>()
+           .Property(v => v.IsDefault)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(0);
+                .HasDefaultValue(false);
             modelBuilder.Entity<ProductVariant>()
                 .HasOne(v => v.Product)
                 .WithMany(p => p.Variants)
@@ -219,7 +219,7 @@ namespace SmartEyewearStore.Data
                 .Property(i => i.Backorderable)
                 .HasConversion(new BoolToZeroOneConverter<int>())
                 .HasColumnType("NUMBER(1)")
-                .HasDefaultValue(0);
+                .HasDefaultValue(false);
             modelBuilder.Entity<VariantInventory>()
                 .HasOne(i => i.Variant)
                 .WithOne(v => v.Inventory)
