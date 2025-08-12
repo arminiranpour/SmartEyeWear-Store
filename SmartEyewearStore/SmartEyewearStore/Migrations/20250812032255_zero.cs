@@ -211,19 +211,19 @@ namespace SmartEyewearStore.Migrations
                 {
                     table.PrimaryKey("PK_FRAMESPECS", x => x.PRODUCTID);
                     table.ForeignKey(
-                        name: "FK_FRAMESPECS_MATERIALS_MATERIALID",
+                        name: "FK_FRAMESPECS_MATERIAL",
                         column: x => x.MATERIALID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "MATERIAL",
                         principalColumn: "MATERIALID");
                     table.ForeignKey(
-                        name: "FK_FRAMESPECS_RIMSTYLES_RIMSTYLEID",
+                        name: "FK_FRAMESPECS_RIMSTYLE",
                         column: x => x.RIMSTYLEID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "RIM_STYLE",
                         principalColumn: "RIMSTYLEID");
                     table.ForeignKey(
-                        name: "FK_FRAMESPECS_SHAPES_SHAPEID",
+                        name: "FK_FRAMESPECS_SHAPE",
                         column: x => x.SHAPEID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "SHAPE",
@@ -308,18 +308,18 @@ namespace SmartEyewearStore.Migrations
                 {
                     table.PrimaryKey("PK_PRODUCTVARIANTS", x => x.VARIANTID);
                     table.ForeignKey(
-                        name: "FK_PRODUCTVARIANTS_COLORS_COLORID",
-                        column: x => x.COLORID,
-                        principalSchema: "DBS311_252NAA12",
-                        principalTable: "COLOR",
-                        principalColumn: "COLORID");
-                    table.ForeignKey(
                         name: "FK_PRODUCT_VARIANT_PRODUCT",
                         column: x => x.PRODUCTID,
                         principalSchema: "DBS311_252NAA12",
                         principalTable: "PRODUCT",
                         principalColumn: "PRODUCTID",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PRODVAR_COLOR",
+                        column: x => x.COLORID,
+                        principalSchema: "DBS311_252NAA12",
+                        principalTable: "COLOR",
+                        principalColumn: "COLORID");
                 });
 
             migrationBuilder.CreateTable(
@@ -593,13 +593,13 @@ namespace SmartEyewearStore.Migrations
                 column: "VARIANTID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VARIANTIMAGES_VARIANTID",
+                name: "IX_VARIMG_VARID",
                 schema: "DBS311_252NAA12",
                 table: "VARIANT_IMAGE",
                 column: "VARIANTID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VARIANTIMAGES_VARIANTID_SORTORDER",
+                name: "IX_VARIMG_VARID_SORT",
                 schema: "DBS311_252NAA12",
                 table: "VARIANT_IMAGE",
                 columns: new[] { "VARIANTID", "SORTORDER" },
@@ -684,11 +684,11 @@ namespace SmartEyewearStore.Migrations
                 schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "COLOR",
+                name: "PRODUCT",
                 schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(
-                name: "PRODUCT",
+                name: "COLOR",
                 schema: "DBS311_252NAA12");
 
             migrationBuilder.DropTable(

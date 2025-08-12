@@ -117,23 +117,26 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<FrameSpecs>()
                 .HasKey(f => f.ProductId);
             modelBuilder.Entity<FrameSpecs>()
-                .HasOne(f => f.Product)
-                .WithOne(p => p.FrameSpecs)
-                .HasForeignKey<FrameSpecs>(f => f.ProductId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_FRAME_SPECS_PRODUCT");
+                 .HasOne(f => f.Product)
+                 .WithOne(p => p.FrameSpecs)
+                 .HasForeignKey<FrameSpecs>(f => f.ProductId)
+                 .OnDelete(DeleteBehavior.Cascade)
+                 .HasConstraintName("FK_FRAME_SPECS_PRODUCT");
             modelBuilder.Entity<FrameSpecs>()
                 .HasOne(f => f.Material)
                 .WithMany(m => m.FrameSpecs)
-                .HasForeignKey(f => f.MaterialId);
+                .HasForeignKey(f => f.MaterialId)
+                .HasConstraintName("FK_FRAMESPECS_MATERIAL");
             modelBuilder.Entity<FrameSpecs>()
                 .HasOne(f => f.Shape)
                 .WithMany(s => s.FrameSpecs)
-                .HasForeignKey(f => f.ShapeId);
+                .HasForeignKey(f => f.ShapeId)
+                .HasConstraintName("FK_FRAMESPECS_SHAPE");
             modelBuilder.Entity<FrameSpecs>()
                 .HasOne(f => f.RimStyle)
                 .WithMany(r => r.FrameSpecs)
-                .HasForeignKey(f => f.RimStyleId);
+                .HasForeignKey(f => f.RimStyleId)
+                .HasConstraintName("FK_FRAMESPECS_RIMSTYLE");
             modelBuilder.Entity<FrameSpecs>()
                 .Property(f => f.WeightG)
                 .HasPrecision(18, 2);
@@ -155,7 +158,12 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<ProductVariant>()
                 .HasOne(v => v.Color)
                 .WithMany(c => c.Variants)
-                .HasForeignKey(v => v.ColorId);
+                .HasForeignKey(v => v.ColorId)
+                .HasConstraintName("FK_PRODVAR_COLOR");
+            modelBuilder.Entity<ProductVariant>()
+                .HasIndex(v => v.ProductId);
+            modelBuilder.Entity<ProductVariant>()
+                .HasIndex(v => v.ColorId);
             modelBuilder.Entity<ProductVariant>()
                 .HasIndex(v => v.ProductId);
             modelBuilder.Entity<ProductVariant>()
@@ -194,10 +202,12 @@ namespace SmartEyewearStore.Data
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_VARIANT_IMAGE_VARIANT");
             modelBuilder.Entity<VariantImage>()
-                .HasIndex(i => i.VariantId);
+                .HasIndex(i => i.VariantId)
+                .HasDatabaseName("IX_VARIMG_VARID");
             modelBuilder.Entity<VariantImage>()
                 .HasIndex(i => new { i.VariantId, i.SortOrder })
-                .IsUnique();
+                .IsUnique()
+                .HasDatabaseName("IX_VARIMG_VARID_SORT");
 
             modelBuilder.Entity<VariantPrice>()
                 .HasKey(p => p.PriceId);

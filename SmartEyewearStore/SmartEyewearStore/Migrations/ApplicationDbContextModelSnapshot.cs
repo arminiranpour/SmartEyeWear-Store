@@ -470,11 +470,11 @@ namespace SmartEyewearStore.Migrations
                         .HasName("PK_VARIANTIMAGES");
 
                     b.HasIndex("VariantId")
-                        .HasDatabaseName("IX_VARIANTIMAGES_VARIANTID");
+                        .HasDatabaseName("IX_VARIMG_VARID");
 
                     b.HasIndex("VariantId", "SortOrder")
                         .IsUnique()
-                        .HasDatabaseName("IX_VARIANTIMAGES_VARIANTID_SORTORDER");
+                        .HasDatabaseName("IX_VARIMG_VARID_SORT");
 
                     b.ToTable("VARIANT_IMAGE", "DBS311_252NAA12");
                 });
@@ -728,7 +728,7 @@ namespace SmartEyewearStore.Migrations
                     b.HasOne("SmartEyewearStore.Models.Catalog.Material", "Material")
                         .WithMany("FrameSpecs")
                         .HasForeignKey("MaterialId")
-                        .HasConstraintName("FK_FRAMESPECS_MATERIALS_MATERIALID");
+                        .HasConstraintName("FK_FRAMESPECS_MATERIAL");
 
                     b.HasOne("SmartEyewearStore.Models.Catalog.Product", "Product")
                         .WithOne("FrameSpecs")
@@ -740,12 +740,12 @@ namespace SmartEyewearStore.Migrations
                     b.HasOne("SmartEyewearStore.Models.Catalog.RimStyle", "RimStyle")
                         .WithMany("FrameSpecs")
                         .HasForeignKey("RimStyleId")
-                        .HasConstraintName("FK_FRAMESPECS_RIMSTYLES_RIMSTYLEID");
+                        .HasConstraintName("FK_FRAMESPECS_RIMSTYLE");
 
                     b.HasOne("SmartEyewearStore.Models.Catalog.Shape", "Shape")
                         .WithMany("FrameSpecs")
                         .HasForeignKey("ShapeId")
-                        .HasConstraintName("FK_FRAMESPECS_SHAPES_SHAPEID");
+                        .HasConstraintName("FK_FRAMESPECS_SHAPE");
 
                     b.Navigation("Material");
 
@@ -813,7 +813,7 @@ namespace SmartEyewearStore.Migrations
                     b.HasOne("SmartEyewearStore.Models.Catalog.Color", "Color")
                         .WithMany("Variants")
                         .HasForeignKey("ColorId")
-                        .HasConstraintName("FK_PRODUCTVARIANTS_COLORS_COLORID");
+                        .HasConstraintName("FK_PRODVAR_COLOR");
 
                     b.HasOne("SmartEyewearStore.Models.Catalog.Product", "Product")
                         .WithMany("Variants")
