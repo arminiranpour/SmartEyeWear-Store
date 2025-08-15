@@ -1,96 +1,125 @@
-﻿@model SmartEyewearStore.Models.ShopViewModel
+﻿@model SmartEyewearStore.ViewModels.CatalogPageVM
 @{
     ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="shop-page">
-    <div class="container">
-        <form method="get" asp-action="Shop" class="filter-form">
-            <div class="row">
-                <!-- Brand Filter -->
-                <div class="col-md-3">
-                    <label for="BrandId">Brand</label>
-                    <select asp-for="BrandId" asp-items="Model.BrandItems" class="form-control">
-                        <option value="">All Brands</option>
-                    </select>
-                </div>
+<section id="shop" class="container mx-auto flex">
+    <form id="filters-form" method="get" class="w-1/4 pr-4">
+        <a href="@Url.Action("Index","Shop")">Clear all</a>
 
-                <!-- Size Filter -->
-                <div class="col-md-3">
-                    <label for="SizeId">Size</label>
-                    <select asp-for="SizeId" asp-items="Model.SizeItems" class="form-control">
-                        <option value="">All Sizes</option>
-                    </select>
-                </div>
+        <h3>Search</h3>
+        <input type="text" name="Search" value="@Model.Filters.Search" />
 
-                <!-- Shape Filter -->
-                <div class="col-md-3">
-                    <label for="ShapeId">Shape</label>
-                    <select asp-for="ShapeId" asp-items="Model.ShapeItems" class="form-control">
-                        <option value="">All Shapes</option>
-                    </select>
-                </div>
+        <h3>Brands</h3>
+        @foreach(var b in Model.Filters.Brands){
+            <label><input type="checkbox" name="BrandIds" value="@b.Id" @(b.Selected?"checked":null) /> @b.Label</label><br />
+        }
+        <h3>Shapes</h3>
+        @foreach(var s in Model.Filters.Shapes){
+            <label><input type="checkbox" name="ShapeIds" value="@s.Id" @(s.Selected?"checked":null) /> @s.Label</label><br />
+        }
+        <h3>Colors</h3>
+        @foreach(var c in Model.Filters.Colors){
+            <label><input type="checkbox" name="ColorIds" value="@c.Id" @(c.Selected?"checked":null) /> @c.Label</label><br />
+        }
+        <h3>Materials</h3>
+        @foreach(var m in Model.Filters.Materials){
+            <label><input type="checkbox" name="MaterialIds" value="@m.Id" @(m.Selected?"checked":null) /> @m.Label</label><br />
+        }
+        <h3>Rim Styles</h3>
+        @foreach(var r in Model.Filters.RimStyles){
+            <label><input type="checkbox" name="RimStyleIds" value="@r.Id" @(r.Selected?"checked":null) /> @r.Label</label><br />
+        }
+        <h3>Features</h3>
+        @foreach(var f in Model.Filters.Features){
+            <label><input type="checkbox" name="FeatureIds" value="@f.Id" @(f.Selected?"checked":null) /> @f.Label</label><br />
+        }
+        <h3>Sizes</h3>
+        @foreach(var f in Model.Filters.SizesOptions){
+            <label><input type="checkbox" name="Sizes" value="@f.Label" @(f.Selected?"checked":null) /> @f.Label</label><br />
+        }
 
-                <!-- Color Filter -->
-                <div class="col-md-3">
-                    <label for="ColorId">Color</label>
-                    <select asp-for="ColorId" asp-items="Model.ColorItems" class="form-control">
-                        <option value="">All Colors</option>
-                    </select>
-                </div>
+        <h3>Price</h3>
+        <input type="number" step="0.01" name="PriceMin" value="@Model.Filters.PriceMin" placeholder="@Model.Filters.PriceMinAvailable" />
+        <input type="number" step="0.01" name="PriceMax" value="@Model.Filters.PriceMax" placeholder="@Model.Filters.PriceMaxAvailable" />
 
-                <!-- Material Filter -->
-                <div class="col-md-3">
-                    <label for="MaterialId">Material</label>
-                    <select asp-for="MaterialId" asp-items="Model.MaterialItems" class="form-control">
-                        <option value="">All Materials</option>
-                    </select>
-                </div>
+        <input type="hidden" name="Sort" value="@Model.Filters.Sort" />
+        <input type="hidden" name="Page" value="1" />
+        <input type="hidden" name="PageSize" value="@Model.Filters.PageSize" />
+        <button type="submit">Apply</button>
+    </form>
 
-                <!-- Rim Filter -->
-                <div class="col-md-3">
-                    <label for="RimStyleId">Rim Style</label>
-                    <select asp-for="RimStyleId" asp-items="Model.RimItems" class="form-control">
-                        <option value="">All Rim Styles</option>
-                    </select>
-                </div>
+    <div class="w-3/4">
+        <div class="flex justify-between mb-4">
+            <span>@Model.TotalItems results</span>
+            <form method="get">
+                @foreach(var b in Model.Filters.BrandIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="BrandIds" value="@b" />
+                }
+                @foreach(var s in Model.Filters.ShapeIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="ShapeIds" value="@s" />
+                }
+                @foreach(var c in Model.Filters.ColorIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="ColorIds" value="@c" />
+                }
+                @foreach(var m in Model.Filters.MaterialIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="MaterialIds" value="@m" />
+                }
+                @foreach(var r in Model.Filters.RimStyleIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="RimStyleIds" value="@r" />
+                }
+                @foreach(var f in Model.Filters.FeatureIds ?? Array.Empty<int>()){
+                    <input type="hidden" name="FeatureIds" value="@f" />
+                }
+                @foreach(var sz in Model.Filters.Sizes ?? Array.Empty<string>()){
+                    <input type="hidden" name="Sizes" value="@sz" />
+                }
+                <input type="hidden" name="PriceMin" value="@Model.Filters.PriceMin" />
+                <input type="hidden" name="PriceMax" value="@Model.Filters.PriceMax" />
+                <input type="hidden" name="Search" value="@Model.Filters.Search" />
+                <input type="hidden" name="Page" value="@Model.Filters.Page" />
+                <input type="hidden" name="PageSize" value="@Model.Filters.PageSize" />
+                <select name="Sort" onchange="this.form.submit()">
+                    <option value="" @(Model.Filters.Sort==null?"selected":null)>Default</option>
+                    <option value="price_asc" @(Model.Filters.Sort=="price_asc"?"selected":null)>Price: Low to High</option>
+                    <option value="price_desc" @(Model.Filters.Sort=="price_desc"?"selected":null)>Price: High to Low</option>
+                    <option value="newest" @(Model.Filters.Sort=="newest"?"selected":null)>Newest</option>
+                </select>
+            </form>
+        </div>
 
-                <!-- Price Filter -->
-                <div class="col-md-3">
-                    <label for="PriceRangeId">Price Range</label>
-                    <select asp-for="PriceRangeId" asp-items="Model.PriceRangeItems" class="form-control">
-                        <option value="">All Prices</option>
-                    </select>
-                </div>
-
-                <!-- Extra Feature Filter -->
-                <div class="col-md-3">
-                    <label for="FeatureId">Feature</label>
-                    <select asp-for="FeatureId" asp-items="Model.FeatureItems" class="form-control">
-                        <option value="">All Features</option>
-                    </select>
-                </div>
-
-                <div class="col-md-12 mt-3">
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                </div>
-            </div>
-        </form>
-
-        <div class="row mt-4">
-            @foreach (var product in Model.Products)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" />
-                        <div class="card-body">
-                            <h5 class="card-title">@product.Name</h5>
-                            <p class="card-text">@product.Price.ToString("C")</p>
-                            <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-outline-primary">View</a>
-                        </div>
+        @if(Model.Items.Any()){
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach(var item in Model.Items){
+                <div class="bg-white p-4 rounded-lg shadow">
+                    @if(!string.IsNullOrEmpty(item.PrimaryImageUrl)){
+                        <img src="@item.PrimaryImageUrl" alt="@item.Name" class="w-full object-cover mb-4 rounded-lg" />
+                    }
+                    <a href="/product/@item.Slug" class="text-lg font-semibold mb-2">@item.Name</a>
+                    @if(!string.IsNullOrEmpty(item.BrandName)){
+                        <p class="my-2">@item.BrandName</p>
+                    }
+                    <div class="flex items-center mb-4">
+                        <span class="text-lg font-bold text-gray-900">$@item.MinPrice.ToString("0.00")</span>
                     </div>
                 </div>
             }
-        </div>
+            </div>
+            <div class="flex justify-center mt-8">
+                <ul class="inline-flex space-x-2">
+                @for(int i=1;i<=Model.TotalPages;i++){
+                    <li>
+                        <a href="@Url.Action("Index", new { Page = i, PageSize = Model.Filters.PageSize, Sort = Model.Filters.Sort, BrandIds = Model.Filters.BrandIds, ShapeIds = Model.Filters.ShapeIds, ColorIds = Model.Filters.ColorIds, MaterialIds = Model.Filters.MaterialIds, RimStyleIds = Model.Filters.RimStyleIds, FeatureIds = Model.Filters.FeatureIds, Sizes = Model.Filters.Sizes, PriceMin = Model.Filters.PriceMin, PriceMax = Model.Filters.PriceMax, Search = Model.Filters.Search })" class="@(i==Model.Page?"font-bold":"")">@i</a>
+                    </li>
+                }
+                </ul>
+            </div>
+        } else {
+            <div>
+                <p>No results found.</p>
+                <a href="@Url.Action("Index","Shop")">Reset filters</a>
+            </div>
+        }
     </div>
 </section>
