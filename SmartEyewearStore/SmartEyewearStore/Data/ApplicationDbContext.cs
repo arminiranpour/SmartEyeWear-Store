@@ -144,6 +144,9 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<ProductVariant>()
                  .HasKey(v => v.VariantId);
             modelBuilder.Entity<ProductVariant>()
+                .Property(v => v.Fit)
+                .HasColumnType("NUMBER(1)");
+            modelBuilder.Entity<ProductVariant>()
             .Property(v => v.IsDefault)
                .IsRequired()
                .HasConversion(new BoolToZeroOneConverter<int?>())

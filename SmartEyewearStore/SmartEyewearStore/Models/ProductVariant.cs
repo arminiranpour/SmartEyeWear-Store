@@ -8,6 +8,7 @@ namespace SmartEyewearStore.Models.Catalog
         public int ProductId { get; set; }
         public int? ColorId { get; set; }
         public string? SizeLabel { get; set; }
+        public int? Fit { get; set; }
         public string? Sku { get; set; }
         public bool? IsDefault { get; set; }
 
