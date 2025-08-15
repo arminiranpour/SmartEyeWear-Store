@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\store\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\shopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\shopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\selectoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\selectoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -179,6 +183,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ShopViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ShopViewModel.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ShopViewModel.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ShopViewModel.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Models\\ShopViewModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAkwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T14:23:50.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SelectOption.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SelectOption.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\SelectOption.cs",
@@ -191,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ProductCardVM.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductCardVM.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ProductCardVM.cs",
@@ -204,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CatalogPageVM.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\CatalogPageVM.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\CatalogPageVM.cs",
@@ -217,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CatalogFiltersVM.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\CatalogFiltersVM.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\CatalogFiltersVM.cs",
@@ -230,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ShopController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\ShopController.cs",
@@ -243,7 +260,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "Shop.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Shop.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Shop.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T18:04:20.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
@@ -256,20 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Shop.cshtml",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Shop.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Shop.cshtml*",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Store\\Shop.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-01T18:04:20.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Product.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Product.cs",
@@ -281,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ProductVariant.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductVariant.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ProductVariant.cs",
@@ -293,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "VariantInventory.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\VariantInventory.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\VariantInventory.cs",
@@ -305,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "HybridRecommendationService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\HybridRecommendationService.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\HybridRecommendationService.cs",
@@ -317,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CollaborativeFilteringService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\CollaborativeFilteringService.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\CollaborativeFilteringService.cs",
@@ -329,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "InteractionService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\InteractionService.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\InteractionService.cs",
@@ -341,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "StoreController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\StoreController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\StoreController.cs",
@@ -354,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ContentBasedService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Services\\ContentBasedService.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Services\\ContentBasedService.cs",
@@ -366,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "InteractionController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\InteractionController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\InteractionController.cs",
@@ -378,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "GetHybridRecommendations.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Recommendation\\GetHybridRecommendations.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Recommendation\\GetHybridRecommendations.cshtml",
@@ -390,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Index.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
@@ -402,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Index.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Store\\Index.cshtml",
@@ -414,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "VariantRecommendation.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\VariantRecommendation.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\VariantRecommendation.cs",
@@ -426,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "UserInteraction.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\UserInteraction.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\UserInteraction.cs",
@@ -438,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "InteractionRequest.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\InteractionRequest.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\InteractionRequest.cs",
@@ -450,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RecommendationController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\RecommendationController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\RecommendationController.cs",
@@ -462,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "RatingSummary.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\RatingSummary.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\RatingSummary.cs",
@@ -474,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "VariantPrice.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\VariantPrice.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\VariantPrice.cs",
@@ -486,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "VariantImage.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\VariantImage.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\VariantImage.cs",
@@ -498,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "VariantDimensions.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\VariantDimensions.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\VariantDimensions.cs",
@@ -510,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Tag.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Tag.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Tag.cs",
@@ -522,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Color.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Color.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Color.cs",
@@ -534,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Shape.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Shape.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Shape.cs",
@@ -546,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "RimStyle.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\RimStyle.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\RimStyle.cs",
@@ -558,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ProductTag.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductTag.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ProductTag.cs",
@@ -570,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ProductFeature.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductFeature.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ProductFeature.cs",
@@ -582,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Material.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Material.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Material.cs",
@@ -594,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "FrameSpecs.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\FrameSpecs.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\FrameSpecs.cs",
@@ -606,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "Feature.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Feature.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Feature.cs",
@@ -618,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Brand.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\Brand.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\Brand.cs",
@@ -630,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "Product.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Product.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Store\\Product.cshtml",
@@ -642,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Program.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Program.cs",
@@ -654,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Layout.cshtml",
@@ -666,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
