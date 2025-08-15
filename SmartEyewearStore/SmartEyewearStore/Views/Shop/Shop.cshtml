@@ -1,0 +1,128 @@
+@using Microsoft.AspNetCore.WebUtilities
+@using System.Linq
+@model SmartEyewearStore.ViewModels.CatalogPageVM
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var query = Context.Request.Query.ToDictionary(k => k.Key, v => v.Value.ToString());
+}
+<div class="flex flex-col md:flex-row">
+    <div class="w-full md:w-1/4 p-4">
+        <form method="get">
+            <input type="text" name="Search" value="@Model.Filters.Search" placeholder="Search" class="border p-1 mb-2 w-full" />
+            <div>
+                <h3>Brands</h3>
+                @foreach (var b in Model.Filters.Brands ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="BrandIds" value="@b.Id" @(b.Selected?"checked":null) /> @b.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Shapes</h3>
+                @foreach (var s in Model.Filters.Shapes ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="ShapeIds" value="@s.Id" @(s.Selected?"checked":null) /> @s.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Colors</h3>
+                @foreach (var c in Model.Filters.Colors ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="ColorIds" value="@c.Id" @(c.Selected?"checked":null) /> @c.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Materials</h3>
+                @foreach (var m in Model.Filters.Materials ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="MaterialIds" value="@m.Id" @(m.Selected?"checked":null) /> @m.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Rim Styles</h3>
+                @foreach (var r in Model.Filters.RimStyles ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="RimStyleIds" value="@r.Id" @(r.Selected?"checked":null) /> @r.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Features</h3>
+                @foreach (var f in Model.Filters.Features ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="FeatureIds" value="@f.Id" @(f.Selected?"checked":null) /> @f.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Sizes</h3>
+                @foreach (var s in Model.Filters.SizesOptions ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="Sizes" value="@s.Label" @(s.Selected?"checked":null) /> @s.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Fit</h3>
+                @foreach (var f in Model.Filters.FitOptions ?? Enumerable.Empty<SmartEyewearStore.ViewModels.SelectOption>())
+                {
+                    <label><input type="checkbox" name="Fit" value="@f.Id" @(f.Selected?"checked":null) /> @f.Label</label><br />
+                }
+            </div>
+            <div>
+                <h3>Price</h3>
+                <input type="number" step="0.01" name="PriceMin" value="@Model.Filters.PriceMin" min="@Model.Filters.PriceMinAvailable" max="@Model.Filters.PriceMaxAvailable" class="border p-1 w-full mb-1" />
+                <input type="number" step="0.01" name="PriceMax" value="@Model.Filters.PriceMax" min="@Model.Filters.PriceMinAvailable" max="@Model.Filters.PriceMaxAvailable" class="border p-1 w-full" />
+            </div>
+            <div class="mt-2">
+                <label>Sort
+                    <select name="Sort" class="border p-1">
+                        <option value="" @(Model.Filters.Sort==null?"selected":null)>Default</option>
+                        <option value="price_asc" @(Model.Filters.Sort=="price_asc"?"selected":null)>Price Low-High</option>
+                        <option value="price_desc" @(Model.Filters.Sort=="price_desc"?"selected":null)>Price High-Low</option>
+                        <option value="newest" @(Model.Filters.Sort=="newest"?"selected":null)>Newest</option>
+                    </select>
+                </label>
+            </div>
+            <input type="hidden" name="PageSize" value="@Model.PageSize" />
+            <div class="mt-4">
+                <button type="submit" class="px-4 py-2 bg-primary text-white rounded">Apply</button>
+                <a href="/Shop" class="ml-2 text-sm">Clear all</a>
+            </div>
+        </form>
+    </div>
+    <div class="w-full md:w-3/4 p-4">
+        <div class="mb-2">@Model.TotalItems results</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach (var item in Model.Items)
+            {
+                <div class="bg-white p-4 rounded shadow">
+                    @if(!string.IsNullOrEmpty(item.PrimaryImageUrl))
+                    {
+                        <img src="@item.PrimaryImageUrl" alt="@item.Name" class="mb-2" />
+                    }
+                    <a href="/Product/@item.Slug" class="font-semibold">@item.Name</a><br />
+                    <span>@item.BrandName</span><br />
+                    <span>@item.MinPrice.ToString("C")</span>
+                </div>
+            }
+        </div>
+        <div class="mt-4">
+            @{
+                var qs = new Dictionary<string, string>(query);
+                qs.Remove("Page");
+                qs["PageSize"] = Model.PageSize.ToString();
+            }
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                qs["Page"] = i.ToString();
+                var url = QueryHelpers.AddQueryString(Url.Action("Index"), qs);
+                if (i == Model.Page)
+                {
+                    <span class="px-2 font-bold">@i</span>
+                }
+                else
+                {
+                    <a class="px-2" href="@url">@i</a>
+                }
+            }
+        </div>
+    </div>
+</div>
