@@ -105,8 +105,8 @@ namespace SmartEyewearStore.Controllers
             var activePrices = _db.VariantPrices
                 .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
                 .Select(p => (decimal)(p.SalePriceCents ?? p.BasePriceCents) / 100m);
-            filters.PriceMinAvailable = activePrices.Any() ? await activePrices.MinAsync() : 0;
-            filters.PriceMaxAvailable = activePrices.Any() ? await activePrices.MaxAsync() : 0;
+            filters.PriceMinAvailable = await activePrices.OrderBy(p => p).FirstOrDefaultAsync();
+            filters.PriceMaxAvailable = await activePrices.OrderByDescending(p => p).FirstOrDefaultAsync();
 
             var query = _db.ProductVariants
                 .Include(v => v.Product).ThenInclude(p => p.Brand)
