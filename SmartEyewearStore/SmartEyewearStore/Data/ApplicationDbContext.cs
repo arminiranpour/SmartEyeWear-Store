@@ -35,14 +35,7 @@ namespace SmartEyewearStore.Data
         public DbSet<RatingSummary> RatingSummaries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // 
-            modelBuilder.Entity<Product>()
-                .Property(p => p.IsActive)
-                .HasConversion(
-                    v => v.HasValue && v.Value ? 1 : 0, // Nullable<bool> to int
-                    v => v == 1                        // int to bool
-                );
+        {       
             // Glasses price precision
             modelBuilder.Entity<UserInteraction>()
                 .HasOne(ui => ui.Variant)
@@ -106,7 +99,7 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<Product>()
                  .Property(p => p.IsActive)
                  .IsRequired()
-                 .HasConversion(new BoolToZeroOneConverter<int?>())
+                 .HasConversion(new BoolToZeroOneConverter<int>())
                  .HasColumnType("NUMBER(1)")
                  .HasDefaultValueSql("1");
             modelBuilder.Entity<Product>()
@@ -153,7 +146,7 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<ProductVariant>()
             .Property(v => v.IsDefault)
                .IsRequired()
-               .HasConversion(new BoolToZeroOneConverter<int?>())
+               .HasConversion(new BoolToZeroOneConverter<int>())
                .HasColumnType("NUMBER(1)")
                .HasDefaultValueSql("0");
             modelBuilder.Entity<ProductVariant>()

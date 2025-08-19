@@ -12,8 +12,8 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250819220809_fixed-db")]
-    partial class fixeddb
+    [Migration("20250819222020_zero")]
+    partial class zero
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
