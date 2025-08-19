@@ -115,6 +115,10 @@ namespace SmartEyewearStore.Controllers
                 .Include(v => v.Images)
                 .Include(v => v.Prices)
                 .Where(v => v.Product.IsActive ?? false)
+                // Filter variants to those with an active price so later projections
+                // don't need to evaluate "ActivePrice != null", which Oracle fails to
+                // translate when casting ints to booleans.
+                .Where(v => v.Prices.Any(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now)))
                 .AsQueryable();
 
             if (filters.BrandIds?.Any() == true)
@@ -141,12 +145,11 @@ namespace SmartEyewearStore.Controllers
                 .Select(v => new
                 {
                     Variant = v,
-                    ActivePrice = v.Prices.Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
-                        .OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
+                    ActivePrice = v.Prices
+                        .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now)).OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
                         .FirstOrDefault(),
                     PrimaryImage = v.Images.OrderBy(i => i.SortOrder).FirstOrDefault()
-                })
-                .Where(x => x.ActivePrice != null);
+                });
 
             if (filters.PriceMin.HasValue)
             {

@@ -36,6 +36,13 @@ namespace SmartEyewearStore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // 
+            modelBuilder.Entity<Product>()
+                .Property(p => p.IsActive)
+                .HasConversion(
+                    v => v.HasValue && v.Value ? 1 : 0, // Nullable<bool> to int
+                    v => v == 1                        // int to bool
+                );
             // Glasses price precision
             modelBuilder.Entity<UserInteraction>()
                 .HasOne(ui => ui.Variant)
