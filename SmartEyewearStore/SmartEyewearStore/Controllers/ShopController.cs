@@ -33,30 +33,66 @@ namespace SmartEyewearStore.Controllers
 
             var now = DateTime.UtcNow;
 
-            filters.Brands = await _db.Brands
-                .OrderBy(b => b.Name)
-                .Select(b => new SelectOption { Id = b.BrandId, Label = b.Name, Selected = filters.BrandIds != null && filters.BrandIds.Contains(b.BrandId) })
-                .ToListAsync();
-            filters.Shapes = await _db.Shapes
-                .OrderBy(s => s.Name)
-                .Select(s => new SelectOption { Id = s.ShapeId, Label = s.Name, Selected = filters.ShapeIds != null && filters.ShapeIds.Contains(s.ShapeId) })
-                .ToListAsync();
-            filters.Colors = await _db.Colors
-                .OrderBy(c => c.Name)
-                .Select(c => new SelectOption { Id = c.ColorId, Label = c.Name, Selected = filters.ColorIds != null && filters.ColorIds.Contains(c.ColorId) })
-                .ToListAsync();
-            filters.Materials = await _db.Materials
-                .OrderBy(m => m.Name)
-                .Select(m => new SelectOption { Id = m.MaterialId, Label = m.Name, Selected = filters.MaterialIds != null && filters.MaterialIds.Contains(m.MaterialId) })
-                .ToListAsync();
-            filters.RimStyles = await _db.RimStyles
-                .OrderBy(r => r.Name)
-                .Select(r => new SelectOption { Id = r.RimStyleId, Label = r.Name, Selected = filters.RimStyleIds != null && filters.RimStyleIds.Contains(r.RimStyleId) })
-                .ToListAsync();
-            filters.Features = await _db.Features
-                .OrderBy(f => f.Label)
-                .Select(f => new SelectOption { Id = f.FeatureId, Label = f.Label, Selected = filters.FeatureIds != null && filters.FeatureIds.Contains(f.FeatureId) })
-                .ToListAsync();
+            filters.Brands = (await _db.Brands
+        .OrderBy(b => b.Name)
+        .ToListAsync())
+    .Select(b => new SelectOption
+    {
+        Id = b.BrandId,
+        Label = b.Name,
+        Selected = filters.BrandIds != null && filters.BrandIds.Contains(b.BrandId)
+    })
+    .ToList();
+            filters.Shapes = (await _db.Shapes
+                    .OrderBy(s => s.Name)
+                    .ToListAsync())
+                .Select(s => new SelectOption
+                {
+                    Id = s.ShapeId,
+                    Label = s.Name,
+                    Selected = filters.ShapeIds != null && filters.ShapeIds.Contains(s.ShapeId)
+                })
+                .ToList();
+            filters.Colors = (await _db.Colors
+                    .OrderBy(c => c.Name)
+                    .ToListAsync())
+                .Select(c => new SelectOption
+                {
+                    Id = c.ColorId,
+                    Label = c.Name,
+                    Selected = filters.ColorIds != null && filters.ColorIds.Contains(c.ColorId)
+                })
+                .ToList();
+            filters.Materials = (await _db.Materials
+                    .OrderBy(m => m.Name)
+                    .ToListAsync())
+                .Select(m => new SelectOption
+                {
+                    Id = m.MaterialId,
+                    Label = m.Name,
+                    Selected = filters.MaterialIds != null && filters.MaterialIds.Contains(m.MaterialId)
+                })
+                .ToList();
+            filters.RimStyles = (await _db.RimStyles
+                    .OrderBy(r => r.Name)
+                    .ToListAsync())
+                .Select(r => new SelectOption
+                {
+                    Id = r.RimStyleId,
+                    Label = r.Name,
+                    Selected = filters.RimStyleIds != null && filters.RimStyleIds.Contains(r.RimStyleId)
+                })
+                .ToList();
+            filters.Features = (await _db.Features
+                    .OrderBy(f => f.Label)
+                    .ToListAsync())
+                .Select(f => new SelectOption
+                {
+                    Id = f.FeatureId,
+                    Label = f.Label,
+                    Selected = filters.FeatureIds != null && filters.FeatureIds.Contains(f.FeatureId)
+                })
+                .ToList();
 
             var sizeLabels = await _db.ProductVariants
                 .Select(v => v.SizeLabel)
