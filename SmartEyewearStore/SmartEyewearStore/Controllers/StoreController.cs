@@ -36,7 +36,6 @@ namespace SmartEyewearStore.Controllers
 
         public IActionResult Shop()
         {
-            return View();
             // The Shop view requires a CatalogPageVM model. Redirect to the
             // dedicated Shop controller which constructs that model and
             // renders the Shop view appropriately.

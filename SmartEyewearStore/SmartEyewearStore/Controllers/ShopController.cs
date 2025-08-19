@@ -180,7 +180,11 @@ namespace SmartEyewearStore.Controllers
                 TotalPages = (int)Math.Ceiling(totalItems / (double)filters.PageSize)
             };
 
-            return View("Shop", vm);
+            // Render the Shop view that lives under the Store views folder.
+            // Without specifying the full path the view engine would look in
+            // Views/Shop/Shop.cshtml which doesn't exist and would cause a
+            // runtime error.
+            return View("~/Views/Store/Shop.cshtml", vm);
         }
     }
 }

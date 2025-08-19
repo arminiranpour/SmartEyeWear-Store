@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\store\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\store\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\store\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\store\\shop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\shopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -190,8 +190,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\SelectOption.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T13:51:45.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:51:45.322Z"
             },
             {
               "$type": "Document",
@@ -203,8 +202,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\ProductCardVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T13:51:23.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:51:23.543Z"
             },
             {
               "$type": "Document",
@@ -216,8 +214,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\CatalogPageVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T13:51:02.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:51:02.061Z"
             },
             {
               "$type": "Document",
@@ -229,25 +226,24 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\CatalogFiltersVM.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAqwCAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T13:50:25.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:50:25.381Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ShopController.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\ShopController.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\ShopController.cs",
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\ShopController.cs",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAYwLkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAYwLoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T13:39:14.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Shop.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Store\\Shop.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
@@ -255,8 +251,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-01T18:04:20.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-01T18:04:20.259Z"
             },
             {
               "$type": "Document",
@@ -266,7 +261,7 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\StoreController.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\StoreController.cs",
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAkwCoAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvyUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-01T18:09:09.965Z",
               "EditorCaption": ""
@@ -281,8 +276,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\ShopViewModel.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAkwCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T14:23:50.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T14:23:50.951Z"
             },
             {
               "$type": "Document",
@@ -294,8 +288,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAIAAAAAAAAAAAAAkwJYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T00:43:14.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T00:43:14.434Z"
             },
             {
               "$type": "Document",
@@ -391,7 +384,8 @@
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\InteractionController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T01:18:02.536Z"
+              "WhenOpened": "2025-08-12T01:18:02.536Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -475,7 +469,8 @@
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\RecommendationController.cs",
               "ViewState": "AgIAAAABAAAAAAAAAAAkwP8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T01:18:59.5Z"
+              "WhenOpened": "2025-08-12T01:18:59.5Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -667,7 +662,8 @@
               "RelativeToolTip": "SmartEyewearStore\\Program.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAAwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T19:03:24.099Z"
+              "WhenOpened": "2025-08-01T19:03:24.099Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -691,7 +687,8 @@
               "RelativeToolTip": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAOQAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-01T16:52:39.256Z"
+              "WhenOpened": "2025-08-01T16:52:39.256Z",
+              "EditorCaption": ""
             }
           ]
         }
