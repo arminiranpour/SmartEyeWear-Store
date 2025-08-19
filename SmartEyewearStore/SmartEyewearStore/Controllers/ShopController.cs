@@ -114,7 +114,7 @@ namespace SmartEyewearStore.Controllers
                 .Include(v => v.Color)
                 .Include(v => v.Images)
                 .Include(v => v.Prices)
-                .Where(v => v.Product.IsActive == true)
+                .Where(v => v.Product.IsActive ?? false)
                 .AsQueryable();
 
             if (filters.BrandIds?.Any() == true)
@@ -158,6 +158,13 @@ namespace SmartEyewearStore.Controllers
                 var max = filters.PriceMax.Value;
                 queryWithPrice = queryWithPrice.Where(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m <= max);
             }
+            // Count the number of distinct products that match the filters.
+            // Using a simplified query avoids complex projections that can cause
+            // Oracle to attempt invalid boolean casts during SQL generation.
+            var totalItems = await queryWithPrice
+                .Select(x => x.Variant.ProductId)
+                .Distinct()
+                .CountAsync();
 
             var grouped = queryWithPrice
                 .GroupBy(x => x.Variant.Product)
@@ -171,8 +178,6 @@ namespace SmartEyewearStore.Controllers
                     Colors = g.Select(x => x.Variant.Color != null ? x.Variant.Color.Name : null).Distinct(),
                     Sizes = g.Select(x => x.Variant.SizeLabel).Where(s => s != null).Distinct()
                 });
-
-            var totalItems = await grouped.CountAsync();
 
             switch (filters.Sort)
             {
