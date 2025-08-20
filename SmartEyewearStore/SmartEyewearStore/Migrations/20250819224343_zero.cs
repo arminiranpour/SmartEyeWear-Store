@@ -141,7 +141,7 @@ namespace SmartEyewearStore.Migrations
                     BRANDID = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     DESCRIPTION = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     SOURCEURL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    ISACTIVE = table.Column<int>(type: "NUMBER(1)", nullable: false, defaultValueSql: "1"),
+                    ISACTIVE = table.Column<int>(type: "NUMBER(1)", nullable: false),
                     CREATEDAT = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false, defaultValueSql: "SYSTIMESTAMP"),
                     UPDATEDAT = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true)
                 },
@@ -302,7 +302,7 @@ namespace SmartEyewearStore.Migrations
                     COLORID = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     SIZELABEL = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     SKU = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    ISDEFAULT = table.Column<int>(type: "NUMBER(1)", nullable: false, defaultValueSql: "0")
+                    ISDEFAULT = table.Column<int>(type: "NUMBER(1)", nullable: false)
                 },
                 constraints: table =>
                 {

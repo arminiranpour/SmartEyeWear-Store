@@ -97,11 +97,10 @@ namespace SmartEyewearStore.Data
                 .HasIndex(p => p.Slug)
                 .IsUnique();
             modelBuilder.Entity<Product>()
-                 .Property(p => p.IsActive)
-                 .IsRequired()
-                 .HasConversion(new BoolToZeroOneConverter<int>())
-                 .HasColumnType("NUMBER(1)")
-                 .HasDefaultValueSql("1");
+             .Property(p => p.IsActive)
+             .IsRequired()
+             .HasConversion(new BoolToZeroOneConverter<int>())
+             .HasColumnType("NUMBER(1)");
             modelBuilder.Entity<Product>()
                 .Property(p => p.CreatedAt)
                 .HasDefaultValueSql("SYSTIMESTAMP");
@@ -147,8 +146,7 @@ namespace SmartEyewearStore.Data
             .Property(v => v.IsDefault)
                .IsRequired()
                .HasConversion(new BoolToZeroOneConverter<int>())
-               .HasColumnType("NUMBER(1)")
-               .HasDefaultValueSql("0");
+               .HasColumnType("NUMBER(1)");
             modelBuilder.Entity<ProductVariant>()
                 .HasOne(v => v.Product)
                 .WithMany(p => p.Variants)
