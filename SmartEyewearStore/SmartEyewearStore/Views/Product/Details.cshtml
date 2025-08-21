@@ -1,0 +1,110 @@
+﻿@model SmartEyewearStore.Models.ProductDetailsViewModel
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+@section Head {
+    @if (ViewData["Canonical"] != null)
+    {
+        <link rel="canonical" href="@ViewData["Canonical"]" />
+    }
+}
+
+<section id="product-info">
+    <div class="container mx-auto">
+        <div class="py-6">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <div class="w-full lg:w-1/2">
+                    <div class="grid gap-4">
+                        @{
+                            var selected = Model.Variants.First(v => v.VariantId == Model.SelectedVariantId);
+                            var mainImage = selected.Images.LastOrDefault();
+                        }
+                        <div id="main-image-container" class="w-full h-80 max-w-full overflow-hidden rounded-lg flex items-center justify-center bg-gray-100">
+                            <img id="main-image" class="h-full w-full object-contain rounded-lg" src="@mainImage?.Url" alt="@mainImage?.Alt" />
+                        </div>
+                        <div class="grid grid-cols-5 gap-4">
+                            @foreach (var img in selected.Images)
+                            {
+                                <div class="h-20 w-full overflow-hidden rounded-lg flex items-center justify-center bg-gray-100">
+                                    <img onclick="changeImage(this)" data-full="@img.Url" src="@img.Url" class="h-full w-full object-contain rounded-lg cursor-pointer" alt="@img.Alt" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 flex flex-col justify-between">
+                    <div class="pb-8 border-b border-gray-line">
+                        <h1 class="text-3xl font-bold mb-4">@Model.Name @selected.ColorName Eyeglasses</h1>
+                        <div class="text-2xl font-semibold mb-8">
+                            @if (selected.Price?.IsOnSale ?? false)
+                            {
+                                var sale = selected.Price.SalePriceCents!.Value / 100M;
+                                var basePrice = selected.Price.BasePriceCents / 100M;
+                                <span class="text-red-600">@selected.Price.Currency @sale</span>
+                                <span class="line-through ml-2 text-gray-500">@selected.Price.Currency @basePrice</span>
+                            }
+                            else if (selected.Price != null)
+                            {
+                                var basePrice = selected.Price.BasePriceCents / 100M;
+                                <span>@selected.Price.Currency @basePrice</span>
+                            }
+                            else
+                            {
+                                <span>Price unavailable</span>
+                            }
+                        </div>
+                        <div class="mb-4">
+                            Size: @selected.SizeLabel
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            @foreach (var v in Model.Variants)
+                            {
+                                var cls = v.VariantId == Model.SelectedVariantId ? "border-primary" : "border-gray-line";
+                                <a href="@Url.Action("Details", "Product", new { slug = Model.Slug, variantId = v.VariantId })" class="p-2 border rounded @cls">@v.ColorName</a>
+                            }
+                        </div>
+                        <a href="#" class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full">Select Lenses</a>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold mb-2">Product Description</h3>
+                        <p>@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mx-auto">
+        <div class="py-12">
+            <div class="mt-10">
+                <div class="flex space-x-4" role="tablist">
+                    <button id="features-tab" role="tab" aria-controls="features-content" aria-selected="true" class="tab active">Features & Size</button>
+                    <button id="description-tab" role="tab" aria-controls="description-content" aria-selected="false" class="tab">Description</button>
+                </div>
+                <div class="mt-8">
+                    <div id="features-content" role="tabpanel" aria-labelledby="features-tab" class="tab-content">
+                        <ul class="list-disc pl-5">
+                            @foreach (var f in Model.Features)
+                            {
+                                <li>@f</li>
+                            }
+                        </ul>
+                    </div>
+                    <div id="description-content" role="tabpanel" aria-labelledby="description-tab" class="tab-content hidden">
+                        <p>@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function changeImage(img) {
+        var main = document.getElementById('main-image');
+        main.src = img.getAttribute('data-full');
+    }
+</script>

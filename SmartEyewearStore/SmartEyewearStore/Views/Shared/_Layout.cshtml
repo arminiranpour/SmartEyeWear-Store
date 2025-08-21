@@ -18,10 +18,11 @@
     <link rel="stylesheet" href="~/node_modules/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="~/assets/css/custom.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    
-   
 
 
+
+
+    @RenderSection("Head", required: false)
 </head>
 <body>
     @await Html.PartialAsync("_Header")
