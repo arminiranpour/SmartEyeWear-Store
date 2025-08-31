@@ -205,13 +205,26 @@ namespace SmartEyewearStore.Controllers
                     (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m <= max);
             }
 
-            // Group to products
-            var grouped = queryWithPrice
-                .GroupBy(x => x.Variant.Product)
-                .Select(g => new
+    // Group variants by product fields instead of the entity itself. Grouping by the
+            // entire Product entity caused incorrect SQL translation with Oracle which
+            // resulted in an empty result set. Grouping by scalar fields ensures proper
+            // translation and returns the expected products.
+                var grouped = queryWithPrice
+                    .GroupBy(x => new
+                    {
+                        x.Variant.Product.ProductId,
+                        x.Variant.Product.Slug,
+                        x.Variant.Product.Name,
+                        BrandName = x.Variant.Product.Brand != null ? x.Variant.Product.Brand.Name : null,
+                        x.Variant.Product.CreatedAt
+                    }).Select(g => new
                 {
-                    Product = g.Key,
-                    MinPrice = g.Min(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m),
+                        g.Key.ProductId,
+                        g.Key.Slug,
+                        g.Key.Name,
+                        g.Key.BrandName,
+                        g.Key.CreatedAt,
+                        MinPrice = g.Min(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m),
                     PrimaryImage = g.OrderBy(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m)
                         .Select(x => x.PrimaryImage != null ? x.PrimaryImage.Url : null)
                         .FirstOrDefault(),
@@ -233,10 +246,10 @@ namespace SmartEyewearStore.Controllers
                     grouped = grouped.OrderByDescending(g => g.MinPrice);
                     break;
                 case "newest":
-                    grouped = grouped.OrderByDescending(g => g.Product.CreatedAt);
+                    grouped = grouped.OrderByDescending(g => g.CreatedAt);
                     break;
                 default:
-                    grouped = grouped.OrderBy(g => g.Product.Name);
+                    grouped = grouped.OrderBy(g => g.Name);
                     break;
             }
 
@@ -246,10 +259,10 @@ namespace SmartEyewearStore.Controllers
                 .Take(filters.PageSize)
                 .Select(g => new ProductCardVM
                 {
-                    ProductId = g.Product.ProductId,
-                    Slug = g.Product.Slug,
-                    Name = g.Product.Name,
-                    BrandName = g.Product.Brand != null ? g.Product.Brand.Name : null,
+                    ProductId = g.ProductId,
+                    Slug = g.Slug,
+                    Name = g.Name,
+                    BrandName = g.BrandName,
                     MinPrice = g.MinPrice,
                     PrimaryImageUrl = g.PrimaryImage,
                     Colors = g.Colors,
