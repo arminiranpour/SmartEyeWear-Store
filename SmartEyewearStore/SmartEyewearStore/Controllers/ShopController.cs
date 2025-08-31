@@ -215,7 +215,9 @@ namespace SmartEyewearStore.Controllers
                     PrimaryImage = g.OrderBy(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m)
                         .Select(x => x.PrimaryImage != null ? x.PrimaryImage.Url : null)
                         .FirstOrDefault(),
-                    Colors = g.Select(x => x.Variant.Color != null ? x.Variant.Color.Name : null).Distinct(),
+                    Colors = g.Where(x => x.Variant.Color != null)
+                        .Select(x => x.Variant.Color!.Name!)
+                        .Distinct(),
                     Sizes = g.Select(x => x.Variant.SizeLabel).Where(s => s != null).Distinct()
                 });
 
@@ -250,7 +252,7 @@ namespace SmartEyewearStore.Controllers
                     BrandName = g.Product.Brand != null ? g.Product.Brand.Name : null,
                     MinPrice = g.MinPrice,
                     PrimaryImageUrl = g.PrimaryImage,
-                    Colors = g.Colors.Where(c => c != null)!,
+                    Colors = g.Colors,
                     SizeLabel = g.Sizes.FirstOrDefault()
                 })
                 .ToListAsync();
