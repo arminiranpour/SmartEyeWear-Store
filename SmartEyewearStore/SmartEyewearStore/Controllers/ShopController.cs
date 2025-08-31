@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +25,7 @@ namespace SmartEyewearStore.Controllers
             filters.Page = Math.Max(filters.Page, 1);
             if (filters.PageSize <= 0) filters.PageSize = DefaultPageSize;
             filters.PageSize = Math.Clamp(filters.PageSize, 1, MaxPageSize);
+
             if (filters.PriceMin.HasValue && filters.PriceMax.HasValue && filters.PriceMin > filters.PriceMax)
             {
                 var tmp = filters.PriceMin; filters.PriceMin = filters.PriceMax; filters.PriceMax = tmp;
@@ -33,142 +34,129 @@ namespace SmartEyewearStore.Controllers
 
             var now = DateTime.UtcNow;
 
-            filters.Brands = (await _db.Brands
-        .OrderBy(b => b.Name)
-        .ToListAsync())
-    .Select(b => new SelectOption
-    {
-        Id = b.BrandId,
-        Label = b.Name,
-        Selected = filters.BrandIds != null && filters.BrandIds.Contains(b.BrandId)
-    })
-    .ToList();
-            filters.Shapes = (await _db.Shapes
-                    .OrderBy(s => s.Name)
-                    .ToListAsync())
-                .Select(s => new SelectOption
-                {
-                    Id = s.ShapeId,
-                    Label = s.Name,
-                    Selected = filters.ShapeIds != null && filters.ShapeIds.Contains(s.ShapeId)
-                })
-                .ToList();
-            filters.Colors = (await _db.Colors
-                    .OrderBy(c => c.Name)
-                    .ToListAsync())
-                .Select(c => new SelectOption
-                {
-                    Id = c.ColorId,
-                    Label = c.Name,
-                    Selected = filters.ColorIds != null && filters.ColorIds.Contains(c.ColorId)
-                })
-                .ToList();
-            filters.Materials = (await _db.Materials
-                    .OrderBy(m => m.Name)
-                    .ToListAsync())
-                .Select(m => new SelectOption
-                {
-                    Id = m.MaterialId,
-                    Label = m.Name,
-                    Selected = filters.MaterialIds != null && filters.MaterialIds.Contains(m.MaterialId)
-                })
-                .ToList();
-            filters.RimStyles = (await _db.RimStyles
-                    .OrderBy(r => r.Name)
-                    .ToListAsync())
-                .Select(r => new SelectOption
-                {
-                    Id = r.RimStyleId,
-                    Label = r.Name,
-                    Selected = filters.RimStyleIds != null && filters.RimStyleIds.Contains(r.RimStyleId)
-                })
-                .ToList();
-            filters.Features = (await _db.Features
-                    .OrderBy(f => f.Label)
-                    .ToListAsync())
-                .Select(f => new SelectOption
-                {
-                    Id = f.FeatureId,
-                    Label = f.Label,
-                    Selected = filters.FeatureIds != null && filters.FeatureIds.Contains(f.FeatureId)
-                })
-                .ToList();
+            // Build filter option lists
+            filters.Brands = await _db.Brands
+                .OrderBy(b => b.Name)
+                .Select(b => new SelectOption { Id = b.BrandId, Label = b.Name, Selected = filters.BrandIds != null && filters.BrandIds.Contains(b.BrandId) })
+                .ToListAsync();
 
+            filters.Shapes = await _db.Shapes
+                .OrderBy(s => s.Name)
+                .Select(s => new SelectOption { Id = s.ShapeId, Label = s.Name, Selected = filters.ShapeIds != null && filters.ShapeIds.Contains(s.ShapeId) })
+                .ToListAsync();
+
+            filters.Colors = await _db.Colors
+                .OrderBy(c => c.Name)
+                .Select(c => new SelectOption { Id = c.ColorId, Label = c.Name, Selected = filters.ColorIds != null && filters.ColorIds.Contains(c.ColorId) })
+                .ToListAsync();
+
+            filters.Materials = await _db.Materials
+                .OrderBy(m => m.Name)
+                .Select(m => new SelectOption { Id = m.MaterialId, Label = m.Name, Selected = filters.MaterialIds != null && filters.MaterialIds.Contains(m.MaterialId) })
+                .ToListAsync();
+
+            filters.RimStyles = await _db.RimStyles
+                .OrderBy(r => r.Name)
+                .Select(r => new SelectOption { Id = r.RimStyleId, Label = r.Name, Selected = filters.RimStyleIds != null && filters.RimStyleIds.Contains(r.RimStyleId) })
+                .ToListAsync();
+
+            filters.Features = await _db.Features
+                .OrderBy(f => f.Label)
+                .Select(f => new SelectOption { Id = f.FeatureId, Label = f.Label, Selected = filters.FeatureIds != null && filters.FeatureIds.Contains(f.FeatureId) })
+                .ToListAsync();
+
+            // Sizes
             var sizeLabels = await _db.ProductVariants
                 .Select(v => v.SizeLabel)
                 .Where(s => s != null && s != "")
                 .Distinct()
                 .OrderBy(s => s)
                 .ToListAsync();
-            filters.SizesOptions = sizeLabels.Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) }).ToList();
+            filters.SizesOptions = sizeLabels
+                .Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) })
+                .ToList();
 
+            // Price bounds available
             var activePrices = _db.VariantPrices
                 .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
                 .Select(p => (decimal)(p.SalePriceCents ?? p.BasePriceCents) / 100m);
-            filters.PriceMinAvailable = await activePrices.OrderBy(p => p).FirstOrDefaultAsync();
-            filters.PriceMaxAvailable = await activePrices.OrderByDescending(p => p).FirstOrDefaultAsync();
 
+            filters.PriceMinAvailable = activePrices.Any() ? await activePrices.MinAsync() : 0;
+            filters.PriceMaxAvailable = activePrices.Any() ? await activePrices.MaxAsync() : 0;
+
+            // Base product-variant query (no IsActive check)
             var query = _db.ProductVariants
                 .Include(v => v.Product).ThenInclude(p => p.Brand)
                 .Include(v => v.Product).ThenInclude(p => p.FrameSpecs)
                 .Include(v => v.Color)
                 .Include(v => v.Images)
                 .Include(v => v.Prices)
-                .Where(v => v.Product.IsActive == true)
-                // Filter variants to those with an active price so later projections
-                // don't need to evaluate "ActivePrice != null", which Oracle fails to
-                // translate when casting ints to booleans.
-                .Where(v => v.Prices.Any(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now)))
                 .AsQueryable();
 
+            // Apply filters
             if (filters.BrandIds?.Any() == true)
                 query = query.Where(v => v.Product.BrandId != null && filters.BrandIds.Contains(v.Product.BrandId.Value));
+
             if (filters.ShapeIds?.Any() == true)
-                query = query.Where(v => v.Product.FrameSpecs != null && v.Product.FrameSpecs.ShapeId != null && filters.ShapeIds.Contains(v.Product.FrameSpecs.ShapeId.Value));
+                query = query.Where(v => v.Product.FrameSpecs != null
+                    && v.Product.FrameSpecs.ShapeId != null
+                    && filters.ShapeIds.Contains(v.Product.FrameSpecs.ShapeId.Value));
+
             if (filters.ColorIds?.Any() == true)
                 query = query.Where(v => v.ColorId != null && filters.ColorIds.Contains(v.ColorId.Value));
+
             if (filters.MaterialIds?.Any() == true)
-                query = query.Where(v => v.Product.FrameSpecs != null && v.Product.FrameSpecs.MaterialId != null && filters.MaterialIds.Contains(v.Product.FrameSpecs.MaterialId.Value));
+                query = query.Where(v => v.Product.FrameSpecs != null
+                    && v.Product.FrameSpecs.MaterialId != null
+                    && filters.MaterialIds.Contains(v.Product.FrameSpecs.MaterialId.Value));
+
             if (filters.RimStyleIds?.Any() == true)
-                query = query.Where(v => v.Product.FrameSpecs != null && v.Product.FrameSpecs.RimStyleId != null && filters.RimStyleIds.Contains(v.Product.FrameSpecs.RimStyleId.Value));
+                query = query.Where(v => v.Product.FrameSpecs != null
+                    && v.Product.FrameSpecs.RimStyleId != null
+                    && filters.RimStyleIds.Contains(v.Product.FrameSpecs.RimStyleId.Value));
+
             if (filters.Sizes?.Any() == true)
                 query = query.Where(v => v.SizeLabel != null && filters.Sizes.Contains(v.SizeLabel));
+
             if (filters.FeatureIds?.Any() == true)
                 query = query.Where(v => v.Product.ProductFeatures.Any(pf => filters.FeatureIds.Contains(pf.FeatureId)));
+
             if (!string.IsNullOrEmpty(filters.Search))
             {
                 var searchLower = filters.Search.ToLower();
-                query = query.Where(v => v.Product.Name.ToLower().Contains(searchLower) || v.Product.Slug.ToLower().Contains(searchLower));
+                query = query.Where(v =>
+                    v.Product.Name.ToLower().Contains(searchLower) ||
+                    v.Product.Slug.ToLower().Contains(searchLower));
             }
 
+            // Attach active price & primary image
             var queryWithPrice = query
                 .Select(v => new
                 {
                     Variant = v,
                     ActivePrice = v.Prices
-                        .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now)).OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
+                        .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
+                        .OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
                         .FirstOrDefault(),
                     PrimaryImage = v.Images.OrderBy(i => i.SortOrder).FirstOrDefault()
-                });
+                })
+                .Where(x => x.ActivePrice != null);
 
+            // Price range filtering
             if (filters.PriceMin.HasValue)
             {
                 var min = filters.PriceMin.Value;
-                queryWithPrice = queryWithPrice.Where(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m >= min);
+                queryWithPrice = queryWithPrice.Where(x =>
+                    (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m >= min);
             }
             if (filters.PriceMax.HasValue)
             {
                 var max = filters.PriceMax.Value;
-                queryWithPrice = queryWithPrice.Where(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m <= max);
+                queryWithPrice = queryWithPrice.Where(x =>
+                    (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m <= max);
             }
-            // Count the number of distinct products that match the filters.
-            // Using a simplified query avoids complex projections that can cause
-            // Oracle to attempt invalid boolean casts during SQL generation.
-            var totalItems = await queryWithPrice
-                .Select(x => x.Variant.ProductId)
-                .Distinct()
-                .CountAsync();
 
+            // Group to products
             var grouped = queryWithPrice
                 .GroupBy(x => x.Variant.Product)
                 .Select(g => new
@@ -182,6 +170,9 @@ namespace SmartEyewearStore.Controllers
                     Sizes = g.Select(x => x.Variant.SizeLabel).Where(s => s != null).Distinct()
                 });
 
+            var totalItems = await grouped.CountAsync();
+
+            // Sorting
             switch (filters.Sort)
             {
                 case "price_asc":
@@ -198,6 +189,7 @@ namespace SmartEyewearStore.Controllers
                     break;
             }
 
+            // Pagination & projection
             var items = await grouped
                 .Skip((filters.Page - 1) * filters.PageSize)
                 .Take(filters.PageSize)
@@ -224,10 +216,7 @@ namespace SmartEyewearStore.Controllers
                 TotalPages = (int)Math.Ceiling(totalItems / (double)filters.PageSize)
             };
 
-            // Render the Shop view that lives under the Store views folder.
-            // Without specifying the full path the view engine would look in
-            // Views/Shop/Shop.cshtml which doesn't exist and would cause a
-            // runtime error.
+            // Render the Shop view under Views/Store
             return View("~/Views/Store/Shop.cshtml", vm);
         }
     }
