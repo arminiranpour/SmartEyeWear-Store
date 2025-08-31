@@ -124,13 +124,14 @@ namespace SmartEyewearStore.Controllers
                 .Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) })
                 .ToList();
 
-            // Price bounds available
-            var activePrices = _db.VariantPrices
+            // Price bounds available - materialize to avoid translating boolean to SQL
+            var activePricesList = await _db.VariantPrices
                 .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
-                .Select(p => (decimal)(p.SalePriceCents ?? p.BasePriceCents) / 100m);
+                .Select(p => (decimal)(p.SalePriceCents ?? p.BasePriceCents) / 100m)
+                .ToListAsync();
 
-            filters.PriceMinAvailable = activePrices.Any() ? await activePrices.MinAsync() : 0;
-            filters.PriceMaxAvailable = activePrices.Any() ? await activePrices.MaxAsync() : 0;
+            filters.PriceMinAvailable = activePricesList.Any() ? activePricesList.Min() : 0;
+            filters.PriceMaxAvailable = activePricesList.Any() ? activePricesList.Max() : 0;
 
             // Base product-variant query (no IsActive check)
             var query = _db.ProductVariants
