@@ -193,10 +193,8 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("DESCRIPTION");
 
                     b.Property<int>("IsActive")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(1)")
-                        .HasColumnName("ISACTIVE")
-                        .HasDefaultValueSql("1");
+                        .HasColumnName("ISACTIVE");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -281,10 +279,8 @@ namespace SmartEyewearStore.Migrations
                         .HasColumnName("COLORID");
 
                     b.Property<int>("IsDefault")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(1)")
-                        .HasColumnName("ISDEFAULT")
-                        .HasDefaultValueSql("0");
+                        .HasColumnName("ISDEFAULT");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("NUMBER(10)")

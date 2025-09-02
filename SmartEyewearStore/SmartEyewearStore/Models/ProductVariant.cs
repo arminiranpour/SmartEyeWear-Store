@@ -9,7 +9,7 @@ namespace SmartEyewearStore.Models.Catalog
         public int? ColorId { get; set; }
         public string? SizeLabel { get; set; }
         public string? Sku { get; set; }
-        public bool? IsDefault { get; set; }
+        public bool IsDefault { get; set; }
 
         public Product Product { get; set; } = null!;
         public Color? Color { get; set; }

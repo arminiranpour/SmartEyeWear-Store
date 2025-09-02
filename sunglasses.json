@@ -1,0 +1,2687 @@
+{
+ "links": [
+  {
+   "image2": "https://img.ebdcdn.com/product/model/portrait/swd0012_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+   "links": [
+    {
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/swd0011_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/swd0011_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/swd0011_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/swd0011_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/swd0011_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Bosk",
+     "price": "$129",
+     "features": [
+      {
+       "featureName": "Spring Hinges"
+      }
+     ],
+     "color": "Wood Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/brown",
+     "weigthG": "25g",
+     "shapeName": "Rectangle",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Made for all your greatest adventures, Bosk is a full-rim rectangular sunglass frame crafted from mixed wood. This classic style is highlighted by the modern material, perfect for those who like to bring a little bit of nature with them wherever they go. With glossy black temple tips and spring hinges for comfort.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "54",
+     "bridge_width_mm": "21",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl5650_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl5650_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl5650_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl5650_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl5650_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Sergi",
+     "price": "$66",
+     "color": "Black Yellow Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "26g",
+     "shapeName": "Rectangle",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Think outside the box with these Sergi sunglasses. This broad-temples black acetate and wood texture frame is a quirky, winning combination.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "56",
+     "bridge_width_mm": "18",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image6": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "productName": "Graham",
+     "price": "$49",
+     "features": [
+      {
+       "featureName": "Low Nose Bridge"
+      },
+      {
+       "featureName": "Adjustable Nose Pads"
+      },
+      {
+       "featureName": "Lightweight"
+      }
+     ],
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "Lightweight (14g)",
+     "shapeName": "Oval",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/oval",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Hello, the 90s? Is that you? Get the good ol’ days back with Graham, a classic oval-shaped frame with that effortlessly cool nineties vibe (you know the one). The slim black eyewire and sleek metal arms scream vintage, while the adjustable nose pads add extra comfort for a casual, laidback look.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "19",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image6": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "productName": "Graham",
+     "price": "$49",
+     "features": [
+      {
+       "featureName": "Low Nose Bridge"
+      },
+      {
+       "featureName": "Adjustable Nose Pads"
+      },
+      {
+       "featureName": "Lightweight"
+      }
+     ],
+     "color": "Gold Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+     "weigthG": "Lightweight (14g)",
+     "shapeName": "Oval",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/oval",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Get a look at Graham, a retro-inspired oval frame with an effortless and enviable vintage vibe (say that ten times fast). With its slim gold eyewire and sleek metal arms, this quintessential classic design just can't do wrong. Adjustable nose pads add extra comfort for a style that’s fit for any face shape or size.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "19",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spm1236_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spm1236_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spm1236_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Winona",
+     "price": "$49",
+     "features": [
+      {
+       "featureName": "Spring Hinges"
+      }
+     ],
+     "color": "Beige Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/white",
+     "weigthG": "21g",
+     "shapeName": "Oval",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/oval",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Looks like teen spirit. If you saw these oval sunnies and thought of Nirvana frontman Kurt Cobain, then you’re definitely a ‘90s kid (or maybe you just love the era, because let’s be real — who doesn’t?). These rocker-chic shades feature light beige acetate, slim metal arms in silver, and spring hinges for comfort. Part of our Embrace Your Light collection.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spm1234_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spm1234_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spm1234_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spm1234_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Winona",
+     "price": "$49",
+     "features": [
+      {
+       "featureName": "Spring Hinges"
+      }
+     ],
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "21g",
+     "shapeName": "Oval",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/oval",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Oval glasses were everywhere in the ‘90s. Well guess what? They’re back, baby! Winona takes the classic shape and makes it modern with wrap around acetate and slim metal arms in silver. This style could only look cooler paired with an oversized leather blazer — inspired by another famous Winona. Part of our Embrace Your Light collection, with spring hinges for comfort.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spm0363_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spm0363_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spm0363_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spm0363_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Samba",
+     "price": "$26",
+     "features": [
+      {
+       "featureName": "Low Nose Bridge"
+      },
+      {
+       "featureName": "Adjustable Nose Pads"
+      }
+     ],
+     "color": "Mint Frost Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/blue",
+     "weigthG": "20g",
+     "shapeName": "Browline",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/browline",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Samba is seen as the musical and cultural expression of Brazil. These 'Samba' frames are sure to spice up your life too! With these 'mint frost' colored frames, you are sure to stand out. The browline frame is adorned with an accented metal nose bridge and has temple accents for added spice. Though they may not be able to make you dance the Samba, the high-quality plastic makes it durable enough for you to dance the Samba in.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "20",
+     "temple_length_mm": "148"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spm0069_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spm0069_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spm0069_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spm0069_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spm0069_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Limoncello",
+     "price": "$73",
+     "features": [
+      {
+       "featureName": "Low Nose Bridge"
+      },
+      {
+       "featureName": "Adjustable Nose Pads"
+      }
+     ],
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "28g",
+     "shapeName": "Browline",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/browline",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "These Limoncello sunglasses are a fun, playful, bright design. The black temples, bronze detailing, and round lenses make this frame brash and stylish.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "19",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl6087_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl6087_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl6087_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl6087_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl6087_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Jakarta",
+     "price": "$66",
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "19g",
+     "shapeName": "Aviator",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/aviator",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Jakarta is a frame that offers timeless appeal for any occasion, featuring a streamlined aviator design with glossy black acetate. The tinted lenses offer UV protection, while the classic shape is perfect for adding extra style to your everyday look.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "59",
+     "bridge_width_mm": "16",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl6086_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl6086_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl6086_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl6086_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl6086_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Jakarta",
+     "price": "$66",
+     "color": "Tortoise Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+     "weigthG": "19g",
+     "shapeName": "Aviator",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/aviator",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Look first-class this summer with Jakarta. These sophisticated sunglasses have an outsize square shape, double bridge, and a classic acetate tortoise finish.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "59",
+     "bridge_width_mm": "16",
+     "temple_length_mm": "135"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/lusmt00964_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/lusmt00964_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/lusmt00964_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/lusmt00964_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/lusmt00964_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Ray-Ban RB3625 New Aviator",
+     "price": "$202",
+     "features": [
+      {
+       "featureName": "Low Nose Bridge"
+      },
+      {
+       "featureName": "Adjustable Nose Pads"
+      }
+     ],
+     "color": "Legend Gold Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+     "weigthG": "33g",
+     "shapeName": "Aviator",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/aviator",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Relive the glamour of Hollywood’s golden era with these classic Ray-Ban aviator sunglasses. The legendary gold frame and tortoiseshell temple tips will give you a vintage style that works for any occasion, while their adjustable nose pads and quality metal construction will ensure they fit comfortably all day long.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "58",
+     "bridge_width_mm": "14",
+     "temple_length_mm": "135"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9246_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9246_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9246_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9246_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9246_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Euphoria",
+     "price": "$52",
+     "features": [
+      {
+       "featureName": "Spring Hinges"
+      }
+     ],
+     "color": "Purple Striped Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/rainbow",
+     "weigthG": "27g",
+     "shapeName": "Heart",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/heart",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Prepare to be swept away by pure Euphoria with these heart-shaped sunglasses, featuring a colorful rainbow-striped finish that's sure to turn heads. The spring hinges provide a comfortable fit, making these shades perfect for any adventure. Whether you're lounging on the beach or dancing at a music festival, these frames will elevate your style and",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9245_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9245_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9245_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9245_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9245_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Euphoria",
+     "price": "$37",
+     "features": [
+      {
+       "featureName": "Spring Hinges"
+      }
+     ],
+     "color": "Blue Red Rainbow Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/rainbow",
+     "weigthG": "27g",
+     "shapeName": "Heart",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/heart",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Step into a world of pure Euphoria with these heart-shaped sunglasses. With their striped rainbow finish and yellow arms, you’ll be feeling the love wherever you go. These acetate frames are both durable and stylish making them the perfect accessory to complete any outfit. Designed with spring hinges for comfort.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9508_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9508_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9508_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9508_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9508_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Suki Sun",
+     "price": "$59",
+     "color": "Crystal Champagne Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/clear",
+     "weigthG": "23g",
+     "shapeName": "Heart",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/heart",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Equal parts bold and playful, Suki Sun shows off a heart-shaped silhouette for all the nostalgic feels. The large lenses are surrounded by translucent acetate in a peachy shade of champagne pink, the perfect neutral hue for pairing with any outfit.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "16",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9507_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9507_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9507_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9507_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9507_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Suki Sun",
+     "price": "$59",
+     "color": "Tortoise Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+     "weigthG": "23g",
+     "shapeName": "Heart",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/heart",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Wear your heart on your sunglasses with this romantic style statement. Suki Sun shows off large heart-shaped lenses, surrounded by a thick acetate frame with a dark tortoise finish. The result is a playful look with retro roots designed to complement your personal aesthetic.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "16",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9506_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9506_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9506_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9506_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9506_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Suki Sun",
+     "price": "$59",
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "23g",
+     "shapeName": "Heart",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/heart",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Make a heart-shaped statement with Suki Sun, a bold pair of shades that were made to shine. This large silhouette is accentuated by thick black acetate for a dark and glamorous look – perfect for adding a playful, yet mysterious aura to any ensemble.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "55",
+     "bridge_width_mm": "16",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9408_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9408_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9408_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9408_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9408_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Redwood",
+     "price": "$39",
+     "features": [
+      {
+       "featureName": "Eco-Friendly"
+      }
+     ],
+     "color": "Crystal Smoke Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/gray",
+     "weigthG": "17g",
+     "shapeName": "Square",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Redwood is the perfect blend of elegance and sophistication. The timeless square lenses, crystal smoke finish, and bio-based nylon* frame make it a standout piece that will elevate your look with enduring style and durability. *Plastic having 46% bio-based carbon content representing the amount of plant-based carbon in the material compared to fossil-based carbon.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "51",
+     "bridge_width_mm": "19",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "image6": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+     "productName": "Resort",
+     "price": "$66",
+     "color": "Tortoise Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+     "weigthG": "26g",
+     "shapeName": "Square",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Grab your passport and head out of town with Resort, a bold frame made for unexpected adventures. Featuring a throwback square design and classic tortoise acetate construction, this style is perfect for those on the hunt for a cool and edgy look. So pack your bags and don’t forget to bring these stylish sunnies!",
+     "sizeLabel": "Large",
+     "lens_width_mm": "53",
+     "bridge_width_mm": "21",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl9148_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/model/portrait/spl9148_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl9148_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl9148_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image6": "https://img.ebdcdn.com/product/frame/gray/spl9148_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Resort",
+     "price": "$66",
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "26g",
+     "shapeName": "Square",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Whether you’re exploring a new city close to home or traveling abroad, these square frames will add an edgy touch to your style. The bold black acetate is contrasted with yellow tinted lenses for a Y2K meets today look — perfect for those who like to keep up with modern trends that nod to the past.",
+     "sizeLabel": "Large",
+     "lens_width_mm": "53",
+     "bridge_width_mm": "21",
+     "temple_length_mm": "145"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl7799_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spl7799_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl7799_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl7799_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Sun Bardot",
+     "price": "$43",
+     "color": "Floral Tortoise Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+     "weigthG": "16g",
+     "shapeName": "Round",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Switch up your sunnies with something a little more daring. Sun Bardot takes a classic tortoise pattern and brings in pops of purple for a totally new take on an everyday staple. Constructed of acetate, this full-rim round frame provides substantial coverage for the sunniest days, with an extra side of style.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl7292_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spl7292_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl7292_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl7292_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Sun Bardot",
+     "price": "$43",
+     "color": "Ivory Tortoise Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+     "weigthG": "16g",
+     "shapeName": "Round",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "The exclusive Ivory Tortoiseshell finish and aesthetic round lenses make this the one frame you don't want to miss. Large framed eyeglasses like this are perfect for accessorizing your outfit and bringing out your best facial features. The acetate construction and straight, solid nose bridge mean extra durability.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "140"
+    },
+    {
+     "image2": "https://img.ebdcdn.com/product/model/portrait/spl7798_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "links": [
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+       "image2": "https://img.ebdcdn.com/product/model/portrait/smt6330_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+       "image3": "https://img.ebdcdn.com/product/model/portrait/smt6330_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+       "image4": "https://img.ebdcdn.com/product/frame/gray/smt6330_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+       "image5": "https://img.ebdcdn.com/product/frame/gray/smt6330_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+       "image6": "https://img.ebdcdn.com/product/frame/gray/smt6330_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+       "links": [
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/smt6329_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/smt6329_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/smt6329_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/smt6329_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/smt6329_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Guru",
+         "price": "$43",
+         "features": [
+          {
+           "featureName": "Low Nose Bridge"
+          },
+          {
+           "featureName": "Adjustable Nose Pads"
+          }
+         ],
+         "color": "Silver Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/silver",
+         "weigthG": "16g",
+         "shapeName": "Round",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Deflect rays and critics in these vibrant silver Guru sunglasses. Act the fashion guru with the delicate curves and sleek temples of this gorgeous metal frame.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "50",
+         "bridge_width_mm": "23",
+         "temple_length_mm": "140"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl8223_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spl8223_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl8223_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl8223_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Jolie",
+         "price": "$49",
+         "color": "Tortoise Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+         "weigthG": "20g",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "If we could only wear one pair of sunglasses, it would be Jolie. Hear us out: the classic cat-eye shape never goes out of style, and the timeless tortoise acetate goes with literally everything. What more could you ask for? Part of our Embrace Your Light collection, featuring sunglasses inspired by self expression.",
+         "sizeLabel": "Medium",
+         "lens_width_mm": "54",
+         "bridge_width_mm": "17",
+         "temple_length_mm": "140"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl8221_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spl8221_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl8221_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl8221_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Jolie",
+         "price": "$49",
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "20g",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "You can always turn to cat-eye shades to save your style on a sunny day. Whether you’re running late for a lunch date or running errands around town, these sunglasses will make sure you’re looking your best — featuring a classic horn shape, with a black acetate front and ivory tortoise arms. Part of our Embrace Your Light collection.",
+         "sizeLabel": "Medium",
+         "lens_width_mm": "54",
+         "bridge_width_mm": "17",
+         "temple_length_mm": "140"
+        },
+        {
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spm1216_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spm1216_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spm1216_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spm1216_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Santa Cruz",
+         "price": "$49",
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "Lightweight (15g)",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "The cool-girl sunglasses of the summer have arrived, and you’re looking at ‘em. Santa Cruz is a look that was made to be worn by the beach (we can already hear the waves) — featuring a horn shape and all the right angles. This Embrace Your Light collection exclusive is complete with a black acetate finish and silver metal arms.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "56",
+         "bridge_width_mm": "15",
+         "temple_length_mm": "140"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/smt6791_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/smt6791_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/smt6791_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/smt6791_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/smt6791_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Sun Soar",
+         "price": "$43",
+         "features": [
+          {
+           "featureName": "Low Nose Bridge"
+          },
+          {
+           "featureName": "Adjustable Nose Pads"
+          },
+          {
+           "featureName": "Lightweight"
+          }
+         ],
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "Lightweight (11g)",
+         "shapeName": "Geometric",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/geometric",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Reach new heights with Sun Soar. In classy Black, this square sunglasses frame offers a mysterious flair along with its superior UV protection. For added depth, Tortoiseshell temple arms compliment its sleek wire frame. Adjustable nose pads give the wearer added comfort and wearability.",
+         "sizeLabel": "Medium",
+         "lens_width_mm": "49",
+         "bridge_width_mm": "22",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/smt6789_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/smt6789_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/smt6789_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/smt6789_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/smt6789_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Sun Soar",
+         "price": "$43",
+         "features": [
+          {
+           "featureName": "Low Nose Bridge"
+          },
+          {
+           "featureName": "Adjustable Nose Pads"
+          },
+          {
+           "featureName": "Lightweight"
+          }
+         ],
+         "color": "Golden Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+         "weigthG": "Lightweight (11g)",
+         "shapeName": "Geometric",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/geometric",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Reach new heights with Sun Soar. In striking Gold, this geometric sunglasses frame offers a unique and bold fashions statement. A pair of Tortoiseshell temple arms compliment the overall warmth of this design, making it an important homage to retro sunwear history. Adjustable nose pads offer extra comfort and wearability.",
+         "sizeLabel": "Medium",
+         "lens_width_mm": "49",
+         "bridge_width_mm": "21",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/smt6790_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/smt6790_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/smt6790_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/smt6790_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/smt6790_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Sun Soar",
+         "price": "$43",
+         "features": [
+          {
+           "featureName": "Low Nose Bridge"
+          },
+          {
+           "featureName": "Adjustable Nose Pads"
+          },
+          {
+           "featureName": "Lightweight"
+          }
+         ],
+         "color": "Silver Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/silver",
+         "weigthG": "Lightweight (11g)",
+         "shapeName": "Geometric",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/geometric",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Reach new heights with Sun Soar. In Silver, this versatile sunglasses frame offers both superior UV protection and casual flair. Tortoiseshell temple arms complete this unique Square design, while adjustable nose pads give extra comfort and wearability.",
+         "sizeLabel": "Medium",
+         "lens_width_mm": "49",
+         "bridge_width_mm": "22",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/smt7485_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/smt7485_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/smt7485_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/smt7485_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/smt7485_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Wilfred",
+         "price": "$46",
+         "features": [
+          {
+           "featureName": "Low Nose Bridge"
+          },
+          {
+           "featureName": "Adjustable Nose Pads"
+          }
+         ],
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "Lightweight (13g)",
+         "shapeName": "Geometric",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/geometric",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Want to tackle sunglasses at a whole new angle? Wilfred’s geometric lenses are just the thing you need to get some new perspective. This frame’s adjustable nose pads and slim temple metal temples make it the ideal choice for folks that are always on the go.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "51",
+         "bridge_width_mm": "21",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/luspl00979_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/luspl00979_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/luspl00979_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/luspl00979_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/luspl00979_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Ray-Ban RB4105",
+         "price": "$191",
+         "color": "Light Tortoise Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+         "weigthG": "26g",
+         "shapeName": "Wayfarer",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Whether you’re sunbathing on a tropical beach or strolling on a busy city street, these classic Ray-Ban sunglasses are the ideal companion. Featuring a light tortoise square frame and chunky plastic design for the ultimate retro look, they’re sure to look great on any occasion. Complete with silver rivets and a signature logo on the temples for extra impact!",
+         "sizeLabel": "Large",
+         "lens_width_mm": "50",
+         "bridge_width_mm": "22",
+         "temple_length_mm": "140"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/luspl00978_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/model/portrait/luspl00978_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/luspl00978_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/luspl00978_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/luspl00978_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Ray-Ban RB4105",
+         "price": "$191",
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "26g",
+         "shapeName": "Wayfarer",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "When the day turns to dusk and the sun's golden rays begin to fade over your favorite wooden porch swing, bring out your Ray-Ban sunglasses. With dark tinted lenses and a black full-rim frame, you'll enjoy these square shades while you sit back, relax, and bask in the dwindling sunlight of dusk.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "50",
+         "bridge_width_mm": "22",
+         "temple_length_mm": "140"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl8188_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spl8188_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl8188_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl8188_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Cinematic",
+         "price": "$49",
+         "color": "Clear Teal Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/blue",
+         "weigthG": "22g",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "This show-stopping look will make you a star (or at least make everyone think so). Cinematic is a look that’s all about the drama — featuring a rich jewel-toned face front in translucent teal, with a classic horn frame and upturned sunglass lenses. Complete with a slim metal detail and double stud rivets on the temples.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "54",
+         "bridge_width_mm": "18",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl8187_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spl8187_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl8187_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl8187_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Cinematic",
+         "price": "$49",
+         "color": "Ivory Tortoise Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/ivory-tortoise",
+         "weigthG": "22g",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Lights, camera...you know what comes next. Cinematic is a classic horn frame that will have no trouble stealing the spotlight, featuring ivory tortoise acetate with an elegantly speckled finish — so chic. The full-rim acetate construction and horn shape complete the look, with double stud rivets on the temples for added detail.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "54",
+         "bridge_width_mm": "18",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl8186_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image3": "https://img.ebdcdn.com/product/frame/gray/spl8186_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl8186_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl8186_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Cinematic",
+         "price": "$49",
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "22g",
+         "shapeName": "Cat Eye",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Let’s set the scene: It’s a bright and sunny day. The sky is blue, but you’re anything but — that’s because you’re wearing your new sunglasses, Cinematic. These glamorous shades feature a classic horn shape, upturned lenses, and a full-rim acetate construction in black. Complete with double stud rivets on the temples.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "54",
+         "bridge_width_mm": "18",
+         "temple_length_mm": "145"
+        },
+        {
+         "image2": "https://img.ebdcdn.com/product/model/portrait/spl7016_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "links": [
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl8217_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl8217_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl8217_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl8217_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl8217_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Impression",
+           "price": "$43",
+           "features": [
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Tortoise Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+           "weigthG": "37g",
+           "shapeName": "Rectangle",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Don’t worry, you’re not dreaming — these sunglasses actually exist, and they’re even better than you could imagine. Santa Cruz has all the summer vibes, no matter what season. So if you’re looking for year-round style then this extra chunky look is the one for you. Complete with timeless tortoise acetate and spring hinges for comfort. Part of our Embrace Your Light collection.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "53",
+           "bridge_width_mm": "19",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl8214_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl8214_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl8214_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl8214_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl8214_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Impression",
+           "price": "$43",
+           "features": [
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Black Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+           "weigthG": "37g",
+           "shapeName": "Rectangle",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Oh. My. Style. Santa Cruz is the ultimate summer look — bold statement, we know. What with its thick acetate and chunky rectangular shape, these sunglasses will make you do more than shine. You'll steal the show, babe! In classic black (because of course), and complete with spring hinges for comfort. P.S. they’re part of our Embrace Your Light collection.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "53",
+           "bridge_width_mm": "19",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl8343_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/frame/gray/spl8343_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl8343_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl8343_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Paradise",
+           "price": "$23",
+           "color": "Burgundy Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/red",
+           "weigthG": "17g",
+           "shapeName": "Cat Eye",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Just us, or does this translucent burgundy finish have you dreaming of black cherry popsicles by the poolside too? Paradise is a look that will have you coming back for more, featuring a full-rim acetate construction and glamorously large square lenses. Part of our Embrace Your Light collection.",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "58",
+           "bridge_width_mm": "16",
+           "temple_length_mm": "140"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl8341_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/frame/gray/spl8341_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl8341_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl8341_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Paradise",
+           "price": "$23",
+           "color": "Black Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+           "weigthG": "17g",
+           "shapeName": "Cat Eye",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Now entering: Paradise — where there’s never a cloud in the sky and the sun can always shine — perfect for wearing stylish shades all day, every day. With glossy black acetate and a glamorous square shape to keep you looking fabulous at all times. Part of our Embrace Your Light collection.",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "58",
+           "bridge_width_mm": "16",
+           "temple_length_mm": "140"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl8342_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/frame/gray/spl8342_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl8342_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl8342_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Paradise",
+           "price": "$23",
+           "color": "Tortoise Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+           "weigthG": "17g",
+           "shapeName": "Cat Eye",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Everyone’s Paradise looks a little different, sunglasses included. Whether you’re pairing this square style with an everyday outfit for some extra flair, or completing your poolside look with the perfect tortoiseshell accessory, these acetate sunnies will have you making statements all summer long. Part of our Embrace Your Light collection.",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "58",
+           "bridge_width_mm": "16",
+           "temple_length_mm": "140"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl7538_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl7538_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl7538_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl7538_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl7538_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Safari",
+           "price": "$43",
+           "color": "Clear Melon Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/orange",
+           "weigthG": "17g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Answer the call (the call of the wild). Get adventurous with Safari and explore the unknowns of your style with a new limited-edition color. The square-shaped shades feature translucent acetate with a clear, melon-colored tint. Eye-catching, but no less comfortable, these airy frames are the perfect companion for all of your summer escapes.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "50",
+           "bridge_width_mm": "21",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl6815_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl6815_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl6815_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl6815_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl6815_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Safari",
+           "price": "$43",
+           "color": "Clear Blue Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/blue",
+           "weigthG": "17g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Safari embodies the spirit of discovery. This Clear Blue frame's unique keyhole nosebridge and bold square lenses break the status-quo of modern sunwear trends.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "50",
+           "bridge_width_mm": "21",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl6813_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl6813_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl6813_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl6813_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl6813_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Safari",
+           "price": "$43",
+           "color": "Tortoise Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+           "weigthG": "17g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Embrace your wild side with Safari. This square frame's bold looks are accentuated by its muted Tortoiseshell patterns and keen square lenses.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "50",
+           "bridge_width_mm": "21",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spl6812_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spl6812_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spl6812_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spl6812_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spl6812_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Safari",
+           "price": "$43",
+           "color": "Dark Tortoise Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+           "weigthG": "17g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Safari embodies the spirit of discovery. This Tortoiseshell frame's unique keyhole nosebridge and bold square lenses break the status-quo of modern sunwear trends.",
+           "sizeLabel": "Medium",
+           "lens_width_mm": "50",
+           "bridge_width_mm": "21",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/smt6688_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/smt6688_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/smt6688_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/smt6688_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/smt6688_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Route 66",
+           "price": "$59",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            },
+            {
+             "featureName": "Adjustable Nose Pads"
+            }
+           ],
+           "color": "Gunmetal Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/silver",
+           "weigthG": "19g",
+           "shapeName": "Aviator",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/aviator",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Route 66 redefines the classic traditions of aviator eyewear... and revamps them into something bolder than ever before. This sleek Gunmetal frame features a double nose bridge, sophisticated temple arms, and adjustable nose pads. This frame is a perfect choice for any sun-packed day.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "58",
+           "bridge_width_mm": "15",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/smt6687_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/smt6687_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/smt6687_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/smt6687_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/smt6687_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Route 66",
+           "price": "$59",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            },
+            {
+             "featureName": "Adjustable Nose Pads"
+            }
+           ],
+           "color": "Golden Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+           "weigthG": "20g",
+           "shapeName": "Aviator",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/aviator",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "This charismatic Gold frame features a sleek double nose bridge, stylized temple arms, and adjustable nose pads — making it a perfect choice for any sun-packed day. Route 66 is an aviator style apart from the rest.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "58",
+           "bridge_width_mm": "15",
+           "temple_length_mm": "145"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spm0979_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/frame/gray/spm0979_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spm0979_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spm0979_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Erica",
+           "price": "$59",
+           "features": [
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Black Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+           "weigthG": "27g",
+           "shapeName": "Square",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Erica is everything you love about statement sunglasses — starting with the bold black face front surrounding slightly oversized square lenses, to the unexpected metal details for a striking two-toned look. And not to mention the spring hinges (the secret to all day, every day comfort). Need we say more?",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "56",
+           "bridge_width_mm": "20",
+           "temple_length_mm": "148"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Erica",
+           "price": "$59",
+           "features": [
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Tortoise Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+           "weigthG": "27g",
+           "shapeName": "Square",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Let your inner starlet shine with Erica — featuring a mixed-material frame made of metal and acetate. A thick tortoiseshell face front surrounds generous square lenses for a bold look, while the gold metal details add even more intrigue. Designed with spring hinges, so you can enjoy a comfortable fit all day, every day.",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "56",
+           "bridge_width_mm": "20",
+           "temple_length_mm": "148"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Erica",
+           "price": "$59",
+           "features": [
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Coffee Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/brown",
+           "weigthG": "27g",
+           "shapeName": "Square",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/square",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "These striking sunglasses will be sure to turn heads, featuring a bold brown face front, matching temple tips that extend up the arm, and gold temple details for contrast. Slightly oversized for an ultra glam look, Erica is the frame for anyone looking to make a statement. With spring hinges for added comfort.",
+           "sizeLabel": "X-Large",
+           "lens_width_mm": "56",
+           "bridge_width_mm": "20",
+           "temple_length_mm": "148"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image6": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Disclosure",
+           "price": "$53",
+           "color": "Gold Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+           "weigthG": "Lightweight (12g)",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Classic, glamorous, and everything in between — disclosure is a vintage-inspired metal frame, with round lenses surrounded by lustrous gold eyewire for a timeless look. This retro frame is complete with distinct details like a subtly engraved nose bridge and temples. Designed adjustable nose for a secure and custom fit.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "51",
+           "bridge_width_mm": "20",
+           "temple_length_mm": "142"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image6": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Disclosure",
+           "price": "$53",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            },
+            {
+             "featureName": "Adjustable Nose Pads"
+            },
+            {
+             "featureName": "Lightweight"
+            }
+           ],
+           "color": "Silver Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/silver",
+           "weigthG": "Lightweight (12g)",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "These sunglasses are both classic and glamorous. The gray metal finish and outsized round design mean this stylish frame fits all faces and have you looking your best. The nose bridge and temples have beautifully engraved details that make the look. Adjustable nose pads ensure a perfect fit to these road-trip ready shades. Look as awesome as your favorite star with Disclosure.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "51",
+           "bridge_width_mm": "20",
+           "temple_length_mm": "142"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Lulu",
+           "price": "$43",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            }
+           ],
+           "color": "Floral Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/floral",
+           "weigthG": "16g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Show off your retro style with these floral eyeglasses. The perfect combination of metal and plastic, this frame features a glossy floral plastic frame front and arm tips paired with silver metal temples and nose bridge. Oval shaped lenses complete the look.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "49",
+           "bridge_width_mm": "23",
+           "temple_length_mm": "146"
+          },
+          {
+           "image2": "https://img.ebdcdn.com/product/model/portrait/spm0392_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image3": "https://img.ebdcdn.com/product/model/portrait/spm0392_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image4": "https://img.ebdcdn.com/product/frame/gray/spm0392_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image5": "https://img.ebdcdn.com/product/frame/gray/spm0392_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "image6": "https://img.ebdcdn.com/product/frame/gray/spm0392_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+           "productName": "Lulu",
+           "price": "$43",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            }
+           ],
+           "color": "Black Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+           "weigthG": "16g",
+           "shapeName": "Round",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Show off your retro style with these black eyeglasses. The perfect combination of metal and plastic, this frame features a glossy black plastic frame front and arm tips paired with silver metal temples and nose bridge. Oval shaped lenses complete the look.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "49",
+           "bridge_width_mm": "22",
+           "temple_length_mm": "146"
+          },
+          {
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Crush",
+           "price": "$79",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            },
+            {
+             "featureName": "Adjustable Nose Pads"
+            },
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Lavender Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/purple",
+           "weigthG": "19g",
+           "shapeName": "Cat Eye",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Fun, playful, and fashion-forward, these purple lavender cat eye sunglasses are simply to die for. Spring hinges and a solid full rim acetate and metal build make Crush as functional as they are fashionable. Get your paws on these head-turners to achieve that picture purrfect look.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "53",
+           "bridge_width_mm": "22",
+           "temple_length_mm": "140"
+          },
+          {
+           "links": [
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+            },
+            {
+             "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "productName": "Crush",
+             "price": "$79",
+             "features": [
+              {
+               "featureName": "Low Nose Bridge"
+              },
+              {
+               "featureName": "Adjustable Nose Pads"
+              },
+              {
+               "featureName": "Spring Hinges"
+              }
+             ],
+             "color": "Ivory Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/white",
+             "weigthG": "19g",
+             "shapeName": "Cat Eye",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Inject bold, feminine elegance into your outfit with these Crush sunglasses. Top quality ivory acetate is combined with a gold toned metal bridge and temples to create a design that is both striking and sophisticated. Spring hinges ensure this retro inspired frame is comfortable and long lasting, while the outsize gray lenses are super flattering. Chic round metallic accents complete the look.",
+             "sizeLabel": "Large",
+             "lens_width_mm": "52",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "140"
+            },
+            {
+             "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "productName": "Crush",
+             "price": "$79",
+             "features": [
+              {
+               "featureName": "Low Nose Bridge"
+              },
+              {
+               "featureName": "Adjustable Nose Pads"
+              },
+              {
+               "featureName": "Spring Hinges"
+              }
+             ],
+             "color": "Frosted Blue Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/blue",
+             "weigthG": "19g",
+             "shapeName": "Cat Eye",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Make everyone fall head over heels for you in these Crush sunglasses. Semi-translucent ice blue acetate lens borders mix perfectly with a cool silver toned metal bridge and temples to create a fashionable, eye-catching look. Bold, large gray lenses flatter all faces and give you an instant celebrity style boost, while spring hinges ensure this frame is comfortable and durable.",
+             "sizeLabel": "Large",
+             "lens_width_mm": "52",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "140"
+            },
+            {
+             "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl03166_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl03166_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$249",
+             "color": "Photo Striped Gray Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/multicolor",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Gray, but not boring. These full-rim Wayfarer sunglasses start sleek, then shift into striped gray magic the moment you step outside. Made with light-reactive acetate, they’re part of the Ray-Ban Change collection—designed to keep up with every mood.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/model/portrait/luspl00437_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/model/portrait/luspl00437_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl00437_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image5": "https://img.ebdcdn.com/product/frame/gray/luspl00437_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image6": "https://img.ebdcdn.com/product/frame/gray/luspl00437_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$191",
+             "features": [
+              {
+               "featureName": "High Base Curve Lens"
+              }
+             ],
+             "color": "Tortoise Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "There's no question about it, the Ray-Ban Wayfarer Classics are one of the most iconic styles in the history of sunglasses. Originally designed in 1952, this ubiquitous look transcends time and trends with its sleek square lenses and full-rim frame. Shown in dark tortoise acetate, with the signature logo on the temples.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/luspl03164_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl03164_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl03164_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$249",
+             "color": "Photo Striped Brown Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/striped",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Sunglasses, but make it magic. These full-rim Wayfarer shades from the Ray-Ban Change collection reveal a bold striped pattern outdoors—crafted in acetate that responds to light. Indoors, they're classic brown; outdoors, they're total showstoppers. One frame, two moods.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/luspl03163_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl03163_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl03163_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$249",
+             "color": "Photo Striped Blue Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/striped",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Watch the stripes come alive. These full-rim Wayfarer shades from the Ray-Ban Change collection shift from sleek blue to a bold striped pattern in sunlight—thanks to color-changing acetate powered by photochromic dyes. Style that transforms with you?",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/luspl01040_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl01040_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl01040_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$212",
+             "color": "Shiny Tortoise Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/tortoise",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "It doesn’t get more timeless than a pair of Ray-Ban sunnies. The classic wayfarer will always be in style, with it’s classic square lenses for a shape that looks good on all. The silver rivets on the end pieces complete the tortoise acetate frame, with the iconic logo on the temples.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/luspl03165_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl03165_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl03165_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$249",
+             "color": "Photo Striped Light Blue Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/striped",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Cool just got cooler. These full-rim Wayfarer sunglasses in light blue acetate transform in sunlight, revealing bold striped patterns thanks to Ray-Ban’s color-changing tech. One look indoors, a totally different vibe outdoors. It’s your favorite frame—now with a twist.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/luspl01042_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/luspl01042_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/luspl01042_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Ray-Ban Wayfarer Change",
+             "price": "$212",
+             "color": "Polished Striped Blue Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/striped",
+             "weigthG": "30g",
+             "shapeName": "Wayfarer",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/wayfarer",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Timeless style and the Ray-Ban wayfarer go hand in hand. Designed with classic square lenses for a flattering look that can paired with anything, complete with a striped blue acetate frame for a subtle touch of color. The silver rivets on the end pieces add contrast, with the iconic logo on the temples to top it off.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "50",
+             "bridge_width_mm": "22",
+             "temple_length_mm": "150"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/model/portrait/spm1273_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/model/portrait/spm1273_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spm1273_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image5": "https://img.ebdcdn.com/product/frame/gray/spm1273_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image6": "https://img.ebdcdn.com/product/frame/gray/spm1273_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Nagano",
+             "price": "$83",
+             "features": [
+              {
+               "featureName": "Low Nose Bridge"
+              },
+              {
+               "featureName": "Adjustable Nose Pads"
+              }
+             ],
+             "color": "Clear Gray Silver Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/gray",
+             "weigthG": "17g",
+             "shapeName": "Round",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Have you ever seen a more refined pair of sunglasses? Nagano is a Japanese-inpired look made for minimalist enthusiasts — featuring soft curves, clean lines, and craftsmanship like no other. Designed with clear acetate on the face front and temple tips, silver metal accents, and adjustable nose pads for a custom fit.",
+             "sizeLabel": "X-Large",
+             "lens_width_mm": "52",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "145"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/model/portrait/spl6229_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/spl6229_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spl6229_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image5": "https://img.ebdcdn.com/product/frame/gray/spl6229_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Elena",
+             "price": "$19",
+             "color": "Matte Brown Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/brown",
+             "weigthG": "22g",
+             "shapeName": "Cat Eye",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Inject some feminine fun into your look with Elena. The all-over soft pink finish combined with a modern round style makes these sunglasses cute and stylish.",
+             "sizeLabel": "Large",
+             "lens_width_mm": "54",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "144"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/model/portrait/spl6228_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/model/portrait/spl6228_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spl6228_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image5": "https://img.ebdcdn.com/product/frame/gray/spl6228_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image6": "https://img.ebdcdn.com/product/frame/gray/spl6228_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Elena",
+             "price": "$19",
+             "color": "Matte Navy Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+             "weigthG": "22g",
+             "shapeName": "Cat Eye",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Get a trendy, nautical summer look with Elena. A modern, full-rim square shape and matte navy finish make these sunglasses perfect for business and pleasure.",
+             "sizeLabel": "Large",
+             "lens_width_mm": "54",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "144"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/spl8220_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/spl8220_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spl8220_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Courteney",
+             "price": "$23",
+             "color": "Clear Brown Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/brown",
+             "weigthG": "36g",
+             "shapeName": "Rectangle",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Oh hello, didn’t see you there, - said no one ever to you wearing these shades. Courtney is a frame for those who like to stand out, and what better way to do so than with a pair of statement sunglasses — featuring rectangular lenses surrounded by chunky acetate in chic translucent brown. See more from the Embrace Your Light collection.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "54",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "145"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/model/portrait/spl8218_w0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image3": "https://img.ebdcdn.com/product/frame/gray/spl8218_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spl8218_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image5": "https://img.ebdcdn.com/product/frame/gray/spl8218_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Courteney",
+             "price": "$23",
+             "color": "Burgundy Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/red",
+             "weigthG": "36g",
+             "shapeName": "Rectangle",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Double takes, head turns, compliments — you’ll get ‘em all with Courteney. This stunning frame was made to make you stand out, featuring a chunky acetate frame in a rich shade of burgundy. Part of our Embrace Your Light collection, and complete with rectangular lenses for a classic look.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "54",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "145"
+            },
+            {
+             "image2": "https://img.ebdcdn.com/product/frame/gray/spl8219_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "links": [
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              },
+              {
+              }
+             ],
+             "image3": "https://img.ebdcdn.com/product/frame/gray/spl8219_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "image4": "https://img.ebdcdn.com/product/frame/gray/spl8219_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+             "productName": "Courteney",
+             "price": "$23",
+             "color": "Black Sunglasses",
+             "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+             "weigthG": "36g",
+             "shapeName": "Rectangle",
+             "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+             "rimStyle": "Full-Rim",
+             "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+             "description": "Watch out world, Courteney is here. Our Embrace Your Light collection is all about letting your personal style shine, and these sunglasses do just that. This bold look is all things glamorous — featuring rectangular lenses and a chunky acetate face front in black, with wide arms that show off a chic animal-print pattern.",
+             "sizeLabel": "Medium",
+             "lens_width_mm": "54",
+             "bridge_width_mm": "20",
+             "temple_length_mm": "145"
+            },
+            {
+            }
+           ],
+           "image2": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image3": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image4": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "image5": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+           "productName": "Crush",
+           "price": "$79",
+           "features": [
+            {
+             "featureName": "Low Nose Bridge"
+            },
+            {
+             "featureName": "Adjustable Nose Pads"
+            },
+            {
+             "featureName": "Spring Hinges"
+            }
+           ],
+           "color": "Coral Sunglasses",
+           "color_url": "https://www.eyebuydirect.com/sunglasses/pink",
+           "weigthG": "19g",
+           "shapeName": "Cat Eye",
+           "shapeName_url": "https://www.eyebuydirect.com/sunglasses/horn",
+           "rimStyle": "Full-Rim",
+           "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+           "description": "Fun, playful, and fashion-forward, these pink melon cat eye sunglasses are simply to die for. Spring hinges and a solid full rim acetate and metal build make Crush as functional as they are fashionable. Get your paws on these head-turners to achieve that picture purrfect look.",
+           "sizeLabel": "Large",
+           "lens_width_mm": "52",
+           "bridge_width_mm": "22",
+           "temple_length_mm": "140"
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          },
+          {
+          }
+         ],
+         "image3": "https://img.ebdcdn.com/product/model/portrait/spl7016_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image4": "https://img.ebdcdn.com/product/frame/gray/spl7016_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image5": "https://img.ebdcdn.com/product/frame/gray/spl7016_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "image6": "https://img.ebdcdn.com/product/frame/gray/spl7016_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+         "productName": "Cortez",
+         "price": "$33",
+         "features": [
+          {
+           "featureName": "Lightweight"
+          }
+         ],
+         "color": "Black Sunglasses",
+         "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+         "weigthG": "Lightweight (14g)",
+         "shapeName": "Rectangle",
+         "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+         "rimStyle": "Full-Rim",
+         "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+         "description": "Cortez is a frame with exceptional class. From its sophisticated Black color, bold rectangle lenses, and large stud accents, it's easy to tell that this is a style perfect for any activity. For a masculine design, look no further than this full-rimmed hit.",
+         "sizeLabel": "Large",
+         "lens_width_mm": "57",
+         "bridge_width_mm": "16",
+         "temple_length_mm": "147"
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+       ],
+       "productName": "Guru",
+       "price": "$43",
+       "features": [
+        {
+         "featureName": "Low Nose Bridge"
+        },
+        {
+         "featureName": "Adjustable Nose Pads"
+        }
+       ],
+       "color": "Light Golden Sunglasses",
+       "color_url": "https://www.eyebuydirect.com/sunglasses/gold",
+       "weigthG": "16g",
+       "shapeName": "Round",
+       "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+       "rimStyle": "Full-Rim",
+       "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+       "description": "Unleash your inner style guru with these quirky sunglasses. The light golden metal frame, tortoise detailing and round shape create an on-trend vintage look.",
+       "sizeLabel": "Large",
+       "lens_width_mm": "50",
+       "bridge_width_mm": "23",
+       "temple_length_mm": "140"
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      },
+      {
+      }
+     ],
+     "image3": "https://img.ebdcdn.com/product/frame/gray/spl7798_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image4": "https://img.ebdcdn.com/product/frame/gray/spl7798_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "image5": "https://img.ebdcdn.com/product/frame/gray/spl7798_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+     "productName": "Sun Bardot",
+     "price": "$43",
+     "color": "Black Sunglasses",
+     "color_url": "https://www.eyebuydirect.com/sunglasses/black",
+     "weigthG": "16g",
+     "shapeName": "Round",
+     "shapeName_url": "https://www.eyebuydirect.com/sunglasses/round",
+     "rimStyle": "Full-Rim",
+     "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+     "description": "Need new sunnies? Well, you’re looking at the perfect pair! Sun Bardot is a classic full-rim round frame made from glossy black acetate, giving them that full-on glamourous look. The slim arms balance the silhouette for a style that can’t go wrong — dressed up or down, anytime or anywhere.",
+     "sizeLabel": "Medium",
+     "lens_width_mm": "52",
+     "bridge_width_mm": "17",
+     "temple_length_mm": "140"
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    }
+   ],
+   "image3": "https://img.ebdcdn.com/product/model/portrait/swd0012_m0.jpg?q=85&im=Resize,width=500,height=600,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+   "image4": "https://img.ebdcdn.com/product/frame/gray/swd0012_2.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+   "image5": "https://img.ebdcdn.com/product/frame/gray/swd0012_1.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+   "image6": "https://img.ebdcdn.com/product/frame/gray/swd0012_3.jpg?q=85&im=Resize,width=640,height=320,aspect=fill;UnsharpMask,sigma=1.0,gain=1.0",
+   "productName": "Bosk",
+   "price": "$129",
+   "features": [
+    {
+     "featureName": "Spring Hinges"
+    }
+   ],
+   "color": "Striped Wood Sunglasses",
+   "color_url": "https://www.eyebuydirect.com/sunglasses/brown",
+   "weigthG": "25g",
+   "shapeName": "Rectangle",
+   "shapeName_url": "https://www.eyebuydirect.com/sunglasses/rectangle",
+   "rimStyle": "Full-Rim",
+   "rimStyle_url": "https://www.eyebuydirect.com/sunglasses/full-rim",
+   "description": "Made from mixed wood, Bosk is a full-rim frame with a classic rectangular shape. The striking dark finish highlights the striped grain pattern, a unique look that’s sure to strike up good conversation whether you’re on the trail or taking a stroll in the park. With glossy black temple tips and spring hinges for comfort.",
+   "sizeLabel": "Large",
+   "lens_width_mm": "54",
+   "bridge_width_mm": "21",
+   "temple_length_mm": "145"
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  },
+  {
+  }
+ ]
+}
