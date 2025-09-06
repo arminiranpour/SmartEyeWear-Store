@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\survey\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\survey\\submithybrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\survey\\submithybrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\shared\\_surveylayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_surveylayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\wwwroot\\assets\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SubmitHybrid.cshtml",
+              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-05T19:35:51.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SurveyAnswer.cs",
               "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SurveyAnswer.cs",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\SurveyAnswer.cs",
@@ -42,8 +55,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Models\\SurveyAnswer.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T14:07:38.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-05T14:07:38.744Z"
             },
             {
               "$type": "Document",
@@ -65,22 +77,10 @@
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
               "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Index.cshtml",
               "RelativeToolTip": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
-              "ViewState": "AgIAAPQCAAAAAAAAAAAcwAcDAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAHgDAAAAAAAAAAAAAH4DAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-03T17:36:17.697Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_SurveyLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_SurveyLayout.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_SurveyLayout.cshtml",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_SurveyLayout.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_SurveyLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-03T17:35:47.997Z"
             }
           ]
         }

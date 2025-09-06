@@ -896,11 +896,13 @@
             <!-- Buttons Footer -->
             <div class="sticky bottom-0 pt-6 mt-6 flex justify-between bg-white">
                 <button type="button" class="px-4 py-2 rounded border" x-show="step>1" @@click="prev">Back</button>
-                <div class="ml-auto space-x-4">
-                    <button type="button" x-show="current().skip" class="text-gray-600" @@click="skip">Skip</button>
-                    <button type="button" class="px-4 py-2 rounded bg-primary text-white disabled:opacity-50" :disabled="!isValid(current())" @@click="next" x-text="step===total ? 'View results' : 'Next'"></button>
-                </div>
+                <button type="button"
+                        class="ml-auto px-4 py-2 rounded bg-primary text-white disabled:opacity-50"
+                        :disabled="!isValid(current())"
+                        @@click="next"
+                        x-text="step===total ? 'View results' : 'Next'"></button>
             </div>
+
         </div>
         <!-- Hidden inputs -->
         <input type="hidden" name="Gender" :value="data.Gender">
