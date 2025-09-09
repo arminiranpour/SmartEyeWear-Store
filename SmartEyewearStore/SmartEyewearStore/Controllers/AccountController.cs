@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
+using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 
 namespace SmartEyewearStore.Controllers
 {
@@ -19,6 +21,50 @@ namespace SmartEyewearStore.Controllers
         {
             _context = context;
         }
+
+        private void MergeGuestCartToUser(int userId)
+        {
+            var guestId = HttpContext.Session.GetString("GuestId");
+            if (string.IsNullOrEmpty(guestId)) return;
+
+            // cart مهمان
+            var guestCart = _context.Carts
+                .Include(c => c.Items)
+                .FirstOrDefault(c => c.GuestId == guestId);
+            if (guestCart == null) return;
+
+            // cart کاربر
+            var userCart = _context.Carts
+                .Include(c => c.Items)
+                .FirstOrDefault(c => c.UserId == userId);
+            if (userCart == null)
+            {
+                userCart = new Cart { UserId = userId };
+                _context.Carts.Add(userCart);
+                _context.SaveChanges();
+                _context.Entry(userCart).Collection(c => c.Items).Load();
+            }
+
+            foreach (var gi in guestCart.Items)
+            {
+                var inv = _context.VariantInventories.Find(gi.VariantId);
+                if (inv == null || inv.QtyOnHand <= 0) continue;
+
+                var ui = userCart.Items.FirstOrDefault(x => x.VariantId == gi.VariantId);
+                var targetQty = (ui?.Qty ?? 0) + gi.Qty;
+                if (targetQty > inv.QtyOnHand) targetQty = inv.QtyOnHand;
+
+                if (ui == null)
+                    userCart.Items.Add(new CartItem { VariantId = gi.VariantId, Qty = targetQty });
+                else
+                    ui.Qty = targetQty;
+            }
+
+            _context.Carts.Remove(guestCart);
+            _context.SaveChanges();
+            HttpContext.Session.Remove("GuestId");
+        }
+
 
         [HttpGet]
         public IActionResult Login()
@@ -35,6 +81,8 @@ namespace SmartEyewearStore.Controllers
                 if (user != null)
                 {
                     HttpContext.Session.SetInt32("UserId", user.Id);
+                    MergeGuestCartToUser(user.Id);
+
 
                     var guestId = HttpContext.Session.GetString("GuestId");
                     if (!string.IsNullOrEmpty(guestId))
@@ -113,6 +161,9 @@ namespace SmartEyewearStore.Controllers
                 _context.SaveChanges();
 
                 HttpContext.Session.SetInt32("UserId", user.Id);
+
+                MergeGuestCartToUser(user.Id);
+
 
                 var guestId = HttpContext.Session.GetString("GuestId");
                 if (!string.IsNullOrEmpty(guestId))

@@ -33,6 +33,10 @@ namespace SmartEyewearStore.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<RatingSummary> RatingSummaries { get; set; }
+       
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {       
@@ -279,6 +283,34 @@ namespace SmartEyewearStore.Data
                 .Property(r => r.AvgRating)
                 .HasPrecision(18, 2);
 
+            // === Cart & CartItem ===
+            modelBuilder.Entity<Cart>()
+                .HasKey(c => c.CartId);
+            modelBuilder.Entity<Cart>()
+                .HasMany(c => c.Items)
+                .WithOne(i => i.Cart)
+                .HasForeignKey(i => i.CartId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_CARTITEM_CART");
+            modelBuilder.Entity<Cart>()
+                .HasIndex(c => c.UserId);
+            modelBuilder.Entity<Cart>()
+                .HasIndex(c => c.GuestId);
+
+            modelBuilder.Entity<CartItem>()
+                .HasKey(i => i.CartItemId);
+            modelBuilder.Entity<CartItem>()
+                .HasOne(i => i.Variant)
+                .WithMany()
+                .HasForeignKey(i => i.VariantId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("FK_CARTITEM_VARIANT");
+            modelBuilder.Entity<CartItem>()
+                .HasIndex(i => new { i.CartId, i.VariantId })
+                .IsUnique()
+                .HasDatabaseName("IX_CART_ITEM_UNQ");
+
+
             // Uppercase all table and column names
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {
@@ -332,6 +364,8 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<Tag>().ToTable("TAG", schema: schema);
             modelBuilder.Entity<ProductTag>().ToTable("PRODUCT_TAG", schema: schema);
             modelBuilder.Entity<RatingSummary>().ToTable("RATING_SUMMARY", schema: schema);
+            modelBuilder.Entity<Cart>().ToTable("CART", schema: schema);
+            modelBuilder.Entity<CartItem>().ToTable("CART_ITEM", schema: schema);
 
         }
     }
