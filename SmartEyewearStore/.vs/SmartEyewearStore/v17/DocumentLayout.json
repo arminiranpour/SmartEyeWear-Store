@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\survey\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\survey\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\survey\\submithybrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\survey\\submithybrid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\views\\shared\\_header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\surveyanswer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\padidar\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\models\\productcardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\models\\productcardvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|c:\\users\\asus\\desktop\\smarteyewear-store\\smarteyewearstore\\smarteyewearstore\\wwwroot\\assets\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B7CD662D-2E9E-4C38-94AB-802FC4E5AB81}|SmartEyewearStore\\SmartEyewearStore.csproj|solutionrelative:smarteyewearstore\\wwwroot\\assets\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Footer.cshtml",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Footer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAA4AAAAAAAAAA==",
+              "Title": "SubmitHybrid.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Survey\\SubmitHybrid.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T14:15:11.587Z"
+              "WhenOpened": "2025-09-05T19:35:51.923Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_Header.cshtml",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Shared\\_Header.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T14:10:06.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductCardVM.cs",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductCardVM.cs",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\ProductCardVM.cs",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\ProductCardVM.cs",
-              "RelativeToolTip": "SmartEyewearStore\\Models\\ProductCardVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
+              "Title": "SurveyAnswer.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SurveyAnswer.cs",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Models\\SurveyAnswer.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Models\\SurveyAnswer.cs",
+              "RelativeToolTip": "SmartEyewearStore\\Models\\SurveyAnswer.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T11:33:21.09Z"
+              "WhenOpened": "2025-09-05T14:07:38.744Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "SmartEyewearStore\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAEwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T11:32:15.534Z"
+              "Title": "custom.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\wwwroot\\assets\\css\\custom.css",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\wwwroot\\assets\\css\\custom.css",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\wwwroot\\assets\\css\\custom.css",
+              "RelativeToolTip": "SmartEyewearStore\\wwwroot\\assets\\css\\custom.css",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-03T18:10:51.546Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Index.cshtml",
+              "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Survey\\Index.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Survey\\Index.cshtml",
+              "ViewState": "AgIAAHsDAAAAAAAAAAAAAH4DAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T09:12:59.726Z",
+              "WhenOpened": "2025-09-03T17:36:17.697Z",
               "EditorCaption": ""
             }
           ]
