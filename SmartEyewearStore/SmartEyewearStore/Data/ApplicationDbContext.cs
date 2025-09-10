@@ -13,8 +13,7 @@ namespace SmartEyewearStore.Data
         public DbSet<User> Users { get; set; }
         public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
         public DbSet<UserInteraction> UserInteractions { get; set; }
-
-
+        
         // Catalog tables
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Material> Materials { get; set; }
@@ -36,6 +35,8 @@ namespace SmartEyewearStore.Data
        
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -310,6 +311,39 @@ namespace SmartEyewearStore.Data
                 .IsUnique()
                 .HasDatabaseName("IX_CART_ITEM_UNQ");
 
+            modelBuilder.Entity<Order>()
+            .HasKey(o => o.OrderId);
+            modelBuilder.Entity<Order>()
+                        .HasIndex(o => o.OrderNumber)
+                        .IsUnique();
+            modelBuilder.Entity<Order>()
+                        .HasIndex(o => o.UserId);
+            modelBuilder.Entity<Order>()
+                        .HasIndex(o => o.GuestId);
+            modelBuilder.Entity<Order>()
+                        .Property(o => o.ShipToDifferent)
+                        .IsRequired()
+                        .HasConversion(new BoolToZeroOneConverter<int>())
+                        .HasColumnType("NUMBER(1)");
+            modelBuilder.Entity<Order>()
+                        .HasOne(o => o.Cart)
+                        .WithMany()
+                        .HasForeignKey(o => o.CartId)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_ORDER_CART");
+
+            modelBuilder.Entity<OrderItem>()
+                        .HasKey(oi => oi.OrderItemId);
+            modelBuilder.Entity<OrderItem>()
+                        .HasOne(oi => oi.Order)
+                        .WithMany(o => o.Items)
+                        .HasForeignKey(oi => oi.OrderId)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_ORDERITEM_ORDER");
+
+            modelBuilder.Entity<Cart>()
+                        .HasIndex(c => c.ClosedAt);
+
 
             // Uppercase all table and column names
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
@@ -366,6 +400,8 @@ namespace SmartEyewearStore.Data
             modelBuilder.Entity<RatingSummary>().ToTable("RATING_SUMMARY", schema: schema);
             modelBuilder.Entity<Cart>().ToTable("CART", schema: schema);
             modelBuilder.Entity<CartItem>().ToTable("CART_ITEM", schema: schema);
+            modelBuilder.Entity<Order>().ToTable("ORDERS", schema: schema);
+            modelBuilder.Entity<OrderItem>().ToTable("ORDERITEM", schema: schema);
 
         }
     }

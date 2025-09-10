@@ -10,6 +10,7 @@ namespace SmartEyewearStore.Models
         public int? UserId { get; set; }           // برای کاربر لاگین
         public string? GuestId { get; set; }       // برای مهمان (از Session)
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? ClosedAt { get; set; }
 
         public List<CartItem> Items { get; set; } = new();
     }

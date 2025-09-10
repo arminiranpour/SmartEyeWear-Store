@@ -1,0 +1,117 @@
+﻿@model SmartEyewearStore.Models.CheckoutViewModel
+@{
+    ViewData["Title"] = "Checkout";
+    Layout = "_Layout";
+}
+<section id="checkout-page" class="bg-white py-16">
+    <div class="container mx-auto px-4">
+        <h1 class="text-2xl font-semibold mb-8">Checkout</h1>
+        <div class="flex flex-col md:flex-row gap-4">
+            <div class="md:w-2/3 bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-semibold mb-4">Billing Details</h2>
+                <form asp-action="Index" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="All" class="text-red-600 mb-4"></div>
+
+                    <div class="mb-4">
+                        <label class="mb-4">Full Name</label>
+                        <input asp-for="FullName" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                    </div>
+                    <div class="mb-4">
+                        <label class="mb-4">Email</label>
+                        <input asp-for="Email" type="email" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                    </div>
+                    <div class="mb-4">
+                        <label class="mb-4">Phone Number</label>
+                        <input asp-for="Phone" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                    </div>
+                    <div class="mb-4">
+                        <label class="mb-4">Address</label>
+                        <input asp-for="BillingAddress1" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                    </div>
+                    <div class="mb-4">
+                        <input asp-for="BillingAddress2" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Address 2 (optional)" />
+                    </div>
+                    <div class="mb-4 flex gap-4">
+                        <div class="w-1/2">
+                            <label class="mb-4">City</label>
+                            <input asp-for="BillingCity" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                        </div>
+                        <div class="w-1/2">
+                            <label class="mb-4">State</label>
+                            <input asp-for="BillingState" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                        </div>
+                    </div>
+                    <div class="mb-4 flex gap-4">
+                        <div class="w-1/2">
+                            <label class="mb-4">ZIP Code</label>
+                            <input asp-for="BillingPostalCode" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
+                        </div>
+                        <div class="w-1/2">
+                            <label class="mb-4">Country</label>
+                            <input asp-for="BillingCountry" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 flex items-center gap-2">
+                        <input asp-for="ShipToDifferent" type="checkbox" class="mr-2">
+                        <label for="ShipToDifferent" class="text-gray-700">Ship to a different address?</label>
+                    </div>
+
+                    <div id="shipping-fields" class="space-y-4" data-bind="shipping">
+                        <input asp-for="ShippingFullName" class="w-full px-3 py-2 border rounded-full" placeholder="Full Name">
+                        <input asp-for="ShippingPhone" class="w-full px-3 py-2 border rounded-full" placeholder="Phone">
+                        <input asp-for="ShippingAddress1" class="w-full px-3 py-2 border rounded-full" placeholder="Address">
+                        <input asp-for="ShippingAddress2" class="w-full px-3 py-2 border rounded-full" placeholder="Address 2">
+                        <div class="flex gap-4">
+                            <input asp-for="ShippingCity" class="w-1/2 px-3 py-2 border rounded-full" placeholder="City">
+                            <input asp-for="ShippingState" class="w-1/2 px-3 py-2 border rounded-full" placeholder="State">
+                        </div>
+                        <div class="flex gap-4">
+                            <input asp-for="ShippingPostalCode" class="w-1/2 px-3 py-2 border rounded-full" placeholder="ZIP">
+                            <input asp-for="ShippingCountry" class="w-1/2 px-3 py-2 border rounded-full" placeholder="Country">
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button type="submit" class="w-full bg-primary text-white border border-primary hover:bg-transparent hover:text-primary font-semibold px-4 py-3 rounded-full">Place Order</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="md:w-1/3 bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+                <div class="space-y-3">
+                    @foreach (var l in Model.Lines)
+                    {
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="@(l.ImageUrl ?? "/assets/images/placeholder.png")" class="h-12 w-12 object-cover rounded mr-2" />
+                                <div>
+                                    <p class="font-semibold">@l.ProductName</p>
+                                    <p class="text-sm">Qty: @l.Qty</p>
+                                </div>
+                            </div>
+                            <p class="font-semibold">$@(l.UnitPriceCents / 100.0M)</p>
+                        </div>
+                    }
+                </div>
+                <div class="border-t mt-4 pt-4 space-y-1">
+                    <div class="flex justify-between"><span>Subtotal</span><span>$@(Model.SubtotalCents / 100.0M)</span></div>
+                    <div class="flex justify-between"><span>Shipping</span><span>$@(Model.ShippingCents / 100.0M)</span></div>
+                    <div class="flex justify-between"><span>Tax</span><span>$@(Model.TaxCents / 100.0M)</span></div>
+                    <div class="flex justify-between font-semibold text-lg"><span>Total</span><span>$@(Model.TotalCents / 100.0M)</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const cb = document.getElementById('ShipToDifferent');
+        const panel = document.getElementById('shipping-fields');
+        function sync(){ panel.style.display = cb.checked ? 'block' : 'none'; }
+        cb && (cb.onchange = sync) && sync();
+    </script>
+}
