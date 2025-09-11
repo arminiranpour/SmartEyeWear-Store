@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 using SmartEyewearStore.Data;
@@ -11,9 +12,11 @@ using SmartEyewearStore.Data;
 namespace SmartEyewearStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250909155427_cart")]
+    partial class cart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,10 +34,6 @@ namespace SmartEyewearStore.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartId"));
 
-                    b.Property<DateTime?>("ClosedAt")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CLOSEDAT");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TIMESTAMP(7)")
                         .HasColumnName("CREATEDAT");
@@ -49,9 +48,6 @@ namespace SmartEyewearStore.Migrations
 
                     b.HasKey("CartId")
                         .HasName("PK_CARTS");
-
-                    b.HasIndex("ClosedAt")
-                        .HasDatabaseName("IX_CARTS_CLOSEDAT");
 
                     b.HasIndex("GuestId")
                         .HasDatabaseName("IX_CARTS_GUESTID");
@@ -614,199 +610,6 @@ namespace SmartEyewearStore.Migrations
                     b.ToTable("VARIANT_PRICE", "DBS311_252NAA12");
                 });
 
-            modelBuilder.Entity("SmartEyewearStore.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("ORDERID");
-
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
-
-                    b.Property<string>("BillingAddress1")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGADDRESS1");
-
-                    b.Property<string>("BillingAddress2")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGADDRESS2");
-
-                    b.Property<string>("BillingCity")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGCITY");
-
-                    b.Property<string>("BillingCountry")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGCOUNTRY");
-
-                    b.Property<string>("BillingPostalCode")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGPOSTALCODE");
-
-                    b.Property<string>("BillingState")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("BILLINGSTATE");
-
-                    b.Property<int>("CartId")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("CARTID");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("CREATEDAT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("EMAIL");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("FULLNAME");
-
-                    b.Property<string>("GuestId")
-                        .HasColumnType("NVARCHAR2(450)")
-                        .HasColumnName("GUESTID");
-
-                    b.Property<string>("OrderNumber")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(450)")
-                        .HasColumnName("ORDERNUMBER");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("PHONE");
-
-                    b.Property<int>("ShipToDifferent")
-                        .HasColumnType("NUMBER(1)")
-                        .HasColumnName("SHIPTODIFFERENT");
-
-                    b.Property<string>("ShippingAddress1")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGADDRESS1");
-
-                    b.Property<string>("ShippingAddress2")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGADDRESS2");
-
-                    b.Property<int>("ShippingCents")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("SHIPPINGCENTS");
-
-                    b.Property<string>("ShippingCity")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGCITY");
-
-                    b.Property<string>("ShippingCountry")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGCOUNTRY");
-
-                    b.Property<string>("ShippingFullName")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGFULLNAME");
-
-                    b.Property<string>("ShippingPhone")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGPHONE");
-
-                    b.Property<string>("ShippingPostalCode")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGPOSTALCODE");
-
-                    b.Property<string>("ShippingState")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("SHIPPINGSTATE");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("STATUS");
-
-                    b.Property<int>("SubtotalCents")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("SUBTOTALCENTS");
-
-                    b.Property<int>("TaxCents")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("TAXCENTS");
-
-                    b.Property<int>("TotalCents")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("TOTALCENTS");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("USERID");
-
-                    b.HasKey("OrderId")
-                        .HasName("PK_ORDERS");
-
-                    b.HasIndex("CartId")
-                        .HasDatabaseName("IX_ORDERS_CARTID");
-
-                    b.HasIndex("GuestId")
-                        .HasDatabaseName("IX_ORDERS_GUESTID");
-
-                    b.HasIndex("OrderNumber")
-                        .IsUnique()
-                        .HasDatabaseName("IX_ORDERS_ORDERNUMBER");
-
-                    b.HasIndex("UserId")
-                        .HasDatabaseName("IX_ORDERS_USERID");
-
-                    b.ToTable("ORDERS", "DBS311_252NAA12");
-                });
-
-            modelBuilder.Entity("SmartEyewearStore.Models.OrderItem", b =>
-                {
-                    b.Property<int>("OrderItemId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("ORDERITEMID");
-
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderItemId"));
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("ORDERID");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("PRODUCTNAME");
-
-                    b.Property<int>("Qty")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("QTY");
-
-                    b.Property<int>("UnitPriceCents")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("UNITPRICECENTS");
-
-                    b.Property<int>("VariantId")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("VARIANTID");
-
-                    b.Property<string>("VariantLabel")
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("VARIANTLABEL");
-
-                    b.HasKey("OrderItemId")
-                        .HasName("PK_ORDERITEMS");
-
-                    b.HasIndex("OrderId")
-                        .HasDatabaseName("IX_ORDERITEMS_ORDERID");
-
-                    b.ToTable("ORDERITEM", "DBS311_252NAA12");
-                });
-
             modelBuilder.Entity("SmartEyewearStore.Models.SurveyAnswer", b =>
                 {
                     b.Property<int>("Id")
@@ -1171,30 +974,6 @@ namespace SmartEyewearStore.Migrations
                     b.Navigation("Variant");
                 });
 
-            modelBuilder.Entity("SmartEyewearStore.Models.Order", b =>
-                {
-                    b.HasOne("SmartEyewearStore.Models.Cart", "Cart")
-                        .WithMany()
-                        .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
-                        .HasConstraintName("FK_ORDER_CART");
-
-                    b.Navigation("Cart");
-                });
-
-            modelBuilder.Entity("SmartEyewearStore.Models.OrderItem", b =>
-                {
-                    b.HasOne("SmartEyewearStore.Models.Order", "Order")
-                        .WithMany("Items")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_ORDERITEM_ORDER");
-
-                    b.Navigation("Order");
-                });
-
             modelBuilder.Entity("SmartEyewearStore.Models.SurveyAnswer", b =>
                 {
                     b.HasOne("SmartEyewearStore.Models.User", "User")
@@ -1287,11 +1066,6 @@ namespace SmartEyewearStore.Migrations
             modelBuilder.Entity("SmartEyewearStore.Models.Catalog.Tag", b =>
                 {
                     b.Navigation("ProductTags");
-                });
-
-            modelBuilder.Entity("SmartEyewearStore.Models.Order", b =>
-                {
-                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("SmartEyewearStore.Models.User", b =>

@@ -1,11 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
 using SmartEyewearStore.Models;
 using SmartEyewearStore.Models.Catalog;
+using System;
+using System.Linq;
+using System.Security.Policy;
+using System.Threading.Tasks;
 
 namespace SmartEyewearStore.Controllers
 {
@@ -23,6 +24,7 @@ namespace SmartEyewearStore.Controllers
         {
             var product = await _context.Products
                 .Include(p => p.Brand)
+                .Include(p => p.RatingSummary)
                 .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Material)
                 .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Shape)
                 .Include(p => p.FrameSpecs).ThenInclude(fs => fs.RimStyle)
@@ -32,12 +34,6 @@ namespace SmartEyewearStore.Controllers
                 .Include(p => p.Variants).ThenInclude(v => v.Prices)
                 .Include(p => p.Variants).ThenInclude(v => v.Inventory)
                 .Include(p => p.Variants).ThenInclude(v => v.Dimensions)
-                .Include(p => p.RatingSummary)
-                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Material)
-                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Shape)
-                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.RimStyle)
-
-
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Slug == slug);
 
@@ -58,7 +54,12 @@ namespace SmartEyewearStore.Controllers
 
             var viewModel = BuildViewModel(product, variant);
 
-            ViewData["Canonical"] = Url.Action(nameof(Details), "Product", new { slug = product.Slug, variantId = variant.VariantId }, Request.Scheme);
+            ViewData["Canonical"] = Url.Action(
+                nameof(Details),
+                "Product",
+                new { slug = product.Slug, variantId = variant.VariantId },
+                Request?.Scheme
+            );
 
             return View(viewModel);
         }
@@ -69,11 +70,14 @@ namespace SmartEyewearStore.Controllers
             var product = await _context.Products
                 .Include(p => p.Variants)
                 .FirstOrDefaultAsync(p => p.Slug == slug);
+
             if (product == null)
                 return NotFound();
+
             var variant = product.Variants.FirstOrDefault(v => v.ColorId == colorId);
             if (variant == null)
                 return NotFound();
+
             return RedirectToActionPermanent(nameof(Details), new { slug, variantId = variant.VariantId });
         }
 
@@ -92,8 +96,7 @@ namespace SmartEyewearStore.Controllers
                 RatingCount = product.RatingSummary?.RatingCount,
                 MaterialName = product.FrameSpecs?.Material?.Name,
                 ShapeName = product.FrameSpecs?.Shape?.Name,
-                RimStyleName = product.FrameSpecs?.RimStyle?.Name,
-
+                RimStyleName = product.FrameSpecs?.RimStyle?.Name
             };
 
             vm.Variants = product.Variants

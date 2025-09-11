@@ -89,8 +89,7 @@
                                     var isSel = v.VariantId == Model.SelectedVariantId;
                                     var label = v.ColorName;
                                     <a href="@Url.Action("Details", "Product", new { slug = Model.Slug, variantId = v.VariantId })"
-                                       class="inline-flex items-center justify-center px-4 py-2 rounded-full border text-sm leading-none transition
-                                                  @(isSel ? "border-black font-semibold" : "border-gray-300 hover:border-black")"
+                                       class="inline-flex items-center justify-center px-4 py-2 rounded-full border text-sm leading-none transition @(isSel ? "border-black font-semibold" : "border-gray-300 hover:border-black")"
                                        title="@label">
                                         @label
                                     </a>
@@ -111,28 +110,22 @@
                             }
                         </div>
 
-
                         <!-- دکمه Add to Cart -->
                         <form method="post" action="/cart/add">
-                            @* TODO: مسیر دقیق CartController رو بعداً جایگزین کن *@
+                            @* اگر مسیر متفاوت داری، همین action رو با مسیر واقعی CartControllerت عوض کن *@
                             <input type="hidden" name="variantId" value="@Model.SelectedVariantId" />
                             <input type="hidden" name="qty" value="1" />
                             <button type="submit"
-                                    class="inline-flex items-center justify-center bg-primary border border-transparent
-                                           hover:bg-transparent hover:border-primary text-white hover:text-primary
-                                           font-semibold py-3 px-6 rounded-full">
+                                    class="inline-flex items-center justify-center bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-3 px-6 rounded-full">
                                 Add to Cart
                             </button>
                         </form>
-
-
                     </div>
                 </div>
             </div> <!-- /row -->
         </div> <!-- /py -->
     </div> <!-- /container -->
 </section>
-
 
 <section>
     <div class="container mx-auto">
@@ -143,6 +136,7 @@
                     <button id="description-tab" role="tab" aria-controls="description-content" aria-selected="false" class="tab">Description</button>
                 </div>
                 <div class="mt-8">
+                    <!-- تب ویژگی‌ها و سایز (ترکیب‌شده: نسخهٔ کاملِ main + لیست سادهٔ AddShoppingCart) -->
                     <div id="features-content"
                          role="tabpanel"
                          aria-labelledby="features-tab"
@@ -152,21 +146,20 @@
                         @{
                             var dims = selected.Dimensions;
                             string sizePattern = (dims != null)
-                            ? $"{(dims.LensWidthMm > 0 ? Math.Round(dims.LensWidthMm ?? 0) : 0)}□{(dims.BridgeWidthMm > 0 ? Math.Round(dims.BridgeWidthMm ?? 0) : 0)}–{(dims.TempleLengthMm > 0 ? Math.Round(dims.TempleLengthMm ?? 0) : 0)}"
-                            : null;
+                                ? $"{(dims.LensWidthMm > 0 ? Math.Round(dims.LensWidthMm ?? 0) : 0)}□{(dims.BridgeWidthMm > 0 ? Math.Round(dims.BridgeWidthMm ?? 0) : 0)}–{(dims.TempleLengthMm > 0 ? Math.Round(dims.TempleLengthMm ?? 0) : 0)}"
+                                : null;
 
-                            // سومین تصویر به‌عنوان تصویر کوچک سمت راست
                             var ordered = (selected.Images ?? Enumerable.Empty<SmartEyewearStore.Models.ProductDetailsViewModel.ImageViewModel>())
-                            .OrderBy(i => i.SortOrder).ToList();
+                                .OrderBy(i => i.SortOrder).ToList();
                             var thirdImg = ordered.Skip(2).FirstOrDefault() ?? ordered.LastOrDefault() ?? ordered.FirstOrDefault();
                             var smallUrl = thirdImg?.Url;
                             var smallAlt = thirdImg?.Alt ?? (Model.Name + " image");
                         }
 
-                        <!-- از md به بعد کنار هم، در موبایل زیر هم -->
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                             <!-- متن (چپ) -->
                             <div class="md:flex-1 min-w-0">
+                                @* از main: نمایش یک فیچر به عنوان هایلایت *@
                                 @if (Model.Features?.Any() == true)
                                 {
                                     <p class="font-semibold mb-4">@Model.Features.First()</p>
@@ -190,6 +183,20 @@
                                     <li><span class="text-gray-600">Rim:</span>      <span class="font-medium">@Model.RimStyleName</span></li>
                                 </ul>
 
+                                @* از AddShoppingCart: لیست کامل Features *@
+                                @if (Model.Features?.Any() == true)
+                                {
+                                    <div class="mt-6">
+                                        <h4 class="font-semibold mb-2">All Features</h4>
+                                        <ul class="list-disc pl-5">
+                                            @foreach (var f in Model.Features)
+                                            {
+                                                <li>@f</li>
+                                            }
+                                        </ul>
+                                    </div>
+                                }
+
                                 <p class="mt-4 text-sm">Branded case &amp; cloth</p>
                                 <p class="mt-2 text-sm">
                                     Not sure about your size?
@@ -197,32 +204,18 @@
                                 </p>
                             </div>
 
-                            <!-- ستون راست: تصویر -->
+                            <!-- تصویر (راست) -->
                             <div class="md:shrink-0 md:self-center md:ml-8">
-                                <!-- ظرف بدون پس‌زمینه و بدون پدینگ؛ کمی بزرگ‌تر -->
                                 <figure class="md:ml-auto" style="width: 440px; max-width: 100%;">
-                                    <!-- نسبت 2:1 (مثل EBD) و بدون قاب سفید -->
                                     <div class="relative overflow-hidden" style="padding-top: 50%;">
-                                        <img src="@smallUrl"
-                                             alt="@smallAlt"
-                                             class="absolute inset-0 w-full h-full object-contain" />
+                                        <img src="@smallUrl" alt="@smallAlt" class="absolute inset-0 w-full h-full object-contain" />
                                     </div>
                                 </figure>
                             </div>
-
                         </div>
                     </div>
 
-
-                    <script>
-                        function switchDiagram(url){
-                          var img = document.getElementById('diagram-image');
-                          if (img) img.src = url;
-                        }
-                        function toggleUnits(){
-                          
-                        }
-                    </script>
+                    <!-- تب توضیحات -->
                     <div id="description-content"
                          role="tabpanel"
                          aria-labelledby="description-tab"
@@ -231,52 +224,43 @@
                         @using SmartEyewearStore.Models
                         @{
                             Func<ProductDetailsViewModel.ImageViewModel, string> roleOf =
-                            vi => (vi?.Role ?? string.Empty).ToLowerInvariant();
+                                vi => (vi?.Role ?? string.Empty).ToLowerInvariant();
 
                             var heroImg = selected.Images
-                            .OrderBy(i => i.SortOrder)
-                            .FirstOrDefault(i => roleOf(i).Contains("onface")
-                            || roleOf(i).Contains("lifestyle")
-                            || roleOf(i).Contains("hero")
-                            || roleOf(i).Contains("angle"))
-                            ?? selected.Images.FirstOrDefault();
+                                .OrderBy(i => i.SortOrder)
+                                .FirstOrDefault(i => roleOf(i).Contains("onface")
+                                                  || roleOf(i).Contains("lifestyle")
+                                                  || roleOf(i).Contains("hero")
+                                                  || roleOf(i).Contains("angle"))
+                                ?? selected.Images.FirstOrDefault();
 
                             var heroUrl = heroImg?.Url;
                             var heroAlt = heroImg?.Alt ?? (Model.Name + " image");
                         }
 
                         <div class="grid grid-cols-12 gap-8 items-center">
-                            <!-- متن سمت چپ -->
                             <div class="col-span-12 md:col-span-7">
                                 <h3 class="text-2xl font-semibold mb-4">About @Model.Brand @Model.Name</h3>
                                 <p class="text-gray-700 leading-relaxed">@Model.Description</p>
                             </div>
-
-                            <!-- تصویر سمت راست -->
-                           @* <div class="col-span-12 md:col-span-5">
+                            @* اگر خواستی دوباره تصویر کناری رو فعال کنی:
+                            <div class="col-span-12 md:col-span-5">
                                 <div class="bg-white rounded-xl p-4 flex items-center justify-center">
                                     <img src="@heroUrl" alt="@heroAlt" class="w-full h-auto object-contain max-h-80" />
                                 </div>
-                            </div>*@
+                            </div>
+                            *@
                         </div>
                     </div>
-
-                    
-        
-    </div>
-</div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
 <script>
     function changeImage(img) {
         var main = document.getElementById('main-image');
-        main.src = img.getAttribute('data-full');
+        if (main) main.src = img.getAttribute('data-full');
     }
 </script>
