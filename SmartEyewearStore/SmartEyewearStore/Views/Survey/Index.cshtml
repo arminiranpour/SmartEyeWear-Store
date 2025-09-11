@@ -1,98 +1,1083 @@
 ﻿@model SmartEyewearStore.Models.SurveyViewModel
 @{
     ViewData["Title"] = "Survey";
+    Layout = "_Layout";
 }
 
-<h2>Survey</h2>
+<div class="flex justify-center py-8" x-data="surveyWizard()">
+    <form asp-action="Index" method="post" class="w-full max-w-screen-lg" x-ref="form" x-on:submit.prevent="finalize()"
+          novalidate>
+        <div asp-validation-summary="All" class="text-red-600 mb-4"></div>
+        <div class="bg-white shadow-lg rounded-2xl p-6 md:p-10 relative overflow-hidden" style="min-height:70vh;" x-ref="card">
+            <!-- Progress Header -->
+            <div class="sticky top-0 bg-white pb-4" x-data="{}">
+                <div class="flex justify-between items-center mb-2">
+                    <div>
+                        <div class="inline-flex items-center justify-center h-7 px-3 rounded-full bg-gray-100 text-gray-800 text-sm font-semibold"
+                             x-text="`${step}/${total}`">
+                        </div>
+                        <div class="h-1 bg-gray-200 rounded"><div class="h-1 bg-primary rounded" :style="{width: ((step-1)/(total-1))*100 + '%'}"></div></div>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <template x-for="i in total" :key="i">
+                            <span class="w-2 h-2 rounded-full" :class="{'bg-primary': i===step, 'bg-gray-300': i!==step}"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
 
-<form asp-action="Index" method="post">
-    <div class="mb-2">
-        <label asp-for="Gender"></label>
-        <select asp-for="Gender" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.GenderEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="Style"></label>
-        <select asp-for="Style" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.StyleEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="Lifestyle"></label>
-        <select asp-for="Lifestyle" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.LifestyleEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="BuyingFrequency"></label>
-        <select asp-for="BuyingFrequency" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.BuyingFrequencyEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="PriceFocus"></label>
-        <select asp-for="PriceFocus" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.PriceFocusEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="FaceShape"></label>
-        <select asp-for="FaceShape" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.FaceShapeEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="FavoriteShapes"></label>
-        <input asp-for="FavoriteShapes" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="Colors"></label>
-        <input asp-for="Colors" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="Materials"></label>
-        <input asp-for="Materials" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="LensWidth"></label>
-        <input asp-for="LensWidth" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="BridgeWidth"></label>
-        <input asp-for="BridgeWidth" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="TempleLength"></label>
-        <input asp-for="TempleLength" class="form-control" />
-    </div>
-    <div class="mb-2">
-        <label asp-for="HeadSize"></label>
-        <select asp-for="HeadSize" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.HeadSizeEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="ScreenTime"></label>
-        <select asp-for="ScreenTime" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.ScreenTimeEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2">
-        <label asp-for="DayLocation"></label>
-        <select asp-for="DayLocation" asp-items="Html.GetEnumSelectList<SmartEyewearStore.Models.DayLocationEnum>()" class="form-control"></select>
-    </div>
-    <div class="mb-2 form-check">
-        <input asp-for="Prescription" class="form-check-input" />
-        <label asp-for="Prescription" class="form-check-label"></label>
-    </div>
-    <div class="mb-2">
-        <label asp-for="Features"></label>
-        <input asp-for="Features" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-</form>
+            <!-- Slides -->
+            <template x-for="(sl,i) in steps" :key="i">
+                <div x-show="step-1===i" x-transition:enter="transition transform duration-300" x-transition:enter-start="translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-full opacity-0" class="pt-4">
+                    <h2 class="text-2xl font-bold mb-2" x-text="sl.title"></h2>
+                    <p x-show="sl.subtitle" class="text-sm text-gray-500 mb-4" x-text="sl.subtitle"></p>
+                    <!-- Pills for multi-select review -->
+                    <div x-show="sl.type==='multi' && data[sl.field].length" class="mb-4 flex flex-wrap gap-2">
+                        <template x-for="item in data[sl.field]" :key="item">
+                            <span class="px-2 py-1 bg-primary text-white rounded-full text-sm flex items-center gap-1">
+                                <span x-text="labelFor(sl.field,item)"></span>
+                                <button type="button" @@click="toggle(sl,item)" class="focus:outline-none">&times;</button>
+                            </span>
+                        </template>
+                    </div>
+                    <!-- Slide #1: Gender (single-select with images) -->
+                    <div x-show="sl.field === 'Gender'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                            <!-- Male -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Male'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Male') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/gender-men.jpg" alt="Male"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Male</div>
+                            </button>
+
+                            <!-- Female -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Female'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Female') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/gender-women.jpg" alt="Female"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Female</div>
+                            </button>
+
+                            <!-- Unisex -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Unisex'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Unisex') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/gender-unisex.jpg" alt="Unisex"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Unisex</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Slide #2: DayLocation (single-select with images) -->
+                    <div x-show="sl.field === 'DayLocation'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                            <!-- Outdoors -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'MostlyOutdoors'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'MostlyOutdoors') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/usage-outdoor.jpg" alt="Outdoors"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Outdoors</div>
+                            </button>
+
+                            <!-- Indoors -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'MostlyIndoors'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'MostlyIndoors') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/usage-indoor.jpg" alt="Indoors"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Indoors</div>
+                            </button>
+
+                            <!-- Both -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Both'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Both') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/usage-both.jpg" alt="Both"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Both</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Slide #3: Style custom layout (text-only cards, improved design) -->
+                    <div x-show="sl.field === 'Style'" class="mt-8 text-center">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto max-w-4xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        :role="'checkbox'"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+                     transition shadow-sm
+                     hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+                       ? 'ring-2 ring-primary bg-primary/5 text-primary'
+                       : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #4: Lifestyle custom layout (multi-select with images) -->
+                    <div x-show="sl.field === 'Lifestyle'" class="mt-10 text-center">
+                        
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-4 md:gap-5 max-w-4xl mx-auto">
+                            <!-- Technology -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Technology')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Technology') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/lifestyle-technology.jpg" alt="Technology" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Technology</div>
+                            </button>
+
+                            <!-- Fashion -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Fashion')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Fashion') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/lifestyle-fashion.jpg" alt="Fashion" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Fashion</div>
+                            </button>
+
+                            <!-- Fitness -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Fitness')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Fitness') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/lifestyle-fitness.jpg" alt="Fitness" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Fitness</div>
+                            </button>
+
+                            <!-- Outdoors -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Outdoors')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Outdoors') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/lifestyle-outdoors.jpg" alt="Outdoors" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Outdoors</div>
+                            </button>
+
+                            <!-- Eco-conscious -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'EcoConscious')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'EcoConscious') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/lifestyle-eco-conscious.jpg" alt="Eco-conscious" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Eco-conscious</div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Slide #5: BuyingFrequency custom layout (text-only, single-select) -->
+                    <div x-show="sl.field === 'BuyingFrequency'" class="mt-8 text-center">
+                        <!-- عنوان و زیرعنوان عمومی بالای اسلاید نمایش داده می‌شوند؛ این بلوک فقط گزینه‌ها را می‌چیند -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto max-w-3xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        role="radio"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+                     transition shadow-sm hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+                        ? 'ring-2 ring-primary bg-primary/5 text-primary'
+                        : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #6: PriceFocus custom layout (text-only, multi-select) -->
+                    <div x-show="sl.field === 'PriceFocus'" class="mt-8 text-center">
+                        <!-- تیتر و زیرتیتر را از بالا می‌گیری؛ اینجا فقط چیدمان کارت‌هاست -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-4xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        role="checkbox"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+                     transition shadow-sm hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+                        ? 'ring-2 ring-primary bg-primary/5 text-primary'
+                        : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #7: Face shape (multi-select with images) -->
+                    <div x-show="sl.field === 'FaceShape'" class="mt-10 text-center">
+
+                        <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5 max-w-5xl mx-auto">
+                            <!-- Triangle -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Triangle')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Triangle') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-triangle.jpg" alt="Triangle"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Triangle</div>
+                            </button>
+
+                            <!-- Oval -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Oval')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Oval') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-oval.jpg" alt="Oval"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Oval</div>
+                            </button>
+
+                            <!-- Square -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Square')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Square') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-square.jpg" alt="Square"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Square</div>
+                            </button>
+
+                            <!-- Round -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Round')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Round') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-round.jpg" alt="Round"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Round</div>
+                            </button>
+
+                            <!-- Heart -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Heart')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Heart') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-heart.jpg" alt="Heart"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Heart</div>
+                            </button>
+
+                            <!-- Diamond -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Diamond')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Diamond') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-diamond.jpg" alt="Diamond"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Diamond</div>
+                            </button>
+
+                            <!-- Unsure -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Unsure')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Unsure') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_shape-unknow.jpg" alt="Unsure"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Unsure</div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Slide #8: Chin shape (single-select with images) -->
+                    <div x-show="sl.field === 'ChinShape'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                            <!-- Defined -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Defined'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Defined') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/chin_shape-defined.jpg" alt="Defined" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Defined</div>
+                            </button>
+
+                            <!-- Rounded -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Rounded'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Rounded') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/chin_shape-rounded.jpg" alt="Rounded" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Rounded</div>
+                            </button>
+
+                            <!-- Pointed -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Pointed'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Pointed') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/chin_shape-pointed.jpg" alt="Pointed" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Pointed</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Slide #9: Forehead vs Cheeks width (single-select with images) -->
+                    <div x-show="sl.field === 'ForeheadCheeks'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                            <!-- Equal -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Equal'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Equal') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/forehead_size-equal.jpg" alt="Equal" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Equal</div>
+                            </button>
+
+                            <!-- Wider -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Wider'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Wider') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/forehead_size-wider.jpg" alt="Wider" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Wider</div>
+                            </button>
+
+                            <!-- Smaller -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Smaller'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Smaller') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/forehead_size-smaller.jpg" alt="Smaller" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Smaller</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Slide #10: Face Length (single-select with images) -->
+                    <div x-show="sl.field === 'FaceLength'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                            <!-- Short -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Short'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Short') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_length-short.jpg" alt="Short" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Short</div>
+                            </button>
+
+                            <!-- Long -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Long'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Long') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/face_length-long.jpg" alt="Long" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Long</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Slide #11: Favorite frame shapes (multi-select with images) -->
+                    <div x-show="sl.field === 'FavoriteShapes'" class="mt-10 text-center">
+
+                        <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5 max-w-5xl mx-auto">
+                            <!-- Browline -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Browline')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Browline') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-browline.jpg" alt="Browline"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Browline</div>
+                            </button>
+
+                            <!-- Round -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Round')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Round') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-round.jpg" alt="Round"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Round</div>
+                            </button>
+
+                            <!-- Square / Rectangle -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Square-Rectangle')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Square-Rectangle') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-square_rectangle.jpg" alt="Square / Rectangle"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Square / Rectangle</div>
+                            </button>
+
+                            <!-- Cat-Eye -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Cat-Eye')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Cat-Eye') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-cat_eye.jpg" alt="Cat-Eye"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Cat-Eye</div>
+                            </button>
+
+                            <!-- Aviator -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Aviator')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Aviator') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-aviator.jpg" alt="Aviator"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Aviator</div>
+                            </button>
+
+                            <!-- Special -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Special')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Special') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_shape-special.jpg" alt="Special"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Special</div>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Slide #12: Frame colors (multi-select with images) -->
+                    <div x-show="sl.field === 'Colors'" class="mt-10 text-center">
+                       
+
+                        <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5 max-w-5xl mx-auto">
+                            <!-- Black -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Black')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Black') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_color-black.jpg" alt="Black" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Black</div>
+                            </button>
+
+                            <!-- Tortoise -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Tortoise')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Tortoise') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_color-tortoise.jpg" alt="Tortoise" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Tortoise</div>
+                            </button>
+
+                            <!-- Pattern -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Pattern')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Pattern') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_color-pattern.jpg" alt="Pattern" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Pattern</div>
+                            </button>
+
+                            <!-- Neutral -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Neutral')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Neutral') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/color_neutral.jpg" alt="Neutral" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Neutral</div>
+                            </button>
+
+                            <!-- Colorful -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Colorful')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Colorful') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/color_colorful.jpg" alt="Colorful" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Colorful</div>
+                            </button>
+
+                            <!-- Translucent -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Translucent')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Translucent') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_color-transparent.jpg" alt="Translucent" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Translucent</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide #13: Frame materials (multi-select with images) -->
+                    <div x-show="sl.field === 'Materials'" class="mt-10 text-center">
+                       
+                        <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5 max-w-4xl mx-auto">
+                            <!-- Metal -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Metal')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Metal') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_material-metal.jpg" alt="Metal" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Metal</div>
+                            </button>
+
+                            <!-- Plastic / Acetate -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Plastic')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Plastic') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_material-plastic_acetate.jpg" alt="Plastic/Acetate" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Plastic/Acetate</div>
+                            </button>
+
+                            <!-- Mixed -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Mixed')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Mixed') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_material-combined.jpg" alt="Mixed" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Mixed</div>
+                            </button>
+
+                            <!-- Eco-friendly -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'EcoFriendly')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'EcoFriendly') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/frame_material-eco_friendly.jpg" alt="Eco-friendly" class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Eco-friendly</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Slide #15: Head size (single-select with images) -->
+
+                    <div x-show="sl.field === 'HeadSize'" class="mt-10 text-center">
+                        <div class="flex flex-wrap md:flex-nowrap items-start justify-center md:justify-between gap-6 max-w-3xl mx-auto">
+
+                           
+                            <!-- Narrow -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Narrow'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Narrow') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/head_size-narrow.jpg" alt="Narrow"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Narrow</div>
+                            </button>
+
+                            <!-- Medium -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Medium'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Medium') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/head_size-medium.jpg" alt="Medium"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Medium</div>
+                            </button>
+
+                            <!-- Wide -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-28 md:w-32"
+                                    x-on:click="toggle(sl,'Wide'); next()">
+                                <div class="w-24 h-24 md:w-28 md:h-28 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Wide') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/head_size-wide.jpg" alt="Wide"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Wide</div>
+                            </button>
+
+                        </div>
+                   
+                    </div>
+
+
+
+                    <!-- Slide #16: Screen Time (text-only, single-select) -->
+                    <div x-show="sl.field === 'ScreenTime'" class="mt-8 text-center">
+                       
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto max-w-3xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        role="radio"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+                     transition shadow-sm hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+                      ? 'ring-2 ring-primary bg-primary/5 text-primary'
+                      : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #17: DayTimeLocation (text-only, single-select, مشابه اسلاید 16) -->
+                    <div x-show="sl.field === 'DayTimeLocation'" class="mt-8 text-center">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto max-w-3xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        role="radio"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+                                  transition shadow-sm hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+                                         ? 'ring-2 ring-primary bg-primary/5 text-primary'
+                                : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #18: Prescription (text-only, single-select, مشابه اسلاید 16 و 17) -->
+                    <div x-show="sl.field === 'Prescription'" class="mt-8 text-center">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto max-w-2xl">
+                            <template x-for="opt in sl.options" :key="opt.value">
+                                <button type="button"
+                                        role="radio"
+                                        :aria-checked="isSelected(sl.field,opt.value)"
+                                        tabindex="0"
+                                        @@click="toggle(sl,opt.value)"
+                                        @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                        @@keydown.space.prevent="toggle(sl,opt.value)"
+                                        class="w-full py-6 px-4 border rounded-2xl bg-white text-lg font-semibold
+ transition shadow-sm hover:shadow-md hover:bg-gray-50 focus:outline-none"
+                                        :class="isSelected(sl.field,opt.value)
+  ? 'ring-2 ring-primary bg-primary/5 text-primary'
+  : 'text-gray-800'">
+                                    <span x-text="opt.label"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Slide #19: Special Features (multi-select with images) -->
+                    <div x-show="sl.field === 'Features'" class="mt-10 text-center">
+                        <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5 max-w-5xl mx-auto">
+
+                            <!-- Lightweight -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Lightweight')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Lightweight') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/extra_features-lightweight.jpg" alt="Lightweight"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Lightweight</div>
+                            </button>
+
+                            <!-- Low nose bridge fit -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Low nose bridge fit')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Low nose bridge fit') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/extra_features-low-nose-bridge.jpg" alt="Low nose bridge fit"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold w-24 mx-auto text-center leading-tight">
+                                    Low nose <br> bridge fit
+                                </div>
+
+
+                            </button>
+
+                            <!-- Adjustable nose pads -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Adjustable nose pads')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Adjustable nose pads') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/extra_features-nosepads.jpg" alt="Adjustable nose pads"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold w-24 mx-auto text-center leading-tight">
+                                    Adjustable <br> nose pads
+                                </div>
+                            </button>
+
+                            <!-- Clip-ons -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Clip-ons')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Clip-ons') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/extra_features-clip-on.jpg" alt="Clip-ons"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Clip-ons</div>
+                            </button>
+
+                            <!-- Spring hinges -->
+                            <button type="button" class="group focus:outline-none shrink-0 w-24 md:w-28"
+                                    x-on:click="toggle(sl,'Spring hinges')">
+                                <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full border overflow-hidden"
+                                     :class="isSelected(sl.field,'Spring hinges') ? 'ring-2 ring-primary' : ''">
+                                    <img src="/assets/images/survay/extra_features-spring.jpg" alt="Spring hinges"
+                                         class="w-full h-full object-contain" />
+                                </div>
+                                <div class="mt-2 text-sm md:text-base font-semibold">Spring hinges</div>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Option cards -->
+                    <div x-show="(sl.type==='single' || sl.type==='multi')
+             && sl.field !== 'Gender'
+             && sl.field !== 'DayLocation'
+             && sl.field !== 'Style'
+             && sl.field !== 'Lifestyle'
+             && sl.field !== 'BuyingFrequency'
+             && sl.field !== 'PriceFocus'
+             && sl.field !== 'FaceShape'
+             && sl.field !== 'FavoriteShapes'
+             && sl.field !== 'Colors'
+             && sl.field !== 'Materials'
+             && sl.field !== 'measure'
+             && sl.field !== 'HeadSize' 
+             && sl.field !== 'ScreenTime'
+             && sl.field !== 'DayTimeLocation'
+             && sl.field !== 'Prescription'
+             && sl.field !== 'Features'
+             && sl.field !== 'ChinShape'
+             && sl.field !== 'ForeheadCheeks'
+             && sl.field !== 'FaceLength'"
+                         class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+
+
+                        <template x-for="opt in sl.options" :key="opt.value">
+                            <button type="button"
+                                    :role="sl.type==='multi' ? 'checkbox' : 'radio'"
+                                    :aria-checked="isSelected(sl.field,opt.value)"
+                                    tabindex="0"
+                                    @@click="toggle(sl,opt.value)"
+                                    @@keydown.enter.prevent="toggle(sl,opt.value)"
+                                    @@keydown.space.prevent="toggle(sl,opt.value)"
+                                    @@keydown.arrow-right.prevent="focusNext($event)"
+                                    @@keydown.arrow-left.prevent="focusPrev($event)"
+                                    class="flex flex-col items-center p-2 bg-white border rounded-xl hover:shadow focus:outline-none" :class="isSelected(sl.field,opt.value) ? 'ring-2 ring-primary bg-primary/10' : ''">
+                                <div class="relative w-36 h-36 md:w-44 md:h-44 border rounded-[14px] overflow-hidden bg-gray-100">
+                                    <img src="" :alt="opt.label" class="object-cover w-full h-full" />
+                                    <div x-show="isSelected(sl.field,opt.value)" class="absolute top-2 right-2 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3"><path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.25 7.25a1 1 0 01-1.42 0l-3.25-3.25a1 1 0 111.42-1.42l2.54 2.54 6.54-6.54a1 1 0 011.42 0z" clip-rule="evenodd" /></svg></div>
+                                </div>
+                                <span class="mt-3 text-center font-semibold" x-text="opt.label"></span>
+                            </button>
+                        </template>
+                    </div>
+                    <!-- Measurement step -->
+                    <div x-show="sl.type==='measure'" class="space-y-6">
+                        <p class="mt-4 text-sm text-gray-700">
+                            Take a look at the inside of the temples of your glasses.
+                            If the frames have little numbers, as shown above, enter them below.
+                        </p>
+                        <div class="mb-6">
+                            
+                            <img src="/assets/images/survay/quiz-measurements.jpg"
+                                 alt="Glasses measurement example"
+                                 class="mx-auto max-w-md rounded-lg shadow" />
+                            
+                        </div>
+                        <template x-for="m in measurements" :key="m.field">
+                            <div>
+                                <label class="font-semibold" x-text="m.label"></label>
+                                <div class="flex items-center gap-4 mt-2">
+                                    <input type="range"
+                                           :min="m.min"
+                                           :max="m.max"
+                                           step="1"
+                                           x-model.number="data[m.field]"
+                                           class="flex-1">
+                                    <div class="flex items-center gap-1">
+                                        <input type="number"
+                                               :min="m.min"
+                                               :max="m.max"
+                                               x-model.number="data[m.field]"
+                                               class="w-20 border rounded p-1 text-right">
+                                        <span class="text-gray-700">mm</span>
+                                    </div>
+                                    <!-- <span class="px-2 py-1 rounded-full bg-gray-200"
+                                    x-show="data[m.field]"
+                                    x-text="data[m.field] + ' mm'"></span> -->
+
+                                </div>
+                                <p class="text-sm text-gray-500 mt-1" x-text="m.hint"></p>
+                            </div>
+                        </template>
+                        <div class="mt-4 flex items-center">
+                            <input id="noMeasurements" type="checkbox" x-model="noMeasurements" @@change="clearMeasurements" class="mr-2">
+                            <label for="noMeasurements" class="text-sm">I don’t have any</label>
+                        </div>
+                    </div>
+                    <p x-show="sl.error" class="text-red-600 mt-2" x-text="sl.error"></p>
+                </div>
+            </template>
+            <!-- Buttons Footer -->
+            <div class="sticky bottom-0 pt-6 mt-6 flex justify-between bg-white">
+                <button type="button" class="px-4 py-2 rounded border" x-show="step>1" @@click="prev">Back</button>
+                <button type="button"
+                        class="ml-auto px-4 py-2 rounded bg-primary text-white disabled:opacity-50"
+                        :disabled="!isValid(current())"
+                        @@click="next"
+                        x-text="step===total ? 'View results' : 'Next'"></button>
+            </div>
+
+        </div>
+        <!-- Hidden inputs -->
+        <input type="hidden" name="Gender" :value="data.Gender">
+        <input type="hidden" name="Style" :value="data.Style[0] || ''">
+        <input type="hidden" name="Lifestyle" :value="data.Lifestyle[0] || ''">
+        <input type="hidden" name="BuyingFrequency" :value="data.BuyingFrequency">
+        <input type="hidden" name="PriceFocus" :value="serializePriceFocus()">
+        <input type="hidden" name="FaceShape" :value="serializeFaceShape()">
+        <input type="hidden" name="FavoriteShapes" :value="data.FavoriteShapes.join(',')">
+        <input type="hidden" name="Colors" :value="data.Colors.join(',')">
+        <input type="hidden" name="Materials" :value="data.Materials.join(',')">
+        <input type="hidden" name="LensWidth" :value="data.LensWidth">
+        <input type="hidden" name="BridgeWidth" :value="data.BridgeWidth">
+        <input type="hidden" name="TempleLength" :value="data.TempleLength">
+        <input type="hidden" name="HeadSize" :value="data.HeadSize">
+        <input type="hidden" name="ScreenTime" :value="data.ScreenTime">
+        <input type="hidden" name="DayLocation" :value="data.DayLocation">
+        <input type="hidden" name="DayTimeLocation" :value="data.DayTimeLocation">
+        <input type="hidden" name="Prescription" :value="data.Prescription">
+        <input type="hidden" name="Features" :value="data.Features.join(',')">
+    </form>
+</div>
 
 @section Scripts {
-    <script>
-        document.querySelector('form').addEventListener('submit', function () {
-            if (!window.userId) {
-                const data = {};
-                new FormData(this).forEach((v, k) => {
-                    if (["LensWidth", "BridgeWidth", "TempleLength"].includes(k)) {
-                        data[k] = v ? parseInt(v) : null;
-                    } else if (k === "Prescription") {
-                        data[k] = v === "on" || v === "true" || v === "True";
-                    } else {
-                        data[k] = v;
-                    }
-                });
-                localStorage.setItem('pendingSurvey', JSON.stringify(data));
+<script>
+function surveyWizard(){
+    return {
+        step:1,
+        total:19,
+        noMeasurements:false,
+        data:{
+            Gender:'',
+            DayLocation:'',
+            Style:[],
+            Lifestyle:[],
+            BuyingFrequency:'',
+            PriceFocus:[],
+            FaceShape:[],
+            FavoriteShapes:[],
+            Colors:[],
+            Materials:[],
+            LensWidth:null,
+            BridgeWidth:null,
+            TempleLength:null,
+            HeadSize:'',
+            ScreenTime:'',
+            DayTimeLocation: '',
+            Prescription:'',
+            Features:[],
+            ChinShape:'',
+            ForeheadCheeks:'',
+            FaceLength:''
+        },
+        measurements:[
+            {field:'LensWidth',label:'Lens Width',min:40,max:60,hint:'Typical lens width: 48–54 mm'},
+            {field:'BridgeWidth',label:'Bridge Width',min:14,max:24,hint:'Typical bridge width: 16–22 mm'},
+            {field:'TempleLength',label:'Temple Length',min:120,max:160,hint:'Typical temple length: 135–145 mm'}
+        ],
+        steps:[
+            {field:'Gender',type:'single',title:'Who are these glasses for?',options:[{label:'Male',value:'Male'},{label:'Female',value:'Female'},{label:'Unisex',value:'Unisex'}]},
+            {field:'DayLocation',type:'single',title:'Where will you wear your glasses most?',options:[{label:'Outdoors',value:'MostlyOutdoors'},{label:'Indoors',value:'MostlyIndoors'},{label:'Both',value:'Both'}]},
+            {field:'Style',type:'multi',title:'Select your favorite styles',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Artsy',value:'Artsy'},{label:'Bold',value:'Bold'},{label:'Classic',value:'Classic'},{label:'Street Style',value:'StreetStyle'},{label:'Sporty',value:'Sporty'},{label:'Retro',value:'Retro'}]},
+            {field:'Lifestyle',type:'multi',title:'Tell us about your lifestyle & interests',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Technology',value:'Technology'},{label:'Fashion',value:'Fashion'},{label:'Fitness',value:'Fitness'},{label:'Outdoors',value:'Outdoors'},{label:'Eco-conscious',value:'EcoConscious'}]},
+            {field:'BuyingFrequency',type:'single',title:'How often do you buy glasses?',skip:true,options:[{label:'Once a month',value:'OnceAMonth'},{label:'Every six months',value:'EverySixMonths'},{label:'Once a year',value:'OnceAYear'},{label:'Every two years',value:'EveryTwoYears'}]},
+            {field:'PriceFocus',type:'multi',title:'What’s your price focus?',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Affordability',value:'Affordability'},{label:'Best Value',value:'BestValue'},{label:'Premium',value:'Premium'}]},
+            {field:'FaceShape',type:'multi',title:'How would you describe your face shape?',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Triangle',value:'Triangle'},{label:'Oval',value:'Oval'},{label:'Square',value:'Square'},{label:'Round',value:'Round'},{label:'Heart',value:'Heart'},{label:'Diamond',value:'Diamond'},{label:'Unsure',value:'Unsure'}]},
+            {field:'ChinShape',type:'single',title:'Which chin shape fits you best?',skip:true,options:[{label:'Defined',value:'Defined'},{label:'Rounded',value:'Rounded'},{label:'Pointed',value:'Pointed'}]},
+            {field:'ForeheadCheeks',type:'single',title:'Forehead vs. cheeks width?',skip:true,options:[{label:'Equal',value:'Equal'},{label:'Wider',value:'Wider'},{label:'Smaller',value:'Smaller'}]},
+            {field:'FaceLength',type:'single',title:'How would you describe your face length?',skip:true,options:[{label:'Short',value:'Short'},{label:'Long',value:'Long'}]},
+            {field:'FavoriteShapes',type:'multi',title:'Your favorite frame shapes',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Browline',value:'Browline'},{label:'Round',value:'Round'},{label:'Square-Rectangle',value:'Square-Rectangle'},{label:'Cat-Eye',value:'Cat-Eye'},{label:'Aviator',value:'Aviator'},{label:'Special',value:'Special'}]},
+            {field:'Colors',type:'multi',title:'Your preferred frame colors',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Black',value:'Black'},{label:'Tortoise',value:'Tortoise'},{label:'Pattern',value:'Pattern'},{label:'Neutral',value:'Neutral'},{label:'Colorful',value:'Colorful'},{label:'Translucent',value:'Translucent'}]},
+            {field:'Materials',type:'multi',title:'Which frame materials do you like?',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Metal',value:'Metal'},{label:'Plastic (Acetate)',value:'Plastic'},{label:'Mixed',value:'Mixed'},{label:'Eco-friendly',value:'Eco-friendly'}]},
+            {field:'Measurements',type:'measure',title:'Do you have your glasses measurements?',skip:true},
+            {field:'HeadSize',type:'single',title:'What’s your estimated head size?',skip:true,options:[{label:'Narrow',value:'Narrow'},{label:'Medium',value:'Medium'},{label:'Wide',value:'Wide'}]},
+            {field:'ScreenTime',type:'single',title:'Average daily screen time',skip:true,options:[{label:'0 hours',value:'Zero'},{label:'0–4 hours',value:'ZeroToFour'},{label:'4–8 hours',value:'FourToEight'},{label:'8+ hours',value:'EightPlus'}]},
+                    {
+          field: 'DayTimeLocation',
+          type: 'single',
+          title: 'Where do you spend most of your day?',
+          skip: true,
+          options: [
+            { label: 'Always indoors',  value: 'AlwaysIndoors' },
+            { label: 'Mostly indoors',  value: 'MostlyIndoors' },
+            { label: 'Both',            value: 'Both' },
+            { label: 'Mostly outdoors', value: 'MostlyOutdoors' },
+            { label: 'Always outdoors', value: 'AlwaysOutdoors' }
+          ]
+        },
+            {field:'Prescription',type:'single',title:'Do you need prescription lenses?',options:[{label:'Yes',value:'true'},{label:'No',value:'false'}]},
+            {field:'Features',type:'multi',title:'Special features you’re interested in',subtitle:'Pick as many as you like!',skip:true,options:[{label:'Lightweight',value:'Lightweight'},{label:'Low nose bridge fit',value:'Low nose bridge fit'},{label:'Adjustable nose pads',value:'Adjustable nose pads'},{label:'Clip-ons',value:'Clip-ons'},{label:'Spring hinges',value:'Spring hinges'}]}
+        ],
+        init(){
+            const saved = localStorage.getItem('surveyDraft');
+            if(saved){
+                try{ this.data = Object.assign(this.data, JSON.parse(saved)); }catch(e){}
             }
-        });
-    </script>
+        },
+        current(){ return this.steps[this.step-1]; },
+        isSelected(field,val){
+            const v = this.data[field];
+            if(Array.isArray(v)) return v.includes(val);
+            return v===val;
+        },
+        toggle(sl,val){
+            const field = sl.field;
+            if(sl.type==='multi'){
+                const arr = this.data[field];
+                const idx = arr.indexOf(val);
+                if(idx>-1) arr.splice(idx,1); else arr.push(val);
+            }else{
+                this.data[field] = this.data[field] === val ? '' : val;
+            }
+        },
+        labelFor(field,val){
+            const step = this.steps.find(s=>s.field===field);
+            const opt = step.options.find(o=>o.value===val);
+            return opt ? opt.label : val;
+        },
+        focusNext(evt){
+            const el = evt.target.closest('[role]');
+            if(!el) return;
+            const items = Array.from(el.parentElement.children);
+            const idx = items.indexOf(el);
+            const next = items[idx+1] || items[0];
+            next.focus();
+        },
+        focusPrev(evt){
+            const el = evt.target.closest('[role]');
+            if(!el) return;
+            const items = Array.from(el.parentElement.children);
+            const idx = items.indexOf(el);
+            const prev = items[idx-1] || items[items.length-1];
+            prev.focus();
+        },
+        isValid(sl){
+            if(sl.type==='measure') return true;
+            const val = this.data[sl.field];
+            if(Array.isArray(val)) return val.length>0;
+            return !!val;
+        },
+        next(){
+            if(!this.isValid(this.current())) return;
+            this.step = Math.min(this.step+1,this.total);
+            this.save();
+        },
+        prev(){
+            this.step = Math.max(this.step-1,1);
+        },
+        skip(){
+            this.step = Math.min(this.step+1,this.total);
+            this.save();
+        },
+        save(){
+            localStorage.setItem('surveyDraft', JSON.stringify(this.data));
+        },
+        clearMeasurements(){
+            if(this.noMeasurements){
+                this.data.LensWidth = this.data.BridgeWidth = this.data.TempleLength = null;
+            }
+        },
+        serializePriceFocus(){
+            const arr = this.data.PriceFocus;
+            if(arr.includes('Premium')) return 'Premium';
+            if(arr.includes('BestValue')) return 'BestValue';
+            if(arr.includes('Affordability')) return 'Affordability';
+            return '';
+        },
+        serializeFaceShape(){
+            const arr = this.data.FaceShape.filter(v=>v!=='Unsure');
+            return arr[0] || '';
+        },
+        finalize(){
+            this.save();
+        }
+    }
+}
+</script>
 }
