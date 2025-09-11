@@ -11,6 +11,15 @@ namespace SmartEyewearStore.Models
         public string? Description { get; set; }
         public int SelectedVariantId { get; set; }
 
+        public decimal? AvgRating { get; set; }
+        public int? RatingCount { get; set; }
+
+        public string? MaterialName { get; set; }
+        public string? ShapeName { get; set; }
+        public string? RimStyleName { get; set; }
+
+
+
         public List<VariantViewModel> Variants { get; set; } = new();
         public List<string> Features { get; set; } = new();
 

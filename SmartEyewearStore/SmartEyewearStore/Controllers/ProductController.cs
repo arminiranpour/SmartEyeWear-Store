@@ -32,6 +32,12 @@ namespace SmartEyewearStore.Controllers
                 .Include(p => p.Variants).ThenInclude(v => v.Prices)
                 .Include(p => p.Variants).ThenInclude(v => v.Inventory)
                 .Include(p => p.Variants).ThenInclude(v => v.Dimensions)
+                .Include(p => p.RatingSummary)
+                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Material)
+                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.Shape)
+                .Include(p => p.FrameSpecs).ThenInclude(fs => fs.RimStyle)
+
+
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Slug == slug);
 
@@ -81,7 +87,13 @@ namespace SmartEyewearStore.Controllers
                 Slug = product.Slug,
                 Description = product.Description,
                 SelectedVariantId = selectedVariant.VariantId,
-                Features = product.ProductFeatures.Select(pf => pf.Feature.Label).ToList()
+                Features = product.ProductFeatures.Select(pf => pf.Feature.Label).ToList(),
+                AvgRating = product.RatingSummary?.AvgRating,
+                RatingCount = product.RatingSummary?.RatingCount,
+                MaterialName = product.FrameSpecs?.Material?.Name,
+                ShapeName = product.FrameSpecs?.Shape?.Name,
+                RimStyleName = product.FrameSpecs?.RimStyle?.Name,
+
             };
 
             vm.Variants = product.Variants
