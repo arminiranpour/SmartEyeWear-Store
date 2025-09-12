@@ -94,6 +94,8 @@ namespace SmartEyewearStore.Controllers
                 _service,
                 _collabService);
 
+            Console.WriteLine($"Hybrid recommendation count: {recommended.Count}");
+
             return View("GetHybridRecommendations", recommended);
         }
 
@@ -191,6 +193,7 @@ namespace SmartEyewearStore.Controllers
                 allVariants,
                 _service,
                 _collabService);
+            Console.WriteLine($"Hybrid recommendation count: {recommended.Count}");
 
             return View(recommended);
         }

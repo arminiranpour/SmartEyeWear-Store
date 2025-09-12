@@ -1070,15 +1070,17 @@ function surveyWizard(){
             if(arr.includes('Affordability')) return 'Affordability';
             return '';
         },
-        serializeFaceShape(){
-            const arr = this.data.FaceShape.filter(v=>v!=='Unsure');
-            return arr[0] || '';
-        },
-        finalize(){
-                this.save();
-                this.$refs.form.submit();
+                        serializeFaceShape(){
+                    const arr = this.data.FaceShape.filter(v=>v!=='Unsure');
+                    return arr[0] || '';
+                },
+                finalize(){
+                    this.save();
+                    localStorage.setItem('pendingSurvey', JSON.stringify(this.data));
+                    localStorage.removeItem('surveyDraft');
+                    this.$refs.form.submit();
+                }
+            }
         }
-    }
-}
     </script>
 }
