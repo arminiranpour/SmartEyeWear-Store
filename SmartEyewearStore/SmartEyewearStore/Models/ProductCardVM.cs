@@ -12,5 +12,6 @@ namespace SmartEyewearStore.ViewModels
         public string? PrimaryImageUrl { get; set; }
         public IEnumerable<string>? Colors { get; set; }
         public string? SizeLabel { get; set; }
+        public int VariantId { get; set; }
     }
 }
