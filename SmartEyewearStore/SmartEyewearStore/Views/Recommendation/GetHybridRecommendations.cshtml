@@ -5,17 +5,29 @@
 }
 
 <h2>Hybrid Recommendations</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-    @foreach (var item in Model)
-    {
-        var img = item.Variant.Images.FirstOrDefault()?.Url;
-        var price = item.Variant.Prices.FirstOrDefault()?.BasePriceCents / 100m;
-        <div class="border p-4 rounded">
-            <img src="@img" alt="@item.Variant.Product?.Name" class="mb-2 w-full h-auto" />
-            <h3 class="font-bold">@item.Variant.Product?.Name</h3>
-            <p>Color: @item.Variant.Color?.Name</p>
-            <p>Price: $@price</p>
-            <p>Score: @item.Score.ToString("F2")</p>
-        </div>
-    }
-</div>
+@if (Model != null && Model.Any())
+{
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @foreach (var item in Model)
+        {
+            var img = item.Variant.Images.FirstOrDefault()?.Url;
+            var price = item.Variant.Prices.FirstOrDefault()?.BasePriceCents / 100m;
+            <a class="border p-4 rounded block hover:shadow" asp-controller="Product" asp-action="Details"
+               asp-route-slug="@item.Variant.Product?.Slug" asp-route-variantId="@item.Variant.VariantId">
+                <img src="@img" alt="@item.Variant.Product?.Name" class="mb-2 w-full h-auto" />
+                <h3 class="font-bold">@item.Variant.Product?.Brand?.Name - @item.Variant.Product?.Name</h3>
+                <p>Color: @item.Variant.Color?.Name</p>
+                <p>Price: $@price</p>
+                <p>Score: @item.Score.ToString("F2")</p>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <p>No recommendations were found for your preferences.</p>
+    <p>
+        <a asp-controller="Survey" asp-action="Index">Retake the survey</a> or
+        <a asp-controller="Store" asp-action="Index">return to the store</a>.
+    </p>
+}
