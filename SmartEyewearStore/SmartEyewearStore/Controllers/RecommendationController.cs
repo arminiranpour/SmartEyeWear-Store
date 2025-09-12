@@ -162,10 +162,14 @@ namespace SmartEyewearStore.Controllers
                 return RedirectToAction("Index", "Store");
             }
 
-            var profile = _context.SurveyAnswers
-                .Where(s => s.UserId == userId)
-                .OrderByDescending(s => s.Id)
-                .FirstOrDefault();
+            SurveyAnswer? profile = null;
+            if (userId.HasValue)
+            {
+                profile = _context.SurveyAnswers
+                    .Where(s => s.UserId == userId.Value)
+                    .OrderByDescending(s => s.Id)
+                    .FirstOrDefault();
+            }
 
             // If a logged in user has not taken the survey yet, redirect them to it
             if (profile == null && userId.HasValue)
