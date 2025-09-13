@@ -57,7 +57,7 @@ namespace SmartEyewearStore.Controllers
             return View("GetRecommendations", recommended);
         }
 
-        [HttpPost]
+        [HttpGet, HttpPost]
         public IActionResult AnalyzeHybridFromClient(SurveyViewModel model)
         {
             var survey = new SurveyAnswer
