@@ -38,9 +38,9 @@
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Product\\Details.cshtml",
               "RelativeDocumentMoniker": "SmartEyewearStore\\Views\\Product\\Details.cshtml",
-              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Product\\Details.cshtml*",
-              "RelativeToolTip": "SmartEyewearStore\\Views\\Product\\Details.cshtml*",
-              "ViewState": "AgIAALQAAAAAAAAAAAAAALkAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\padidar\\Desktop\\SmartEyeWear-Store\\SmartEyewearStore\\SmartEyewearStore\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "SmartEyewearStore\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAALIAAAAAAAAAAAAwwLkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-13T12:44:42.754Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Controllers\\ShopController.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAYwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T11:49:29.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T11:49:29.821Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "SmartEyewearStore\\Views\\Store\\Shop.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAOsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-13T11:27:14.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T11:27:14.859Z"
             }
           ]
         }

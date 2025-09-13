@@ -136,7 +136,6 @@
                     <button id="description-tab" role="tab" aria-controls="description-content" aria-selected="false" class="tab">Description</button>
                 </div>
                 <div class="mt-8">
-                    <!-- تب ویژگی‌ها و سایز (ترکیب‌شده: نسخهٔ کاملِ main + لیست سادهٔ AddShoppingCart) -->
                     <div id="features-content"
                          role="tabpanel"
                          aria-labelledby="features-tab"
@@ -159,7 +158,6 @@
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                             <!-- متن (چپ) -->
                             <div class="md:flex-1 min-w-0">
-                                @* از main: نمایش یک فیچر به عنوان هایلایت *@
                                 @if (Model.Features?.Any() == true)
                                 {
                                     <p class="font-semibold mb-4">@Model.Features.First()</p>
@@ -183,32 +181,22 @@
                                     <li><span class="text-gray-600">Rim:</span>      <span class="font-medium">@Model.RimStyleName</span></li>
                                 </ul>
 
-                                @* از AddShoppingCart: لیست کامل Features *@
-                                @if (Model.Features?.Any() == true)
-                                {
-                                    <div class="mt-6">
-                                        <h4 class="font-semibold mb-2">All Features</h4>
-                                        <ul class="list-disc pl-5">
-                                            @foreach (var f in Model.Features)
-                                            {
-                                                <li>@f</li>
-                                            }
-                                        </ul>
-                                    </div>
-                                }
-
+                               
+                                <!--
                                 <p class="mt-4 text-sm">Branded case &amp; cloth</p>
                                 <p class="mt-2 text-sm">
                                     Not sure about your size?
                                     <a class="text-primary font-semibold underline" href="/size-guide">Size Guide</a>
-                                </p>
+                                </p> -->
                             </div>
 
-                            <!-- تصویر (راست) -->
+                            <!-- ستون راست: تصویر -->
                             <div class="md:shrink-0 md:self-center md:ml-8">
                                 <figure class="md:ml-auto" style="width: 440px; max-width: 100%;">
                                     <div class="relative overflow-hidden" style="padding-top: 50%;">
-                                        <img src="@smallUrl" alt="@smallAlt" class="absolute inset-0 w-full h-full object-contain" />
+                                        <img src="@smallUrl"
+                                             alt="@smallAlt"
+                                             class="absolute inset-0 w-full h-full object-contain" />
                                     </div>
                                 </figure>
                             </div>
@@ -243,7 +231,7 @@
                                 <h3 class="text-2xl font-semibold mb-4">About @Model.Brand @Model.Name</h3>
                                 <p class="text-gray-700 leading-relaxed">@Model.Description</p>
                             </div>
-                            @* اگر خواستی دوباره تصویر کناری رو فعال کنی:
+                            @* 
                             <div class="col-span-12 md:col-span-5">
                                 <div class="bg-white rounded-xl p-4 flex items-center justify-center">
                                     <img src="@heroUrl" alt="@heroAlt" class="w-full h-auto object-contain max-h-80" />
