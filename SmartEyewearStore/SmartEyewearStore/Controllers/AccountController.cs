@@ -218,5 +218,14 @@ namespace SmartEyewearStore.Controllers
             }
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("UserId");
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
