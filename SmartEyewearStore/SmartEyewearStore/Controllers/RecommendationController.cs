@@ -57,7 +57,7 @@ namespace SmartEyewearStore.Controllers
             return View("GetRecommendations", recommended);
         }
 
-        [HttpPost]
+        [HttpGet, HttpPost]
         public IActionResult AnalyzeHybridFromClient(SurveyViewModel model)
         {
             var survey = new SurveyAnswer
@@ -93,6 +93,8 @@ namespace SmartEyewearStore.Controllers
                 allVariants,
                 _service,
                 _collabService);
+
+            Console.WriteLine($"Hybrid recommendation count: {recommended.Count}");
 
             return View("GetHybridRecommendations", recommended);
         }
@@ -162,15 +164,22 @@ namespace SmartEyewearStore.Controllers
                 return RedirectToAction("Index", "Store");
             }
 
-            var profile = _context.SurveyAnswers
-                .Where(s => s.UserId == userId)
-                .OrderByDescending(s => s.Id)
-                .FirstOrDefault();
-
-            if (profile == null)
+            SurveyAnswer? profile = null;
+            if (userId.HasValue)
             {
-                return RedirectToAction("Index", "Store");
+                profile = _context.SurveyAnswers
+                    .Where(s => s.UserId == userId.Value)
+                    .OrderByDescending(s => s.Id)
+                    .FirstOrDefault();
             }
+
+            // If a logged in user has not taken the survey yet, redirect them to it
+            if (profile == null && userId.HasValue)
+            {
+                return RedirectToAction("Index", "Survey");
+            }
+
+            profile ??= new SurveyAnswer { UserId = userId ?? 0 };
 
             var allVariants = LoadAllVariants();
 
@@ -184,6 +193,7 @@ namespace SmartEyewearStore.Controllers
                 allVariants,
                 _service,
                 _collabService);
+            Console.WriteLine($"Hybrid recommendation count: {recommended.Count}");
 
             return View(recommended);
         }
@@ -191,6 +201,8 @@ namespace SmartEyewearStore.Controllers
         private List<ProductVariant> LoadAllVariants()
         {
             return _context.ProductVariants
+                .Include(v => v.Images)
+                .Include(v => v.Prices)
                 .Include(v => v.Product)
                     .ThenInclude(p => p.FrameSpecs)
                         .ThenInclude(fs => fs.Shape)
@@ -213,8 +225,12 @@ namespace SmartEyewearStore.Controllers
             string? guestId = HttpContext.Session.GetString("GuestId");
 
             var query = _context.UserInteractions
-                                .Include(ui => ui.Variant)
-                    .ThenInclude(v => v.Product)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Images)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Prices)
+                .Include(ui => ui.Variant)
+                .ThenInclude(v => v.Product)
                         .ThenInclude(p => p.FrameSpecs)
                             .ThenInclude(fs => fs.Shape)
                 .Include(ui => ui.Variant)
@@ -253,6 +269,10 @@ namespace SmartEyewearStore.Controllers
         private List<UserInteraction> LoadAllInteractions()
         {
             return _context.UserInteractions
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Images)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Prices)
                 .Include(ui => ui.Variant)
                     .ThenInclude(v => v.Product)
                         .ThenInclude(p => p.FrameSpecs)

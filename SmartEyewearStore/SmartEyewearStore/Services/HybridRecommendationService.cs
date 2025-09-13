@@ -62,6 +62,13 @@ namespace SmartEyewearStore.Services
                 combined.Add(new VariantRecommendation { Variant = variant, Score = final });
             }
 
+            if (!combined.Any())
+            {
+                combined = contentResults.Any()
+                    ? contentResults
+                    : allVariants.Select(v => new VariantRecommendation { Variant = v, Score = 0 }).ToList();
+            }
+
             return combined
                 .OrderByDescending(r => r.Score)
                 .Take(topN)

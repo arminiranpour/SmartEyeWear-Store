@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SmartEyewearStore.Models.VariantRecommendation>
+﻿@model IEnumerable<SmartEyewearStore.Models.Catalog.ProductVariant>
 @{
     ViewData["Title"] = "Recommendations";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,9 +13,8 @@
     else
     {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            @foreach (var rec in Model)
+            @foreach (var variant in Model)
             {
-                var variant = rec.Variant;
                 var product = variant.Product;
                 var img = variant.Images.OrderBy(i => i.SortOrder).FirstOrDefault()?.Url;
                 var price = variant.Prices.OrderBy(p => p.ValidFrom).FirstOrDefault();
