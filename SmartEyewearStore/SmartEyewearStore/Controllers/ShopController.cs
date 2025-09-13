@@ -26,114 +26,47 @@ namespace SmartEyewearStore.Controllers
             if (filters.PageSize <= 0) filters.PageSize = DefaultPageSize;
             filters.PageSize = Math.Clamp(filters.PageSize, 1, MaxPageSize);
 
-            if (filters.PriceMin.HasValue && filters.PriceMax.HasValue && filters.PriceMin > filters.PriceMax)
-            {
-                var tmp = filters.PriceMin; filters.PriceMin = filters.PriceMax; filters.PriceMax = tmp;
-            }
-            filters.Search = filters.Search?.Trim();
+            // CHANGE: چون فیلتر قیمت حذف شد، نیازی به جابجایی Min/Max نیست
+            // اگر در آینده برگردوندی، این بخش را احیا کن
+            // if (filters.PriceMin.HasValue && filters.PriceMax.HasValue && filters.PriceMin > filters.PriceMax) { ... }
 
+            filters.Search = filters.Search?.Trim();
             var now = DateTime.UtcNow;
 
-            // Build filter option lists (avoid translating boolean literals to SQL)
-            var brandList = await _db.Brands
-                .OrderBy(b => b.Name)
-                .Select(b => new { b.BrandId, b.Name })
-                .ToListAsync();
+            // Filter option lists
+            var brandList = await _db.Brands.OrderBy(b => b.Name).Select(b => new { b.BrandId, b.Name }).ToListAsync();
+            filters.Brands = brandList.Select(b => new SelectOption { Id = b.BrandId, Label = b.Name, Selected = filters.BrandIds?.Contains(b.BrandId) == true }).ToList();
 
-            filters.Brands = brandList
-                .Select(b => new SelectOption
-                {
-                    Id = b.BrandId,
-                    Label = b.Name,
-                    Selected = filters.BrandIds?.Contains(b.BrandId) == true
-                })
-                .ToList();
-            var shapeList = await _db.Shapes
-                .OrderBy(s => s.Name)
-                .Select(s => new { s.ShapeId, s.Name })
-                .ToListAsync();
-            filters.Shapes = shapeList
-                .Select(s => new SelectOption
-                {
-                    Id = s.ShapeId,
-                    Label = s.Name,
-                    Selected = filters.ShapeIds?.Contains(s.ShapeId) == true
-                })
-                .ToList();
+            var shapeList = await _db.Shapes.OrderBy(s => s.Name).Select(s => new { s.ShapeId, s.Name }).ToListAsync();
+            filters.Shapes = shapeList.Select(s => new SelectOption { Id = s.ShapeId, Label = s.Name, Selected = filters.ShapeIds?.Contains(s.ShapeId) == true }).ToList();
 
-            var colorList = await _db.Colors
-                .OrderBy(c => c.Name)
-                .Select(c => new { c.ColorId, c.Name })
-                .ToListAsync();
-            filters.Colors = colorList
-                .Select(c => new SelectOption
-                {
-                    Id = c.ColorId,
-                    Label = c.Name,
-                    Selected = filters.ColorIds?.Contains(c.ColorId) == true
-                })
-                .ToList();
+            var colorList = await _db.Colors.OrderBy(c => c.Name).Select(c => new { c.ColorId, c.Name }).ToListAsync();
+            filters.Colors = colorList.Select(c => new SelectOption { Id = c.ColorId, Label = c.Name, Selected = filters.ColorIds?.Contains(c.ColorId) == true }).ToList();
 
-            var materialList = await _db.Materials
-                .OrderBy(m => m.Name)
-                .Select(m => new { m.MaterialId, m.Name })
-                .ToListAsync();
-            filters.Materials = materialList
-                .Select(m => new SelectOption
-                {
-                    Id = m.MaterialId,
-                    Label = m.Name,
-                    Selected = filters.MaterialIds?.Contains(m.MaterialId) == true
-                })
-                .ToList();
+            var materialList = await _db.Materials.OrderBy(m => m.Name).Select(m => new { m.MaterialId, m.Name }).ToListAsync();
+            filters.Materials = materialList.Select(m => new SelectOption { Id = m.MaterialId, Label = m.Name, Selected = filters.MaterialIds?.Contains(m.MaterialId) == true }).ToList();
 
-            var rimStyleList = await _db.RimStyles
-                .OrderBy(r => r.Name)
-                .Select(r => new { r.RimStyleId, r.Name })
-                .ToListAsync();
-            filters.RimStyles = rimStyleList
-                .Select(r => new SelectOption
-                {
-                    Id = r.RimStyleId,
-                    Label = r.Name,
-                    Selected = filters.RimStyleIds?.Contains(r.RimStyleId) == true
-                })
-                .ToList();
+            var rimStyleList = await _db.RimStyles.OrderBy(r => r.Name).Select(r => new { r.RimStyleId, r.Name }).ToListAsync();
+            filters.RimStyles = rimStyleList.Select(r => new SelectOption { Id = r.RimStyleId, Label = r.Name, Selected = filters.RimStyleIds?.Contains(r.RimStyleId) == true }).ToList();
 
-            var featureList = await _db.Features
-                .OrderBy(f => f.Label)
-                .Select(f => new { f.FeatureId, f.Label })
-                .ToListAsync();
-            filters.Features = featureList
-                .Select(f => new SelectOption
-                {
-                    Id = f.FeatureId,
-                    Label = f.Label,
-                    Selected = filters.FeatureIds?.Contains(f.FeatureId) == true
-                })
-                .ToList();
+            var featureList = await _db.Features.OrderBy(f => f.Label).Select(f => new { f.FeatureId, f.Label }).ToListAsync();
+            filters.Features = featureList.Select(f => new SelectOption { Id = f.FeatureId, Label = f.Label, Selected = filters.FeatureIds?.Contains(f.FeatureId) == true }).ToList();
 
-            // Sizes
-            var sizeLabels = await _db.ProductVariants
-                .Select(v => v.SizeLabel)
-                .Where(s => s != null && s != "")
-                .Distinct()
-                .OrderBy(s => s)
-                .ToListAsync();
-            filters.SizesOptions = sizeLabels
-                .Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) })
-                .ToList();
+            // CHANGE: سایزها از UI حذف شد؛ این بخش را هم غیرفعال می‌کنیم
+            // (اگر بعداً نیاز شد، برگردان)
+            // var sizeLabels = await _db.ProductVariants
+            //     .Select(v => v.SizeLabel).Where(s => s != null && s != "")
+            //     .Distinct().OrderBy(s => s).ToListAsync();
+            // filters.SizesOptions = sizeLabels
+            //     .Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) })
+            //     .ToList();
 
-            // Price bounds available - materialize to avoid translating boolean to SQL
-            var activePricesList = await _db.VariantPrices
-                .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
-                .Select(p => (decimal)(p.SalePriceCents ?? p.BasePriceCents) / 100m)
-                .ToListAsync();
+            // CHANGE: محدوده قیمت قابل‌دسترسی برای UI لازم نیست
+            // var activePricesList = await _db.VariantPrices ...;
+            // filters.PriceMinAvailable = ...;
+            // filters.PriceMaxAvailable = ...;
 
-            filters.PriceMinAvailable = activePricesList.Any() ? activePricesList.Min() : 0;
-            filters.PriceMaxAvailable = activePricesList.Any() ? activePricesList.Max() : 0;
-
-            // Base product-variant query (no IsActive check)
+            // Base product-variant query
             var query = _db.ProductVariants
                 .Include(v => v.Product).ThenInclude(p => p.Brand)
                 .Include(v => v.Product).ThenInclude(p => p.FrameSpecs)
@@ -164,8 +97,9 @@ namespace SmartEyewearStore.Controllers
                     && v.Product.FrameSpecs.RimStyleId != null
                     && filters.RimStyleIds.Contains(v.Product.FrameSpecs.RimStyleId.Value));
 
-            if (filters.Sizes?.Any() == true)
-                query = query.Where(v => v.SizeLabel != null && filters.Sizes.Contains(v.SizeLabel));
+            // CHANGE: فیلتر سایز حذف شد
+            // if (filters.Sizes?.Any() == true)
+            //     query = query.Where(v => v.SizeLabel != null && filters.Sizes.Contains(v.SizeLabel));
 
             if (filters.FeatureIds?.Any() == true)
                 query = query.Where(v => v.Product.ProductFeatures.Any(pf => filters.FeatureIds.Contains(pf.FeatureId)));
@@ -178,8 +112,7 @@ namespace SmartEyewearStore.Controllers
                     v.Product.Slug.ToLower().Contains(searchLower));
             }
 
-            // Attach active price & primary image
-            var queryWithPrice = query
+            var queryWithCalc = query
                 .Select(v => new
                 {
                     Variant = v,
@@ -187,47 +120,51 @@ namespace SmartEyewearStore.Controllers
                         .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
                         .OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
                         .FirstOrDefault(),
-                    PrimaryImage = v.Images.OrderBy(i => i.SortOrder).FirstOrDefault()
-                })
-                .Where(x => x.ActivePrice != null);
+                    PrimaryImage = v.Images.OrderBy(i => i.SortOrder).FirstOrDefault(),
+                    PriceValue = (
+                        v.Prices
+                         .Where(p => p.ValidFrom <= now && (p.ValidTo == null || p.ValidTo >= now))
+                         .OrderBy(p => p.SalePriceCents ?? p.BasePriceCents)
+                         .Select(p => (decimal?)((p.SalePriceCents ?? p.BasePriceCents) / 100m))
+                         .FirstOrDefault()
+                    )
+                });
 
-            // Price range filtering
-            if (filters.PriceMin.HasValue)
-            {
-                var min = filters.PriceMin.Value;
-                queryWithPrice = queryWithPrice.Where(x =>
-                    (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m >= min);
-            }
-            if (filters.PriceMax.HasValue)
-            {
-                var max = filters.PriceMax.Value;
-                queryWithPrice = queryWithPrice.Where(x =>
-                    (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m <= max);
-            }
+            // CHANGE: فیلتر محدوده قیمت را حذف می‌کنیم (چون UI ندارد)
+            // if (filters.PriceMin.HasValue) { ... }
+            // if (filters.PriceMax.HasValue) { ... }
 
-    // Group variants by product fields instead of the entity itself. Grouping by the
-            // entire Product entity caused incorrect SQL translation with Oracle which
-            // resulted in an empty result set. Grouping by scalar fields ensures proper
-            // translation and returns the expected products.
-                var grouped = queryWithPrice
-                    .GroupBy(x => new
-                    {
-                        x.Variant.Product.ProductId,
-                        x.Variant.Product.Slug,
-                        x.Variant.Product.Name,
-                        BrandName = x.Variant.Product.Brand != null ? x.Variant.Product.Brand.Name : null,
-                        x.Variant.Product.CreatedAt
-                    }).Select(g => new
+            // CHANGE: گروه‌بندی با MinPrice امن (اگر null بود => 0)
+            var grouped = queryWithCalc
+                .GroupBy(x => new
                 {
-                        g.Key.ProductId,
-                        g.Key.Slug,
-                        g.Key.Name,
-                        g.Key.BrandName,
-                        g.Key.CreatedAt,
-                        MinPrice = g.Min(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m),
-                    PrimaryImage = g.OrderBy(x => (decimal)(x.ActivePrice.SalePriceCents ?? x.ActivePrice.BasePriceCents) / 100m)
-                        .Select(x => x.PrimaryImage != null ? x.PrimaryImage.Url : null)
-                        .FirstOrDefault(),
+                    x.Variant.Product.ProductId,
+                    x.Variant.Product.Slug,
+                    x.Variant.Product.Name,
+                    BrandName = x.Variant.Product.Brand != null ? x.Variant.Product.Brand.Name : null,
+                    x.Variant.Product.CreatedAt
+                })
+                .Select(g => new
+                {
+                    g.Key.ProductId,
+                    g.Key.Slug,
+                    g.Key.Name,
+                    g.Key.BrandName,
+                    g.Key.CreatedAt,
+                    MinPrice = (g.Min(x => x.PriceValue) ?? 0m),
+                    PrimaryImage =
+    g.OrderBy(x => x.Variant.VariantId)                     
+     .SelectMany(x => x.Variant.Images)
+     .Where(i => !string.IsNullOrWhiteSpace(i.Url))
+     .OrderBy(i => i.SortOrder)                              
+     .Select(i => i.Url.Trim())
+     .FirstOrDefault()
+    ?? g.SelectMany(x => x.Variant.Images)
+        .Where(i => !string.IsNullOrWhiteSpace(i.Url))
+        .OrderBy(i => i.SortOrder)
+        .Select(i => i.Url.Trim())
+        .FirstOrDefault(),
+
                     Colors = g.Where(x => x.Variant.Color != null)
                         .Select(x => x.Variant.Color!.Name!)
                         .Distinct(),
@@ -263,7 +200,7 @@ namespace SmartEyewearStore.Controllers
                     Slug = g.Slug,
                     Name = g.Name,
                     BrandName = g.BrandName,
-                    MinPrice = g.MinPrice,
+                    MinPrice = g.MinPrice,          
                     PrimaryImageUrl = g.PrimaryImage,
                     Colors = g.Colors,
                     SizeLabel = g.Sizes.FirstOrDefault()
@@ -280,7 +217,6 @@ namespace SmartEyewearStore.Controllers
                 TotalPages = (int)Math.Ceiling(totalItems / (double)filters.PageSize)
             };
 
-            // Render the Shop view under Views/Store
             return View("~/Views/Store/Shop.cshtml", vm);
         }
     }
