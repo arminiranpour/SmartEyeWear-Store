@@ -896,10 +896,10 @@
             <!-- Buttons Footer -->
             <div class="sticky bottom-0 pt-6 mt-6 flex justify-between bg-white">
                 <button type="button" class="px-4 py-2 rounded border" x-show="step>1" @@click="prev">Back</button>
-                <button type="button"
-                        class="ml-auto px-4 py-2 rounded bg-primary text-white disabled:opacity-50"
-                        :disabled="!isValid(current())"
-                        @@click="next"
+                <button type="button" 
+                        class="ml-auto px-4 py-2 rounded bg-primary text-white disabled:opacity-50" 
+                        :disabled="!isValid(current())" 
+                        @@click="step===total ? finalize() : next()"
                         x-text="step===total ? 'View results' : 'Next'"></button>
             </div>
 
@@ -1070,14 +1070,17 @@ function surveyWizard(){
             if(arr.includes('Affordability')) return 'Affordability';
             return '';
         },
-        serializeFaceShape(){
-            const arr = this.data.FaceShape.filter(v=>v!=='Unsure');
-            return arr[0] || '';
-        },
-        finalize(){
-            this.save();
+                        serializeFaceShape(){
+                    const arr = this.data.FaceShape.filter(v=>v!=='Unsure');
+                    return arr[0] || '';
+                },
+                finalize(){
+                    this.save();
+                    localStorage.setItem('pendingSurvey', JSON.stringify(this.data));
+                    localStorage.removeItem('surveyDraft');
+                    this.$refs.form.submit();
+                }
+            }
         }
-    }
-}
-</script>
+    </script>
 }
