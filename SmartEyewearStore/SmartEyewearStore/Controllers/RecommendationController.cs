@@ -201,6 +201,8 @@ namespace SmartEyewearStore.Controllers
         private List<ProductVariant> LoadAllVariants()
         {
             return _context.ProductVariants
+                .Include(v => v.Images)
+                .Include(v => v.Prices)
                 .Include(v => v.Product)
                     .ThenInclude(p => p.FrameSpecs)
                         .ThenInclude(fs => fs.Shape)
@@ -223,8 +225,12 @@ namespace SmartEyewearStore.Controllers
             string? guestId = HttpContext.Session.GetString("GuestId");
 
             var query = _context.UserInteractions
-                                .Include(ui => ui.Variant)
-                    .ThenInclude(v => v.Product)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Images)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Prices)
+                .Include(ui => ui.Variant)
+                .ThenInclude(v => v.Product)
                         .ThenInclude(p => p.FrameSpecs)
                             .ThenInclude(fs => fs.Shape)
                 .Include(ui => ui.Variant)
@@ -263,6 +269,10 @@ namespace SmartEyewearStore.Controllers
         private List<UserInteraction> LoadAllInteractions()
         {
             return _context.UserInteractions
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Images)
+                .Include(ui => ui.Variant)
+                    .ThenInclude(v => v.Prices)
                 .Include(ui => ui.Variant)
                     .ThenInclude(v => v.Product)
                         .ThenInclude(p => p.FrameSpecs)
