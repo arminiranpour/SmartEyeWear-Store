@@ -12,13 +12,11 @@ public class SurveyController : Controller
         _context = context;
     }
 
-    // GET: /Survey
     public IActionResult Index()
     {
         return View();
     }
 
-    // POST: /Survey
     [HttpPost]
     public IActionResult Index(SurveyViewModel model)
     {

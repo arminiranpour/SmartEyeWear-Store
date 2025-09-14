@@ -63,7 +63,7 @@ namespace SmartEyewearStore.Controllers
 
             var order = new Order
             {
-                OrderNumber = await GenerateOrderNumberAsync(),
+                OrderNumber = GenerateOrderNumber(),
                 UserId = CurrentUserId,
                 GuestId = CurrentUserId.HasValue ? null : CurrentGuestId,
                 CartId = cart.CartId,
@@ -77,15 +77,8 @@ namespace SmartEyewearStore.Controllers
                 BillingState = vm.BillingState,
                 BillingPostalCode = vm.BillingPostalCode,
                 BillingCountry = vm.BillingCountry,
-                ShipToDifferent = vm.ShipToDifferent,
-                ShippingFullName = vm.ShippingFullName,
-                ShippingPhone = vm.ShippingPhone,
-                ShippingAddress1 = vm.ShippingAddress1,
-                ShippingAddress2 = vm.ShippingAddress2,
-                ShippingCity = vm.ShippingCity,
-                ShippingState = vm.ShippingState,
-                ShippingPostalCode = vm.ShippingPostalCode,
-                ShippingCountry = vm.ShippingCountry,
+
+
                 SubtotalCents = vm.SubtotalCents,
                 ShippingCents = vm.ShippingCents,
                 TaxCents = vm.TaxCents,
@@ -248,5 +241,14 @@ namespace SmartEyewearStore.Controllers
             Array.Reverse(b);
             return new string(b);
         }
+
+        string GenerateOrderNumber()
+        {
+            var ts = DateTime.UtcNow.Ticks.ToString("x");
+            var rnd = Guid.NewGuid().ToString("N")[..6].ToUpperInvariant();
+            return $"SO-{ts}-{rnd}";
+        }
+
+
     }
 }

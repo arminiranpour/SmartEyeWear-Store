@@ -61,7 +61,6 @@
                             <p class="text-gray-600 text-base">@Model.Brand</p>
                         }
 
-                        <!-- ریویوها (ستاره از DB + فقط تعداد) -->
                         <div class="flex items-center gap-3">
                             <div class="flex text-lg leading-none">
                                 @for (int i = 0; i < full; i++)
@@ -80,7 +79,6 @@
                             <a href="#reviews-content" class="text-primary font-semibold hover:underline">@ratingCount Reviews</a>
                         </div>
 
-                        <!-- واریانت‌ها (دکمه‌های نام رنگ) -->
                         <div class="space-y-2">
                             <p class="text-sm text-gray-700">Available Variants</p>
                             <div class="flex flex-wrap gap-3">
@@ -97,7 +95,6 @@
                             </div>
                         </div>
 
-                        <!-- قیمت -->
                         <div class="flex items-baseline gap-3">
                             <span class="text-2xl font-semibold">@price?.Currency @saleP.ToString("0.00")</span>
                             @if (onSale)
@@ -110,9 +107,7 @@
                             }
                         </div>
 
-                        <!-- دکمه Add to Cart -->
                         <form method="post" action="/cart/add">
-                            @* اگر مسیر متفاوت داری، همین action رو با مسیر واقعی CartControllerت عوض کن *@
                             <input type="hidden" name="variantId" value="@Model.SelectedVariantId" />
                             <input type="hidden" name="qty" value="1" />
                             <button type="submit"

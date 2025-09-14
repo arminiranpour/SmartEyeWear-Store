@@ -47,31 +47,10 @@
                             <label class="mb-4">ZIP Code</label>
                             <input asp-for="BillingPostalCode" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" required />
                         </div>
-                        <div class="w-1/2">
-                            <label class="mb-4">Country</label>
-                            <input asp-for="BillingCountry" class="w-full px-3 mt-2 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary" />
-                        </div>
+                       
                     </div>
 
-                    <div class="mb-4 flex items-center gap-2">
-                        <input asp-for="ShipToDifferent" type="checkbox" class="mr-2">
-                        <label for="ShipToDifferent" class="text-gray-700">Ship to a different address?</label>
-                    </div>
-
-                    <div id="shipping-fields" class="space-y-4" data-bind="shipping">
-                        <input asp-for="ShippingFullName" class="w-full px-3 py-2 border rounded-full" placeholder="Full Name">
-                        <input asp-for="ShippingPhone" class="w-full px-3 py-2 border rounded-full" placeholder="Phone">
-                        <input asp-for="ShippingAddress1" class="w-full px-3 py-2 border rounded-full" placeholder="Address">
-                        <input asp-for="ShippingAddress2" class="w-full px-3 py-2 border rounded-full" placeholder="Address 2">
-                        <div class="flex gap-4">
-                            <input asp-for="ShippingCity" class="w-1/2 px-3 py-2 border rounded-full" placeholder="City">
-                            <input asp-for="ShippingState" class="w-1/2 px-3 py-2 border rounded-full" placeholder="State">
-                        </div>
-                        <div class="flex gap-4">
-                            <input asp-for="ShippingPostalCode" class="w-1/2 px-3 py-2 border rounded-full" placeholder="ZIP">
-                            <input asp-for="ShippingCountry" class="w-1/2 px-3 py-2 border rounded-full" placeholder="Country">
-                        </div>
-                    </div>
+                    
 
                     <div class="mt-6">
                         <button type="submit" class="w-full bg-primary text-white border border-primary hover:bg-transparent hover:text-primary font-semibold px-4 py-3 rounded-full">Place Order</button>

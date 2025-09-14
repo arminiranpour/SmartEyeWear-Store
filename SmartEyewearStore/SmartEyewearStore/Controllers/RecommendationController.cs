@@ -173,7 +173,6 @@ namespace SmartEyewearStore.Controllers
                     .FirstOrDefault();
             }
 
-            // If a logged in user has not taken the survey yet, redirect them to it
             if (profile == null && userId.HasValue)
             {
                 return RedirectToAction("Index", "Survey");

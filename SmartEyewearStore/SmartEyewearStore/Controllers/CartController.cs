@@ -60,14 +60,12 @@ namespace SmartEyewearStore.Controllers
             return cart;
         }
 
-        // GET /cart
         public async Task<IActionResult> Index()
         {
             var vm = await BuildCartViewModelAsync();
             return View(vm);
         }
 
-        // POST /cart/add
         [HttpPost]
         public async Task<IActionResult> Add(int variantId, int qty = 1)
         {
@@ -100,7 +98,6 @@ namespace SmartEyewearStore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST /cart/update
         [HttpPost]
         public async Task<IActionResult> UpdateQty(int itemId, int qty)
         {
@@ -127,7 +124,6 @@ namespace SmartEyewearStore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST /cart/remove
         [HttpPost]
         public async Task<IActionResult> Remove(int itemId)
         {
@@ -141,7 +137,6 @@ namespace SmartEyewearStore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // POST /cart/empty
         [HttpPost]
         public async Task<IActionResult> Empty()
         {
@@ -152,7 +147,6 @@ namespace SmartEyewearStore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // ---- helpers ----
         async Task<CartPageViewModel> BuildCartViewModelAsync()
         {
             var cart = await GetOrCreateCartAsync();
@@ -181,7 +175,7 @@ namespace SmartEyewearStore.Controllers
                     .OrderByDescending(p => p.ValidFrom)
                     .FirstOrDefaultAsync();
 
-                if (price == null) // fallback: آخرین قیمت
+                if (price == null) 
                 {
                     price = await _db.VariantPrices
                         .Where(p => p.VariantId == v.VariantId)

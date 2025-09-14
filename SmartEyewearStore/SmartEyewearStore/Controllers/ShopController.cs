@@ -26,9 +26,7 @@ namespace SmartEyewearStore.Controllers
             if (filters.PageSize <= 0) filters.PageSize = DefaultPageSize;
             filters.PageSize = Math.Clamp(filters.PageSize, 1, MaxPageSize);
 
-            // CHANGE: چون فیلتر قیمت حذف شد، نیازی به جابجایی Min/Max نیست
-            // اگر در آینده برگردوندی، این بخش را احیا کن
-            // if (filters.PriceMin.HasValue && filters.PriceMax.HasValue && filters.PriceMin > filters.PriceMax) { ... }
+          
 
             filters.Search = filters.Search?.Trim();
             var now = DateTime.UtcNow;
@@ -52,8 +50,6 @@ namespace SmartEyewearStore.Controllers
             var featureList = await _db.Features.OrderBy(f => f.Label).Select(f => new { f.FeatureId, f.Label }).ToListAsync();
             filters.Features = featureList.Select(f => new SelectOption { Id = f.FeatureId, Label = f.Label, Selected = filters.FeatureIds?.Contains(f.FeatureId) == true }).ToList();
 
-            // CHANGE: سایزها از UI حذف شد؛ این بخش را هم غیرفعال می‌کنیم
-            // (اگر بعداً نیاز شد، برگردان)
             // var sizeLabels = await _db.ProductVariants
             //     .Select(v => v.SizeLabel).Where(s => s != null && s != "")
             //     .Distinct().OrderBy(s => s).ToListAsync();
@@ -61,10 +57,7 @@ namespace SmartEyewearStore.Controllers
             //     .Select(s => new SelectOption { Id = 0, Label = s!, Selected = filters.Sizes != null && filters.Sizes.Contains(s!) })
             //     .ToList();
 
-            // CHANGE: محدوده قیمت قابل‌دسترسی برای UI لازم نیست
-            // var activePricesList = await _db.VariantPrices ...;
-            // filters.PriceMinAvailable = ...;
-            // filters.PriceMaxAvailable = ...;
+           
 
             // Base product-variant query
             var query = _db.ProductVariants
@@ -130,11 +123,7 @@ namespace SmartEyewearStore.Controllers
                     )
                 });
 
-            // CHANGE: فیلتر محدوده قیمت را حذف می‌کنیم (چون UI ندارد)
-            // if (filters.PriceMin.HasValue) { ... }
-            // if (filters.PriceMax.HasValue) { ... }
-
-            // CHANGE: گروه‌بندی با MinPrice امن (اگر null بود => 0)
+           
             var grouped = queryWithCalc
                 .GroupBy(x => new
                 {

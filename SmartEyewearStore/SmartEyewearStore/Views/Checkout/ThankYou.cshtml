@@ -6,10 +6,13 @@
 <section class="bg-white py-16">
     <div class="container mx-auto px-4 max-w-3xl">
         <div class="bg-white rounded-2xl shadow p-8">
-            <h1 class="text-2xl font-bold mb-2">سفارش شما ثبت شد</h1>
-            <p class="text-gray-600 mb-6">شماره سفارش: <span class="font-mono font-semibold">@Model.OrderNumber</span></p>
+            <h1 class="text-2xl font-bold mb-2">Your order has been placed</h1>
+            <p class="text-gray-600 mb-6">
+                Order number:
+                <span class="font-mono font-semibold">@Model.OrderNumber</span>
+            </p>
 
-            <h2 class="text-xl font-semibold mb-4">خلاصه سفارش</h2>
+            <h2 class="text-xl font-semibold mb-4">Order summary</h2>
             <div class="space-y-3">
                 @foreach (var it in Model.Items)
                 {
@@ -21,14 +24,25 @@
             </div>
 
             <div class="border-t mt-4 pt-4 space-y-1">
-                <div class="flex justify-between"><span>Subtotal</span><span>$@(Model.SubtotalCents / 100.0M)</span></div>
-                <div class="flex justify-between"><span>Shipping</span><span>$@(Model.ShippingCents / 100.0M)</span></div>
-                <div class="flex justify-between"><span>Tax</span><span>$@(Model.TaxCents / 100.0M)</span></div>
-                <div class="flex justify-between font-semibold text-lg"><span>Total</span><span>$@(Model.TotalCents / 100.0M)</span></div>
+                <div class="flex justify-between">
+                    <span>Subtotal</span><span>$@(Model.SubtotalCents / 100.0M)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Shipping</span><span>$@(Model.ShippingCents / 100.0M)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Tax</span><span>$@(Model.TaxCents / 100.0M)</span>
+                </div>
+                <div class="flex justify-between font-semibold text-lg">
+                    <span>Total</span><span>$@(Model.TotalCents / 100.0M)</span>
+                </div>
             </div>
 
             <div class="mt-8 flex gap-3">
-                <a asp-controller="Home" asp-action="Index" class="px-5 py-2 rounded-full border border-primary bg-primary text-white hover:bg-transparent hover:text-primary">بازگشت به فروشگاه</a>
+                <a asp-controller="Home" asp-action="Index"
+                   class="px-5 py-2 rounded-full border border-primary bg-primary text-white hover:bg-transparent hover:text-primary">
+                    Back to Shop
+                </a>
             </div>
         </div>
     </div>

@@ -5,9 +5,7 @@ using System.Collections.Generic;
 
 namespace SmartEyewearStore.Models
 {
-    /// <summary>
-    /// View model used by the Shop view to render filter dropdowns and product listings.
-    /// </summary>
+    
     public class ShopViewModel
     {
         // Selected filter values

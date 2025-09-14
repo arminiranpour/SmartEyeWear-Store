@@ -311,35 +311,30 @@ namespace SmartEyewearStore.Data
                 .IsUnique()
                 .HasDatabaseName("IX_CART_ITEM_UNQ");
 
+            // === Order / OrderItem ===
+            modelBuilder.Entity<Order>().HasKey(o => o.OrderId);
+            modelBuilder.Entity<Order>().HasIndex(o => o.OrderNumber).IsUnique();
+            modelBuilder.Entity<Order>().HasIndex(o => o.UserId);
+            modelBuilder.Entity<Order>().HasIndex(o => o.GuestId);
             modelBuilder.Entity<Order>()
-            .HasKey(o => o.OrderId);
-            modelBuilder.Entity<Order>()
-                        .HasIndex(o => o.OrderNumber)
-                        .IsUnique();
-            modelBuilder.Entity<Order>()
-                        .HasIndex(o => o.UserId);
-            modelBuilder.Entity<Order>()
-                        .HasIndex(o => o.GuestId);
-            modelBuilder.Entity<Order>()
-                        .Property(o => o.ShipToDifferent)
-                        .IsRequired()
-                        .HasConversion(new BoolToZeroOneConverter<int>())
-                        .HasColumnType("NUMBER(1)");
-            modelBuilder.Entity<Order>()
-                        .HasOne(o => o.Cart)
-                        .WithMany()
-                        .HasForeignKey(o => o.CartId)
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .HasConstraintName("FK_ORDER_CART");
+                .HasOne(o => o.Cart)
+                .WithMany()
+                .HasForeignKey(o => o.CartId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("FK_ORDER_CART");
+
 
             modelBuilder.Entity<OrderItem>()
-                        .HasKey(oi => oi.OrderItemId);
+                .HasKey(oi => oi.OrderItemId);
+
             modelBuilder.Entity<OrderItem>()
-                        .HasOne(oi => oi.Order)
-                        .WithMany(o => o.Items)
-                        .HasForeignKey(oi => oi.OrderId)
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK_ORDERITEM_ORDER");
+                .HasOne(oi => oi.Order)
+                .WithMany(o => o.Items)
+                .HasForeignKey(oi => oi.OrderId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_ORDERITEM_ORDER");
+
+
 
             modelBuilder.Entity<Cart>()
                         .HasIndex(c => c.ClosedAt);
