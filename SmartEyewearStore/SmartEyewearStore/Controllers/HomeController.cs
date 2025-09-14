@@ -1,5 +1,4 @@
-﻿// Controllers/HomeController.cs
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartEyewearStore.Data;
@@ -48,12 +47,10 @@ namespace SmartEyewearStore.Controllers
                 var variant = product.Variants.FirstOrDefault(v => v.VariantId == p.variantId);
                 if (variant == null) continue;
 
-                // === تصویر اصلی: مثل Details → آخرین تصویر بر اساس SortOrder
                 var mainImage = variant.Images
                     .OrderBy(i => i.SortOrder)
                     .LastOrDefault();
 
-                // === قیمت: اگر بازه معتبر داشت همون؛ وگرنه آخرین قیمت
                 var activePrice = variant.Prices
                     .Where(pr => pr.ValidFrom <= now && (pr.ValidTo == null || pr.ValidTo >= now))
                     .OrderBy(pr => pr.ValidFrom)
@@ -76,7 +73,6 @@ namespace SmartEyewearStore.Controllers
                 });
             }
 
-            // می‌تونی به‌جای ViewBag، Model هم بفرستی؛ اما برای مینیمم تغییر:
             ViewBag.PopularProducts = popular;
             return View();
         }
