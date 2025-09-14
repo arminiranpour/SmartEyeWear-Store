@@ -109,7 +109,8 @@
 @using SmartEyewearStore.ViewModels
 
 <!-- Popular product section -->
-<section id="popular-products">
+<section id="popular-products" class="mb-16">
+
     <div class="container mx-auto py-10">
         <div class="flex flex-wrap -mx-4">
         <h2 class="text-2xl font-bold mb-8">Popular products</h2>
@@ -146,135 +147,135 @@
 
 
 <!-- Shop by shape  -->
-<section class="my-24 py-14 bg-white">
+<section class="relative my-16">
     <div class="container mx-auto px-4">
 
         <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
             Shop by <span class="text-primary">shape</span>
         </h2>
 
-        <div class="max-w-[1200px] mx-auto">
-            <ul class="flex flex-wrap justify-center gap-x-12 gap-y-14 list-none p-0 m-0">
-                <!-- Rectangle -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/1_b43d7987e8.jpg" alt="Rectangle"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Rectangle</span>
-                    </a>
-                </li>
+        <div class="flex flex-wrap -mx-4 justify-center">
 
-                <!-- Square -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/Square_060505f694.jpg" alt="Square"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Square</span>
-                    </a>
-                </li>
+            <!-- هر آیتم: عرض ریسپانسیو + px-4 برای گاتر + mb-8 مثل کارت‌ها -->
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/1_b43d7987e8.jpg" alt="Rectangle"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Rectangle</span>
+                </a>
+            </div>
 
-                <!-- Oval -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/Oval_47ecbb1b4b.jpg" alt="Oval"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Oval</span>
-                    </a>
-                </li>
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/Square_060505f694.jpg" alt="Square"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Square</span>
+                </a>
+            </div>
 
-                <!-- Round -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/Round_0e961070b8.jpg" alt="Round"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Round</span>
-                    </a>
-                </li>
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/Oval_47ecbb1b4b.jpg" alt="Oval"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Oval</span>
+                </a>
+            </div>
 
-                <!-- Browline -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/Brownline_01a926648c.jpg" alt="Browline"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Browline</span>
-                    </a>
-                </li>
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/Round_0e961070b8.jpg" alt="Round"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Round</span>
+                </a>
+            </div>
 
-                <!-- Horn -->
-                <li style="width:170px">
-                    <a href="#" class="block text-center">
-                        <div class="rounded-2xl overflow-hidden bg-[#F9EEE7]" style="width:170px;height:170px;">
-                            <img src="/assets/images/home/Horn_9193010a3d.jpg" alt="Horn"
-                                 class="w-full h-full object-cover" loading="lazy">
-                        </div>
-                        <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Horn</span>
-                    </a>
-                </li>
-            </ul>
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/Brownline_01a926648c.jpg" alt="Browline"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Browline</span>
+                </a>
+            </div>
+
+            <div class="w-1/2 sm:w-1/3 lg:w-1/6 px-4 mb-8">
+                <a href="#" class="block text-center">
+                    <div class="rounded-2xl overflow-hidden bg-[#F9EEE7] mx-auto" style="width:170px;height:170px;">
+                        <img src="/assets/images/home/Horn_9193010a3d.jpg" alt="Horn"
+                             class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <span class="mt-4 block text-[18px] md:text-[20px] font-semibold text-gray-900">Horn</span>
+                </a>
+            </div>
+
         </div>
     </div>
 </section>
 
 
-<!-- Brand section 
-<section id="brands" class="bg-white py-16 px-4">
-    <div class="container mx-auto max-w-screen-xl px-4 testimonials">
-        <div class="text-center mb-12 lg:mb-20">
-            <h2 class="text-5xl font-bold mb-4">Discover <span class="text-primary">Our Brands</span></h2>
-            <p class="my-7">Explore the top brands we feature in our store</p>
-        </div>
+<!-- Brand section -->
+<section id="brands" class="py-16 bg-white">
+
+    <div class="container mx-auto px-4 text-center">
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Discover <span class="text-primary">Our Brands</span></h2>
+        <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">Explore the top brands we feature in our store</p>
+       
         <div class="swiper brands-swiper-slider">
             <div class="swiper-wrapper">
                
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/html.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/arnette_bcec33057d.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
 
               
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/js.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/ax_4b50084290.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
 
 
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/laravel.svg" alt="Client Logo" class="max-h-full max-w-full">
-                </div>
-
-                
-                <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/php.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/ralph_3a20dba2d9.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
 
                 
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/react.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/ray_ban_03cec9205b.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
 
                 
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/tailwind.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/rflkt_f6bdd6a76c.jpg" alt="Client Logo" class="max-h-full max-w-full">
+                </div>
+
+                
+                <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
+                    <img src="/assets/images/home/coach_4d30014a8c.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
 
                
                 <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
-                    <img src="/assets/images/brands/typescript.svg" alt="Client Logo" class="max-h-full max-w-full">
+                    <img src="/assets/images/home/vogue_baae66800f.jpg" alt="Client Logo" class="max-h-full max-w-full">
+                </div>
+
+                <div class="swiper-slide flex-none bg-gray-200 flex items-center justify-center rounded-md">
+                    <img src="/assets/images/home/oakley_0a290f75b7.jpg" alt="Client Logo" class="max-h-full max-w-full">
                 </div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
      </div>
-</section> -->
+</section> 
 
 
 <!-- Banner section -->
@@ -397,7 +398,7 @@
         <div class="flex flex-col items-center rounded-lg p-4 sm:p-0 ">
             <div class="mb-8">
                 <h2 class="text-center text-xl font-bold sm:text-2xl lg:text-left lg:text-3xl">
-                    Join our newsletter and <span class="text-primary">get $50 discount</span> for your first order
+                    Don’t miss <span class="text-primary">exclusive offers</span>
                 </h2>
             </div>
             <div class="flex flex-col items-center w-96 ">
